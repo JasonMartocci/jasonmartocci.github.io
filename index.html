@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martocci Mayhem Hub</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <style>
     body { background: #0f0f0f; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     h1 { color: #ff0000; text-align: center; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .video-card { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
     .video-card img { width: 100%; height: auto; }
@@ -19,71 +21,14 @@
     .video-card a { color: #ff0000; text-decoration: none; }
     footer { text-align: center; margin-top: 40px; color: #888; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://jasonmartocci.com",
-    "name": "Martocci Mayhem Hub",
-    "description": "Dive into insane ASMR roleplays from Martocci Mayhem."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "url": "https://jasonmartocci.com/videos/why-does-this-savage-grandma-never-flinch.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://jasonmartocci.com/videos/how-ai-finds-the-best-parts-for-youtube-videos.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "url": "https://jasonmartocci.com/videos/how-ai-finds-the-best-parts-for-youtube-videos.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "url": "https://jasonmartocci.com/videos/how-ai-finds-the-best-parts-for-youtube-videos.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "url": "https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "url": "https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html"
-      },
-      
-      {
-        "@type": "ListItem",
-        "position": 7,
-        "url": "https://jasonmartocci.com/videos/experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html"
-      }
-      
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "description": "Dive into insane ASMR roleplays from Martocci Mayhem.", "name": "Martocci Mayhem Hub", "url": "https://jasonmartocci.com"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://jasonmartocci.com/videos/why-does-this-savage-grandma-never-flinch.html"}, {"@type": "ListItem", "position": 2, "url": "https://jasonmartocci.com/videos/how-ai-finds-the-best-parts-for-youtube-videos.html"}, {"@type": "ListItem", "position": 3, "url": "https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html"}, {"@type": "ListItem", "position": 4, "url": "https://jasonmartocci.com/videos/experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html"}, {"@type": "ListItem", "position": 5, "url": "https://jasonmartocci.com/videos/why-i-quit-drinking-but-still-mess-up.html"}, {"@type": "ListItem", "position": 6, "url": "https://jasonmartocci.com/videos/what-happens-when-you-stop-drinking.html"}, {"@type": "ListItem", "position": 7, "url": "https://jasonmartocci.com/videos/50-seconds-of-pure-magic-with-9-second-asmr-clips.html"}, {"@type": "ListItem", "position": 8, "url": "https://jasonmartocci.com/videos/mixing-this-week-s-best-9-second-asmr-clips-into-50-seconds-of-bliss.html"}]}</script>
 </head>
 <body>
   <div class="container">
     <h1>Martocci Mayhem Hub</h1>
     <p style="text-align: center;">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
+    <input type="text" id="search" placeholder="Search videos...">
     <div class="video-grid">
       
       <div class="video-card">
@@ -98,30 +43,6 @@
         <img src="https://i.ytimg.com/vi//hqdefault.jpg" alt="How AI Finds the Best Parts for YouTube Videos!">
         <div class="video-card-body">
           <a href="/videos/how-ai-finds-the-best-parts-for-youtube-videos.html" class="video-card-title">How AI Finds the Best Parts for YouTube Videos!</a>
-          <p class="video-card-desc"></p>
-        </div>
-      </div>
-      
-      <div class="video-card">
-        <img src="https://i.ytimg.com/vi//hqdefault.jpg" alt="How AI Finds the Best Parts for YouTube Videos!">
-        <div class="video-card-body">
-          <a href="/videos/how-ai-finds-the-best-parts-for-youtube-videos.html" class="video-card-title">How AI Finds the Best Parts for YouTube Videos!</a>
-          <p class="video-card-desc"></p>
-        </div>
-      </div>
-      
-      <div class="video-card">
-        <img src="https://i.ytimg.com/vi//hqdefault.jpg" alt="How AI Finds the Best Parts for YouTube Videos!">
-        <div class="video-card-body">
-          <a href="/videos/how-ai-finds-the-best-parts-for-youtube-videos.html" class="video-card-title">How AI Finds the Best Parts for YouTube Videos!</a>
-          <p class="video-card-desc"></p>
-        </div>
-      </div>
-      
-      <div class="video-card">
-        <img src="https://i.ytimg.com/vi//hqdefault.jpg" alt="What Happens When You Cut Objects in REVERSE ASMR">
-        <div class="video-card-body">
-          <a href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html" class="video-card-title">What Happens When You Cut Objects in REVERSE ASMR</a>
           <p class="video-card-desc"></p>
         </div>
       </div>
@@ -142,10 +63,53 @@
         </div>
       </div>
       
+      <div class="video-card">
+        <img src="https://i.ytimg.com/vi/Mde2TglHZSA/hqdefault.jpg" alt="Why I Quit Drinking But Still Mess Up!">
+        <div class="video-card-body">
+          <a href="/videos/why-i-quit-drinking-but-still-mess-up.html" class="video-card-title">Why I Quit Drinking But Still Mess Up!</a>
+          <p class="video-card-desc">Get ready for a dose of sassy grandma wisdom! In this hilarious video, we're counting down the...</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <img src="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg" alt="What Happens When You Stop Drinking?">
+        <div class="video-card-body">
+          <a href="/videos/what-happens-when-you-stop-drinking.html" class="video-card-title">What Happens When You Stop Drinking?</a>
+          <p class="video-card-desc">Get ready to laugh out loud with the most savage grandma jokes ever! In this hilarious video, we...</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <img src="https://i.ytimg.com/vi/kLcmQWQKy98/hqdefault.jpg" alt="50 Seconds of PURE MAGIC with 9-Second ASMR Clips!">
+        <div class="video-card-body">
+          <a href="/videos/50-seconds-of-pure-magic-with-9-second-asmr-clips.html" class="video-card-title">50 Seconds of PURE MAGIC with 9-Second ASMR Clips!</a>
+          <p class="video-card-desc">Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds...</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <img src="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" alt="Mixing THIS WEEK'S BEST 9-Second ASMR Clips into 50 Seconds of Bliss?">
+        <div class="video-card-body">
+          <a href="/videos/mixing-this-week-s-best-9-second-asmr-clips-into-50-seconds-of-bliss.html" class="video-card-title">Mixing THIS WEEK'S BEST 9-Second ASMR Clips into 50 Seconds of Bliss?</a>
+          <p class="video-card-desc">Get ready to relax with the most calming ASMR experience! In this video, we've curated the best...</p>
+        </div>
+      </div>
+      
     </div>
   </div>
   <footer>
     &copy; 2025 Martocci Mayhem ASMR | Follow on <a href="https://twitter.com/JasonMartocci" style="color: #ff0000;">X</a>
   </footer>
+  <script>
+    const search = document.getElementById('search');
+    search.addEventListener('input', e => {
+      const value = e.target.value.toLowerCase();
+      document.querySelectorAll('.video-card').forEach(card => {
+        const title = card.querySelector('.video-card-title').textContent.toLowerCase();
+        const desc = card.querySelector('.video-card-desc').textContent.toLowerCase();
+        card.style.display = (title.includes(value) || desc.includes(value)) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
