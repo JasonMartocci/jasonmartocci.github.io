@@ -10,7 +10,7 @@
     </video:video>
   </url>
   <!-- Add more <url> blocks for additional videos -->
-</urlset>
+
 
 <url>
   <loc>https://jasonmartocci.com/videos/{ slug }</loc>
@@ -61,3 +61,19 @@
     <video:player_loc>https://www.youtube.com/watch?v={ video_id }</video:player_loc>
   </video:video>
 </url>
+
+<url>
+  <loc>{ site_url }/videos/{ slug }.html</loc>
+  <lastmod>{ current_date }</lastmod>
+  <video:video>
+    <video:thumbnail_loc>https://i.ytimg.com/vi/{ video_id }/hqdefault.jpg</video:thumbnail_loc>
+    <video:title>{ title }</video:title>
+    <video:description>{ description }</video:description>
+    <video:player_loc>https://www.youtube.com/watch?v={ video_id }</video:player_loc>
+    <video:duration>{ duration_seconds }</video:duration>
+    <video:publication_date>{ upload_date }</video:publication_date>
+    <video:tag>{ tags | join('</video:tag><video:tag>') }</video:tag>
+  </video:video>
+</url>
+
+</urlset>
