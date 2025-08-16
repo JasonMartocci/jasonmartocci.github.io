@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://jasonmartocci.github.io/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/VIDEO_ID1/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Insane Night Fall ASMR</video:title>
+      <video:description>Chaotic whispering and tapping ASMR roleplay.</video:description>
+      <video:player_loc>https://www.youtube.com/watch?v=VIDEO_ID1</video:player_loc>
+    </video:video>
+  </url>
+  <!-- Add more <url> blocks for additional videos -->
+</urlset>
