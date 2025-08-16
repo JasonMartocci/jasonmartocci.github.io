@@ -10,9 +10,12 @@
   <title>{{ title }}</title>
   <style>
     body { font-family: Arial, sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; text-align: center; }
-    iframe { width: 100%; height: auto; max-width: 560px; display: block; margin: 20px auto; border: 2px solid red; animation: fadeIn 1s; aspect-ratio: 16/9; }  /* Responsive, Shorts auto-vertical if 9/16 */
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @media (max-width: 600px) { h1 { font-size: 1.5em; } iframe { aspect-ratio: auto; } }  /* Shorts-friendly */
+    .video-container { position: relative; max-width: 560px; margin: 20px auto; }
+    iframe { width: 100%; height: auto; aspect-ratio: 16/9; }
+    .thumbnail { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg') center/cover; cursor: pointer; }
+    .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 50px; color: red; }
+    .related { margin: 20px; }
+    @media (max-width: 600px) { iframe { aspect-ratio: auto; } }  /* Shorts-friendly */
   </style>
   <script type="application/ld+json">
   {
@@ -24,13 +27,52 @@
     "uploadDate": "{{ upload_date }}",
     "duration": "PT{{ duration }}M",
     "embedUrl": "https://www.youtube.com/embed/{{ video_id }}",
-    "contentUrl": "https://www.youtube.com/watch?v={{ video_id }}"
+    "contentUrl": "https://www.youtube.com/watch?v={{ video_id }}",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is insane ASMR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insane ASMR is a chaotic twist on traditional ASMR with intense roleplays and sounds."
+      }
+    }],
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site_url }}"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Videos",
+      "item": "{{ site_url }}/videos"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ title }}",
+      "item": "{{ site_url }}/videos/{{ slug }}.html"
+    }],
+    "@type": "Person",
+    "name": "Jason Martocci",
+    "url": "{{ site_url }}"
   }
   </script>
 </head>
 <body>
   <h1>{{ title }}</h1>
-  <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+    <!-- Thumbnail overlay for visual appeal -->
+    <div class="thumbnail" onclick="this.style.display='none';">
+      <div class="play-button">▶</div>
+    </div>
+  </div>
   <p>{{ description }}</p>
+  <div class="related">
+    <h2>Related ASMR Videos</h2>
+    <!-- Add links to other pages or dynamic via JS if expanded -->
+  </div>
 </body>
 </html>

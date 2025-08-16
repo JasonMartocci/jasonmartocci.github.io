@@ -41,3 +41,13 @@
     <video:player_loc>https://www.youtube.com/watch?v={ video_id }</video:player_loc>
   </video:video>
 </url>
+
+<url>
+  <loc>{ site_url }/videos/{ slug }</loc>
+  <video:video>
+    <video:thumbnail_loc>https://i.ytimg.com/vi/{ video_id }/hqdefault.jpg</video:thumbnail_loc>
+    <video:title>{ title }</video:title>
+    <video:description>{ description }</video:description>
+    <video:player_loc>https://www.youtube.com/watch?v={ video_id }</video:player_loc>
+  </video:video>
+</url>

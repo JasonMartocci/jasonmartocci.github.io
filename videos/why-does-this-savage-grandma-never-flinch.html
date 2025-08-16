@@ -49,9 +49,12 @@ All stunts are performed in a controlled environment; don't attempt them at home
   <title>Why Does This Savage Grandma Never Flinch?</title>
   <style>
     body { font-family: Arial, sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; text-align: center; }
-    iframe { width: 100%; height: auto; max-width: 560px; display: block; margin: 20px auto; border: 2px solid red; animation: fadeIn 1s; aspect-ratio: 16/9; }  /* Responsive, Shorts auto-vertical if 9/16 */
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @media (max-width: 600px) { h1 { font-size: 1.5em; } iframe { aspect-ratio: auto; } }  /* Shorts-friendly */
+    .video-container { position: relative; max-width: 560px; margin: 20px auto; }
+    iframe { width: 100%; height: auto; aspect-ratio: 16/9; }
+    .thumbnail { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.ytimg.com/vi/RfQvg6O8OO0/hqdefault.jpg') center/cover; cursor: pointer; }
+    .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 50px; color: red; }
+    .related { margin: 20px; }
+    @media (max-width: 600px) { iframe { aspect-ratio: auto; } }  /* Shorts-friendly */
   </style>
   <script type="application/ld+json">
   {
@@ -102,13 +105,48 @@ All stunts are performed in a controlled environment; don't attempt them at home
     "uploadDate": "2025-08-14T03:49:37Z",
     "duration": "PT9M",
     "embedUrl": "https://www.youtube.com/embed/RfQvg6O8OO0",
-    "contentUrl": "https://www.youtube.com/watch?v=RfQvg6O8OO0"
+    "contentUrl": "https://www.youtube.com/watch?v=RfQvg6O8OO0",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is insane ASMR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insane ASMR is a chaotic twist on traditional ASMR with intense roleplays and sounds."
+      }
+    }],
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jasonmartocci.com"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Videos",
+      "item": "https://jasonmartocci.com/videos"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why Does This Savage Grandma Never Flinch?",
+      "item": "https://jasonmartocci.com/videos/why-does-this-savage-grandma-never-flinch.html"
+    }],
+    "@type": "Person",
+    "name": "Jason Martocci",
+    "url": "https://jasonmartocci.com"
   }
   </script>
 </head>
 <body>
   <h1>Why Does This Savage Grandma Never Flinch?</h1>
-  <iframe src="https://www.youtube.com/embed/RfQvg6O8OO0" frameborder="0" allowfullscreen></iframe>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/RfQvg6O8OO0" frameborder="0" allowfullscreen></iframe>
+    <!-- Thumbnail overlay for visual appeal -->
+    <div class="thumbnail" onclick="this.style.display='none';">
+      <div class="play-button">▶</div>
+    </div>
+  </div>
   <p>Get ready for a dose of Southern charm and humor as Savage Grandma invites you to relax on her cozy porch! In this heartwarming video, Grandma shares her wisdom, wit, and warmth, making you feel like you're sitting right there with her on a lazy summer afternoon. 
  
 From storytelling to laughter and good old-fashioned conversation, this video is the perfect remedy for a stressful day. So grab a glass of sweet tea, sit back, and let Savage Grandma's southern hospitality envelop you in comfort and tranquility.
@@ -149,5 +187,9 @@ If you have any questions about this video, please feel free to let me know in t
 All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.
 
 #MartocciMayhem, #JasonMartocci, #aiasmr</p>
+  <div class="related">
+    <h2>Related ASMR Videos</h2>
+    <!-- Add links to other pages or dynamic via JS if expanded -->
+  </div>
 </body>
 </html>
