@@ -51,6 +51,24 @@
   {% if related %}
   <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
   {% endif %}
+
+<!-- Clarity tracking code for https://jasonmartocci.com/ -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "svqy7xlhwy");
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M23LKR14B1');
+</script>
+
 </head>
 <body>
   <header>
@@ -79,7 +97,7 @@
       <ul>
         {% for r in related %}
         <li>
-          <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;">
+          <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;">
           <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
         </li>
         {% endfor %}
