@@ -20,6 +20,7 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #e0e0e0; margin: 0; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     header { background: #1a1a1a; padding: 15px; text-align: center; border-bottom: 2px solid #ff0000; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; }
     h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ff0000; }
     .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #ff0000; border-radius: 8px; margin: 20px 0; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -35,9 +36,10 @@
     .btn-social { background: #ff0000; color: #fff; margin: 5px; }
     .related-videos { margin: 40px 0; }
     .related-videos h2 { font-size: 1.8rem; color: #ff0000; margin-bottom: 20px; }
-    .related-videos ul { list-style: none; padding: 0; }
-    .related-videos li { margin-bottom: 10px; }
-    .related-videos a { color: #ff0000; text-decoration: none; }
+    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .related-videos li { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+    .related-videos img { width: 100%; height: auto; }
+    .related-videos a { color: #ff0000; text-decoration: none; display: block; padding: 10px; }
     .related-videos a:hover { text-decoration: underline; }
     footer { background: #1a1a1a; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #ff0000; }
     @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
@@ -53,6 +55,7 @@
 <body>
   <header>
     <h1>{{ title }}</h1>
+    <input type="text" id="search" placeholder="Search related videos...">
   </header>
   <div class="container">
     <div class="video-embed">
@@ -71,11 +74,14 @@
       {% endfor %}
     </div>
     {% if related %}
-    <div class="related-videos">
+    <div class="related-videos" id="related-list">
       <h2>Check Out These Related Videos</h2>
       <ul>
         {% for r in related %}
-        <li><a href="/videos/{{ r.slug }}.html">{{ r.title }}</a></li>
+        <li>
+          <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;">
+          <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
+        </li>
         {% endfor %}
       </ul>
     </div>
@@ -89,5 +95,20 @@
     &copy; {{ current_year }} Martocci Mayhem ASMR | <a href="{{ site_url }}" style="color: #ff0000;">Home</a> | <a href="https://github.com/JasonMartocci" style="color: #ff0000;">GitHub</a>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const search = document.getElementById('search');
+    search.addEventListener('input', e => {
+      const value = e.target.value.toLowerCase();
+      const related = document.querySelectorAll('#related-list li');
+      if (related.length > 0) {
+        related.forEach(li => {
+          const title = li.querySelector('a').textContent.toLowerCase();
+          li.style.display = title.includes(value) ? '' : 'none';
+        });
+      } else {
+        window.location.href = '{{ site_url }}/index.html?search=' + encodeURIComponent(value);
+      }
+    });
+  </script>
 </body>
 </html>

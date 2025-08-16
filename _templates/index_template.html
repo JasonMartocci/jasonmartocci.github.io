@@ -32,7 +32,7 @@
     <div class="video-grid">
       {% for v in videos %}
       <div class="video-card">
-        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}">
+        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;">
         <div class="video-card-body">
           <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
           <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
@@ -45,6 +45,9 @@
     &copy; {{ current_year }} Martocci Mayhem ASMR | Follow on <a href="https://twitter.com/JasonMartocci" style="color: #ff0000;">X</a>
   </footer>
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('search') || '';
+    document.getElementById('search').value = query;
     const search = document.getElementById('search');
     search.addEventListener('input', e => {
       const value = e.target.value.toLowerCase();
@@ -54,6 +57,7 @@
         card.style.display = (title.includes(value) || desc.includes(value)) ? '' : 'none';
       });
     });
+    if (query) search.dispatchEvent(new Event('input'));
   </script>
 </body>
 </html>
