@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="{{ title }} - Martocci Mayhem ASMR">
+  <meta name="description" content="{{ description }}">
+  <meta name="keywords" content="ASMR, insane ASMR, {{ keywords }}">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; text-align: center; }
+    iframe { width: 100%; height: auto; max-width: 560px; display: block; margin: 20px auto; border: 2px solid red; animation: fadeIn 1s; aspect-ratio: 16/9; }  /* Responsive, Shorts auto-vertical if 9/16 */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @media (max-width: 600px) { h1 { font-size: 1.5em; } iframe { aspect-ratio: auto; } }  /* Shorts-friendly */
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "{{ title }}",
+    "description": "{{ description }}",
+    "thumbnailUrl": "https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg",
+    "uploadDate": "{{ upload_date }}",
+    "duration": "PT{{ duration }}M",
+    "embedUrl": "https://www.youtube.com/embed/{{ video_id }}",
+    "contentUrl": "https://www.youtube.com/watch?v={{ video_id }}"
+  }
+  </script>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  <p>{{ description }}</p>
+</body>
+</html>
