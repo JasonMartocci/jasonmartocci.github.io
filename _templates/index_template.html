@@ -16,20 +16,21 @@
   <meta name="twitter:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
   <title>Martocci Mayhem Hub - Insane ASMR Roleplays & Savage Chaos</title>
   <link rel="canonical" href="{{ site_url }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <style>
-    body { background: #0f0f0f; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #ffffff; color: #333333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    h1 { color: #ff0000; text-align: center; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; }
+    h1 { color: #2ca01c; text-align: center; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
     .video-card img { width: 100%; height: auto; }
     .video-card-body { padding: 15px; }
-    .video-card-title { color: #ff0000; font-size: 1.2rem; }
-    .video-card-desc { font-size: 0.9rem; color: #ccc; }
-    .video-card a { color: #ff0000; text-decoration: none; }
+    .video-card-title { color: #2ca01c; font-size: 1.2rem; }
+    .video-card-desc { font-size: 0.9rem; color: #666; }
+    .video-card a { color: #2ca01c; text-decoration: none; }
     footer { text-align: center; margin-top: 40px; color: #888; }
   </style>
   <script type="application/ld+json">{{ web_site_schema | tojson | safe }}</script>
@@ -61,7 +62,7 @@
     <div class="video-grid">
       {% for v in videos %}
       <div class="video-card">
-        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;">
+        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;"{% if loop.index == 1 %} fetchpriority="high" loading="eager"{% else %} loading="lazy"{% endif %}>
         <div class="video-card-body">
           <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
           <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
@@ -71,22 +72,30 @@
     </div>
   </div>
   <footer>
-    &copy; {{ current_year }} Martocci Mayhem ASMR | Follow on <a href="https://twitter.com/JasonMartocci" style="color: #ff0000;">X</a>
+    &copy; {{ current_year }} Martocci Mayhem ASMR | Follow on <a href="https://twitter.com/JasonMartocci" style="color: #2ca01c;">X</a>
   </footer>
   <script>
+    function debounce(func, wait) {
+      let timeout;
+      return function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, wait);
+      };
+    }
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('search') || '';
     document.getElementById('search').value = query;
     const search = document.getElementById('search');
-    search.addEventListener('input', e => {
+    const debouncedSearch = debounce(e => {
       const value = e.target.value.toLowerCase();
       document.querySelectorAll('.video-card').forEach(card => {
         const title = card.querySelector('.video-card-title').textContent.toLowerCase();
         const desc = card.querySelector('.video-card-desc').textContent.toLowerCase();
         card.style.display = (title.includes(value) || desc.includes(value)) ? '' : 'none';
       });
-    });
-    if (query) search.dispatchEvent(new Event('input'));
+    }, 300);
+    search.addEventListener('input', debouncedSearch);
+    if (query) debouncedSearch({ target: search });
   </script>
 </body>
 </html>
