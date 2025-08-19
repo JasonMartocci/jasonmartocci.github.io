@@ -27,6 +27,7 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     h1 { color: #0b3f04; text-align: center; }
     h2 { font-size: 1.8rem; color: #0b3f04; margin-bottom: 20px; }
+    .page-header { text-align: center; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
@@ -63,8 +64,8 @@
 <body>
   <div class="container">
     <h1>Martocci Mayhem Hub</h1>
-    <h2>Insane ASMR Roleplays & Savage Chaos</h2>
-    <p style="text-align: center;">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
+    <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
+    <p class="page-header">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
     <input type="text" id="search" placeholder="Search videos...">
     <div class="video-grid">
       {% for v in videos %}
