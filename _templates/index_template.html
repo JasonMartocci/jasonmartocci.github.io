@@ -4,11 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Martocci Mayhem Hub - Insane ASMR Roleplays & Savage Chaos">
   <meta name="description" content="Welcome to Martocci Mayhem Hub - Dive into insane ASMR roleplays, Savage Grandma chaos, and mayhem-filled entertainment!">
   <meta property="og:title" content="Martocci Mayhem Hub">
   <meta property="og:description" content="Dive into insane ASMR roleplays from Martocci Mayhem!">
   <meta property="og:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
   <meta property="og:url" content="{{ site_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Martocci Mayhem Hub">
   <meta name="twitter:description" content="Dive into insane ASMR roleplays from Martocci Mayhem!">
@@ -23,10 +26,11 @@
     body { background: #ffffff; color: #333333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     h1 { color: #2ca01c; text-align: center; }
+    h2 { font-size: 1.8rem; color: #2ca01c; margin-bottom: 20px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
-    .video-card img { width: 100%; height: auto; }
+    .video-card img { width: 480px; height: 360px; }
     .video-card-body { padding: 15px; }
     .video-card-title { color: #2ca01c; font-size: 1.2rem; }
     .video-card-desc { font-size: 0.9rem; color: #666; }
@@ -53,16 +57,19 @@
   gtag('config', 'G-M23LKR14B1');
 </script>
 
+<script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/YNlxTGMpHVIg.js";o.head.appendChild(scr);}})()</script>
+
 </head>
 <body>
   <div class="container">
-    <h1>Martocci Mayhem Hub - Insane ASMR Roleplays & Savage Chaos</h1>
+    <h1>Martocci Mayhem Hub</h1>
+    <h2>Insane ASMR Roleplays & Savage Chaos</h2>
     <p style="text-align: center;">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
     <input type="text" id="search" placeholder="Search videos...">
     <div class="video-grid">
       {% for v in videos %}
       <div class="video-card">
-        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;"{% if loop.index == 1 %} fetchpriority="high" loading="eager"{% else %} loading="lazy"{% endif %}>
+        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;"{% if loop.index == 1 %} fetchpriority="high" loading="eager"{% else %} loading="lazy"{% endif %} width="480" height="360">
         <div class="video-card-body">
           <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
           <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
