@@ -80,7 +80,7 @@
 </head>
 <body>
   <header>
-    <h1>{{ title }}</h1>
+    <h1>{{ (title) | truncate(60) }}</h1>
     <input type="text" id="search" placeholder="Search related videos...">
   </header>
   <div class="container">
