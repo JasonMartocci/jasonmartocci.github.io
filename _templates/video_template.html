@@ -109,7 +109,7 @@
         <li>
           <div class="thumbnail-wrapper">
             <picture>
-              <source srcset="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" type="image/jpg">
+              <source srcset="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.webp" type="image/webp">
               <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
             </picture>
           </div>
