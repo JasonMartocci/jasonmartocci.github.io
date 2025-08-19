@@ -110,7 +110,7 @@
           <div class="thumbnail-wrapper">
             <picture>
               <source srcset="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.webp" type="image/webp">
-              <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;"{% if loop.index > 3 %} loading="lazy"{% endif %}>
+              <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;"{% if loop.index > 3 %} loading="lazy"{% endif %}>
             </picture>
           </div>
           <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
