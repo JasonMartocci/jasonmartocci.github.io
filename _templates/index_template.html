@@ -74,7 +74,7 @@
       <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
-            <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.webp" type="image/webp">
+            <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
             <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
           </picture>
         </div>
