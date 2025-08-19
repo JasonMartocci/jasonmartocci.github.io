@@ -7,8 +7,8 @@
   <meta name="title" content="{{ title }} - Martocci Mayhem ASMR Video">
   <meta name="description" content="{{ short_desc }}">
   <meta name="keywords" content="ASMR, insane ASMR, Savage Grandma, chaos, mayhem, {{ tags | join(', ') }}">
-  <meta property="og:title" content="{{ title }} - Martocci Mayhem ASMR">
-  <meta property="og:description" content="{{ short_desc }}">
+  <meta property="og:title" content="{{ (title ~ ' | Martocci Mayhem ASMR Video') | truncate(60) }}">
+  <meta property="og:description" content="{{ (short_desc) | truncate(65) }}">
   <meta property="og:image" content="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg">
   <meta property="og:url" content="{{ site_url }}/videos/{{ slug }}.html">
   <meta property="og:type" content="video.other">
