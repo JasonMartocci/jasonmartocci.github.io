@@ -30,8 +30,10 @@
     .page-header { text-align: center; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
-    .video-card img { width: 480px; height: 360px; }
+    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; }
+    .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; }
+    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-card img { width: 100%; height: 100%; object-fit: cover; }
     .video-card-body { padding: 15px; }
     .video-card-title { color: #0b3f04; font-size: 1.2rem; }
     .video-card-desc { font-size: 0.9rem; color: #666; }
@@ -70,7 +72,12 @@
     <div class="video-grid">
       {% for v in videos %}
       <div class="video-card">
-        <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.jpg'; this.onerror=null;"{% if loop.index == 1 %} fetchpriority="high" loading="eager"{% else %} loading="lazy"{% endif %} width="480" height="360">
+        <div class="thumbnail-wrapper">
+          <picture>
+            <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.webp" type="image/webp">
+            <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;"{% if loop.index == 1 %} fetchpriority="high" loading="eager"{% else %} loading="lazy"{% endif %}>
+          </picture>
+        </div>
         <div class="video-card-body">
           <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
           <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
