@@ -139,8 +139,9 @@
     const search = document.getElementById('search');
     const debouncedSearch = debounce(e => {
       const value = e.target.value.toLowerCase();
-      const related = document.querySelectorAll('#related-list li');
-      if (related.length > 0) {
+      const relatedList = document.getElementById('related-list');
+      if (relatedList) {
+        const related = relatedList.querySelectorAll('li');
         related.forEach(li => {
           const title = li.querySelector('a').textContent.toLowerCase();
           li.style.display = title.includes(value) ? '' : 'none';

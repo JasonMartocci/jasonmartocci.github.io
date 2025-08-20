@@ -103,11 +103,17 @@
       const cards = document.querySelectorAll('.video-card');
       cards.forEach(card => {
         const title = card.querySelector('.video-card-title').textContent.toLowerCase();
-        const desc = card.querySelector('.video-card-desc').textContent.toLowerCase();
-        card.style.display = (title.includes(value) || desc.includes(value)) ? '' : 'none';
+        card.style.display = title.includes(value) ? '' : 'none';
       });
     }, 300);
     search.addEventListener('input', debouncedSearch);
+    // Optional: Handle query param from redirects (e.g., ?search=query)
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('search');
+    if (query) {
+      search.value = query;
+      search.dispatchEvent(new Event('input'));
+    }
   </script>
 </body>
 </html>
