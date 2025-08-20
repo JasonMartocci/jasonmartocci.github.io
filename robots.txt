@@ -6,4 +6,5 @@ Disallow: /
 
 User-agent: *
 Allow: /
+Disallow: /private/  # Optional: Add if you have non-public paths; remove if not needed
 Sitemap: https://jasonmartocci.com/sitemap.xml
