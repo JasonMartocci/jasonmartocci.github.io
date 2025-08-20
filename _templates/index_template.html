@@ -69,7 +69,7 @@
     <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
     <p class="page-header">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
     <input type="text" id="search" placeholder="Search videos...">
-    <div class="video-grid">
+    <div class="video-grid" id="video-list">
       {% for v in videos %}
       <div class="video-card">
         <div class="thumbnail-wrapper">
@@ -97,20 +97,17 @@
         timeout = setTimeout(func, wait);
       };
     }
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('search') || '';
-    document.getElementById('search').value = query;
     const search = document.getElementById('search');
     const debouncedSearch = debounce(e => {
       const value = e.target.value.toLowerCase();
-      document.querySelectorAll('.video-card').forEach(card => {
+      const cards = document.querySelectorAll('.video-card');
+      cards.forEach(card => {
         const title = card.querySelector('.video-card-title').textContent.toLowerCase();
         const desc = card.querySelector('.video-card-desc').textContent.toLowerCase();
         card.style.display = (title.includes(value) || desc.includes(value)) ? '' : 'none';
       });
     }, 300);
     search.addEventListener('input', debouncedSearch);
-    if (query) debouncedSearch({ target: search });
   </script>
 </body>
 </html>
