@@ -121,7 +121,7 @@
     {% endif %}
     <div class="social-buttons">
       <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url={{ site_url }}/videos/{{ slug }}.html&text=Check out {{ title }}!" target="_blank" class="btn btn-social">Share on X</a>
+      <a href="https://twitter.com/intent/tweet?url={{ (site_url ~ '/videos/' ~ slug ~ '.html') | urlencode }}&amp;text={{ ('Check out ' ~ title ~ '!') | urlencode }}" target="_blank" class="btn btn-social">Share on X</a>
     </div>
   </div>
   <footer>
