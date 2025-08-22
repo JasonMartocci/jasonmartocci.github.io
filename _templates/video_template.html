@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="{{ title | truncate(60) }}">
-  <meta name="description" content="{{ short_desc }}">
+  <meta name="description" content="{{ meta_desc }}">
   <meta name="keywords" content="ASMR, insane ASMR, Savage Grandma, chaos, mayhem, {{ tags | join(', ') }}">
   <meta property="og:title" content="{{ title | truncate(60) }}">
   <meta property="og:description" content="{{ short_desc | truncate(65) }}">
@@ -65,14 +65,6 @@
   <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
   {% endif %}
 
-<!-- Clarity tracking code for https://jasonmartocci.com/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "svqy7xlhwy");
-</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -84,25 +76,40 @@
 
 <script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/YNlxTGMpHVIg.js";o.head.appendChild(scr);}})()</script>
 
+  <script>
+    // Lazy load YT iframe
+    document.addEventListener("DOMContentLoaded", function() {
+      var iframes = document.querySelectorAll('iframe[data-src]');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px' });
+      iframes.forEach(iframe => observer.observe(iframe));
+    });
+  </script>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-8">
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen title="{{ title }}"></iframe>
+          <iframe data-src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen title="{{ title }}"></iframe>
         </div>
         <h1>{{ title }}</h1>
         <div class="stats">
           <span>{{ view_count }} views</span>
-          <span>Uploaded: {{ upload | truncate(10) }}</span>
+          <span>Uploaded: {{ upload_date }}</span>
         </div>
         <div class="channel-info">
           {{ channel_title }} - {{ subscriber_count }} subscribers
         </div>
         <div class="stats">
-          <span>{{ like_count }} likes</span>
-          <span>{{ comment_count }} comments</span>
+          <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank">{{ like_count }} likes</a>
+          <a href="https://www.youtube.com/watch?v={{ video_id }}#comments" target="_blank">{{ comment_count }} comments</a>
         </div>
         <div class="social-buttons">
           <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="btn-social">Watch on YouTube</a>
@@ -112,7 +119,7 @@
           {{ formatted_desc | safe }}
         </div>
         <div class="comments">
-          <h2>{{ comment_count }} Comments</h2>
+          <h2><a href="https://www.youtube.com/watch?v={{ video_id }}#comments" target="_blank">{{ comment_count }} Comments (View/Add on YouTube)</a></h2>
           {% for c in comments %}
           <div class="comment">
             <p><strong>{{ c.author }}</strong> - {{ c.published }}</p>
