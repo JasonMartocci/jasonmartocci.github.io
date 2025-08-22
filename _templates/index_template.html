@@ -26,21 +26,22 @@
     body { background: #1d1a1b; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .container { width: 100%; padding: 0 20px; box-sizing: border-box; max-width: none; }
     header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
-    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
+    .branding { position: absolute; top: 10px; left: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
     .branding img { width: 30px; height: auto; margin-right: 10px; }
     h1 { color: #ffffff; text-align: center; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; border-radius: 6px; }
-    .nav-tabs { margin-bottom: 20px; }
+    .category-bar { display: flex; overflow-x: auto; margin-bottom: 20px; }
+    .category-bar button { background: #3ea6ff; color: #ffffff; border: none; padding: 10px 15px; margin-right: 10px; cursor: pointer; border-radius: 5px; }
+    .category-bar button.active { background: #0b3f04; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; cursor: pointer; }
+    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: left; cursor: pointer; } /* Left align */
     .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; }
     .video-card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
-    .video-card-body { padding: 15px; }
-    .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; } /* Smaller titles */
+    .video-card-body { padding: 15px; text-align: left; }
+    .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
     .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
-    .video-card a { color: #3ea6ff; text-decoration: none; cursor: pointer; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
   </style>
   <script type="application/ld+json">{{ web_site_schema | tojson | safe }}</script>
@@ -75,9 +76,12 @@
     <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
     <p class="page-header">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
     <input type="text" id="search" placeholder="Search videos...">
+    <div class="category-bar" id="category-bar">
+      <!-- JS will populate -->
+    </div>
     <div class="video-grid" id="video-list">
       {% for v in videos %}
-      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'" data-date="{{ v.published_at }}" data-views="{{ v.view_count }}">
+      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'" data-date="{{ v.published_at }}" data-views="{{ v.view_count }}" data-tags="{{ v.tags | join(',') }}" data-category="{{ v.category_id }}">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
@@ -86,7 +90,7 @@
         </div>
         <div class="video-card-body">
           <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
-          <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
+          <p class="video-card-desc">{{ v.desc | truncate(100) }} | Views: {{ v.view_count }} | Updated: {{ v.last_edited_date }}</p>
         </div>
       </div>
       {% endfor %}
@@ -137,6 +141,36 @@
       cards.forEach(card => grid.appendChild(card));
     }
     // Assume data-date and data-views are added via Jinja or JS fetch
+    // Infinite scroll
+    let visibleCount = 20;
+    const grid = document.getElementById('video-list');
+    const cards = grid.querySelectorAll('.video-card');
+    cards.forEach((card, idx) => {
+      if (idx >= visibleCount) card.style.display = 'none';
+    });
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        for (let i = visibleCount; i < Math.min(visibleCount + 20, cards.length); i++) {
+          cards[i].style.display = 'grid';
+        }
+        visibleCount += 20;
+      }
+    });
+    // Category filter bar
+    const categories = [...new Set(Array.from(cards).flatMap(card => card.dataset.tags.split(',')).map(tag => tag.trim()))]; // Unique tags
+    const categoryBar = document.getElementById('category-bar');
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.textContent = cat;
+      btn.onclick = () => {
+        cards.forEach(card => {
+          card.style.display = card.dataset.tags.includes(cat) ? '' : 'none';
+        });
+        categoryBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      };
+      categoryBar.appendChild(btn);
+    });
   </script>
 </body>
 </html>

@@ -28,9 +28,9 @@
     .container { width: 100%; padding: 0 20px; box-sizing: border-box; max-width: none; }
     #columns { display: flex; flex-direction: row; gap: 20px; }
     #primary { flex: 2; }
-    #secondary { flex: 1; }
+    #secondary { flex: 0.8; } /* 20% smaller */
     header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
-    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
+    .branding { position: absolute; top: 10px; left: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
     .branding img { width: 30px; height: auto; margin-right: 10px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
     h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; cursor: pointer; }
@@ -56,12 +56,15 @@
     .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; cursor: pointer; }
     .related-videos { margin: 40px 0; }
     .related-videos ul { list-style: none; padding: 0; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; cursor: pointer; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: left; margin-bottom: 20px; cursor: pointer; } /* Left align */
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .related-videos img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
     .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
     .related-videos a:hover { text-decoration: underline; }
+    .related-videos .video-card-body { padding: 15px; text-align: left; }
+    .related-videos .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
+    .related-videos .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
     @media (max-width: 768px) { 
       #columns { flex-direction: column; } 
@@ -124,14 +127,6 @@
         <div class="description">
           {{ formatted_desc | safe }}
         </div>
-        <div class="comments">
-          <h2>Top Comments</h2>
-          {% for comment in comments %}
-          <div class="comment" onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}#comments', '_blank')">
-            <strong>{{ comment.author }}</strong>: {{ comment.text }}
-          </div>
-          {% endfor %}
-        </div>
         <div class="faq-section">
           <h2>Frequently Asked Questions</h2>
           {% for q, a in faqs %}
@@ -139,6 +134,14 @@
             <summary>{{ q }}</summary>
             <p>{{ a }}</p>
           </details>
+          {% endfor %}
+        </div>
+        <div class="comments">
+          <h2>Top Comments</h2>
+          {% for comment in comments %}
+          <div class="comment" onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}#comments', '_blank')">
+            <strong>{{ comment.author }}</strong>: {{ comment.text }}
+          </div>
           {% endfor %}
         </div>
       </div>
@@ -154,7 +157,10 @@
                   <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
                 </picture>
               </div>
-              <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
+              <div class="video-card-body">
+                <a href="/videos/{{ r.slug }}.html" class="video-card-title">{{ r.title }}</a>
+                <p class="video-card-desc">{{ r.desc | truncate(100) }} | Views: {{ r.view_count }} | Updated: {{ r.last_edited_date }}</p>
+              </div>
             </li>
             {% endfor %}
           </ul>
