@@ -25,41 +25,44 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .container-fluid { padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
+    .stats { margin-bottom: 10px; color: #bbbbbb; }
+    .stats span { margin-right: 15px; }
+    .channel-info { margin-bottom: 20px; color: #ffffff; }
+    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-bottom: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment strong { color: #ffffff; }
+    .comment p { margin: 5px 0; color: #bbbbbb; }
+    .related-videos { }
+    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
+    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-video img { width: 100%; height: 100%; object-fit: cover; }
+    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
+    .related-video a:hover { text-decoration: underline; }
+    .social-buttons { margin-bottom: 20px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
-    .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
-    .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
-    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
-    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this rel...", "mainEntity": {"@id": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html#video"}, "name": "50 Seconds of the Most Relaxing ASMR - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=kLcmQWQKy98", "description": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-visual journey, carefully crafted to trigger your Autonomous Sensory Meridian Response. With a dash of magic, we\u0027re taking ASMR to the next level!\n \n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\n  \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 Travel \u0026 Mayhem On-The Road \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\n\u2022 Mukbang \u0026 Extreme Food Challenges \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 GitHub \u25ba https://github.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n \n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n#MartocciMayhem, #JasonMartocci, #aiasmr", "duration": "PT0H0M49S", "embedUrl": "https://www.youtube.com/embed/kLcmQWQKy98", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 222}, "name": "50 Seconds of the Most Relaxing ASMR", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/kLcmQWQKy98/defaultdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/mqdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/hqdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/sddefault.jpg"], "uploadDate": "2025-08-14T19:00:47Z"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=kLcmQWQKy98", "description": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-visual journey, carefully crafted to trigger your Autonomous Sensory Meridian Response. With a dash of magic, we\u0027re taking ASMR to the next level!\n \n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\n  \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 Travel \u0026 Mayhem On-The Road \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\n\u2022 Mukbang \u0026 Extreme Food Challenges \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 GitHub \u25ba https://github.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n \n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n#MartocciMayhem, #JasonMartocci, #aiasmr", "duration": "PT0H0M49S", "embedUrl": "https://www.youtube.com/embed/kLcmQWQKy98", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "https://schema.org/WatchAction", "userInteractionCount": 222}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction", "userInteractionCount": 3}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/CommentAction", "userInteractionCount": 0}], "name": "50 Seconds of the Most Relaxing ASMR", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/kLcmQWQKy98/defaultdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/mqdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/hqdefault.jpg", "https://i.ytimg.com/vi/kLcmQWQKy98/sddefault.jpg"], "uploadDate": "2025-08-14T19:00:47Z"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html", "name": "50 Seconds of the Most Relaxing ASMR", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this rel..."}, "name": "What is \u002750 Seconds of the Most Relaxing ASMR\u0027 about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This video was uploaded on 2025-08-14T19:00:47Z."}, "name": "When was the ASMR video \u002750 Seconds of the Most Relaxing ASMR\u0027 uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video duration is 49 seconds."}, "name": "How long is the mayhem-filled video \u002750 Seconds of the Most Relaxing ASMR\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It belongs to the Entertainment category."}, "name": "What category does \u002750 Seconds of the Most Relaxing ASMR\u0027 fall under on YouTube?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tags include: AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio, calming sounds, chillout, meditation, meditation music, mix and mash, peaceful, peaceful music, piano, piano music, reep sleeping music, relaxation, relaxing music, relaxing music to sleep, sensory experience, short videos, sleep music, sleeping music, smoothing relaxation, soothing, soothing music, soothing relaxation, sound therapy, stress relief, stress relief music, tranquil, visuals, weekly highlights."}, "name": "What are the key tags for \u002750 Seconds of the Most Relaxing ASMR\u0027 including ASMR and chaos?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This chaotic ASMR video has garnered 222 views, 3 likes, and 0 comments as of the last update."}, "name": "How popular is \u002750 Seconds of the Most Relaxing ASMR\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment."}, "name": "Who is Jason Martocci and what is Martocci Mayhem?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "The ASMR Experience for Non-Believers", "position": 1, "url": "https://jasonmartocci.com/videos/the-asmr-experience-for-non-believers.html"}, {"@type": "ListItem", "name": "Why ASMR Is More Than Just Weird Noises", "position": 2, "url": "https://jasonmartocci.com/videos/why-asmr-is-more-than-just-weird-noises.html"}, {"@type": "ListItem", "name": "Mind-Blowing FOOD COMBOS in ASMR Mukbang!", "position": 3, "url": "https://jasonmartocci.com/videos/mind-blowing-food-combos-in-asmr-mukbang.html"}, {"@type": "ListItem", "name": "Why ASMR Cutting Sounds Are the Secret to Relaxation", "position": 4, "url": "https://jasonmartocci.com/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxati.html"}, {"@type": "ListItem", "name": "The Weird Science Behind ASMR", "position": 5, "url": "https://jasonmartocci.com/videos/the-weird-science-behind-asmr.html"}, {"@type": "ListItem", "name": "The Ultimate Satisfying ASMR Experiment", "position": 6, "url": "https://jasonmartocci.com/videos/the-ultimate-satisfying-asmr-experiment.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "The ASMR Experience for Non-Believers", "position": 1, "url": "https://jasonmartocci.com/videos/the-asmr-experience-for-non-believers.html"}, {"@type": "ListItem", "name": "Why ASMR Is More Than Just Weird Noises", "position": 2, "url": "https://jasonmartocci.com/videos/why-asmr-is-more-than-just-weird-noises.html"}, {"@type": "ListItem", "name": "Mind-Blowing FOOD COMBOS in ASMR Mukbang!", "position": 3, "url": "https://jasonmartocci.com/videos/mind-blowing-food-combos-in-asmr-mukbang.html"}, {"@type": "ListItem", "name": "Why ASMR Cutting Sounds Are the Secret to Relaxation", "position": 4, "url": "https://jasonmartocci.com/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxati.html"}, {"@type": "ListItem", "name": "The Weird Science Behind ASMR", "position": 5, "url": "https://jasonmartocci.com/videos/the-weird-science-behind-asmr.html"}, {"@type": "ListItem", "name": "The Ultimate Satisfying ASMR Experiment", "position": 6, "url": "https://jasonmartocci.com/videos/the-ultimate-satisfying-asmr-experiment.html"}, {"@type": "ListItem", "name": "Crazy Food Combo Experiments You Have To See!", "position": 7, "url": "https://jasonmartocci.com/videos/crazy-food-combo-experiments-you-have-to-see.html"}, {"@type": "ListItem", "name": "I Let AI Create An Unusual Food Feast", "position": 8, "url": "https://jasonmartocci.com/videos/i-let-ai-create-an-unusual-food-feast.html"}, {"@type": "ListItem", "name": "5 Mind Blowing ASMR Experiments For A Relaxing Experience", "position": 9, "url": "https://jasonmartocci.com/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html"}, {"@type": "ListItem", "name": "EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!", "position": 10, "url": "https://jasonmartocci.com/videos/experience-satisfying-sounds-of-slicing-open-glass.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -83,126 +86,181 @@
 
 </head>
 <body>
-  <header>
-    <h1>50 Seconds of the Most Relaxing ASMR</h1>
-  </header>
-  <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/kLcmQWQKy98" frameborder="0" allowfullscreen title="50 Seconds of the Most Relaxing ASMR"></iframe>
-    </div>
-    <div class="description">
-      <p>Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-visual journey, carefully crafted to trigger your Autonomous Sensory Meridian Response. With a dash of magic, we're taking ASMR to the next level!</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• Travel & Mayhem On-The Road → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33</a></p><p>• Mukbang & Extreme Food Challenges → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• GitHub ► <a href="https://github.com/JasonMartocci" target="_blank">https://github.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>#MartocciMayhem, #JasonMartocci, #aiasmr</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is &#39;50 Seconds of the Most Relaxing ASMR&#39; about?</summary>
-        <p>Get ready for a mesmerizing experience! In this unique video, we&#39;re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this rel...</p>
-      </details>
-      
-      <details>
-        <summary>When was the ASMR video &#39;50 Seconds of the Most Relaxing ASMR&#39; uploaded?</summary>
-        <p>This video was uploaded on 2025-08-14T19:00:47Z.</p>
-      </details>
-      
-      <details>
-        <summary>How long is the mayhem-filled video &#39;50 Seconds of the Most Relaxing ASMR&#39;?</summary>
-        <p>The video duration is 49 seconds.</p>
-      </details>
-      
-      <details>
-        <summary>What category does &#39;50 Seconds of the Most Relaxing ASMR&#39; fall under on YouTube?</summary>
-        <p>It belongs to the Entertainment category.</p>
-      </details>
-      
-      <details>
-        <summary>What are the key tags for &#39;50 Seconds of the Most Relaxing ASMR&#39; including ASMR and chaos?</summary>
-        <p>Tags include: AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio, calming sounds, chillout, meditation, meditation music, mix and mash, peaceful, peaceful music, piano, piano music, reep sleeping music, relaxation, relaxing music, relaxing music to sleep, sensory experience, short videos, sleep music, sleeping music, smoothing relaxation, soothing, soothing music, soothing relaxation, sound therapy, stress relief, stress relief music, tranquil, visuals, weekly highlights.</p>
-      </details>
-      
-      <details>
-        <summary>How popular is &#39;50 Seconds of the Most Relaxing ASMR&#39;?</summary>
-        <p>This chaotic ASMR video has garnered 222 views, 3 likes, and 0 comments as of the last update.</p>
-      </details>
-      
-      <details>
-        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" alt="The ASMR Experience for Non-Believers" title="The ASMR Experience for Non-Believers" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/kLcmQWQKy98" frameborder="0" allowfullscreen title="50 Seconds of the Most Relaxing ASMR"></iframe>
+        </div>
+        <h1>50 Seconds of the Most Relaxing ASMR</h1>
+        <div class="stats">
+          <span>222 views</span>
+          <span>Uploaded: 2025-08...</span>
+        </div>
+        <div class="channel-info">
+          Martocci Mayhem - 191 subscribers
+        </div>
+        <div class="stats">
+          <span>3 likes</span>
+          <span>0 comments</span>
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" class="btn-social">Watch on YouTube</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html&amp;text=Check%20out%2050%20Seconds%20of%20the%20Most%20Relaxing%20ASMR%21" target="_blank" class="btn-social">Share on X</a>
+        </div>
+        <div class="description">
+          <p>Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-visual journey, carefully crafted to trigger your Autonomous Sensory Meridian Response. With a dash of magic, we're taking ASMR to the next level!</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• Travel & Mayhem On-The Road → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33</a></p><p>• Mukbang & Extreme Food Challenges → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• GitHub ► <a href="https://github.com/JasonMartocci" target="_blank">https://github.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>#MartocciMayhem, #JasonMartocci, #aiasmr</p>
+        </div>
+        <div class="comments">
+          <h2>0 Comments</h2>
+          
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is &#39;50 Seconds of the Most Relaxing ASMR&#39; about?</summary>
+            <p>Get ready for a mesmerizing experience! In this unique video, we&#39;re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this rel...</p>
+          </details>
+          
+          <details>
+            <summary>When was the ASMR video &#39;50 Seconds of the Most Relaxing ASMR&#39; uploaded?</summary>
+            <p>This video was uploaded on 2025-08-14T19:00:47Z.</p>
+          </details>
+          
+          <details>
+            <summary>How long is the mayhem-filled video &#39;50 Seconds of the Most Relaxing ASMR&#39;?</summary>
+            <p>The video duration is 49 seconds.</p>
+          </details>
+          
+          <details>
+            <summary>What category does &#39;50 Seconds of the Most Relaxing ASMR&#39; fall under on YouTube?</summary>
+            <p>It belongs to the Entertainment category.</p>
+          </details>
+          
+          <details>
+            <summary>What are the key tags for &#39;50 Seconds of the Most Relaxing ASMR&#39; including ASMR and chaos?</summary>
+            <p>Tags include: AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio, calming sounds, chillout, meditation, meditation music, mix and mash, peaceful, peaceful music, piano, piano music, reep sleeping music, relaxation, relaxing music, relaxing music to sleep, sensory experience, short videos, sleep music, sleeping music, smoothing relaxation, soothing, soothing music, soothing relaxation, sound therapy, stress relief, stress relief music, tranquil, visuals, weekly highlights.</p>
+          </details>
+          
+          <details>
+            <summary>How popular is &#39;50 Seconds of the Most Relaxing ASMR&#39;?</summary>
+            <p>This chaotic ASMR video has garnered 222 views, 3 likes, and 0 comments as of the last update.</p>
+          </details>
+          
+          <details>
+            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+          </details>
+          
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="related-videos">
+          <h2>Related Videos</h2>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" alt="The ASMR Experience for Non-Believers" title="The ASMR Experience for Non-Believers" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+              </picture>
+            </div>
+            <a href="/videos/the-asmr-experience-for-non-believers.html">The ASMR Experience for Non-Believers</a>
           </div>
-          <a href="/videos/the-asmr-experience-for-non-believers.html">The ASMR Experience for Non-Believers</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" alt="Why ASMR Is More Than Just Weird Noises" title="Why ASMR Is More Than Just Weird Noises" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" alt="Why ASMR Is More Than Just Weird Noises" title="Why ASMR Is More Than Just Weird Noises" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/why-asmr-is-more-than-just-weird-noises.html">Why ASMR Is More Than Just Weird Noises</a>
           </div>
-          <a href="/videos/why-asmr-is-more-than-just-weird-noises.html">Why ASMR Is More Than Just Weird Noises</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg" alt="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" title="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg" alt="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" title="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/mind-blowing-food-combos-in-asmr-mukbang.html">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</a>
           </div>
-          <a href="/videos/mind-blowing-food-combos-in-asmr-mukbang.html">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg" alt="Why ASMR Cutting Sounds Are the Secret to Relaxation" title="Why ASMR Cutting Sounds Are the Secret to Relaxation" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg" alt="Why ASMR Cutting Sounds Are the Secret to Relaxation" title="Why ASMR Cutting Sounds Are the Secret to Relaxation" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxati.html">Why ASMR Cutting Sounds Are the Secret to Relaxation</a>
           </div>
-          <a href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxati.html">Why ASMR Cutting Sounds Are the Secret to Relaxation</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg" alt="The Weird Science Behind ASMR" title="The Weird Science Behind ASMR" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg" alt="The Weird Science Behind ASMR" title="The Weird Science Behind ASMR" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/the-weird-science-behind-asmr.html">The Weird Science Behind ASMR</a>
           </div>
-          <a href="/videos/the-weird-science-behind-asmr.html">The Weird Science Behind ASMR</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" alt="The Ultimate Satisfying ASMR Experiment" title="The Ultimate Satisfying ASMR Experiment" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" alt="The Ultimate Satisfying ASMR Experiment" title="The Ultimate Satisfying ASMR Experiment" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/the-ultimate-satisfying-asmr-experiment.html">The Ultimate Satisfying ASMR Experiment</a>
           </div>
-          <a href="/videos/the-ultimate-satisfying-asmr-experiment.html">The Ultimate Satisfying ASMR Experiment</a>
-        </li>
-        
-      </ul>
-    </div>
-    
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html&amp;text=Check%20out%2050%20Seconds%20of%20the%20Most%20Relaxing%20ASMR%21" target="_blank" class="btn btn-social">Share on X</a>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg" alt="Crazy Food Combo Experiments You Have To See!" title="Crazy Food Combo Experiments You Have To See!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/crazy-food-combo-experiments-you-have-to-see.html">Crazy Food Combo Experiments You Have To See!</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/YT2bBo4s2m4/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/YT2bBo4s2m4/hqdefault.jpg" alt="I Let AI Create An Unusual Food Feast" title="I Let AI Create An Unusual Food Feast" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/i-let-ai-create-an-unusual-food-feast.html">I Let AI Create An Unusual Food Feast</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg" alt="5 Mind Blowing ASMR Experiments For A Relaxing Experience" title="5 Mind Blowing ASMR Experiments For A Relaxing Experience" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html">5 Mind Blowing ASMR Experiments For A Relaxing Experience</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/144YU0heSJI/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/144YU0heSJI/hqdefault.jpg" alt="EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!" title="EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/experience-satisfying-sounds-of-slicing-open-glass.html">EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!</a>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
   <footer>

@@ -25,41 +25,44 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .container-fluid { padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
+    .stats { margin-bottom: 10px; color: #bbbbbb; }
+    .stats span { margin-right: 15px; }
+    .channel-info { margin-bottom: 20px; color: #ffffff; }
+    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-bottom: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment strong { color: #ffffff; }
+    .comment p { margin: 5px 0; color: #bbbbbb; }
+    .related-videos { }
+    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
+    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-video img { width: 100%; height: 100%; object-fit: cover; }
+    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
+    .related-video a:hover { text-decoration: underline; }
+    .social-buttons { margin-bottom: 20px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
-    .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
-    .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
-    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
-    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "\u201cI used to do drugs....", "mainEntity": {"@id": "https://jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html#video"}, "name": "Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=3NECwF6hKNA", "description": "\u201cI used to do drugs.\nI still do, but I used to too.\u201d \ud83d\ude33\ud83d\ude02\n \nThat\u2019s peak Mitch Hedberg \u2014 dry, weird, and sneakily brilliant.\nHe didn\u2019t need to set up. He was the punchline.\n \n\ud83c\udfa4 I\u2019m Jason Martocci \u2014 bringing the best one-liners back from comedy legends.\nBite-sized laughs. No fluff. New drops weekly.\n \n\ud83d\udcf2 Follow me everywhere @JasonMartocci:\n\ud83d\udc49 YouTube: https://www.youtube.com/@JasonMartocci\n\ud83d\udc49 TikTok: https://www.tiktok.com/@JasonMartocci\n\ud83d\udc49 X: https://x.com/JasonMartocci\n\ud83d\udc49 Facebook: https://www.facebook.com/JasonMartocci\n \n\ud83d\udcac Comment: Ever heard a more perfectly confusing joke?\n\ud83d\udd14 Sub if you like your comedy short, sharp, and weird.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M4S", "embedUrl": "https://www.youtube.com/embed/3NECwF6hKNA", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 2497}, "name": "Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/3NECwF6hKNA/defaultdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/mqdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/sddefault.jpg"], "uploadDate": "2025-06-26T20:51:24Z"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=3NECwF6hKNA", "description": "\u201cI used to do drugs.\nI still do, but I used to too.\u201d \ud83d\ude33\ud83d\ude02\n \nThat\u2019s peak Mitch Hedberg \u2014 dry, weird, and sneakily brilliant.\nHe didn\u2019t need to set up. He was the punchline.\n \n\ud83c\udfa4 I\u2019m Jason Martocci \u2014 bringing the best one-liners back from comedy legends.\nBite-sized laughs. No fluff. New drops weekly.\n \n\ud83d\udcf2 Follow me everywhere @JasonMartocci:\n\ud83d\udc49 YouTube: https://www.youtube.com/@JasonMartocci\n\ud83d\udc49 TikTok: https://www.tiktok.com/@JasonMartocci\n\ud83d\udc49 X: https://x.com/JasonMartocci\n\ud83d\udc49 Facebook: https://www.facebook.com/JasonMartocci\n \n\ud83d\udcac Comment: Ever heard a more perfectly confusing joke?\n\ud83d\udd14 Sub if you like your comedy short, sharp, and weird.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M4S", "embedUrl": "https://www.youtube.com/embed/3NECwF6hKNA", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "https://schema.org/WatchAction", "userInteractionCount": 2497}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction", "userInteractionCount": 2}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/CommentAction", "userInteractionCount": 1}], "name": "Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/3NECwF6hKNA/defaultdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/mqdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg", "https://i.ytimg.com/vi/3NECwF6hKNA/sddefault.jpg"], "uploadDate": "2025-06-26T20:51:24Z"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html", "name": "Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "\u201cI used to do drugs...."}, "name": "What is \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027 about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This video was uploaded on 2025-06-26T20:51:24Z."}, "name": "When was the ASMR video \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027 uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video duration is 4 seconds."}, "name": "How long is the mayhem-filled video \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It belongs to the Comedy category."}, "name": "What category does \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027 fall under on YouTube?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tags include: absurd comedy, absurd humor, absurd jokes, classic jokes, comedy bites, comedy clips, comedy skits, comedyshorts, dark comedy, dark humor, dark jokes, dry humor, dry wit, dryhumor, funny moments, funny shorts, humor highlights, ironic humor, mitch hedberg, mitch hedberg quotes, mitchhedberg, one-liners, quick wit, quirky bits, quirky humor, quirky jokes, silly quotes, slapstick humor, stand-up comedy, stoner humor, stoner jokes, weird comedy, weird jokes, youtubeshorts."}, "name": "What are the key tags for \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027 including ASMR and chaos?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This chaotic ASMR video has garnered 2497 views, 2 likes, and 1 comments as of the last update."}, "name": "How popular is \u0027Funniest Line Ever? \ud83e\udd2f | \u201cI Used to Do Drugs\u2026\u201d #mitchhedberg\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment."}, "name": "Who is Jason Martocci and what is Martocci Mayhem?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "George Carlin Was Right About Everything", "position": 1, "url": "https://jasonmartocci.com/videos/george-carlin-was-right-about-everything.html"}, {"@type": "ListItem", "name": "The Joke That Changed Comedy Forever", "position": 2, "url": "https://jasonmartocci.com/videos/the-joke-that-changed-comedy-forever.html"}, {"@type": "ListItem", "name": "Grandma\u0027s Epic Burn Will Make You Laugh!", "position": 3, "url": "https://jasonmartocci.com/videos/grandma-s-epic-burn-will-make-you-laugh.html"}, {"@type": "ListItem", "name": "You Won\u0027t Believe How LIFE ADVICE CHANGES with Age", "position": 4, "url": "https://jasonmartocci.com/videos/you-won-t-believe-how-life-advice-changes-with-age.html"}, {"@type": "ListItem", "name": "Nikki Glaser Said WHAT?! \ud83e\udd2f | Savage Joke You Can\u2019t Unhear \ud83d\udca5", "position": 5, "url": "https://jasonmartocci.com/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html"}, {"@type": "ListItem", "name": "Wife\u0027s Unusual Demand for Plumbers", "position": 6, "url": "https://jasonmartocci.com/videos/wife-s-unusual-demand-for-plumbers.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "George Carlin Was Right About Everything", "position": 1, "url": "https://jasonmartocci.com/videos/george-carlin-was-right-about-everything.html"}, {"@type": "ListItem", "name": "The Joke That Changed Comedy Forever", "position": 2, "url": "https://jasonmartocci.com/videos/the-joke-that-changed-comedy-forever.html"}, {"@type": "ListItem", "name": "Grandma\u0027s Epic Burn Will Make You Laugh!", "position": 3, "url": "https://jasonmartocci.com/videos/grandma-s-epic-burn-will-make-you-laugh.html"}, {"@type": "ListItem", "name": "You Won\u0027t Believe How LIFE ADVICE CHANGES with Age", "position": 4, "url": "https://jasonmartocci.com/videos/you-won-t-believe-how-life-advice-changes-with-age.html"}, {"@type": "ListItem", "name": "Nikki Glaser Said WHAT?! \ud83e\udd2f | Savage Joke You Can\u2019t Unhear \ud83d\udca5", "position": 5, "url": "https://jasonmartocci.com/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html"}, {"@type": "ListItem", "name": "Wife\u0027s Unusual Demand for Plumbers", "position": 6, "url": "https://jasonmartocci.com/videos/wife-s-unusual-demand-for-plumbers.html"}, {"@type": "ListItem", "name": "The TOP 6 MOST Savage Grandma Clips", "position": 7, "url": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html"}, {"@type": "ListItem", "name": "Is McDonald\u0027s Drive-Thru Getting Out of Hand?", "position": 8, "url": "https://jasonmartocci.com/videos/is-mcdonald-s-drive-thru-getting-out-of-hand.html"}, {"@type": "ListItem", "name": "The Most Expensive Dog Joke Ever", "position": 9, "url": "https://jasonmartocci.com/videos/the-most-expensive-dog-joke-ever.html"}, {"@type": "ListItem", "name": "Funny Italian Dad Jokes about Money", "position": 10, "url": "https://jasonmartocci.com/videos/funny-italian-dad-jokes-about-money.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -83,126 +86,187 @@
 
 </head>
 <body>
-  <header>
-    <h1>Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</h1>
-  </header>
-  <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/3NECwF6hKNA" frameborder="0" allowfullscreen title="Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg"></iframe>
-    </div>
-    <div class="description">
-      <p>“I used to do drugs.</p><p>I still do, but I used to too.” 😳😂</p><p>That’s peak Mitch Hedberg — dry, weird, and sneakily brilliant.</p><p>He didn’t need to set up. He was the punchline.</p><p>🎤 I’m Jason Martocci — bringing the best one-liners back from comedy legends.</p><p>Bite-sized laughs. No fluff. New drops weekly.</p><p>📲 Follow me everywhere @JasonMartocci:</p><p>👉 YouTube: <a href="https://www.youtube.com/@JasonMartocci" target="_blank">https://www.youtube.com/@JasonMartocci</a></p><p>👉 TikTok: <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>👉 X: <a href="https://x.com/JasonMartocci" target="_blank">https://x.com/JasonMartocci</a></p><p>👉 Facebook: <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>💬 Comment: Ever heard a more perfectly confusing joke?</p><p>🔔 Sub if you like your comedy short, sharp, and weird.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; about?</summary>
-        <p>“I used to do drugs....</p>
-      </details>
-      
-      <details>
-        <summary>When was the ASMR video &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; uploaded?</summary>
-        <p>This video was uploaded on 2025-06-26T20:51:24Z.</p>
-      </details>
-      
-      <details>
-        <summary>How long is the mayhem-filled video &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39;?</summary>
-        <p>The video duration is 4 seconds.</p>
-      </details>
-      
-      <details>
-        <summary>What category does &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; fall under on YouTube?</summary>
-        <p>It belongs to the Comedy category.</p>
-      </details>
-      
-      <details>
-        <summary>What are the key tags for &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; including ASMR and chaos?</summary>
-        <p>Tags include: absurd comedy, absurd humor, absurd jokes, classic jokes, comedy bites, comedy clips, comedy skits, comedyshorts, dark comedy, dark humor, dark jokes, dry humor, dry wit, dryhumor, funny moments, funny shorts, humor highlights, ironic humor, mitch hedberg, mitch hedberg quotes, mitchhedberg, one-liners, quick wit, quirky bits, quirky humor, quirky jokes, silly quotes, slapstick humor, stand-up comedy, stoner humor, stoner jokes, weird comedy, weird jokes, youtubeshorts.</p>
-      </details>
-      
-      <details>
-        <summary>How popular is &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39;?</summary>
-        <p>This chaotic ASMR video has garnered 2497 views, 2 likes, and 1 comments as of the last update.</p>
-      </details>
-      
-      <details>
-        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" alt="George Carlin Was Right About Everything" title="George Carlin Was Right About Everything" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/3NECwF6hKNA" frameborder="0" allowfullscreen title="Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg"></iframe>
+        </div>
+        <h1>Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</h1>
+        <div class="stats">
+          <span>2497 views</span>
+          <span>Uploaded: 2025-06...</span>
+        </div>
+        <div class="channel-info">
+          Martocci Mayhem - 191 subscribers
+        </div>
+        <div class="stats">
+          <span>2 likes</span>
+          <span>1 comments</span>
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/watch?v=3NECwF6hKNA" target="_blank" class="btn-social">Watch on YouTube</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html&amp;text=Check%20out%20Funniest%20Line%20Ever%3F%20%F0%9F%A4%AF%20%7C%20%E2%80%9CI%20Used%20to%20Do%20Drugs%E2%80%A6%E2%80%9D%20%23mitchhedberg%21" target="_blank" class="btn-social">Share on X</a>
+        </div>
+        <div class="description">
+          <p>“I used to do drugs.</p><p>I still do, but I used to too.” 😳😂</p><p>That’s peak Mitch Hedberg — dry, weird, and sneakily brilliant.</p><p>He didn’t need to set up. He was the punchline.</p><p>🎤 I’m Jason Martocci — bringing the best one-liners back from comedy legends.</p><p>Bite-sized laughs. No fluff. New drops weekly.</p><p>📲 Follow me everywhere @JasonMartocci:</p><p>👉 YouTube: <a href="https://www.youtube.com/@JasonMartocci" target="_blank">https://www.youtube.com/@JasonMartocci</a></p><p>👉 TikTok: <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>👉 X: <a href="https://x.com/JasonMartocci" target="_blank">https://x.com/JasonMartocci</a></p><p>👉 Facebook: <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>💬 Comment: Ever heard a more perfectly confusing joke?</p><p>🔔 Sub if you like your comedy short, sharp, and weird.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
+        </div>
+        <div class="comments">
+          <h2>1 Comments</h2>
+          
+          <div class="comment">
+            <p><strong>@JasonMartocci</strong> - 2025-08-05T03:47:50Z</p>
+            <p>🔥 Like this? Hit sub &amp; catch tomorrow’s drop</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/george-carlin-was-right-about-everything.html">George Carlin Was Right About Everything</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" alt="The Joke That Changed Comedy Forever" title="The Joke That Changed Comedy Forever" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; about?</summary>
+            <p>“I used to do drugs....</p>
+          </details>
+          
+          <details>
+            <summary>When was the ASMR video &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; uploaded?</summary>
+            <p>This video was uploaded on 2025-06-26T20:51:24Z.</p>
+          </details>
+          
+          <details>
+            <summary>How long is the mayhem-filled video &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39;?</summary>
+            <p>The video duration is 4 seconds.</p>
+          </details>
+          
+          <details>
+            <summary>What category does &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; fall under on YouTube?</summary>
+            <p>It belongs to the Comedy category.</p>
+          </details>
+          
+          <details>
+            <summary>What are the key tags for &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39; including ASMR and chaos?</summary>
+            <p>Tags include: absurd comedy, absurd humor, absurd jokes, classic jokes, comedy bites, comedy clips, comedy skits, comedyshorts, dark comedy, dark humor, dark jokes, dry humor, dry wit, dryhumor, funny moments, funny shorts, humor highlights, ironic humor, mitch hedberg, mitch hedberg quotes, mitchhedberg, one-liners, quick wit, quirky bits, quirky humor, quirky jokes, silly quotes, slapstick humor, stand-up comedy, stoner humor, stoner jokes, weird comedy, weird jokes, youtubeshorts.</p>
+          </details>
+          
+          <details>
+            <summary>How popular is &#39;Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg&#39;?</summary>
+            <p>This chaotic ASMR video has garnered 2497 views, 2 likes, and 1 comments as of the last update.</p>
+          </details>
+          
+          <details>
+            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+          </details>
+          
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="related-videos">
+          <h2>Related Videos</h2>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" alt="George Carlin Was Right About Everything" title="George Carlin Was Right About Everything" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+              </picture>
+            </div>
+            <a href="/videos/george-carlin-was-right-about-everything.html">George Carlin Was Right About Everything</a>
           </div>
-          <a href="/videos/the-joke-that-changed-comedy-forever.html">The Joke That Changed Comedy Forever</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" alt="Grandma&#39;s Epic Burn Will Make You Laugh!" title="Grandma&#39;s Epic Burn Will Make You Laugh!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" alt="The Joke That Changed Comedy Forever" title="The Joke That Changed Comedy Forever" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/the-joke-that-changed-comedy-forever.html">The Joke That Changed Comedy Forever</a>
           </div>
-          <a href="/videos/grandma-s-epic-burn-will-make-you-laugh.html">Grandma&#39;s Epic Burn Will Make You Laugh!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" alt="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age" title="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" alt="Grandma&#39;s Epic Burn Will Make You Laugh!" title="Grandma&#39;s Epic Burn Will Make You Laugh!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/grandma-s-epic-burn-will-make-you-laugh.html">Grandma&#39;s Epic Burn Will Make You Laugh!</a>
           </div>
-          <a href="/videos/you-won-t-believe-how-life-advice-changes-with-age.html">You Won&#39;t Believe How LIFE ADVICE CHANGES with Age</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" alt="Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥" title="Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" alt="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age" title="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/you-won-t-believe-how-life-advice-changes-with-age.html">You Won&#39;t Believe How LIFE ADVICE CHANGES with Age</a>
           </div>
-          <a href="/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html">Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" alt="Wife&#39;s Unusual Demand for Plumbers" title="Wife&#39;s Unusual Demand for Plumbers" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" alt="Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥" title="Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html">Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥</a>
           </div>
-          <a href="/videos/wife-s-unusual-demand-for-plumbers.html">Wife&#39;s Unusual Demand for Plumbers</a>
-        </li>
-        
-      </ul>
-    </div>
-    
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/watch?v=3NECwF6hKNA" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html&amp;text=Check%20out%20Funniest%20Line%20Ever%3F%20%F0%9F%A4%AF%20%7C%20%E2%80%9CI%20Used%20to%20Do%20Drugs%E2%80%A6%E2%80%9D%20%23mitchhedberg%21" target="_blank" class="btn btn-social">Share on X</a>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" alt="Wife&#39;s Unusual Demand for Plumbers" title="Wife&#39;s Unusual Demand for Plumbers" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/wife-s-unusual-demand-for-plumbers.html">Wife&#39;s Unusual Demand for Plumbers</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg" alt="The TOP 6 MOST Savage Grandma Clips" title="The TOP 6 MOST Savage Grandma Clips" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/the-top-6-most-savage-grandma-clips.html">The TOP 6 MOST Savage Grandma Clips</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/qKroZ9jiHvc/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/qKroZ9jiHvc/hqdefault.jpg" alt="Is McDonald&#39;s Drive-Thru Getting Out of Hand?" title="Is McDonald&#39;s Drive-Thru Getting Out of Hand?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/is-mcdonald-s-drive-thru-getting-out-of-hand.html">Is McDonald&#39;s Drive-Thru Getting Out of Hand?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/3TcXeaqeGu8/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/3TcXeaqeGu8/hqdefault.jpg" alt="The Most Expensive Dog Joke Ever" title="The Most Expensive Dog Joke Ever" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/the-most-expensive-dog-joke-ever.html">The Most Expensive Dog Joke Ever</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/WsF_eHRpcv4/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/WsF_eHRpcv4/hqdefault.jpg" alt="Funny Italian Dad Jokes about Money" title="Funny Italian Dad Jokes about Money" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/funny-italian-dad-jokes-about-money.html">Funny Italian Dad Jokes about Money</a>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
   <footer>

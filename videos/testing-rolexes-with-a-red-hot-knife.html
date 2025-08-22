@@ -25,41 +25,44 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .container-fluid { padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
+    .stats { margin-bottom: 10px; color: #bbbbbb; }
+    .stats span { margin-right: 15px; }
+    .channel-info { margin-bottom: 20px; color: #ffffff; }
+    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-bottom: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment strong { color: #ffffff; }
+    .comment p { margin: 5px 0; color: #bbbbbb; }
+    .related-videos { }
+    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
+    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-video img { width: 100%; height: 100%; object-fit: cover; }
+    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
+    .related-video a:hover { text-decoration: underline; }
+    .social-buttons { margin-bottom: 20px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
-    .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
-    .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
-    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
-    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a m...", "mainEntity": {"@id": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html#video"}, "name": "Testing Rolexes With a Red Hot Knife - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=DJsRjOdkyOs", "description": "Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a mesmerizing display. This video is a high-heat experiment.\n \nThis isn\u0027t just a \"hot knife video\" \u2014 this is luxury vs entropy. Time vs heat. Rolex vs reality. \n \n\ud83c\udfa7 Best experienced with headphones \n\ud83c\udfac Shot in 9:16 vertical for TikTok, Shorts, Reels \n\ud83d\udee0\ufe0f Created using VEO3 / AI-enhanced visual processing \n\n \ud83d\udcac COMMENT BELOW: \n\ud83d\udd3b What luxury item should we slice next? \n\u231a Omega Speedmaster? \n\ud83c\udfae Vintage Game Boy? \n\ud83d\udc8e Solid Diamond Ring? \n \nWatch. Feel. React. And hit replay \u2014 because this one\u0027s a masterpiece worth watching twice.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M9S", "embedUrl": "https://www.youtube.com/embed/DJsRjOdkyOs", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 26662}, "name": "Testing Rolexes With a Red Hot Knife", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/DJsRjOdkyOs/defaultdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/mqdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/sddefault.jpg"], "uploadDate": "2025-06-22T22:46:48Z"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=DJsRjOdkyOs", "description": "Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a mesmerizing display. This video is a high-heat experiment.\n \nThis isn\u0027t just a \"hot knife video\" \u2014 this is luxury vs entropy. Time vs heat. Rolex vs reality. \n \n\ud83c\udfa7 Best experienced with headphones \n\ud83c\udfac Shot in 9:16 vertical for TikTok, Shorts, Reels \n\ud83d\udee0\ufe0f Created using VEO3 / AI-enhanced visual processing \n\n \ud83d\udcac COMMENT BELOW: \n\ud83d\udd3b What luxury item should we slice next? \n\u231a Omega Speedmaster? \n\ud83c\udfae Vintage Game Boy? \n\ud83d\udc8e Solid Diamond Ring? \n \nWatch. Feel. React. And hit replay \u2014 because this one\u0027s a masterpiece worth watching twice.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M9S", "embedUrl": "https://www.youtube.com/embed/DJsRjOdkyOs", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "https://schema.org/WatchAction", "userInteractionCount": 26662}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction", "userInteractionCount": 47}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/CommentAction", "userInteractionCount": 6}], "name": "Testing Rolexes With a Red Hot Knife", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/DJsRjOdkyOs/defaultdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/mqdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg", "https://i.ytimg.com/vi/DJsRjOdkyOs/sddefault.jpg"], "uploadDate": "2025-06-22T22:46:48Z"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html", "name": "Testing Rolexes With a Red Hot Knife", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a m..."}, "name": "What is \u0027Testing Rolexes With a Red Hot Knife\u0027 about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This video was uploaded on 2025-06-22T22:46:48Z."}, "name": "When was the ASMR video \u0027Testing Rolexes With a Red Hot Knife\u0027 uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video duration is 9 seconds."}, "name": "How long is the mayhem-filled video \u0027Testing Rolexes With a Red Hot Knife\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It belongs to the Entertainment category."}, "name": "What category does \u0027Testing Rolexes With a Red Hot Knife\u0027 fall under on YouTube?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tags include: Rolex, asmr cutting, asmr shorts, asmr slicing, asmr videos, destruction art, extreme cutting, heat knife, hot knife challenge, jason martocci, knife, knife videos, luxury watches, martocci mayhem, oddly satisfying, red hot knife, rolex, rolex collection, rolex sub, rolex submariner, rolex submariner date, rolex watch, rolex watches, rolexes, satisfaction videos, satisfying video, submariner, tiktok asmr, watch, watch destruction, watches, watchtok."}, "name": "What are the key tags for \u0027Testing Rolexes With a Red Hot Knife\u0027 including ASMR and chaos?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This chaotic ASMR video has garnered 26662 views, 47 likes, and 6 comments as of the last update."}, "name": "How popular is \u0027Testing Rolexes With a Red Hot Knife\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment."}, "name": "Who is Jason Martocci and what is Martocci Mayhem?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Can a $40,000 Rolex Survive an 800\u00b0 Red Hot Knife?", "position": 1, "url": "https://jasonmartocci.com/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html"}, {"@type": "ListItem", "name": "\ud83d\udd25 Rolex vs Red Hot Knife \u2014 Ultimate Slow-Mo Destruction", "position": 2, "url": "https://jasonmartocci.com/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html"}, {"@type": "ListItem", "name": "Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion", "position": 3, "url": "https://jasonmartocci.com/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html"}, {"@type": "ListItem", "name": "What Happens When You Cut Objects in REVERSE ASMR", "position": 4, "url": "https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html"}, {"@type": "ListItem", "name": "Can You Guess What These Weird Objects Are?", "position": 5, "url": "https://jasonmartocci.com/videos/can-you-guess-what-these-weird-objects-are.html"}, {"@type": "ListItem", "name": "This Glass Apple Looks Normal But Watch What\u2019s Inside!", "position": 6, "url": "https://jasonmartocci.com/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Can a $40,000 Rolex Survive an 800\u00b0 Red Hot Knife?", "position": 1, "url": "https://jasonmartocci.com/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html"}, {"@type": "ListItem", "name": "\ud83d\udd25 Rolex vs Red Hot Knife \u2014 Ultimate Slow-Mo Destruction", "position": 2, "url": "https://jasonmartocci.com/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html"}, {"@type": "ListItem", "name": "Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion", "position": 3, "url": "https://jasonmartocci.com/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html"}, {"@type": "ListItem", "name": "What Happens When You Cut Objects in REVERSE ASMR", "position": 4, "url": "https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html"}, {"@type": "ListItem", "name": "Can You Guess What These Weird Objects Are?", "position": 5, "url": "https://jasonmartocci.com/videos/can-you-guess-what-these-weird-objects-are.html"}, {"@type": "ListItem", "name": "This Glass Apple Looks Normal But Watch What\u2019s Inside!", "position": 6, "url": "https://jasonmartocci.com/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html"}, {"@type": "ListItem", "name": "What\u0027s REALLY Inside this ASMR Glass Fruit?", "position": 7, "url": "https://jasonmartocci.com/videos/what-s-really-inside-this-asmr-glass-fruit.html"}, {"@type": "ListItem", "name": "Hot Knife ASMR! Will It MELT?", "position": 8, "url": "https://jasonmartocci.com/videos/hot-knife-asmr-will-it-melt.html"}, {"@type": "ListItem", "name": "Can You Really Sleep On A Bed Of Weed?", "position": 9, "url": "https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html"}, {"@type": "ListItem", "name": "ASMR Extra Creamy Glass Fruit Cutting \ud83c\udf53 | Oddly Satisfying", "position": 10, "url": "https://jasonmartocci.com/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -83,126 +86,199 @@
 
 </head>
 <body>
-  <header>
-    <h1>Testing Rolexes With a Red Hot Knife</h1>
-  </header>
-  <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/DJsRjOdkyOs" frameborder="0" allowfullscreen title="Testing Rolexes With a Red Hot Knife"></iframe>
-    </div>
-    <div class="description">
-      <p>Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a mesmerizing display. This video is a high-heat experiment.</p><p>This isn't just a "hot knife video" — this is luxury vs entropy. Time vs heat. Rolex vs reality.</p><p>🎧 Best experienced with headphones</p><p>🎬 Shot in 9:16 vertical for TikTok, Shorts, Reels</p><p>🛠️ Created using VEO3 / AI-enhanced visual processing</p><p>💬 COMMENT BELOW:</p><p>🔻 What luxury item should we slice next?</p><p>⌚ Omega Speedmaster?</p><p>🎮 Vintage Game Boy?</p><p>💎 Solid Diamond Ring?</p><p>Watch. Feel. React. And hit replay — because this one's a masterpiece worth watching twice.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is &#39;Testing Rolexes With a Red Hot Knife&#39; about?</summary>
-        <p>Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a m...</p>
-      </details>
-      
-      <details>
-        <summary>When was the ASMR video &#39;Testing Rolexes With a Red Hot Knife&#39; uploaded?</summary>
-        <p>This video was uploaded on 2025-06-22T22:46:48Z.</p>
-      </details>
-      
-      <details>
-        <summary>How long is the mayhem-filled video &#39;Testing Rolexes With a Red Hot Knife&#39;?</summary>
-        <p>The video duration is 9 seconds.</p>
-      </details>
-      
-      <details>
-        <summary>What category does &#39;Testing Rolexes With a Red Hot Knife&#39; fall under on YouTube?</summary>
-        <p>It belongs to the Entertainment category.</p>
-      </details>
-      
-      <details>
-        <summary>What are the key tags for &#39;Testing Rolexes With a Red Hot Knife&#39; including ASMR and chaos?</summary>
-        <p>Tags include: Rolex, asmr cutting, asmr shorts, asmr slicing, asmr videos, destruction art, extreme cutting, heat knife, hot knife challenge, jason martocci, knife, knife videos, luxury watches, martocci mayhem, oddly satisfying, red hot knife, rolex, rolex collection, rolex sub, rolex submariner, rolex submariner date, rolex watch, rolex watches, rolexes, satisfaction videos, satisfying video, submariner, tiktok asmr, watch, watch destruction, watches, watchtok.</p>
-      </details>
-      
-      <details>
-        <summary>How popular is &#39;Testing Rolexes With a Red Hot Knife&#39;?</summary>
-        <p>This chaotic ASMR video has garnered 26662 views, 47 likes, and 6 comments as of the last update.</p>
-      </details>
-      
-      <details>
-        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg" alt="Can a $40,000 Rolex Survive an 800° Red Hot Knife?" title="Can a $40,000 Rolex Survive an 800° Red Hot Knife?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/DJsRjOdkyOs" frameborder="0" allowfullscreen title="Testing Rolexes With a Red Hot Knife"></iframe>
+        </div>
+        <h1>Testing Rolexes With a Red Hot Knife</h1>
+        <div class="stats">
+          <span>26662 views</span>
+          <span>Uploaded: 2025-06...</span>
+        </div>
+        <div class="channel-info">
+          Martocci Mayhem - 191 subscribers
+        </div>
+        <div class="stats">
+          <span>47 likes</span>
+          <span>6 comments</span>
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/watch?v=DJsRjOdkyOs" target="_blank" class="btn-social">Watch on YouTube</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html&amp;text=Check%20out%20Testing%20Rolexes%20With%20a%20Red%20Hot%20Knife%21" target="_blank" class="btn-social">Share on X</a>
+        </div>
+        <div class="description">
+          <p>Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a mesmerizing display. This video is a high-heat experiment.</p><p>This isn't just a "hot knife video" — this is luxury vs entropy. Time vs heat. Rolex vs reality.</p><p>🎧 Best experienced with headphones</p><p>🎬 Shot in 9:16 vertical for TikTok, Shorts, Reels</p><p>🛠️ Created using VEO3 / AI-enhanced visual processing</p><p>💬 COMMENT BELOW:</p><p>🔻 What luxury item should we slice next?</p><p>⌚ Omega Speedmaster?</p><p>🎮 Vintage Game Boy?</p><p>💎 Solid Diamond Ring?</p><p>Watch. Feel. React. And hit replay — because this one's a masterpiece worth watching twice.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
+        </div>
+        <div class="comments">
+          <h2>6 Comments</h2>
+          
+          <div class="comment">
+            <p><strong>@Your_Sleep_Paralysis_Demons</strong> - 2025-08-04T23:43:09Z</p>
+            <p>Ai slop</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html">Can a $40,000 Rolex Survive an 800° Red Hot Knife?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg" alt="🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction" title="🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="comment">
+            <p><strong>@davidwilliams6434</strong> - 2025-06-26T11:33:40Z</p>
+            <p>I have no idea what I&#39;m watching. What is this all about? 😮</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html">🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg" alt="Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion" title="Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="comment">
+            <p><strong>@AnnieDavis0305</strong> - 2025-06-24T23:03:32Z</p>
+            <p>Top video</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html">Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" alt="What Happens When You Cut Objects in REVERSE ASMR" title="What Happens When You Cut Objects in REVERSE ASMR" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is &#39;Testing Rolexes With a Red Hot Knife&#39; about?</summary>
+            <p>Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying sizzle and melting metal create a m...</p>
+          </details>
+          
+          <details>
+            <summary>When was the ASMR video &#39;Testing Rolexes With a Red Hot Knife&#39; uploaded?</summary>
+            <p>This video was uploaded on 2025-06-22T22:46:48Z.</p>
+          </details>
+          
+          <details>
+            <summary>How long is the mayhem-filled video &#39;Testing Rolexes With a Red Hot Knife&#39;?</summary>
+            <p>The video duration is 9 seconds.</p>
+          </details>
+          
+          <details>
+            <summary>What category does &#39;Testing Rolexes With a Red Hot Knife&#39; fall under on YouTube?</summary>
+            <p>It belongs to the Entertainment category.</p>
+          </details>
+          
+          <details>
+            <summary>What are the key tags for &#39;Testing Rolexes With a Red Hot Knife&#39; including ASMR and chaos?</summary>
+            <p>Tags include: Rolex, asmr cutting, asmr shorts, asmr slicing, asmr videos, destruction art, extreme cutting, heat knife, hot knife challenge, jason martocci, knife, knife videos, luxury watches, martocci mayhem, oddly satisfying, red hot knife, rolex, rolex collection, rolex sub, rolex submariner, rolex submariner date, rolex watch, rolex watches, rolexes, satisfaction videos, satisfying video, submariner, tiktok asmr, watch, watch destruction, watches, watchtok.</p>
+          </details>
+          
+          <details>
+            <summary>How popular is &#39;Testing Rolexes With a Red Hot Knife&#39;?</summary>
+            <p>This chaotic ASMR video has garnered 26662 views, 47 likes, and 6 comments as of the last update.</p>
+          </details>
+          
+          <details>
+            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+          </details>
+          
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="related-videos">
+          <h2>Related Videos</h2>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg" alt="Can a $40,000 Rolex Survive an 800° Red Hot Knife?" title="Can a $40,000 Rolex Survive an 800° Red Hot Knife?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+              </picture>
+            </div>
+            <a href="/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html">Can a $40,000 Rolex Survive an 800° Red Hot Knife?</a>
           </div>
-          <a href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">What Happens When You Cut Objects in REVERSE ASMR</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" alt="Can You Guess What These Weird Objects Are?" title="Can You Guess What These Weird Objects Are?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg" alt="🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction" title="🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html">🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction</a>
           </div>
-          <a href="/videos/can-you-guess-what-these-weird-objects-are.html">Can You Guess What These Weird Objects Are?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!" title="This Glass Apple Looks Normal But Watch What’s Inside!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg" alt="Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion" title="Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html">Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion</a>
           </div>
-          <a href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">This Glass Apple Looks Normal But Watch What’s Inside!</a>
-        </li>
-        
-      </ul>
-    </div>
-    
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/watch?v=DJsRjOdkyOs" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html&amp;text=Check%20out%20Testing%20Rolexes%20With%20a%20Red%20Hot%20Knife%21" target="_blank" class="btn btn-social">Share on X</a>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" alt="What Happens When You Cut Objects in REVERSE ASMR" title="What Happens When You Cut Objects in REVERSE ASMR" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">What Happens When You Cut Objects in REVERSE ASMR</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" alt="Can You Guess What These Weird Objects Are?" title="Can You Guess What These Weird Objects Are?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/can-you-guess-what-these-weird-objects-are.html">Can You Guess What These Weird Objects Are?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!" title="This Glass Apple Looks Normal But Watch What’s Inside!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">This Glass Apple Looks Normal But Watch What’s Inside!</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg" alt="What&#39;s REALLY Inside this ASMR Glass Fruit?" title="What&#39;s REALLY Inside this ASMR Glass Fruit?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/what-s-really-inside-this-asmr-glass-fruit.html">What&#39;s REALLY Inside this ASMR Glass Fruit?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg" alt="Hot Knife ASMR! Will It MELT?" title="Hot Knife ASMR! Will It MELT?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/hot-knife-asmr-will-it-melt.html">Hot Knife ASMR! Will It MELT?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" alt="Can You Really Sleep On A Bed Of Weed?" title="Can You Really Sleep On A Bed Of Weed?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/can-you-really-sleep-on-a-bed-of-weed.html">Can You Really Sleep On A Bed Of Weed?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/08AfEsiLjnU/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/08AfEsiLjnU/hqdefault.jpg" alt="ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying" title="ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html">ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying</a>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
   <footer>

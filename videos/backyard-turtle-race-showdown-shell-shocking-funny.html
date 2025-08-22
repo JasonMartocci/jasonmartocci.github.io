@@ -25,41 +25,44 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .container-fluid { padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
+    .stats { margin-bottom: 10px; color: #bbbbbb; }
+    .stats span { margin-right: 15px; }
+    .channel-info { margin-bottom: 20px; color: #ffffff; }
+    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-bottom: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment strong { color: #ffffff; }
+    .comment p { margin: 5px 0; color: #bbbbbb; }
+    .related-videos { }
+    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
+    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-video img { width: 100%; height: 100%; object-fit: cover; }
+    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
+    .related-video a:hover { text-decoration: underline; }
+    .social-buttons { margin-bottom: 20px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
-    .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
-    .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
-    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
-    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Get ready for the slowest\u2014but-funniest turtle race you\u0027ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled spri...", "mainEntity": {"@id": "https://jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html#video"}, "name": "Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23 - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=Y9UPbqMV29E", "description": "Get ready for the slowest\u2014but-funniest turtle race you\u0027ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled sprint to the finish line. Watch as they take unexpected detours, mid-race naps, and hilarious photo finishes that will leave you cracking up!\n \nFeaturing:\n\n\ud83d\udc22 Unexpected Twists: When you think they\u0027re about to win\u2026they stop for a snack!\n\ud83c\udfa5 Slow-Mo Highlights: Every wobbly step and sudden sprint in glorious detail\n\ud83c\udf99 Comedic Commentary: Live reactions and silly play-by-play that you won\u0027t want to miss\n \nWhether you\u0027re an animal lover or need a good laugh, this show has it all. Hit Play and join the fun!\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M12S", "embedUrl": "https://www.youtube.com/embed/Y9UPbqMV29E", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 6}, "name": "Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/Y9UPbqMV29E/defaultdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/mqdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/hqdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/sddefault.jpg"], "uploadDate": "2025-07-10T05:56:16Z"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=Y9UPbqMV29E", "description": "Get ready for the slowest\u2014but-funniest turtle race you\u0027ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled sprint to the finish line. Watch as they take unexpected detours, mid-race naps, and hilarious photo finishes that will leave you cracking up!\n \nFeaturing:\n\n\ud83d\udc22 Unexpected Twists: When you think they\u0027re about to win\u2026they stop for a snack!\n\ud83c\udfa5 Slow-Mo Highlights: Every wobbly step and sudden sprint in glorious detail\n\ud83c\udf99 Comedic Commentary: Live reactions and silly play-by-play that you won\u0027t want to miss\n \nWhether you\u0027re an animal lover or need a good laugh, this show has it all. Hit Play and join the fun!\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M12S", "embedUrl": "https://www.youtube.com/embed/Y9UPbqMV29E", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "https://schema.org/WatchAction", "userInteractionCount": 6}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction", "userInteractionCount": 1}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/CommentAction", "userInteractionCount": 1}], "name": "Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/Y9UPbqMV29E/defaultdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/mqdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/hqdefault.jpg", "https://i.ytimg.com/vi/Y9UPbqMV29E/sddefault.jpg"], "uploadDate": "2025-07-10T05:56:16Z"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html", "name": "Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for the slowest\u2014but-funniest turtle race you\u0027ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled spri..."}, "name": "What is \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027 about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This video was uploaded on 2025-07-10T05:56:16Z."}, "name": "When was the ASMR video \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027 uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video duration is 12 seconds."}, "name": "How long is the mayhem-filled video \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It belongs to the Entertainment category."}, "name": "What category does \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027 fall under on YouTube?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tags include: animal antics, animal challenges, animal race, animal race day, animal race video, animal sprint, backyard animals, backyard fun, backyard pets, backyard racing, backyard turtle, cute animal videos, cute turtles, funny animals, funny creatures, funny pets, funny racers, funny tortoises, slow race, tortoise, tortoise race, turtle, turtle madness, turtle race, turtle sprint, turtle sprinting, turtle videos, viral shorts, viral turtles, jason martocci, martocci mayhem."}, "name": "What are the key tags for \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027 including ASMR and chaos?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This chaotic ASMR video has garnered 6 views, 1 likes, and 1 comments as of the last update."}, "name": "How popular is \u0027Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! \ud83d\udc22\ud83e\udd23\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment."}, "name": "Who is Jason Martocci and what is Martocci Mayhem?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Turtle \u0026 Tortoise Race Showdown: Shell-Shocking Facts \u0026 Finish!", "position": 1, "url": "https://jasonmartocci.com/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html"}, {"@type": "ListItem", "name": "Can You Really Sleep On A Bed Of Weed?", "position": 2, "url": "https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 3, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Weird Food Mukbangs: The $500 Challenge", "position": 4, "url": "https://jasonmartocci.com/videos/weird-food-mukbangs-the-500-challenge.html"}, {"@type": "ListItem", "name": "MIND-BLOWING SEAFOOD MUKBANG Moments!", "position": 5, "url": "https://jasonmartocci.com/videos/mind-blowing-seafood-mukbang-moments.html"}, {"@type": "ListItem", "name": "I Tested The Weird ASMR Keyboard Trend", "position": 6, "url": "https://jasonmartocci.com/videos/i-tested-the-weird-asmr-keyboard-trend.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Turtle \u0026 Tortoise Race Showdown: Shell-Shocking Facts \u0026 Finish!", "position": 1, "url": "https://jasonmartocci.com/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html"}, {"@type": "ListItem", "name": "Can You Really Sleep On A Bed Of Weed?", "position": 2, "url": "https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 3, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Weird Food Mukbangs: The $500 Challenge", "position": 4, "url": "https://jasonmartocci.com/videos/weird-food-mukbangs-the-500-challenge.html"}, {"@type": "ListItem", "name": "MIND-BLOWING SEAFOOD MUKBANG Moments!", "position": 5, "url": "https://jasonmartocci.com/videos/mind-blowing-seafood-mukbang-moments.html"}, {"@type": "ListItem", "name": "I Tested The Weird ASMR Keyboard Trend", "position": 6, "url": "https://jasonmartocci.com/videos/i-tested-the-weird-asmr-keyboard-trend.html"}, {"@type": "ListItem", "name": "STEAMING HOT Knife Cuts Through Frozen Chunk!", "position": 7, "url": "https://jasonmartocci.com/videos/steaming-hot-knife-cuts-through-frozen-chunk.html"}, {"@type": "ListItem", "name": "Martocci Mayhem: How Technology is Revolutionizing AI ASMR", "position": 8, "url": "https://jasonmartocci.com/videos/martocci-mayhem-how-technology-is-revolutionizing-.html"}, {"@type": "ListItem", "name": "I Tested The Most Insane ASMR Blankets", "position": 9, "url": "https://jasonmartocci.com/videos/i-tested-the-most-insane-asmr-blankets.html"}, {"@type": "ListItem", "name": "Stunning Venus Flytrap Eating Bugs in Slow Motion", "position": 10, "url": "https://jasonmartocci.com/videos/stunning-venus-flytrap-eating-bugs-in-slow-motion.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -83,126 +86,187 @@
 
 </head>
 <body>
-  <header>
-    <h1>Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣</h1>
-  </header>
-  <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/Y9UPbqMV29E" frameborder="0" allowfullscreen title="Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣"></iframe>
-    </div>
-    <div class="description">
-      <p>Get ready for the slowest—but-funniest turtle race you've ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled sprint to the finish line. Watch as they take unexpected detours, mid-race naps, and hilarious photo finishes that will leave you cracking up!</p><p>Featuring:</p><p>🐢 Unexpected Twists: When you think they're about to win…they stop for a snack!</p><p>🎥 Slow-Mo Highlights: Every wobbly step and sudden sprint in glorious detail</p><p>🎙 Comedic Commentary: Live reactions and silly play-by-play that you won't want to miss</p><p>Whether you're an animal lover or need a good laugh, this show has it all. Hit Play and join the fun!</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; about?</summary>
-        <p>Get ready for the slowest—but-funniest turtle race you&#39;ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled spri...</p>
-      </details>
-      
-      <details>
-        <summary>When was the ASMR video &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; uploaded?</summary>
-        <p>This video was uploaded on 2025-07-10T05:56:16Z.</p>
-      </details>
-      
-      <details>
-        <summary>How long is the mayhem-filled video &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39;?</summary>
-        <p>The video duration is 12 seconds.</p>
-      </details>
-      
-      <details>
-        <summary>What category does &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; fall under on YouTube?</summary>
-        <p>It belongs to the Entertainment category.</p>
-      </details>
-      
-      <details>
-        <summary>What are the key tags for &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; including ASMR and chaos?</summary>
-        <p>Tags include: animal antics, animal challenges, animal race, animal race day, animal race video, animal sprint, backyard animals, backyard fun, backyard pets, backyard racing, backyard turtle, cute animal videos, cute turtles, funny animals, funny creatures, funny pets, funny racers, funny tortoises, slow race, tortoise, tortoise race, turtle, turtle madness, turtle race, turtle sprint, turtle sprinting, turtle videos, viral shorts, viral turtles, jason martocci, martocci mayhem.</p>
-      </details>
-      
-      <details>
-        <summary>How popular is &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39;?</summary>
-        <p>This chaotic ASMR video has garnered 6 views, 1 likes, and 1 comments as of the last update.</p>
-      </details>
-      
-      <details>
-        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" alt="Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!" title="Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/Y9UPbqMV29E" frameborder="0" allowfullscreen title="Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣"></iframe>
+        </div>
+        <h1>Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣</h1>
+        <div class="stats">
+          <span>6 views</span>
+          <span>Uploaded: 2025-07...</span>
+        </div>
+        <div class="channel-info">
+          Martocci Mayhem - 191 subscribers
+        </div>
+        <div class="stats">
+          <span>1 likes</span>
+          <span>1 comments</span>
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/watch?v=Y9UPbqMV29E" target="_blank" class="btn-social">Watch on YouTube</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html&amp;text=Check%20out%20Backyard%20Turtle%20Race%20Showdown%3A%20Shell-Shocking%20Funny%20Moments%21%20%F0%9F%90%A2%F0%9F%A4%A3%21" target="_blank" class="btn-social">Share on X</a>
+        </div>
+        <div class="description">
+          <p>Get ready for the slowest—but-funniest turtle race you've ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled sprint to the finish line. Watch as they take unexpected detours, mid-race naps, and hilarious photo finishes that will leave you cracking up!</p><p>Featuring:</p><p>🐢 Unexpected Twists: When you think they're about to win…they stop for a snack!</p><p>🎥 Slow-Mo Highlights: Every wobbly step and sudden sprint in glorious detail</p><p>🎙 Comedic Commentary: Live reactions and silly play-by-play that you won't want to miss</p><p>Whether you're an animal lover or need a good laugh, this show has it all. Hit Play and join the fun!</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
+        </div>
+        <div class="comments">
+          <h2>1 Comments</h2>
+          
+          <div class="comment">
+            <p><strong>@JasonMartocci</strong> - 2025-08-05T03:18:25Z</p>
+            <p>🔥 Like this? Hit sub &amp; catch tomorrow’s drop</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html">Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" alt="Can You Really Sleep On A Bed Of Weed?" title="Can You Really Sleep On A Bed Of Weed?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; about?</summary>
+            <p>Get ready for the slowest—but-funniest turtle race you&#39;ve ever seen! In this backyard shell derby, my rescue turtles line up for a lettuce-fueled spri...</p>
+          </details>
+          
+          <details>
+            <summary>When was the ASMR video &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; uploaded?</summary>
+            <p>This video was uploaded on 2025-07-10T05:56:16Z.</p>
+          </details>
+          
+          <details>
+            <summary>How long is the mayhem-filled video &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39;?</summary>
+            <p>The video duration is 12 seconds.</p>
+          </details>
+          
+          <details>
+            <summary>What category does &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; fall under on YouTube?</summary>
+            <p>It belongs to the Entertainment category.</p>
+          </details>
+          
+          <details>
+            <summary>What are the key tags for &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39; including ASMR and chaos?</summary>
+            <p>Tags include: animal antics, animal challenges, animal race, animal race day, animal race video, animal sprint, backyard animals, backyard fun, backyard pets, backyard racing, backyard turtle, cute animal videos, cute turtles, funny animals, funny creatures, funny pets, funny racers, funny tortoises, slow race, tortoise, tortoise race, turtle, turtle madness, turtle race, turtle sprint, turtle sprinting, turtle videos, viral shorts, viral turtles, jason martocci, martocci mayhem.</p>
+          </details>
+          
+          <details>
+            <summary>How popular is &#39;Backyard Turtle Race Showdown: Shell-Shocking Funny Moments! 🐢🤣&#39;?</summary>
+            <p>This chaotic ASMR video has garnered 6 views, 1 likes, and 1 comments as of the last update.</p>
+          </details>
+          
+          <details>
+            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+          </details>
+          
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="related-videos">
+          <h2>Related Videos</h2>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" alt="Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!" title="Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+              </picture>
+            </div>
+            <a href="/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html">Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!</a>
           </div>
-          <a href="/videos/can-you-really-sleep-on-a-bed-of-weed.html">Can You Really Sleep On A Bed Of Weed?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?" title="Will AI Replace Human Mukbangs?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" alt="Can You Really Sleep On A Bed Of Weed?" title="Can You Really Sleep On A Bed Of Weed?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/can-you-really-sleep-on-a-bed-of-weed.html">Can You Really Sleep On A Bed Of Weed?</a>
           </div>
-          <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge" title="Weird Food Mukbangs: The $500 Challenge" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?" title="Will AI Replace Human Mukbangs?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
           </div>
-          <a href="/videos/weird-food-mukbangs-the-500-challenge.html">Weird Food Mukbangs: The $500 Challenge</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" alt="MIND-BLOWING SEAFOOD MUKBANG Moments!" title="MIND-BLOWING SEAFOOD MUKBANG Moments!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge" title="Weird Food Mukbangs: The $500 Challenge" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/weird-food-mukbangs-the-500-challenge.html">Weird Food Mukbangs: The $500 Challenge</a>
           </div>
-          <a href="/videos/mind-blowing-seafood-mukbang-moments.html">MIND-BLOWING SEAFOOD MUKBANG Moments!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" alt="I Tested The Weird ASMR Keyboard Trend" title="I Tested The Weird ASMR Keyboard Trend" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" alt="MIND-BLOWING SEAFOOD MUKBANG Moments!" title="MIND-BLOWING SEAFOOD MUKBANG Moments!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/mind-blowing-seafood-mukbang-moments.html">MIND-BLOWING SEAFOOD MUKBANG Moments!</a>
           </div>
-          <a href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">I Tested The Weird ASMR Keyboard Trend</a>
-        </li>
-        
-      </ul>
-    </div>
-    
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/watch?v=Y9UPbqMV29E" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/backyard-turtle-race-showdown-shell-shocking-funny.html&amp;text=Check%20out%20Backyard%20Turtle%20Race%20Showdown%3A%20Shell-Shocking%20Funny%20Moments%21%20%F0%9F%90%A2%F0%9F%A4%A3%21" target="_blank" class="btn btn-social">Share on X</a>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" alt="I Tested The Weird ASMR Keyboard Trend" title="I Tested The Weird ASMR Keyboard Trend" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">I Tested The Weird ASMR Keyboard Trend</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/qsGqwpv5-uY/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/qsGqwpv5-uY/hqdefault.jpg" alt="STEAMING HOT Knife Cuts Through Frozen Chunk!" title="STEAMING HOT Knife Cuts Through Frozen Chunk!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/steaming-hot-knife-cuts-through-frozen-chunk.html">STEAMING HOT Knife Cuts Through Frozen Chunk!</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg" alt="Martocci Mayhem: How Technology is Revolutionizing AI ASMR" title="Martocci Mayhem: How Technology is Revolutionizing AI ASMR" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/martocci-mayhem-how-technology-is-revolutionizing-.html">Martocci Mayhem: How Technology is Revolutionizing AI ASMR</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/h7AlqDdAgyg/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/h7AlqDdAgyg/hqdefault.jpg" alt="I Tested The Most Insane ASMR Blankets" title="I Tested The Most Insane ASMR Blankets" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/i-tested-the-most-insane-asmr-blankets.html">I Tested The Most Insane ASMR Blankets</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-VepyiUaGgA/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-VepyiUaGgA/hqdefault.jpg" alt="Stunning Venus Flytrap Eating Bugs in Slow Motion" title="Stunning Venus Flytrap Eating Bugs in Slow Motion" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/stunning-venus-flytrap-eating-bugs-in-slow-motion.html">Stunning Venus Flytrap Eating Bugs in Slow Motion</a>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
   <footer>

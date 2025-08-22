@@ -25,41 +25,44 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .container-fluid { padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
+    .stats { margin-bottom: 10px; color: #bbbbbb; }
+    .stats span { margin-right: 15px; }
+    .channel-info { margin-bottom: 20px; color: #ffffff; }
+    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-bottom: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment strong { color: #ffffff; }
+    .comment p { margin: 5px 0; color: #bbbbbb; }
+    .related-videos { }
+    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
+    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-video img { width: 100%; height: 100%; object-fit: cover; }
+    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
+    .related-video a:hover { text-decoration: underline; }
+    .social-buttons { margin-bottom: 20px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
-    .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
-    .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
-    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
-    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic...", "mainEntity": {"@id": "https://jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html#video"}, "name": "Can You Survive This Epic Snowboarding Adventure? - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=uyjHENU0tBY", "description": "Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic mountains and forests, showcasing the beauty of backcountry exploration. Join in as we celebrate the end of a fantastic day on the snow.\n  \nWhistler Blackcomb \u2022 Winter 2004\n \n\ud83c\udfa5 This isn\u0027t just snowboarding\u2026 It\u0027s a frozen time capsule from a week we still dream about.\n \nWe were just a bunch of friends chasing something pure \u2014 untouched snow, steep lines, and the kind of stoke you don\u0027t find in daily life. We booked First Tracks Lodge before we even had proper jobs, showed up with gear held together by duct tape, and lucked out with over 40 inches of fresh powder in just a few days.\n \nNo GoPros. No drones. No socials. Just shaky camcorders, analog vibes, and the ride of our lives.\n \nThis trip didn\u0027t make us influencers \u2014 it made us believers.\n \n\ud83c\udfd4 Whistler Blackcomb that year was on another level. Trees heavy with snow, bowls begging to be carved, and chairlift rides filled with laughter, numb fingers, and whispered stories about that one run we barely survived. And every night? Hot tubs, cheap, and memories tattooed on our hearts forever.\n \nIf you know, you know:\n \n\ud83d\udd25 The sound of bindings clicking in.\n\ud83d\udd25 That first untouched line of the morning.\n\ud83d\udd25 The silence of snowfall at 3 am.\n\ud83d\udd25 The sore legs that still feel worth it two decades later.\n \nThis video is for the OG riders, the powder chasers, the mountain dwellers, the dreamers, and anyone who\u0027s ever felt more alive carving down a mountain than anywhere else in the world.\n \n\ud83d\udd70\ufe0f 2004. No filters. Just soul turns.\n\ud83d\udc47 Tag your crew you rode with back then.\n\ud83d\udc47 Or the one you\u0027re riding with this winter in South America or New Zealand.\n\ud83d\udc47 Or the one you wish you could take back in time with you.\n \n\u26a1\ufe0f Let\u0027s bring back this energy. Not just for the views \u2014 for the love of the ride.\n \n\ud83d\udccdFilmed: Whistler Blackcomb, BC\n\ud83c\udfe0 Stayed: First Tracks Lodge\n\ud83c\udfc2 Snowfall that week: 40+ inches of FRESH CANADIAN POW\n\ud83c\udfbf Riders: Friends. Family. Frostbitten fools.\n\ud83c\udfb6 Soundtrack: Our laughter + that one scratched punk CD\n\ud83d\udd76 Style: Baggy pants. Beanies under helmets. Unmatched vibes.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H5M49S", "embedUrl": "https://www.youtube.com/embed/uyjHENU0tBY", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 8}, "name": "Can You Survive This Epic Snowboarding Adventure?", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/uyjHENU0tBY/defaultdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/mqdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/hqdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/sddefault.jpg"], "uploadDate": "2025-06-25T19:06:16Z"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=uyjHENU0tBY", "description": "Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic mountains and forests, showcasing the beauty of backcountry exploration. Join in as we celebrate the end of a fantastic day on the snow.\n  \nWhistler Blackcomb \u2022 Winter 2004\n \n\ud83c\udfa5 This isn\u0027t just snowboarding\u2026 It\u0027s a frozen time capsule from a week we still dream about.\n \nWe were just a bunch of friends chasing something pure \u2014 untouched snow, steep lines, and the kind of stoke you don\u0027t find in daily life. We booked First Tracks Lodge before we even had proper jobs, showed up with gear held together by duct tape, and lucked out with over 40 inches of fresh powder in just a few days.\n \nNo GoPros. No drones. No socials. Just shaky camcorders, analog vibes, and the ride of our lives.\n \nThis trip didn\u0027t make us influencers \u2014 it made us believers.\n \n\ud83c\udfd4 Whistler Blackcomb that year was on another level. Trees heavy with snow, bowls begging to be carved, and chairlift rides filled with laughter, numb fingers, and whispered stories about that one run we barely survived. And every night? Hot tubs, cheap, and memories tattooed on our hearts forever.\n \nIf you know, you know:\n \n\ud83d\udd25 The sound of bindings clicking in.\n\ud83d\udd25 That first untouched line of the morning.\n\ud83d\udd25 The silence of snowfall at 3 am.\n\ud83d\udd25 The sore legs that still feel worth it two decades later.\n \nThis video is for the OG riders, the powder chasers, the mountain dwellers, the dreamers, and anyone who\u0027s ever felt more alive carving down a mountain than anywhere else in the world.\n \n\ud83d\udd70\ufe0f 2004. No filters. Just soul turns.\n\ud83d\udc47 Tag your crew you rode with back then.\n\ud83d\udc47 Or the one you\u0027re riding with this winter in South America or New Zealand.\n\ud83d\udc47 Or the one you wish you could take back in time with you.\n \n\u26a1\ufe0f Let\u0027s bring back this energy. Not just for the views \u2014 for the love of the ride.\n \n\ud83d\udccdFilmed: Whistler Blackcomb, BC\n\ud83c\udfe0 Stayed: First Tracks Lodge\n\ud83c\udfc2 Snowfall that week: 40+ inches of FRESH CANADIAN POW\n\ud83c\udfbf Riders: Friends. Family. Frostbitten fools.\n\ud83c\udfb6 Soundtrack: Our laughter + that one scratched punk CD\n\ud83d\udd76 Style: Baggy pants. Beanies under helmets. Unmatched vibes.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H5M49S", "embedUrl": "https://www.youtube.com/embed/uyjHENU0tBY", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "https://schema.org/WatchAction", "userInteractionCount": 8}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction", "userInteractionCount": 1}, {"@type": "InteractionCounter", "interactionType": "https://schema.org/CommentAction", "userInteractionCount": 1}], "name": "Can You Survive This Epic Snowboarding Adventure?", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/uyjHENU0tBY/defaultdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/mqdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/hqdefault.jpg", "https://i.ytimg.com/vi/uyjHENU0tBY/sddefault.jpg"], "uploadDate": "2025-06-25T19:06:16Z"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html", "name": "Can You Survive This Epic Snowboarding Adventure?", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic..."}, "name": "What is \u0027Can You Survive This Epic Snowboarding Adventure?\u0027 about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This video was uploaded on 2025-06-25T19:06:16Z."}, "name": "When was the ASMR video \u0027Can You Survive This Epic Snowboarding Adventure?\u0027 uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video duration is 5 minutes and 49 seconds."}, "name": "How long is the mayhem-filled video \u0027Can You Survive This Epic Snowboarding Adventure?\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It belongs to the Entertainment category."}, "name": "What category does \u0027Can You Survive This Epic Snowboarding Adventure?\u0027 fall under on YouTube?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Tags include: 2004 winter, 7th heaven, amazing views, backcountry bliss, backcountry riding, big mountain, big mountain skiing, blackcomb mountain, blackcomb skiing, canada skiing, canada winter, deep snow, epic snowboarding, extreme snowboarding, freeride snow, martocci mayhem, mountain views, powder snow, powder turns, skiing, snowboard journey, snowboarding, whistler blackcomb, whistler mountain, whistler parks, whistler snow, whistler snowboarding, winter wonderland, yolo."}, "name": "What are the key tags for \u0027Can You Survive This Epic Snowboarding Adventure?\u0027 including ASMR and chaos?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This chaotic ASMR video has garnered 8 views, 1 likes, and 1 comments as of the last update."}, "name": "How popular is \u0027Can You Survive This Epic Snowboarding Adventure?\u0027?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment."}, "name": "Who is Jason Martocci and what is Martocci Mayhem?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "\ud83c\udfa5 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON\u2019T BELIEVE THIS.", "position": 1, "url": "https://jasonmartocci.com/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html"}, {"@type": "ListItem", "name": "Can You Really Sleep On A Bed Of Weed?", "position": 2, "url": "https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html"}, {"@type": "ListItem", "name": "Testing Rolexes With a Red Hot Knife", "position": 3, "url": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html"}, {"@type": "ListItem", "name": "87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb", "position": 4, "url": "https://jasonmartocci.com/videos/87-years-young-mom-grandma-great-grandma-skiing-wh.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 5, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Weird Food Mukbangs: The $500 Challenge", "position": 6, "url": "https://jasonmartocci.com/videos/weird-food-mukbangs-the-500-challenge.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "\ud83c\udfa5 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON\u2019T BELIEVE THIS.", "position": 1, "url": "https://jasonmartocci.com/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html"}, {"@type": "ListItem", "name": "Can You Really Sleep On A Bed Of Weed?", "position": 2, "url": "https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html"}, {"@type": "ListItem", "name": "Testing Rolexes With a Red Hot Knife", "position": 3, "url": "https://jasonmartocci.com/videos/testing-rolexes-with-a-red-hot-knife.html"}, {"@type": "ListItem", "name": "87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb", "position": 4, "url": "https://jasonmartocci.com/videos/87-years-young-mom-grandma-great-grandma-skiing-wh.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 5, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Weird Food Mukbangs: The $500 Challenge", "position": 6, "url": "https://jasonmartocci.com/videos/weird-food-mukbangs-the-500-challenge.html"}, {"@type": "ListItem", "name": "Can You Guess What These Weird Objects Are?", "position": 7, "url": "https://jasonmartocci.com/videos/can-you-guess-what-these-weird-objects-are.html"}, {"@type": "ListItem", "name": "5 Mind Blowing ASMR Experiments For A Relaxing Experience", "position": 8, "url": "https://jasonmartocci.com/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html"}, {"@type": "ListItem", "name": "MIND-BLOWING SEAFOOD MUKBANG Moments!", "position": 9, "url": "https://jasonmartocci.com/videos/mind-blowing-seafood-mukbang-moments.html"}, {"@type": "ListItem", "name": "I Tested The Weird ASMR Keyboard Trend", "position": 10, "url": "https://jasonmartocci.com/videos/i-tested-the-weird-asmr-keyboard-trend.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -83,126 +86,187 @@
 
 </head>
 <body>
-  <header>
-    <h1>Can You Survive This Epic Snowboarding Adventure?</h1>
-  </header>
-  <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/uyjHENU0tBY" frameborder="0" allowfullscreen title="Can You Survive This Epic Snowboarding Adventure?"></iframe>
-    </div>
-    <div class="description">
-      <p>Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic mountains and forests, showcasing the beauty of backcountry exploration. Join in as we celebrate the end of a fantastic day on the snow.</p><p>Whistler Blackcomb • Winter 2004</p><p>🎥 This isn't just snowboarding… It's a frozen time capsule from a week we still dream about.</p><p>We were just a bunch of friends chasing something pure — untouched snow, steep lines, and the kind of stoke you don't find in daily life. We booked First Tracks Lodge before we even had proper jobs, showed up with gear held together by duct tape, and lucked out with over 40 inches of fresh powder in just a few days.</p><p>No GoPros. No drones. No socials. Just shaky camcorders, analog vibes, and the ride of our lives.</p><p>This trip didn't make us influencers — it made us believers.</p><p>🏔 Whistler Blackcomb that year was on another level. Trees heavy with snow, bowls begging to be carved, and chairlift rides filled with laughter, numb fingers, and whispered stories about that one run we barely survived. And every night? Hot tubs, cheap, and memories tattooed on our hearts forever.</p><p>If you know, you know:</p><p>🔥 The sound of bindings clicking in.</p><p>🔥 That first untouched line of the morning.</p><p>🔥 The silence of snowfall at 3 am.</p><p>🔥 The sore legs that still feel worth it two decades later.</p><p>This video is for the OG riders, the powder chasers, the mountain dwellers, the dreamers, and anyone who's ever felt more alive carving down a mountain than anywhere else in the world.</p><p>🕰️ 2004. No filters. Just soul turns.</p><p>👇 Tag your crew you rode with back then.</p><p>👇 Or the one you're riding with this winter in South America or New Zealand.</p><p>👇 Or the one you wish you could take back in time with you.</p><p>⚡️ Let's bring back this energy. Not just for the views — for the love of the ride.</p><p>📍Filmed: Whistler Blackcomb, BC</p><p>🏠 Stayed: First Tracks Lodge</p><p>🏂 Snowfall that week: 40+ inches of FRESH CANADIAN POW</p><p>🎿 Riders: Friends. Family. Frostbitten fools.</p><p>🎶 Soundtrack: Our laughter + that one scratched punk CD</p><p>🕶 Style: Baggy pants. Beanies under helmets. Unmatched vibes.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is &#39;Can You Survive This Epic Snowboarding Adventure?&#39; about?</summary>
-        <p>Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic...</p>
-      </details>
-      
-      <details>
-        <summary>When was the ASMR video &#39;Can You Survive This Epic Snowboarding Adventure?&#39; uploaded?</summary>
-        <p>This video was uploaded on 2025-06-25T19:06:16Z.</p>
-      </details>
-      
-      <details>
-        <summary>How long is the mayhem-filled video &#39;Can You Survive This Epic Snowboarding Adventure?&#39;?</summary>
-        <p>The video duration is 5 minutes and 49 seconds.</p>
-      </details>
-      
-      <details>
-        <summary>What category does &#39;Can You Survive This Epic Snowboarding Adventure?&#39; fall under on YouTube?</summary>
-        <p>It belongs to the Entertainment category.</p>
-      </details>
-      
-      <details>
-        <summary>What are the key tags for &#39;Can You Survive This Epic Snowboarding Adventure?&#39; including ASMR and chaos?</summary>
-        <p>Tags include: 2004 winter, 7th heaven, amazing views, backcountry bliss, backcountry riding, big mountain, big mountain skiing, blackcomb mountain, blackcomb skiing, canada skiing, canada winter, deep snow, epic snowboarding, extreme snowboarding, freeride snow, martocci mayhem, mountain views, powder snow, powder turns, skiing, snowboard journey, snowboarding, whistler blackcomb, whistler mountain, whistler parks, whistler snow, whistler snowboarding, winter wonderland, yolo.</p>
-      </details>
-      
-      <details>
-        <summary>How popular is &#39;Can You Survive This Epic Snowboarding Adventure?&#39;?</summary>
-        <p>This chaotic ASMR video has garnered 8 views, 1 likes, and 1 comments as of the last update.</p>
-      </details>
-      
-      <details>
-        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" alt="🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS." title="🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS." onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/uyjHENU0tBY" frameborder="0" allowfullscreen title="Can You Survive This Epic Snowboarding Adventure?"></iframe>
+        </div>
+        <h1>Can You Survive This Epic Snowboarding Adventure?</h1>
+        <div class="stats">
+          <span>8 views</span>
+          <span>Uploaded: 2025-06...</span>
+        </div>
+        <div class="channel-info">
+          Martocci Mayhem - 191 subscribers
+        </div>
+        <div class="stats">
+          <span>1 likes</span>
+          <span>1 comments</span>
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/watch?v=uyjHENU0tBY" target="_blank" class="btn-social">Watch on YouTube</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html&amp;text=Check%20out%20Can%20You%20Survive%20This%20Epic%20Snowboarding%20Adventure%3F%21" target="_blank" class="btn-social">Share on X</a>
+        </div>
+        <div class="description">
+          <p>Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic mountains and forests, showcasing the beauty of backcountry exploration. Join in as we celebrate the end of a fantastic day on the snow.</p><p>Whistler Blackcomb • Winter 2004</p><p>🎥 This isn't just snowboarding… It's a frozen time capsule from a week we still dream about.</p><p>We were just a bunch of friends chasing something pure — untouched snow, steep lines, and the kind of stoke you don't find in daily life. We booked First Tracks Lodge before we even had proper jobs, showed up with gear held together by duct tape, and lucked out with over 40 inches of fresh powder in just a few days.</p><p>No GoPros. No drones. No socials. Just shaky camcorders, analog vibes, and the ride of our lives.</p><p>This trip didn't make us influencers — it made us believers.</p><p>🏔 Whistler Blackcomb that year was on another level. Trees heavy with snow, bowls begging to be carved, and chairlift rides filled with laughter, numb fingers, and whispered stories about that one run we barely survived. And every night? Hot tubs, cheap, and memories tattooed on our hearts forever.</p><p>If you know, you know:</p><p>🔥 The sound of bindings clicking in.</p><p>🔥 That first untouched line of the morning.</p><p>🔥 The silence of snowfall at 3 am.</p><p>🔥 The sore legs that still feel worth it two decades later.</p><p>This video is for the OG riders, the powder chasers, the mountain dwellers, the dreamers, and anyone who's ever felt more alive carving down a mountain than anywhere else in the world.</p><p>🕰️ 2004. No filters. Just soul turns.</p><p>👇 Tag your crew you rode with back then.</p><p>👇 Or the one you're riding with this winter in South America or New Zealand.</p><p>👇 Or the one you wish you could take back in time with you.</p><p>⚡️ Let's bring back this energy. Not just for the views — for the love of the ride.</p><p>📍Filmed: Whistler Blackcomb, BC</p><p>🏠 Stayed: First Tracks Lodge</p><p>🏂 Snowfall that week: 40+ inches of FRESH CANADIAN POW</p><p>🎿 Riders: Friends. Family. Frostbitten fools.</p><p>🎶 Soundtrack: Our laughter + that one scratched punk CD</p><p>🕶 Style: Baggy pants. Beanies under helmets. Unmatched vibes.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
+        </div>
+        <div class="comments">
+          <h2>1 Comments</h2>
+          
+          <div class="comment">
+            <p><strong>@JasonMartocci</strong> - 2025-07-16T06:19:35Z</p>
+            <p>🔥 Diggin’ the mayhem? Smash SUBSCRIBE &amp; tell me below what I should blow up, slice, or roast next—new madness drops every day!</p>
+            <p>Likes: 1</p>
           </div>
-          <a href="/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html">🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS.</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" alt="Can You Really Sleep On A Bed Of Weed?" title="Can You Really Sleep On A Bed Of Weed?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is &#39;Can You Survive This Epic Snowboarding Adventure?&#39; about?</summary>
+            <p>Experience the thrill of a snowboard adventure as we navigate down the slopes! This winter journey captures the essence of snowboarding through scenic...</p>
+          </details>
+          
+          <details>
+            <summary>When was the ASMR video &#39;Can You Survive This Epic Snowboarding Adventure?&#39; uploaded?</summary>
+            <p>This video was uploaded on 2025-06-25T19:06:16Z.</p>
+          </details>
+          
+          <details>
+            <summary>How long is the mayhem-filled video &#39;Can You Survive This Epic Snowboarding Adventure?&#39;?</summary>
+            <p>The video duration is 5 minutes and 49 seconds.</p>
+          </details>
+          
+          <details>
+            <summary>What category does &#39;Can You Survive This Epic Snowboarding Adventure?&#39; fall under on YouTube?</summary>
+            <p>It belongs to the Entertainment category.</p>
+          </details>
+          
+          <details>
+            <summary>What are the key tags for &#39;Can You Survive This Epic Snowboarding Adventure?&#39; including ASMR and chaos?</summary>
+            <p>Tags include: 2004 winter, 7th heaven, amazing views, backcountry bliss, backcountry riding, big mountain, big mountain skiing, blackcomb mountain, blackcomb skiing, canada skiing, canada winter, deep snow, epic snowboarding, extreme snowboarding, freeride snow, martocci mayhem, mountain views, powder snow, powder turns, skiing, snowboard journey, snowboarding, whistler blackcomb, whistler mountain, whistler parks, whistler snow, whistler snowboarding, winter wonderland, yolo.</p>
+          </details>
+          
+          <details>
+            <summary>How popular is &#39;Can You Survive This Epic Snowboarding Adventure?&#39;?</summary>
+            <p>This chaotic ASMR video has garnered 8 views, 1 likes, and 1 comments as of the last update.</p>
+          </details>
+          
+          <details>
+            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+          </details>
+          
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="related-videos">
+          <h2>Related Videos</h2>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" alt="🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS." title="🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS." onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+              </picture>
+            </div>
+            <a href="/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html">🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS.</a>
           </div>
-          <a href="/videos/can-you-really-sleep-on-a-bed-of-weed.html">Can You Really Sleep On A Bed Of Weed?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg" alt="Testing Rolexes With a Red Hot Knife" title="Testing Rolexes With a Red Hot Knife" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" alt="Can You Really Sleep On A Bed Of Weed?" title="Can You Really Sleep On A Bed Of Weed?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/can-you-really-sleep-on-a-bed-of-weed.html">Can You Really Sleep On A Bed Of Weed?</a>
           </div>
-          <a href="/videos/testing-rolexes-with-a-red-hot-knife.html">Testing Rolexes With a Red Hot Knife</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/DiH6-5Bu8UU/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/DiH6-5Bu8UU/hqdefault.jpg" alt="87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb" title="87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg" alt="Testing Rolexes With a Red Hot Knife" title="Testing Rolexes With a Red Hot Knife" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/testing-rolexes-with-a-red-hot-knife.html">Testing Rolexes With a Red Hot Knife</a>
           </div>
-          <a href="/videos/87-years-young-mom-grandma-great-grandma-skiing-wh.html">87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?" title="Will AI Replace Human Mukbangs?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/DiH6-5Bu8UU/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/DiH6-5Bu8UU/hqdefault.jpg" alt="87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb" title="87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/87-years-young-mom-grandma-great-grandma-skiing-wh.html">87 Years Young .. Mom / Grandma / Great Grandma Skiing Whistler Blackcomb</a>
           </div>
-          <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge" title="Weird Food Mukbangs: The $500 Challenge" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?" title="Will AI Replace Human Mukbangs?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
           </div>
-          <a href="/videos/weird-food-mukbangs-the-500-challenge.html">Weird Food Mukbangs: The $500 Challenge</a>
-        </li>
-        
-      </ul>
-    </div>
-    
-    <div class="social-buttons">
-      <a href="https://www.youtube.com/watch?v=uyjHENU0tBY" target="_blank" class="btn btn-social">Watch on YouTube</a>
-      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/can-you-survive-this-epic-snowboarding-adventure.html&amp;text=Check%20out%20Can%20You%20Survive%20This%20Epic%20Snowboarding%20Adventure%3F%21" target="_blank" class="btn btn-social">Share on X</a>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge" title="Weird Food Mukbangs: The $500 Challenge" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/weird-food-mukbangs-the-500-challenge.html">Weird Food Mukbangs: The $500 Challenge</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" alt="Can You Guess What These Weird Objects Are?" title="Can You Guess What These Weird Objects Are?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/can-you-guess-what-these-weird-objects-are.html">Can You Guess What These Weird Objects Are?</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg" alt="5 Mind Blowing ASMR Experiments For A Relaxing Experience" title="5 Mind Blowing ASMR Experiments For A Relaxing Experience" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html">5 Mind Blowing ASMR Experiments For A Relaxing Experience</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" alt="MIND-BLOWING SEAFOOD MUKBANG Moments!" title="MIND-BLOWING SEAFOOD MUKBANG Moments!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/mind-blowing-seafood-mukbang-moments.html">MIND-BLOWING SEAFOOD MUKBANG Moments!</a>
+          </div>
+          
+          <div class="related-video">
+            <div class="thumbnail-wrapper">
+              <picture>
+                <source srcset="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" type="image/jpg">
+                <img src="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" alt="I Tested The Weird ASMR Keyboard Trend" title="I Tested The Weird ASMR Keyboard Trend" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+              </picture>
+            </div>
+            <a href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">I Tested The Weird ASMR Keyboard Trend</a>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
   <footer>
