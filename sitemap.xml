@@ -100,57 +100,6 @@
 </url>
 
 <url>
-  <loc>https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html</loc>
-  <lastmod>2025-08-22</lastmod>
-  <video:video>
-    <video:thumbnail_loc>https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg</video:thumbnail_loc>
-    <video:title>Will AI Replace Human Mukbangs?</video:title>
-    <video:description>Get ready to have your mind blown by the most realistic AI-generated mukbang creations that will leave you questioning what&apos;s real and what&apos;s not! ...</video:description>
-    <video:player_loc>https://www.youtube.com/watch?v=-oMR-qryMq0</video:player_loc>
-    <video:duration>81</video:duration>
-    <video:publication_date>2025-08-13T22:00:00Z</video:publication_date>
-    <video:tag>AI Mukbang</video:tag>
-    <video:tag>ASMR</video:tag>
-    <video:tag>Cooking with AI</video:tag>
-    <video:tag>Crystal Cake</video:tag>
-    <video:tag>Dessert ASMR</video:tag>
-    <video:tag>Food Challenge</video:tag>
-    <video:tag>Food Science</video:tag>
-    <video:tag>Food Trends</video:tag>
-    <video:tag>Foodie</video:tag>
-    <video:tag>Mukbang</video:tag>
-    <video:tag>Taste Test</video:tag>
-    <video:tag>Viral Food Videos</video:tag>
-    <video:tag>Visual Feast</video:tag>
-    <video:tag>ai</video:tag>
-    <video:tag>ai eating</video:tag>
-    <video:tag>ai foodie</video:tag>
-    <video:tag>aismr</video:tag>
-    <video:tag>asmr eating</video:tag>
-    <video:tag>asmr food</video:tag>
-    <video:tag>asmr mukbang</video:tag>
-    <video:tag>asmr sleep</video:tag>
-    <video:tag>asmr sounds</video:tag>
-    <video:tag>asmr video</video:tag>
-    <video:tag>jason martocci</video:tag>
-    <video:tag>korean food mukbang</video:tag>
-    <video:tag>korean mukbang</video:tag>
-    <video:tag>martocci mayhem</video:tag>
-    <video:tag>mukbang asmr</video:tag>
-    <video:tag>oddly satisfying</video:tag>
-    <video:tag>satisfying</video:tag>
-    <video:tag>satisfying asmr</video:tag>
-    <video:tag>satisfying video</video:tag>
-    <video:tag>satisfying videos</video:tag>
-    <video:tag>shorts</video:tag>
-    <video:tag>trending</video:tag>
-    <video:tag>viral shorts</video:tag>
-    
-    <video:view_count>647</video:view_count>
-  </video:video>
-</url>
-
-<url>
   <loc>https://jasonmartocci.com/videos/squirrel-vs-cat-kitchen-showdown.html</loc>
   <lastmod>2025-08-22</lastmod>
   <video:video>
@@ -416,7 +365,7 @@
     <video:tag>aiasmr</video:tag>
     <video:tag>ai</video:tag>
     
-    <video:view_count>1050</video:view_count>
+    <video:view_count>1052</video:view_count>
   </video:video>
 </url>
 
@@ -721,7 +670,7 @@
     <video:tag>stand up routine</video:tag>
     <video:tag>stand up comedian</video:tag>
     
-    <video:view_count>194</video:view_count>
+    <video:view_count>196</video:view_count>
   </video:video>
 </url>
 
@@ -770,7 +719,7 @@
     <video:tag>visuals</video:tag>
     <video:tag>weekly highlights</video:tag>
     
-    <video:view_count>229</video:view_count>
+    <video:view_count>222</video:view_count>
   </video:video>
 </url>
 
@@ -915,6 +864,57 @@
     <video:tag>warm colors</video:tag>
     
     <video:view_count>20</video:view_count>
+  </video:video>
+</url>
+
+<url>
+  <loc>https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html</loc>
+  <lastmod>2025-08-22</lastmod>
+  <video:video>
+    <video:thumbnail_loc>https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg</video:thumbnail_loc>
+    <video:title>Will AI Replace Human Mukbangs?</video:title>
+    <video:description>Get ready to have your mind blown by the most realistic AI-generated mukbang creations that will leave you questioning what&apos;s real and what&apos;s not! ...</video:description>
+    <video:player_loc>https://www.youtube.com/watch?v=-oMR-qryMq0</video:player_loc>
+    <video:duration>81</video:duration>
+    <video:publication_date>2025-08-13T22:00:00Z</video:publication_date>
+    <video:tag>AI Mukbang</video:tag>
+    <video:tag>ASMR</video:tag>
+    <video:tag>Cooking with AI</video:tag>
+    <video:tag>Crystal Cake</video:tag>
+    <video:tag>Dessert ASMR</video:tag>
+    <video:tag>Food Challenge</video:tag>
+    <video:tag>Food Science</video:tag>
+    <video:tag>Food Trends</video:tag>
+    <video:tag>Foodie</video:tag>
+    <video:tag>Mukbang</video:tag>
+    <video:tag>Taste Test</video:tag>
+    <video:tag>Viral Food Videos</video:tag>
+    <video:tag>Visual Feast</video:tag>
+    <video:tag>ai</video:tag>
+    <video:tag>ai eating</video:tag>
+    <video:tag>ai foodie</video:tag>
+    <video:tag>aismr</video:tag>
+    <video:tag>asmr eating</video:tag>
+    <video:tag>asmr food</video:tag>
+    <video:tag>asmr mukbang</video:tag>
+    <video:tag>asmr sleep</video:tag>
+    <video:tag>asmr sounds</video:tag>
+    <video:tag>asmr video</video:tag>
+    <video:tag>jason martocci</video:tag>
+    <video:tag>korean food mukbang</video:tag>
+    <video:tag>korean mukbang</video:tag>
+    <video:tag>martocci mayhem</video:tag>
+    <video:tag>mukbang asmr</video:tag>
+    <video:tag>oddly satisfying</video:tag>
+    <video:tag>satisfying</video:tag>
+    <video:tag>satisfying asmr</video:tag>
+    <video:tag>satisfying video</video:tag>
+    <video:tag>satisfying videos</video:tag>
+    <video:tag>shorts</video:tag>
+    <video:tag>trending</video:tag>
+    <video:tag>viral shorts</video:tag>
+    
+    <video:view_count>647</video:view_count>
   </video:video>
 </url>
 
@@ -1114,7 +1114,7 @@
     <video:tag>visual asmr</video:tag>
     <video:tag>visual satisfaction</video:tag>
     
-    <video:view_count>1024</video:view_count>
+    <video:view_count>1025</video:view_count>
   </video:video>
 </url>
 
@@ -1216,7 +1216,7 @@
     <video:tag>satisfying</video:tag>
     <video:tag>asmr shorts</video:tag>
     
-    <video:view_count>1035</video:view_count>
+    <video:view_count>1036</video:view_count>
   </video:video>
 </url>
 
@@ -2555,7 +2555,7 @@
     <video:tag>visual storytelling</video:tag>
     <video:tag>youtube shorts</video:tag>
     
-    <video:view_count>6</video:view_count>
+    <video:view_count>5</video:view_count>
   </video:video>
 </url>
 
@@ -3316,7 +3316,7 @@
     <video:tag>asmr whispering</video:tag>
     <video:tag>relaxing asmr</video:tag>
     
-    <video:view_count>3001</video:view_count>
+    <video:view_count>3003</video:view_count>
   </video:video>
 </url>
 
@@ -7984,7 +7984,7 @@
     <video:tag>viral laughs</video:tag>
     <video:tag>viral shorts</video:tag>
     
-    <video:view_count>2392</video:view_count>
+    <video:view_count>2393</video:view_count>
   </video:video>
 </url>
 

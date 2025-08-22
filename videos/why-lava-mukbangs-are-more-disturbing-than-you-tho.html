@@ -1,13 +1,18 @@
 
+<header style="background: #1d1a1b; padding: 10px; text-align: right; border-bottom: 2px solid #0b3f04;">
+  <a href="/" style="color: #ffffff; text-decoration: none; font-size: 1.2rem;">
+    <img src="/images/JasonMartocci_Logo.png" alt="Martocci Mayhem" style="width: 30px; height: auto; vertical-align: middle; margin-right: 5px;">
+    Martocci Mayhem
+  </a>
+</header>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="Why Lava Mukbangs Are More Disturbing Than You Thought">
-  <meta name="description" content="Lava Ramen. Lava Dumplings. Lava Cheesecake....e eats them all — and then the heart.
- 
-Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, where">
+  <meta name="description" content="Lava Ramen. Lava Dumplings. Lava Cheesecake.... She eats them all — and then the heart.  Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, wher...">
   <meta name="keywords" content="ASMR, insane ASMR, Savage Grandma, chaos, mayhem, ai, ai cooking, ai food, ai generated food video, ai mukbang, asmr, asmr eating, asmr food, cooking asmr, eating show, extreme mukbang, food asmr, food challenge, food review, food vlog, foodie, google veo 3, gulp sounds, korean mukbang, mukbang, mukbang asmr, mukbang video, realistic asmr eating, satisfying food, seafood mukbang, slurp sounds, spicy food, spicy mukbang, spicy noodle challenge, trending shorts, viral video, wholesome asmr, youtube shorts, yt shorts">
   <meta property="og:title" content="Why Lava Mukbangs Are More Disturbing Than You Thought">
   <meta property="og:description" content="Lava Ramen. Lava Dumplings. Lava Cheesecake....">
@@ -27,37 +32,30 @@ Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, where">
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container-fluid { padding: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin-bottom: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    h1 { font-size: 2rem; color: #ffffff; margin-bottom: 10px; }
-    .stats { margin-bottom: 10px; color: #bbbbbb; }
-    .stats span { margin-right: 15px; }
-    .channel-info { margin-bottom: 20px; color: #ffffff; }
-    .description { border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee; margin-bottom: 20px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
-    .comments { margin-bottom: 40px; }
-    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
-    .comment strong { color: #ffffff; }
-    .comment p { margin: 5px 0; color: #bbbbbb; }
-    .related-videos { }
-    .related-video { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; margin-bottom: 20px; text-align: center; }
-    .related-video .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .related-video .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-video img { width: 100%; height: 100%; object-fit: cover; }
-    .related-video a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; font-size: 1rem; color: #0b3f04; }
-    .related-video a:hover { text-decoration: underline; }
-    .social-buttons { margin-bottom: 20px; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; padding: 5px 10px; border-radius: 4px; text-decoration: none; }
+    .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
     .faq-section { margin: 40px 0; }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
+    .social-buttons { text-align: center; margin: 20px 0; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
+    .related-videos { margin: 40px 0; }
+    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
+    .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
+    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
+    .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
-    @media (max-width: 992px) { .related-videos { margin-top: 40px; } }
+    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Lava Ramen. Lava Dumplings. Lava Cheesecake....", "mainEntity": {"@id": "https://jasonmartocci.com/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html#video"}, "name": "Why Lava Mukbangs Are More Disturbing Than You Thought - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html"}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=URYGgY4UeIY", "description": "Lava Ramen. Lava Dumplings. Lava Cheesecake.\nShe eats them all \u2014 and then the heart.\n \nWould you try a molten mukbang? This is Part 1 of the LAVA SERIES, where AI-generated ASMR meets surreal food visuals. Created with Veo 3 and layered sound design to trigger maximum tingles and curiosity. No voice. No music. Just complete sensory immersion.\n \n\ud83d\udd25 Headphones on. Full ASMR mode.\n\ud83e\udde0 AI visuals + real sound design = forbidden feast\n\ud83c\udfa5 Comment \ud83d\udd25 if you made it to the end\n \nSubscribe for more surreal food, ASMR experiments, and AI weirdcore drops.\n \nSUBSCRIBE OR I\u0027LL TAKE YOUR DOG\n \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n\u2022 Prodigy Game \u2013 https://www.dpbolvw.net/click-101429015-15836259\n\n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\nNew Martocci Mayhem every Saturday at noon ET!\n[Your Socials/Links Here]", "duration": "PT0H0M48S", "embedUrl": "https://www.youtube.com/embed/URYGgY4UeIY", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 18}, "name": "Why Lava Mukbangs Are More Disturbing Than You Thought", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/URYGgY4UeIY/defaultdefault.jpg", "https://i.ytimg.com/vi/URYGgY4UeIY/mqdefault.jpg", "https://i.ytimg.com/vi/URYGgY4UeIY/hqdefault.jpg", "https://i.ytimg.com/vi/URYGgY4UeIY/sddefault.jpg"], "uploadDate": "2025-06-21T08:52:03Z"}</script>
@@ -78,158 +76,125 @@ Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, where">
 
 <script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/YNlxTGMpHVIg.js";o.head.appendChild(scr);}})()</script>
 
-  <script>
-    // Lazy load YT iframe
-    document.addEventListener("DOMContentLoaded", function() {
-      var iframes = document.querySelectorAll('iframe[data-src]');
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.src = entry.target.dataset.src;
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '200px' });
-      iframes.forEach(iframe => observer.observe(iframe));
-    });
-  </script>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="video-embed">
-          <iframe data-src="https://www.youtube.com/embed/URYGgY4UeIY" frameborder="0" allowfullscreen title="Why Lava Mukbangs Are More Disturbing Than You Thought"></iframe>
-        </div>
-        <h1>Why Lava Mukbangs Are More Disturbing Than You Thought</h1>
-        <div class="stats">
-          <span>18 views</span>
-          <span>Uploaded: </span>
-        </div>
-        <div class="channel-info">
-          Martocci Mayhem -  subscribers
-        </div>
-        <div class="stats">
-          <a href="https://www.youtube.com/watch?v=URYGgY4UeIY" target="_blank">1 likes</a>
-          <a href="https://www.youtube.com/watch?v=URYGgY4UeIY#comments" target="_blank">1 comments</a>
-        </div>
-        <div class="social-buttons">
-          <a href="https://www.youtube.com/watch?v=URYGgY4UeIY" target="_blank" class="btn-social">Watch on YouTube</a>
-          <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html&amp;text=Check%20out%20Why%20Lava%20Mukbangs%20Are%20More%20Disturbing%20Than%20You%20Thought%21" target="_blank" class="btn-social">Share on X</a>
-        </div>
-        <div class="description">
-          <p>Lava Ramen. Lava Dumplings. Lava Cheesecake.</p><p>She eats them all — and then the heart.</p><p>Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, where AI-generated ASMR meets surreal food visuals. Created with Veo 3 and layered sound design to trigger maximum tingles and curiosity. No voice. No music. Just complete sensory immersion.</p><p>🔥 Headphones on. Full ASMR mode.</p><p>🧠 AI visuals + real sound design = forbidden feast</p><p>🎥 Comment 🔥 if you made it to the end</p><p>Subscribe for more surreal food, ASMR experiments, and AI weirdcore drops.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
-        </div>
-        <div class="comments">
-          <h2><a href="https://www.youtube.com/watch?v=URYGgY4UeIY#comments" target="_blank">1 Comments (View/Add on YouTube)</a></h2>
-          
-        </div>
-        <div class="faq-section">
-          <h2>Frequently Asked Questions</h2>
-          
-          <details>
-            <summary>What is &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; about?</summary>
-            <p>Lava Ramen. Lava Dumplings. Lava Cheesecake....</p>
-          </details>
-          
-          <details>
-            <summary>When was the ASMR video &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; uploaded?</summary>
-            <p>This video was uploaded on 2025-06-21T08:52:03Z.</p>
-          </details>
-          
-          <details>
-            <summary>How long is the mayhem-filled video &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39;?</summary>
-            <p>The video duration is 48 seconds.</p>
-          </details>
-          
-          <details>
-            <summary>What category does &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; fall under on YouTube?</summary>
-            <p>It belongs to the People &amp; Blogs category.</p>
-          </details>
-          
-          <details>
-            <summary>What are the key tags for &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; including ASMR and chaos?</summary>
-            <p>Tags include: ai, ai cooking, ai food, ai generated food video, ai mukbang, asmr, asmr eating, asmr food, cooking asmr, eating show, extreme mukbang, food asmr, food challenge, food review, food vlog, foodie, google veo 3, gulp sounds, korean mukbang, mukbang, mukbang asmr, mukbang video, realistic asmr eating, satisfying food, seafood mukbang, slurp sounds, spicy food, spicy mukbang, spicy noodle challenge, trending shorts, viral video, wholesome asmr, youtube shorts, yt shorts.</p>
-          </details>
-          
-          <details>
-            <summary>How popular is &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39;?</summary>
-            <p>This chaotic ASMR video has garnered 18 views, 1 likes, and 1 comments as of the last update.</p>
-          </details>
-          
-          <details>
-            <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
-            <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
-          </details>
-          
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="related-videos">
-          <h2>Related Videos</h2>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" alt="Culinary Disturbia: Pasta Horror Stories" title="Culinary Disturbia: Pasta Horror Stories" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-              </picture>
-            </div>
-            <a href="/videos/culinary-disturbia-pasta-horror-stories.html">Culinary Disturbia: Pasta Horror Stories</a>
+  <div class="container">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/URYGgY4UeIY" frameborder="0" allowfullscreen title="Why Lava Mukbangs Are More Disturbing Than You Thought"></iframe>
+    </div>
+    <div class="description">
+      <p>Lava Ramen. Lava Dumplings. Lava Cheesecake.</p><p>She eats them all — and then the heart.</p><p>Would you try a molten mukbang? This is Part 1 of the LAVA SERIES, where AI-generated ASMR meets surreal food visuals. Created with Veo 3 and layered sound design to trigger maximum tingles and curiosity. No voice. No music. Just complete sensory immersion.</p><p>🔥 Headphones on. Full ASMR mode.</p><p>🧠 AI visuals + real sound design = forbidden feast</p><p>🎥 Comment 🔥 if you made it to the end</p><p>Subscribe for more surreal food, ASMR experiments, and AI weirdcore drops.</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci" target="_blank">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href="https://twitter.com/JasonMartocci" target="_blank">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href="https://www.facebook.com/JasonMartocci" target="_blank">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href="https://www.instagram.com/Jason.Martocci" target="_blank">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts" target="_blank">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci" target="_blank">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href="https://www.dpbolvw.net/click-101429015-15836259" target="_blank">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
+    </div>
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <details>
+        <summary>What is &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; about?</summary>
+        <p>Lava Ramen. Lava Dumplings. Lava Cheesecake....</p>
+      </details>
+      
+      <details>
+        <summary>When was the ASMR video &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; uploaded?</summary>
+        <p>This video was uploaded on 2025-06-21T08:52:03Z.</p>
+      </details>
+      
+      <details>
+        <summary>How long is the mayhem-filled video &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39;?</summary>
+        <p>The video duration is 48 seconds.</p>
+      </details>
+      
+      <details>
+        <summary>What category does &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; fall under on YouTube?</summary>
+        <p>It belongs to the People &amp; Blogs category.</p>
+      </details>
+      
+      <details>
+        <summary>What are the key tags for &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39; including ASMR and chaos?</summary>
+        <p>Tags include: ai, ai cooking, ai food, ai generated food video, ai mukbang, asmr, asmr eating, asmr food, cooking asmr, eating show, extreme mukbang, food asmr, food challenge, food review, food vlog, foodie, google veo 3, gulp sounds, korean mukbang, mukbang, mukbang asmr, mukbang video, realistic asmr eating, satisfying food, seafood mukbang, slurp sounds, spicy food, spicy mukbang, spicy noodle challenge, trending shorts, viral video, wholesome asmr, youtube shorts, yt shorts.</p>
+      </details>
+      
+      <details>
+        <summary>How popular is &#39;Why Lava Mukbangs Are More Disturbing Than You Thought&#39;?</summary>
+        <p>This chaotic ASMR video has garnered 18 views, 1 likes, and 1 comments as of the last update.</p>
+      </details>
+      
+      <details>
+        <summary>Who is Jason Martocci and what is Martocci Mayhem?</summary>
+        <p>Jason Martocci is the creator of Martocci Mayhem, a YouTube channel featuring intense ASMR roleplays, Savage Grandma antics, and chaotic entertainment.</p>
+      </details>
+      
+    </div>
+    
+    <div class="related-videos" id="related-list">
+      <h2>Check Out These Related Videos</h2>
+      <ul>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" alt="Culinary Disturbia: Pasta Horror Stories" title="Culinary Disturbia: Pasta Horror Stories" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
+            </picture>
           </div>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" alt="The Disturbing &#39;Lava&#39; Mukbang Trend" title="The Disturbing &#39;Lava&#39; Mukbang Trend" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-              </picture>
-            </div>
-            <a href="/videos/the-disturbing-lava-mukbang-trend.html">The Disturbing &#39;Lava&#39; Mukbang Trend</a>
+          <a href="/videos/culinary-disturbia-pasta-horror-stories.html">Culinary Disturbia: Pasta Horror Stories</a>
+        </li>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" alt="The Disturbing &#39;Lava&#39; Mukbang Trend" title="The Disturbing &#39;Lava&#39; Mukbang Trend" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+            </picture>
           </div>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" alt="The Ultimate ASMR Food Bliss" title="The Ultimate ASMR Food Bliss" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-              </picture>
-            </div>
-            <a href="/videos/the-ultimate-asmr-food-bliss.html">The Ultimate ASMR Food Bliss</a>
+          <a href="/videos/the-disturbing-lava-mukbang-trend.html">The Disturbing &#39;Lava&#39; Mukbang Trend</a>
+        </li>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" alt="The Ultimate ASMR Food Bliss" title="The Ultimate ASMR Food Bliss" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+            </picture>
           </div>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" alt="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds" title="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-              </picture>
-            </div>
-            <a href="/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html">ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds</a>
+          <a href="/videos/the-ultimate-asmr-food-bliss.html">The Ultimate ASMR Food Bliss</a>
+        </li>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" alt="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds" title="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+            </picture>
           </div>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" alt="Slime Donuts ASMR - The Sweetest Squish" title="Slime Donuts ASMR - The Sweetest Squish" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-              </picture>
-            </div>
-            <a href="/videos/slime-donuts-asmr-the-sweetest-squish.html">Slime Donuts ASMR - The Sweetest Squish</a>
+          <a href="/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html">ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds</a>
+        </li>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" alt="Slime Donuts ASMR - The Sweetest Squish" title="Slime Donuts ASMR - The Sweetest Squish" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+            </picture>
           </div>
-          
-          <div class="related-video">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" alt="Can I Eat This Giant Burger In One Bite?" title="Can I Eat This Giant Burger In One Bite?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-              </picture>
-            </div>
-            <a href="/videos/can-i-eat-this-giant-burger-in-one-bite.html">Can I Eat This Giant Burger In One Bite?</a>
+          <a href="/videos/slime-donuts-asmr-the-sweetest-squish.html">Slime Donuts ASMR - The Sweetest Squish</a>
+        </li>
+        
+        <li>
+          <div class="thumbnail-wrapper">
+            <picture>
+              <source srcset="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" type="image/jpg">
+              <img src="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" alt="Can I Eat This Giant Burger In One Bite?" title="Can I Eat This Giant Burger In One Bite?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+            </picture>
           </div>
-          
-        </div>
-      </div>
+          <a href="/videos/can-i-eat-this-giant-burger-in-one-bite.html">Can I Eat This Giant Burger In One Bite?</a>
+        </li>
+        
+      </ul>
+    </div>
+    
+    <div class="social-buttons">
+      <a href="https://www.youtube.com/watch?v=URYGgY4UeIY" target="_blank" class="btn btn-social">Watch on YouTube</a>
+      <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html&amp;text=Check%20out%20Why%20Lava%20Mukbangs%20Are%20More%20Disturbing%20Than%20You%20Thought%21" target="_blank" class="btn btn-social">Share on X</a>
     </div>
   </div>
   <footer>
