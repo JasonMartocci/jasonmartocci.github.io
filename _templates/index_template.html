@@ -24,22 +24,24 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <style>
     body { background: #1d1a1b; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .container { width: 100%; padding: 0 20px; box-sizing: border-box; max-width: none; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
-    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
-    .branding img { width: 30px; height: auto; margin-right: 10px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     h1 { color: #ffffff; text-align: center; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; border-radius: 6px; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; cursor: pointer; }
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; right: 10px; }
+    .branding img { width: 50px; height: auto; }
+    .page-header { text-align: center; }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; width: 100%; }
+    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; }
     .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; }
-    .video-card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-card img { width: 100%; height: 100%; object-fit: cover; }
     .video-card-body { padding: 15px; }
-    .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; } /* Smaller titles */
-    .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
-    .video-card a { color: #3ea6ff; text-decoration: none; cursor: pointer; }
+    .video-card-title { color: #0b3f04; font-size: 1.0rem; } /* Smaller titles */
+    .video-card-desc { font-size: 0.9rem; color: #666; }
+    .video-card a { color: #3ea6ff; text-decoration: none; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
   </style>
   <script type="application/ld+json">{{ web_site_schema | tojson | safe }}</script>
@@ -68,7 +70,9 @@
 <body>
   <header>
     <h1>Martocci Mayhem Hub</h1>
-    <a href="{{ site_url }}" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
+    <div class="branding">
+      <img src="{{ site_url }}/images/JasonMartocci_Logo.png" alt="Martocci Mayhem Logo">
+    </div>
   </header>
   <div class="container">
     <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
@@ -76,7 +80,7 @@
     <input type="text" id="search" placeholder="Search videos...">
     <div class="video-grid" id="video-list">
       {% for v in videos %}
-      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
@@ -119,23 +123,6 @@
       search.value = query;
       search.dispatchEvent(new Event('input'));
     }
-    // Sorting fix: Sort by date or views
-    function sortVideos(by) {
-      const grid = document.getElementById('video-list');
-      const cards = Array.from(grid.children);
-      cards.sort((a, b) => {
-        if (by === 'date_new') {
-          return new Date(b.dataset.date) - new Date(a.dataset.date);
-        } else if (by === 'date_old') {
-          return new Date(a.dataset.date) - new Date(b.dataset.date);
-        } else if (by === 'views') {
-          return b.dataset.views - a.dataset.views;
-        }
-        return 0;
-      });
-      cards.forEach(card => grid.appendChild(card));
-    }
-    // Assume data-date and data-views are added via Jinja or JS fetch
   </script>
 </body>
 </html>

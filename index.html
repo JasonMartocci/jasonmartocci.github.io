@@ -24,22 +24,24 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <style>
     body { background: #1d1a1b; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .container { width: 100%; padding: 0 20px; box-sizing: border-box; max-width: none; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
-    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
-    .branding img { width: 30px; height: auto; margin-right: 10px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     h1 { color: #ffffff; text-align: center; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; border-radius: 6px; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; cursor: pointer; }
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; right: 10px; }
+    .branding img { width: 50px; height: auto; }
+    .page-header { text-align: center; }
+    .whiteLink { color: #ffffff; text-decoration: underline; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; width: 100%; }
+    .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; }
     .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; }
-    .video-card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-card img { width: 100%; height: 100%; object-fit: cover; }
     .video-card-body { padding: 15px; }
-    .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; } /* Smaller titles */
-    .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
-    .video-card a { color: #3ea6ff; text-decoration: none; cursor: pointer; }
+    .video-card-title { color: #0b3f04; font-size: 1.0rem; } /* Smaller titles */
+    .video-card-desc { font-size: 0.9rem; color: #666; }
+    .video-card a { color: #3ea6ff; text-decoration: none; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "description": "Dive into insane ASMR roleplays from Martocci Mayhem.", "name": "Martocci Mayhem Hub", "potentialAction": {"@type": "SearchAction", "query-input": "required name=search_term_string", "target": "https://jasonmartocci.com/index.html?search={search_term_string}"}, "url": "https://jasonmartocci.com"}</script>
@@ -68,7 +70,9 @@
 <body>
   <header>
     <h1>Martocci Mayhem Hub</h1>
-    <a href="https://jasonmartocci.com" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
+    <div class="branding">
+      <img src="https://jasonmartocci.com/images/JasonMartocci_Logo.png" alt="Martocci Mayhem Logo">
+    </div>
   </header>
   <div class="container">
     <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
@@ -76,7 +80,7 @@
     <input type="text" id="search" placeholder="Search videos...">
     <div class="video-grid" id="video-list">
       
-      <div class="video-card" onclick="window.location.href='/videos/let-s-chat-and-chill.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/iTijX3CfdLs/hqdefault.jpg" type="image/jpg">
@@ -90,7 +94,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/squirrel-vs-cat-kitchen-showdown.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg" type="image/jpg">
@@ -103,7 +107,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-squirrel-chef-cooks-better-than-me.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/lieIUJo5Bkk/hqdefault.jpg" type="image/jpg">
@@ -116,7 +120,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-me-taste-the-biggest-crab-ever.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg" type="image/jpg">
@@ -129,7 +133,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-i-eat-this-giant-crab-in-one-sitting.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg" type="image/jpg">
@@ -142,7 +146,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-a.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg" type="image/jpg">
@@ -155,7 +159,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-bed-melts-when-you-sleep-on-it.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg" type="image/jpg">
@@ -168,7 +172,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-sliced-a-gummy-and-this-happened.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/dxrMR2PTczA/hqdefault.jpg" type="image/jpg">
@@ -181,7 +185,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/giant-gummy-bear-meets-red-hot-knife.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/85CrbTqoT-Q/hqdefault.jpg" type="image/jpg">
@@ -194,7 +198,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-ultimate-satisfying-asmr-experiment.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" type="image/jpg">
@@ -207,7 +211,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-i-quit-drinking-but-still-mess-up.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Mde2TglHZSA/hqdefault.jpg" type="image/jpg">
@@ -220,7 +224,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-happens-when-you-stop-drinking.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg" type="image/jpg">
@@ -233,7 +237,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/50-seconds-of-the-most-relaxing-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/kLcmQWQKy98/hqdefault.jpg" type="image/jpg">
@@ -246,7 +250,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-asmr-experience-for-non-believers.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg" type="image/jpg">
@@ -259,7 +263,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-s-brutal-roast.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/7Vdbu4nJako/hqdefault.jpg" type="image/jpg">
@@ -272,7 +276,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-roasts-the-internet.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/RfQvg6O8OO0/hqdefault.jpg" type="image/jpg">
@@ -285,7 +289,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/will-ai-replace-human-mukbangs.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
@@ -298,7 +302,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-let-ai-create-an-unusual-food-feast.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/YT2bBo4s2m4/hqdefault.jpg" type="image/jpg">
@@ -311,7 +315,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/mind-blowing-food-combos-in-asmr-mukbang.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg" type="image/jpg">
@@ -324,7 +328,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/crazy-food-combo-experiments-you-have-to-see.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg" type="image/jpg">
@@ -337,7 +341,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-strange-future-of-asmr-in-reverse.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/0VIYnfChoxo/hqdefault.jpg" type="image/jpg">
@@ -350,7 +354,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" type="image/jpg">
@@ -363,7 +367,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/weird-food-mukbangs-the-500-challenge.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" type="image/jpg">
@@ -376,7 +380,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-asmr-is-more-than-just-weird-noises.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" type="image/jpg">
@@ -389,7 +393,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-guess-what-these-weird-objects-are.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" type="image/jpg">
@@ -402,7 +406,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg" type="image/jpg">
@@ -415,7 +419,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-spills-the-tea-on-her-love-life.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/gPHqtEKv9oQ/hqdefault.jpg" type="image/jpg">
@@ -428,7 +432,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/golden-hour-feast-meat-mayhem-and-grandma-s-savage.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/P5VrYObsphY/hqdefault.jpg" type="image/jpg">
@@ -441,7 +445,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxati.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg" type="image/jpg">
@@ -454,7 +458,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-weird-science-behind-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg" type="image/jpg">
@@ -467,7 +471,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/mind-blowing-seafood-mukbang-moments.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg" type="image/jpg">
@@ -480,7 +484,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/top-comedian-reveals-best-shellfish-joke-technique.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/bXQzLNFQZLE/hqdefault.jpg" type="image/jpg">
@@ -493,7 +497,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-tested-the-weird-asmr-keyboard-trend.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" type="image/jpg">
@@ -506,7 +510,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-really-use-a-keyboard-made-of-hard-candy.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/7G1APxxKHoE/hqdefault.jpg" type="image/jpg">
@@ -519,7 +523,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/steaming-hot-knife-cuts-through-frozen-chunk.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/qsGqwpv5-uY/hqdefault.jpg" type="image/jpg">
@@ -532,7 +536,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-a-superheated-blade-destroy-ice-instantly.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg" type="image/jpg">
@@ -545,7 +549,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/frozen-in-time-1994-baby-born-30-years-later.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/z6ND2mKXftU/hqdefault.jpg" type="image/jpg">
@@ -558,7 +562,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-weird-asmr-stuff-make-strangers-react.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/yXArsQRLOA8/hqdefault.jpg" type="image/jpg">
@@ -571,7 +575,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-get-asmr-tingles-on-the-street.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/SwAySf4Or6M/hqdefault.jpg" type="image/jpg">
@@ -584,7 +588,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/HaynzHs2q9I/hqdefault.jpg" type="image/jpg">
@@ -597,7 +601,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-savage-grandma-has-some-viral-videos-for-your.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/HYVMT2hXy6M/hqdefault.jpg" type="image/jpg">
@@ -610,7 +614,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-bet-you-can-t-tell-which-is-real-fruit-and-which.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/mlJkSexJ2So/hqdefault.jpg" type="image/jpg">
@@ -623,7 +627,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/carnival-cruise-s-disturbing-secrets.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" type="image/jpg">
@@ -636,7 +640,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/grandma-stories-that-will-leave-you-dying-laughing.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Q9ji34RHk0A/hqdefault.jpg" type="image/jpg">
@@ -649,7 +653,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-s-the-real-reason-carnival-cruise-limits-your.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg" type="image/jpg">
@@ -662,7 +666,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-destroys-carnival-cruise-line-in-hi.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/0l2lHbKonk0/hqdefault.jpg" type="image/jpg">
@@ -675,7 +679,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-this-unique-fruit-reveal-its-delicious-secre.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Mc0YAsZ7M6I/hqdefault.jpg" type="image/jpg">
@@ -688,7 +692,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/glass-passion-fruit-splits-open-in-slow-motion.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/DBzzPlwpZT0/hqdefault.jpg" type="image/jpg">
@@ -701,7 +705,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-made-a-rainbow-glass-fruit-garden.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" type="image/jpg">
@@ -714,7 +718,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-made-a-glass-fruit-smoothie-then-brought-it-to-l.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Bb3w54pNsRY/hqdefault.jpg" type="image/jpg">
@@ -727,7 +731,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
@@ -740,7 +744,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg" type="image/jpg">
@@ -753,7 +757,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/satisfying-glass-dragon-fruit-slicing-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/tQKP3KcQOI4/hqdefault.jpg" type="image/jpg">
@@ -766,7 +770,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/martocci-mayhem-how-technology-is-revolutionizing-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg" type="image/jpg">
@@ -781,7 +785,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/experience-satisfying-sounds-of-slicing-open-glass.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/144YU0heSJI/hqdefault.jpg" type="image/jpg">
@@ -794,7 +798,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-satisfying-mangosteen-slices.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" type="image/jpg">
@@ -807,7 +811,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/satisfying-mangosteen-fruit-slicing-sounds-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/fFowPHR_1sQ/hqdefault.jpg" type="image/jpg">
@@ -820,7 +824,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-s-really-inside-this-asmr-glass-fruit.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg" type="image/jpg">
@@ -833,7 +837,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/cutting-open-the-weirdest-melon-ever.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/XBMbeko-Rwo/hqdefault.jpg" type="image/jpg">
@@ -846,7 +850,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/grass-vs-sand-bed-cast-your-vote.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/o-dBl_AqxBY/hqdefault.jpg" type="image/jpg">
@@ -859,7 +863,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/ivy-vs-tall-grass-cast-your-vote.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/pLr1GbyX1xQ/hqdefault.jpg" type="image/jpg">
@@ -872,7 +876,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-really-sleep-on-a-bed-of-weed.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg" type="image/jpg">
@@ -885,7 +889,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-tested-the-most-insane-asmr-blankets.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/h7AlqDdAgyg/hqdefault.jpg" type="image/jpg">
@@ -898,7 +902,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/crazy-things-people-use-as-blankets.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/xQPjDGRtKNU/hqdefault.jpg" type="image/jpg">
@@ -911,7 +915,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-s-5-crazy-bug-eating-challenges-can-you-st.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/X5KGBcMDPGQ/hqdefault.jpg" type="image/jpg">
@@ -924,7 +928,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-eats-bugs-and-it-gets-wild.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/rOrx30yN4G4/hqdefault.jpg" type="image/jpg">
@@ -937,7 +941,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Fq7fMnoqLkM/hqdefault.jpg" type="image/jpg">
@@ -950,7 +954,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/ultimate-bigfoot-mayhem-stand-up-pranks-rasta-fore.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/89azTrCpkPc/hqdefault.jpg" type="image/jpg">
@@ -963,7 +967,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-spicy-lava-cake-almost-defeated-me.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg" type="image/jpg">
@@ -976,7 +980,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/did-a-gorilla-just-save-the-planet.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/dZV7_lI8Pv4/hqdefault.jpg" type="image/jpg">
@@ -989,7 +993,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-s-wild-campfire-surprise.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/AIzh2f1uNJA/hqdefault.jpg" type="image/jpg">
@@ -1002,7 +1006,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/surprising-moments-with-bigfoot-at-campfire.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QZVg13MrIMk/hqdefault.jpg" type="image/jpg">
@@ -1015,7 +1019,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/glass-fruit-revealed-in-a-rainbow-of-realistic-tex.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/0ErldPsx-4g/hqdefault.jpg" type="image/jpg">
@@ -1028,7 +1032,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/is-glass-fruit-actually-edible.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/4imjN4zS6Z0/hqdefault.jpg" type="image/jpg">
@@ -1041,7 +1045,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/these-bigfoot-jokes-will-make-you-cry-laughing.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/IX_Re2LUCX8/hqdefault.jpg" type="image/jpg">
@@ -1054,7 +1058,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-s-best-jokes-the-sasquatch-comedy-special.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/ZbR4dicr8lA/hqdefault.jpg" type="image/jpg">
@@ -1067,7 +1071,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-found-bigfoot-using-watermelons.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/UzZDEaK4vvk/hqdefault.jpg" type="image/jpg">
@@ -1080,7 +1084,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-s-deadly-watermelon-challenge.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/W-dOS-m3jHk/hqdefault.jpg" type="image/jpg">
@@ -1093,7 +1097,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/are-crystal-candies-actually-dangerous.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Lb2icdcbKak/hqdefault.jpg" type="image/jpg">
@@ -1106,7 +1110,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/crystals-that-are-actually-candy.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/CRSqHvIJx3s/hqdefault.jpg" type="image/jpg">
@@ -1119,7 +1123,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/kingda-ka-s-fastest-demise-revealed.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/YHfgduMAfds/hqdefault.jpg" type="image/jpg">
@@ -1132,7 +1136,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-roasts-the-entire-internet.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg" type="image/jpg">
@@ -1145,7 +1149,7 @@
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-top-6-most-savage-grandma-clips.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg" type="image/jpg">
@@ -1160,7 +1164,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/cutting-open-fruits-reveals-wild-creatures-inside.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/F3VtGsctWnI/hqdefault.jpg" type="image/jpg">
@@ -1173,7 +1177,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-cracked-open-dragon-fruit-and-found-a-wild-anima.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/rAK4XnhiPzY/hqdefault.jpg" type="image/jpg">
@@ -1186,7 +1190,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-roasts-voting-excuses.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/3s7U-YVuK3g/hqdefault.jpg" type="image/jpg">
@@ -1199,7 +1203,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-happens-when-you-scratch-a-planet.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/IqjycuJgrp8/hqdefault.jpg" type="image/jpg">
@@ -1212,7 +1216,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/is-mcdonald-s-drive-thru-getting-out-of-hand.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/qKroZ9jiHvc/hqdefault.jpg" type="image/jpg">
@@ -1225,7 +1229,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-i-eat-this-giant-burger-in-one-bite.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" type="image/jpg">
@@ -1238,7 +1242,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-satisfying-durian-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/oufd--dmu0c/hqdefault.jpg" type="image/jpg">
@@ -1251,7 +1255,7 @@ Dive into the six funniest, most...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-powerful-client-list-in-history.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/sp4_MZ58KQU/hqdefault.jpg" type="image/jpg">
@@ -1265,7 +1269,7 @@ Watch Savage Grandma...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/20-years-for-trafficking-to-nobody-savage-grandma-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/bt8fKaE7PNE/hqdefault.jpg" type="image/jpg">
@@ -1278,7 +1282,7 @@ Watch Savage Grandma...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/we-heated-a-10-000-rolex-to-600-c-you-won-t-believ.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/eyXStK_C9dM/hqdefault.jpg" type="image/jpg">
@@ -1293,7 +1297,7 @@ Today, we throw iconic timepieces—Rolex...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-top-3-crazy-things-she-did-in-30-seconds.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/m4Z-9XArzDw/hqdefault.jpg" type="image/jpg">
@@ -1306,7 +1310,7 @@ Today, we throw iconic timepieces—Rolex...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/supercar-sledgehammer-showdown-lamborghini-bugatti.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/R0ppeMOqH3w/hqdefault.jpg" type="image/jpg">
@@ -1319,7 +1323,7 @@ Today, we throw iconic timepieces—Rolex...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/science-experiments-that-will-blow-your-mind.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/RIH3IlUQkaI/hqdefault.jpg" type="image/jpg">
@@ -1332,7 +1336,7 @@ Today, we throw iconic timepieces—Rolex...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/dumbest-beach-interview-fails.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/fMi2dJ7qUUc/hqdefault.jpg" type="image/jpg">
@@ -1345,7 +1349,7 @@ Today, we throw iconic timepieces—Rolex...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/blonde-geography-fails-new-jersey-ohio-chicago-are.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/c2AERmaaq2k/hqdefault.jpg" type="image/jpg">
@@ -1360,7 +1364,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/galactic-asmr-saturn-jupiter-neptune-soundscapes.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/vA4YB8jxCc4/hqdefault.jpg" type="image/jpg">
@@ -1373,7 +1377,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/how-to-make-the-best-berry-toast.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/KVG_5Vta1ps/hqdefault.jpg" type="image/jpg">
@@ -1386,7 +1390,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/7mfoSu1AFvM/hqdefault.jpg" type="image/jpg">
@@ -1399,7 +1403,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-this-coconut-split-in-seconds.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/G4lcamHGWXA/hqdefault.jpg" type="image/jpg">
@@ -1412,7 +1416,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-satisfying-pineapple-asmr.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg" type="image/jpg">
@@ -1425,7 +1429,7 @@ On a sunny day along the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/making-satisfying-passionfruit-glass-art.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/o27vEzEvRJQ/hqdefault.jpg" type="image/jpg">
@@ -1440,7 +1444,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-s-inside-exotic-fruits-when-you-cut-them-open.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/I6nP0XNGGUY/hqdefault.jpg" type="image/jpg">
@@ -1453,7 +1457,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" type="image/jpg">
@@ -1466,7 +1470,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/backyard-turtle-race-showdown-shell-shocking-funny.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Y9UPbqMV29E/hqdefault.jpg" type="image/jpg">
@@ -1479,7 +1483,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-real-reason-trolls-get-owned-by-savage-moments.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/9LKt1XWqcSA/hqdefault.jpg" type="image/jpg">
@@ -1492,7 +1496,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-brought-a-dragon-to-life-on-my-hand-and-it-soare.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/e5AKApY-6LA/hqdefault.jpg" type="image/jpg">
@@ -1505,7 +1509,7 @@ ASMR Passion Fruit Glass Art Slice & Pop 🌟🍈 |...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/tiny-dragon-hatches-will-it-fly.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/MgUKExtb5Q8/hqdefault.jpg" type="image/jpg">
@@ -1520,7 +1524,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-yet-genius-relationship-advice.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Yla2OhXNdfM/hqdefault.jpg" type="image/jpg">
@@ -1533,7 +1537,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/dating-with-dentures-a-comedy-special.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/mpU45yYCZg0/hqdefault.jpg" type="image/jpg">
@@ -1546,7 +1550,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-roasts-romance-again.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Bmi-QNfpSUc/hqdefault.jpg" type="image/jpg">
@@ -1559,7 +1563,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/3-epic-fruit-to-animal-morphs-ultimate-morph-compi.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/yR-Ti8836Xk/hqdefault.jpg" type="image/jpg">
@@ -1572,7 +1576,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/mind-blowing-transformations-in-nature.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/SzCDDJJIaME/hqdefault.jpg" type="image/jpg">
@@ -1585,7 +1589,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-visual-trick-to-make-you-feel-calm-and-surpri.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/pUmFo5HR7JY/hqdefault.jpg" type="image/jpg">
@@ -1600,7 +1604,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-turned-a-watermelon-into-a-cute-puppy.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/lOO4n2TUPns/hqdefault.jpg" type="image/jpg">
@@ -1613,7 +1617,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/gorilla-vs-humans-who-s-stronger.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/IPSg13Jq2Ng/hqdefault.jpg" type="image/jpg">
@@ -1626,7 +1630,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/silverback-gorilla-tug-of-war-destruction-vs-50-me.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/FD_wJEPwhTM/hqdefault.jpg" type="image/jpg">
@@ -1639,7 +1643,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-silverback-gorillas-are-the-strongest-animals-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/zh1okaKLHRw/hqdefault.jpg" type="image/jpg">
@@ -1652,7 +1656,7 @@ Prepare to have your mind blown! In...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-roasts-carnival-cruises-this-ain-t-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/velarGA8nCI/hqdefault.jpg" type="image/jpg">
@@ -1667,7 +1671,7 @@ Carnival...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/what-really-happens-on-a-carnival-cruise.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/wu-IO0odXls/hqdefault.jpg" type="image/jpg">
@@ -1680,7 +1684,7 @@ Carnival...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/you-won-t-believe-this-hippo-s-high-dive.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/6I_kW76PiY8/hqdefault.jpg" type="image/jpg">
@@ -1693,7 +1697,7 @@ Carnival...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/dante-s-inferno-food-challenge-can-she-survive-the.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/eENyUuykhLI/hqdefault.jpg" type="image/jpg">
@@ -1707,7 +1711,7 @@ Welcome to the Dante’s Inferno Challenge —...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/carving-fruit-into-flowers-yummy-strawberry-orange.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/uLgC5o6YYXQ/hqdefault.jpg" type="image/jpg">
@@ -1722,7 +1726,7 @@ In this short and...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/satisfying-fruit-art-chef-turns-fruit-into-floral-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/f5sQ9DvQ6Gs/hqdefault.jpg" type="image/jpg">
@@ -1736,7 +1740,7 @@ In this jaw-dropping short, a professional chef uses...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-insane-art-of-advanced-fruit-carving.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/CGkLQCHVX-g/hqdefault.jpg" type="image/jpg">
@@ -1751,7 +1755,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/horrifying-360-amusement-park-ride-snaps.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/6TQ3p17iEHk/hqdefault.jpg" type="image/jpg">
@@ -1764,7 +1768,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/stunning-venus-flytrap-eating-bugs-in-slow-motion.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/-VepyiUaGgA/hqdefault.jpg" type="image/jpg">
@@ -1777,7 +1781,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-shocking-secrets-of-venus-flytraps.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QguSXsx5mgs/hqdefault.jpg" type="image/jpg">
@@ -1790,7 +1794,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/we-cooked-a-turkey-with-crystal-geodes.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/ao7maf1fDMM/hqdefault.jpg" type="image/jpg">
@@ -1803,7 +1807,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/see-how-soap-makes-water-stretch-like-magic.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/SqA9KTP37z0/hqdefault.jpg" type="image/jpg">
@@ -1816,7 +1820,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-ladder-joke-that-explains-inflation.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/JwqSMVmNG9E/hqdefault.jpg" type="image/jpg">
@@ -1829,7 +1833,7 @@ In this short but...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-is-what-freedom-feels-like-july-4th-rooftop-f.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/V2NMzLEhQ20/hqdefault.jpg" type="image/jpg">
@@ -1844,7 +1848,7 @@ A rooftop toast to freedom, with shimmering fruit...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/golden-hour-rooftop-bbq-usa-july-4th-vibes-in-cine.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/58M2ABOA428/hqdefault.jpg" type="image/jpg">
@@ -1857,7 +1861,7 @@ A rooftop toast to freedom, with shimmering fruit...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-guess-what-s-inside-this-shiny-red-ball.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/TZe_ugmZ0L4/hqdefault.jpg" type="image/jpg">
@@ -1872,7 +1876,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-beautiful-july-4th-you-ll-see-satisfying-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/-Lpa-ObHvgk/hqdefault.jpg" type="image/jpg">
@@ -1885,7 +1889,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-unusual-asmr-of-star-fruit.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/6lCtLuY7G5g/hqdefault.jpg" type="image/jpg">
@@ -1898,7 +1902,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-made-a-glass-pomegranate-cut-it-open.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/oqhl4YwaaLQ/hqdefault.jpg" type="image/jpg">
@@ -1911,7 +1915,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/f4sYNCqHooo/hqdefault.jpg" type="image/jpg">
@@ -1924,7 +1928,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" type="image/jpg">
@@ -1937,7 +1941,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/satisfying-black-molten-cake-slime.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/SuawP9hgKcs/hqdefault.jpg" type="image/jpg">
@@ -1950,7 +1954,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-ultimate-asmr-food-bliss.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" type="image/jpg">
@@ -1963,7 +1967,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/tiny-dragon-on-my-finger-breathes-fire-epic-miniat.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/nYO3Xfymiy8/hqdefault.jpg" type="image/jpg">
@@ -1976,7 +1980,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/is-dragon-fruit-a-superfood-or-a-scam.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/BPQ0zKPwQTc/hqdefault.jpg" type="image/jpg">
@@ -1989,7 +1993,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/hot-knife-asmr-will-it-melt.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg" type="image/jpg">
@@ -2002,7 +2006,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/you-won-t-believe-how-life-advice-changes-with-age.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" type="image/jpg">
@@ -2015,7 +2019,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-glass-dragon-fruit-sliced-by-knife-mesmerizin.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QPJ9q_cYJ5w/hqdefault.jpg" type="image/jpg">
@@ -2028,7 +2032,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-gold-brick-vs-hot-knife-scratch-melt-satisfyi.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/PIr8dj6aQBs/hqdefault.jpg" type="image/jpg">
@@ -2041,7 +2045,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QWlO6Ngm6-M/hqdefault.jpg" type="image/jpg">
@@ -2054,7 +2058,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/seeing-two-sides-the-art-of-perspective.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/F0jUT-jYM8s/hqdefault.jpg" type="image/jpg">
@@ -2067,7 +2071,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-this-donut-turn-into-neon-slime.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/uC_0W0jJL9o/hqdefault.jpg" type="image/jpg">
@@ -2080,7 +2084,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/funny-italian-dad-jokes-about-money.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/WsF_eHRpcv4/hqdefault.jpg" type="image/jpg">
@@ -2093,7 +2097,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-most-expensive-dog-joke-ever.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/3TcXeaqeGu8/hqdefault.jpg" type="image/jpg">
@@ -2106,7 +2110,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-three-blind-mice-is-a-hilarious-joke.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/bpkDlq89ohg/hqdefault.jpg" type="image/jpg">
@@ -2119,7 +2123,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/bigfoot-the-roast-that-exposed-him.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/UKImgr_xP00/hqdefault.jpg" type="image/jpg">
@@ -2132,7 +2136,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/this-is-why-you-re-broke.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/_k-xcuQ_mFI/hqdefault.jpg" type="image/jpg">
@@ -2145,7 +2149,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-shocking-italian-joke-that-s-got-everyone-laug.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/QUrc0ezDMeE/hqdefault.jpg" type="image/jpg">
@@ -2158,7 +2162,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-do-slow-drivers-make-us-so-mad.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/wqEArdJdRzI/hqdefault.jpg" type="image/jpg">
@@ -2171,7 +2175,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/neon-slime-lava-will-it-pop.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/b40gRYUXv8U/hqdefault.jpg" type="image/jpg">
@@ -2184,7 +2188,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/neon-dessert-asmr-a-feast-for-the-senses.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/tLOEMBOdc6s/hqdefault.jpg" type="image/jpg">
@@ -2197,7 +2201,7 @@ The sound, the texture, the...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/slime-donuts-asmr-the-sweetest-squish.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" type="image/jpg">
@@ -2212,7 +2216,7 @@ Get ready for the most mind-blowing 9-second...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/robot-vs-kawaii-queen-glitch-or-glam.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/NAPn5m7_o-E/hqdefault.jpg" type="image/jpg">
@@ -2225,7 +2229,7 @@ Get ready for the most mind-blowing 9-second...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-unspoken-rules-of-growing-up-italian.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/XgxVz-hjVq4/hqdefault.jpg" type="image/jpg">
@@ -2240,7 +2244,7 @@ Meet...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/culinary-disturbia-pasta-horror-stories.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" type="image/jpg">
@@ -2253,7 +2257,7 @@ Meet...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/savage-grandma-s-marriage-tips.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/_jHQfc24AxM/hqdefault.jpg" type="image/jpg">
@@ -2268,7 +2272,7 @@ Savage Grandma is back with another legendary one-liner — this time...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/southern-grandma-throws-epic-shade.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/FYI6w0AN84w/hqdefault.jpg" type="image/jpg">
@@ -2283,7 +2287,7 @@ This week’s roast? “Bless your heart.” And if you...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/grandma-s-epic-burn-will-make-you-laugh.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" type="image/jpg">
@@ -2296,7 +2300,7 @@ This week’s roast? “Bless your heart.” And if you...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/george-carlin-was-right-about-everything.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" type="image/jpg">
@@ -2310,7 +2314,7 @@ That’s the kind of joke only...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg" type="image/jpg">
@@ -2326,7 +2330,7 @@ That’s peak Mitch Hedberg — dry,...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" type="image/jpg">
@@ -2341,7 +2345,7 @@ This joke? Pure savage. Zero...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-joke-that-changed-comedy-forever.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" type="image/jpg">
@@ -2354,7 +2358,7 @@ This joke? Pure savage. Zero...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/red-hot-knife-vs-butter-the-smoothest-melt-ever.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/YtmM2xQnfA8/hqdefault.jpg" type="image/jpg">
@@ -2368,7 +2372,7 @@ This joke? Pure savage. Zero...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-you-survive-this-epic-snowboarding-adventure.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/uyjHENU0tBY/hqdefault.jpg" type="image/jpg">
@@ -2381,7 +2385,7 @@ This joke? Pure savage. Zero...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" type="image/jpg">
@@ -2394,7 +2398,7 @@ This joke? Pure savage. Zero...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/cutting-pure-gold-with-a-red-hot-knife.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/32KggH-612g/hqdefault.jpg" type="image/jpg">
@@ -2409,7 +2413,7 @@ A molten-hot blade slowly...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/cutting-asmr-hot-knife-foam-slicing.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/eW0RBZttYQU/hqdefault.jpg" type="image/jpg">
@@ -2424,7 +2428,7 @@ In complete silence, a red-hot blade cuts through what appears...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/a-red-hot-knife-meets-its-softest-opponent-yet-a-s.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/w0uDjS1-7KQ/hqdefault.jpg" type="image/jpg">
@@ -2437,7 +2441,7 @@ In complete silence, a red-hot blade cuts through what appears...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-funniest-jokes-from-legendary-comedians.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/RamX-8oShZA/hqdefault.jpg" type="image/jpg">
@@ -2452,7 +2456,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/the-disturbing-lava-mukbang-trend.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" type="image/jpg">
@@ -2465,7 +2469,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/watch-this-turtle-s-amazing-rescue.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/j8JH5B8gBfE/hqdefault.jpg" type="image/jpg">
@@ -2478,7 +2482,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/wife-s-unusual-demand-for-plumbers.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" type="image/jpg">
@@ -2491,7 +2495,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg" type="image/jpg">
@@ -2504,7 +2508,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg" type="image/jpg">
@@ -2517,7 +2521,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg" type="image/jpg">
@@ -2530,7 +2534,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/testing-rolexes-with-a-red-hot-knife.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg" type="image/jpg">
@@ -2543,7 +2547,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/i-tried-the-new-asmr-fruit-cutting-trend.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/FxBGneFYvxc/hqdefault.jpg" type="image/jpg">
@@ -2558,7 +2562,7 @@ The Mount Rushmore of Comedy Just...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/URYGgY4UeIY/hqdefault.jpg" type="image/jpg">
@@ -2574,7 +2578,7 @@ Would you...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/how-to-keep-your-job-safe-from-ai.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/xs2wtVnmhtQ/hqdefault.jpg" type="image/jpg">
@@ -2587,7 +2591,7 @@ Would you...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-ai-sleep-assistant-from-the-future.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/RVd5K4Yea34/hqdefault.jpg" type="image/jpg">
@@ -2602,7 +2606,7 @@ I’m your ASMR AI Sleep Assistant — and...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/08AfEsiLjnU/hqdefault.jpg" type="image/jpg">
@@ -2615,7 +2619,7 @@ I’m your ASMR AI Sleep Assistant — and...</p>
         </div>
       </div>
       
-      <div class="video-card" onclick="window.location.href='/videos/87-years-young-mom-grandma-great-grandma-skiing-wh.html'">
+      <div class="video-card">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/DiH6-5Bu8UU/hqdefault.jpg" type="image/jpg">
@@ -2658,23 +2662,6 @@ I’m your ASMR AI Sleep Assistant — and...</p>
       search.value = query;
       search.dispatchEvent(new Event('input'));
     }
-    // Sorting fix: Sort by date or views
-    function sortVideos(by) {
-      const grid = document.getElementById('video-list');
-      const cards = Array.from(grid.children);
-      cards.sort((a, b) => {
-        if (by === 'date_new') {
-          return new Date(b.dataset.date) - new Date(a.dataset.date);
-        } else if (by === 'date_old') {
-          return new Date(a.dataset.date) - new Date(b.dataset.date);
-        } else if (by === 'views') {
-          return b.dataset.views - a.dataset.views;
-        }
-        return 0;
-      });
-      cards.forEach(card => grid.appendChild(card));
-    }
-    // Assume data-date and data-views are added via Jinja or JS fetch
   </script>
 </body>
 </html>
