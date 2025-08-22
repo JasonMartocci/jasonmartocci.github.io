@@ -25,42 +25,45 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .container { width: 100%; padding: 0 20px; margin: 0 auto; box-sizing: border-box; }
     #columns { display: flex; flex-direction: row; gap: 20px; }
     #primary { flex: 2; }
     #secondary { flex: 1; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; }
+    .branding img { width: 30px; height: auto; margin-right: 10px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    h1 { font-size: 1.8rem; margin-bottom: 10px; color: #ffffff; cursor: pointer; }
+    h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; cursor: pointer; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .metadata { margin-bottom: 20px; color: #ddd; }
+    .metadata a, .metadata span { cursor: pointer; color: #3ea6ff; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
-    .description a { color: #3ea6ff; text-decoration: underline; }
+    .description a { color: #3ea6ff; text-decoration: underline; cursor: pointer; }
     .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
     .comments { margin-top: 40px; }
-    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; cursor: pointer; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
-    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
+    .whiteLink { color: #ffffff; text-decoration: underline; cursor: pointer; }
+    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; cursor: pointer; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
     .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; cursor: pointer; }
     .related-videos { margin: 40px 0; }
     .related-videos ul { list-style: none; padding: 0; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; cursor: pointer; }
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
+    .related-videos img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
     .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
     @media (max-width: 768px) { 
       #columns { flex-direction: column; } 
-      #secondary { order: -1; } /* Stack related above on mobile if desired, or remove */
+      #secondary { order: -1; } 
       h1 { font-size: 1.8rem; } .container { padding: 10px; } 
     }
   </style>
@@ -95,16 +98,20 @@
 <body>
   <header>
     <h1>This Grandma Has a Wild Idea for Safety!</h1>
+    <a href="https://jasonmartocci.com" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
   </header>
   <div class="container">
     <div id="columns">
       <div id="primary">
-        <div class="video-embed">
+        <div class="video-embed" onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M', '_blank')">
           <iframe src="https://www.youtube.com/embed/HYVMT2hXy6M" frameborder="0" allowfullscreen title="This Grandma Has a Wild Idea for Safety!"></iframe>
         </div>
-        <h1>This Grandma Has a Wild Idea for Safety!</h1>
+        <h1 onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M', '_blank')">This Grandma Has a Wild Idea for Safety!</h1>
         <div class="metadata">
-          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank">Martocci Mayhem (193 subscribers)</a> - 39 views - 3 likes - 1 comments - Uploaded: 2025-08-01
+          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank" onclick="window.open('https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw?sub_confirmation=1', '_blank')">Martocci Mayhem (193 subscribers)</a> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M', '_blank')">39 views</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M', '_blank')">3 likes</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M#comments', '_blank')">1 comments</span> - Uploaded: 2025-08-01
         </div>
         <div class="description">
           <p><strong>This Savage Grandma's viral videos are pure chaos—see how it could save your day! Get ready for a comedy dose of brutal honesty as Grandma shares her unconventional take on the age-old debate of weapon control! With crime on the rise, people are desperate for a solution - but is Grandma's unorthodox approach the answer?</strong></p><p>Watch as she lays down the law and sparks a heated discussion that will leave you questioning everything you thought you knew about weapon control. Is her solution shocking, genius, or a mix of both? Tune in to find out!</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659\">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-\">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• Travel & Mayhem On-The Road → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33</a></p><p>• Mukbang & Extreme Food Challenges → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z</a></p><p>• ASMR Knife-Cut Satisfiers → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g\">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href=\"https://www.tiktok.com/@JasonMartocci\">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href=\"https://twitter.com/JasonMartocci\">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href=\"https://www.facebook.com/JasonMartocci\">https://www.facebook.com/JasonMartocci</a></p><p>• GitHub ► <a href=\"https://github.com/JasonMartocci\">https://github.com/JasonMartocci</a></p><p>• Instagram ► <a href=\"https://www.instagram.com/Jason.Martocci\">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href=\"https://www.youtube.com/@JasonMartocci/shorts\">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href=\"https://vidiq.com/JasonMartocci/\">https://vidiq.com/JasonMartocci/</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>#MartocciMayhem, #JasonMartocci, #AIASMR</p>
@@ -112,7 +119,7 @@
         <div class="comments">
           <h2>Top Comments</h2>
           
-          <div class="comment">
+          <div class="comment" onclick="window.open('https://www.youtube.com/watch?v=HYVMT2hXy6M#comments', '_blank')">
             <strong>@JasonMartocci</strong>: 🔥 Like this? Hit sub &amp; catch tomorrow’s drop
           </div>
           
@@ -167,7 +174,7 @@
           <h2>Recommended Videos</h2>
           <ul>
             
-            <li>
+            <li onclick="window.location.href='/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/HaynzHs2q9I/hqdefault.jpg" type="image/jpg">
@@ -177,7 +184,7 @@
               <a href="/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html">Savage Grandma Outsmarts Bad Guys with Her Wisdom</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/carnival-cruise-s-disturbing-secrets.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" type="image/jpg">
@@ -187,7 +194,7 @@
               <a href="/videos/carnival-cruise-s-disturbing-secrets.html">Carnival Cruise's Disturbing Secrets</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/grandma-stories-that-will-leave-you-dying-laughing.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/Q9ji34RHk0A/hqdefault.jpg" type="image/jpg">
@@ -197,7 +204,7 @@
               <a href="/videos/grandma-stories-that-will-leave-you-dying-laughing.html">GRANDMA STORIES That Will Leave You DYING Laughing</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/what-s-the-real-reason-carnival-cruise-limits-your.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg" type="image/jpg">
@@ -207,7 +214,7 @@
               <a href="/videos/what-s-the-real-reason-carnival-cruise-limits-your.html">What's the REAL Reason Carnival Cruise Limits Your DRINKS to 15</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/savage-grandma-spills-the-tea-on-her-love-life.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/gPHqtEKv9oQ/hqdefault.jpg" type="image/jpg">
@@ -217,7 +224,7 @@
               <a href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">Savage Grandma SPILLS The TEA on Her Love Life</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/savage-grandma-destroys-carnival-cruise-line-in-hi.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/0l2lHbKonk0/hqdefault.jpg" type="image/jpg">

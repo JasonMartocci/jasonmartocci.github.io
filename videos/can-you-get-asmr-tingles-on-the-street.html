@@ -27,42 +27,45 @@ From tapping on w">
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .container { width: 100%; padding: 0 20px; margin: 0 auto; box-sizing: border-box; }
     #columns { display: flex; flex-direction: row; gap: 20px; }
     #primary { flex: 2; }
     #secondary { flex: 1; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; }
+    .branding img { width: 30px; height: auto; margin-right: 10px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    h1 { font-size: 1.8rem; margin-bottom: 10px; color: #ffffff; cursor: pointer; }
+    h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; cursor: pointer; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .metadata { margin-bottom: 20px; color: #ddd; }
+    .metadata a, .metadata span { cursor: pointer; color: #3ea6ff; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
-    .description a { color: #3ea6ff; text-decoration: underline; }
+    .description a { color: #3ea6ff; text-decoration: underline; cursor: pointer; }
     .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
     .comments { margin-top: 40px; }
-    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; cursor: pointer; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
-    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
+    .whiteLink { color: #ffffff; text-decoration: underline; cursor: pointer; }
+    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; cursor: pointer; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
     .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; cursor: pointer; }
     .related-videos { margin: 40px 0; }
     .related-videos ul { list-style: none; padding: 0; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; cursor: pointer; }
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
+    .related-videos img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
     .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
     @media (max-width: 768px) { 
       #columns { flex-direction: column; } 
-      #secondary { order: -1; } /* Stack related above on mobile if desired, or remove */
+      #secondary { order: -1; } 
       h1 { font-size: 1.8rem; } .container { padding: 10px; } 
     }
   </style>
@@ -97,16 +100,20 @@ From tapping on w">
 <body>
   <header>
     <h1>I Gave Strangers ASMR Tingles in Public</h1>
+    <a href="https://jasonmartocci.com" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
   </header>
   <div class="container">
     <div id="columns">
       <div id="primary">
-        <div class="video-embed">
+        <div class="video-embed" onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M', '_blank')">
           <iframe src="https://www.youtube.com/embed/SwAySf4Or6M" frameborder="0" allowfullscreen title="I Gave Strangers ASMR Tingles in Public"></iframe>
         </div>
-        <h1>I Gave Strangers ASMR Tingles in Public</h1>
+        <h1 onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M', '_blank')">I Gave Strangers ASMR Tingles in Public</h1>
         <div class="metadata">
-          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank">Martocci Mayhem (193 subscribers)</a> - 192 views - 2 likes - 5 comments - Uploaded: 2025-08-02
+          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank" onclick="window.open('https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw?sub_confirmation=1', '_blank')">Martocci Mayhem (193 subscribers)</a> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M', '_blank')">192 views</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M', '_blank')">2 likes</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M#comments', '_blank')">5 comments</span> - Uploaded: 2025-08-02
         </div>
         <div class="description">
           <p><strong>Get ready for some serious ASMR tingles and awkwardness as we take weird ASMR props to the streets and capture people's hilarious reactions!</strong></p><p>From tapping on weird objects to whispering in strangers' ears, we're pushing the boundaries of what's considered "normal" in public. Will people be confused, annoyed, or even triggered by our ASMR antics? Watch to find out!</p><p>SUBSCRIBE OR I'LL TAKE YOUR DOG</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659\">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-\">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• ASMR Knife-Cut Satisfiers → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g\">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href=\"https://www.tiktok.com/@JasonMartocci\">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href=\"https://twitter.com/JasonMartocci\">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href=\"https://www.facebook.com/JasonMartocci\">https://www.facebook.com/JasonMartocci</a></p><p>• Instagram ► <a href=\"https://www.instagram.com/Jason.Martocci\">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href=\"https://www.youtube.com/@JasonMartocci/shorts\">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href=\"https://vidiq.com/JasonMartocci\">https://vidiq.com/JasonMartocci</a></p><p>• Prodigy Game – <a href=\"https://www.dpbolvw.net/click-101429015-15836259\">https://www.dpbolvw.net/click-101429015-15836259</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>New Martocci Mayhem every Saturday at noon ET!</p><p>[Your Socials/Links Here]</p>
@@ -114,11 +121,11 @@ From tapping on w">
         <div class="comments">
           <h2>Top Comments</h2>
           
-          <div class="comment">
+          <div class="comment" onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M#comments', '_blank')">
             <strong>@JasonMartocci</strong>: 🔥 Like this? Hit sub &amp; catch tomorrow’s drop
           </div>
           
-          <div class="comment">
+          <div class="comment" onclick="window.open('https://www.youtube.com/watch?v=SwAySf4Or6M#comments', '_blank')">
             <strong>@rufus2014callmevotex</strong>: wtf is this vid i know you use ai i dont like ai just saying
           </div>
           
@@ -175,7 +182,7 @@ From tapping on w</p>
           <h2>Recommended Videos</h2>
           <ul>
             
-            <li>
+            <li onclick="window.location.href='/videos/can-weird-asmr-stuff-make-strangers-react.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/yXArsQRLOA8/hqdefault.jpg" type="image/jpg">
@@ -185,7 +192,7 @@ From tapping on w</p>
               <a href="/videos/can-weird-asmr-stuff-make-strangers-react.html">Can Weird ASMR Stuff Make Strangers React?</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/Fq7fMnoqLkM/hqdefault.jpg" type="image/jpg">
@@ -195,7 +202,7 @@ From tapping on w</p>
               <a href="/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html">Mind-Blowing Beds You’ll Want To Sleep In 😴✨ | Ultra-Real ASMR</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/the-most-satisfying-mangosteen-slices.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" type="image/jpg">
@@ -205,7 +212,7 @@ From tapping on w</p>
               <a href="/videos/the-most-satisfying-mangosteen-slices.html">The Most Satisfying Mangosteen Slices</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg" type="image/jpg">
@@ -215,7 +222,7 @@ From tapping on w</p>
               <a href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/will-ai-replace-human-mukbangs.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
@@ -225,7 +232,7 @@ From tapping on w</p>
               <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/can-a-superheated-blade-destroy-ice-instantly.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg" type="image/jpg">

@@ -27,42 +27,45 @@ From insa">
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .container { width: 100%; padding: 0 20px; margin: 0 auto; box-sizing: border-box; }
     #columns { display: flex; flex-direction: row; gap: 20px; }
     #primary { flex: 2; }
     #secondary { flex: 1; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; right: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; }
+    .branding img { width: 30px; height: auto; margin-right: 10px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
-    h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    h1 { font-size: 1.8rem; margin-bottom: 10px; color: #ffffff; cursor: pointer; }
+    h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 20px; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; cursor: pointer; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .metadata { margin-bottom: 20px; color: #ddd; }
+    .metadata a, .metadata span { cursor: pointer; color: #3ea6ff; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
-    .description a { color: #3ea6ff; text-decoration: underline; }
+    .description a { color: #3ea6ff; text-decoration: underline; cursor: pointer; }
     .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
     .comments { margin-top: 40px; }
-    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; cursor: pointer; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
-    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
+    .whiteLink { color: #ffffff; text-decoration: underline; cursor: pointer; }
+    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; cursor: pointer; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
     .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; cursor: pointer; }
     .related-videos { margin: 40px 0; }
     .related-videos ul { list-style: none; padding: 0; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; cursor: pointer; }
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
+    .related-videos img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
     .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
     @media (max-width: 768px) { 
       #columns { flex-direction: column; } 
-      #secondary { order: -1; } /* Stack related above on mobile if desired, or remove */
+      #secondary { order: -1; } 
       h1 { font-size: 1.8rem; } .container { padding: 10px; } 
     }
   </style>
@@ -71,7 +74,7 @@ From insa">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/weird-food-mukbangs-the-500-challenge.html", "name": "Weird Food Mukbangs: The $500 Challenge", "position": 3}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a whirlwind of blades and chaos that will leave you speechless! \n \nFrom insa"}, "name": "What is this video about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "2025-08-10"}, "name": "When was this video uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "0h 0m 50s"}, "name": "How long is this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "asmr tingles, asmr massage sleep, mukbang asmr, asmr eating sounds, asmr relax, asmr for sleep, asmr tapping, martocci mayhem, jason martocci, mukbang, asmr, relaxing sounds, oddly satisfying, asmr mukbang, korean mukbang, ai asmr, ai, asmr head massage, ai video, asmr eating, satisfying sounds, asmr food, cutting asmr, viral shorts, asmr sounds, visual asmr, asmr sleep, eating show, spicy food, ai videos, food asmr, satisfying asmr, tingles, satisfying, asmr shorts"}, "name": "What tags are associated with this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "24"}, "name": "What category is this video in?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "1036"}, "name": "How many views does this video have?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "11"}, "name": "How many likes does this video have?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "0"}, "name": "How many comments does this video have?"}]}</script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "This Glass Apple Looks Normal But Watch What\u2019s Inside!", "position": 1, "url": "https://jasonmartocci.com/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html"}, {"@type": "ListItem", "name": "Are Crystal Candies Actually Dangerous?", "position": 2, "url": "https://jasonmartocci.com/videos/are-crystal-candies-actually-dangerous.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 3, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!", "position": 4, "url": "https://jasonmartocci.com/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html"}, {"@type": "ListItem", "name": "The Most Satisfying Mangosteen Slices", "position": 5, "url": "https://jasonmartocci.com/videos/the-most-satisfying-mangosteen-slices.html"}, {"@type": "ListItem", "name": "Martocci Mayhem: How Technology is Revolutionizing AI ASMR", "position": 6, "url": "https://jasonmartocci.com/videos/martocci-mayhem-how-technology-is-revolutionizing-.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Are Crystal Candies Actually Dangerous?", "position": 1, "url": "https://jasonmartocci.com/videos/are-crystal-candies-actually-dangerous.html"}, {"@type": "ListItem", "name": "This Glass Apple Looks Normal But Watch What\u2019s Inside!", "position": 2, "url": "https://jasonmartocci.com/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 3, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}, {"@type": "ListItem", "name": "Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!", "position": 4, "url": "https://jasonmartocci.com/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html"}, {"@type": "ListItem", "name": "The Most Satisfying Mangosteen Slices", "position": 5, "url": "https://jasonmartocci.com/videos/the-most-satisfying-mangosteen-slices.html"}, {"@type": "ListItem", "name": "Martocci Mayhem: How Technology is Revolutionizing AI ASMR", "position": 6, "url": "https://jasonmartocci.com/videos/martocci-mayhem-how-technology-is-revolutionizing-.html"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -97,16 +100,20 @@ From insa">
 <body>
   <header>
     <h1>Weird Food Mukbangs: The $500 Challenge</h1>
+    <a href="https://jasonmartocci.com" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
   </header>
   <div class="container">
     <div id="columns">
       <div id="primary">
-        <div class="video-embed">
+        <div class="video-embed" onclick="window.open('https://www.youtube.com/watch?v=xQl7CHnOmMY', '_blank')">
           <iframe src="https://www.youtube.com/embed/xQl7CHnOmMY" frameborder="0" allowfullscreen title="Weird Food Mukbangs: The $500 Challenge"></iframe>
         </div>
-        <h1>Weird Food Mukbangs: The $500 Challenge</h1>
+        <h1 onclick="window.open('https://www.youtube.com/watch?v=xQl7CHnOmMY', '_blank')">Weird Food Mukbangs: The $500 Challenge</h1>
         <div class="metadata">
-          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank">Martocci Mayhem (193 subscribers)</a> - 1036 views - 11 likes - 0 comments - Uploaded: 2025-08-10
+          <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank" onclick="window.open('https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw?sub_confirmation=1', '_blank')">Martocci Mayhem (193 subscribers)</a> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=xQl7CHnOmMY', '_blank')">1036 views</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=xQl7CHnOmMY', '_blank')">11 likes</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=xQl7CHnOmMY#comments', '_blank')">0 comments</span> - Uploaded: 2025-08-10
         </div>
         <div class="description">
           <p><strong>Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a whirlwind of blades and chaos that will leave you speechless!</strong></p><p>From insane trick shots to mind-bending stunts, this video is a non-stop thrill ride that will push the limits of what's possible. With precision, skill, and a dash of crazy, Martocci Mayhem is about to blow your mind!</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659\">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-\">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• Travel & Mayhem On-The Road → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33</a></p><p>• Mukbang & Extreme Food Challenges → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z</a></p><p>• ASMR Knife-Cut Satisfiers → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g\">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href=\"https://www.tiktok.com/@JasonMartocci\">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href=\"https://twitter.com/JasonMartocci\">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href=\"https://www.facebook.com/JasonMartocci\">https://www.facebook.com/JasonMartocci</a></p><p>• GitHub ► <a href=\"https://github.com/JasonMartocci\">https://github.com/JasonMartocci</a></p><p>• Instagram ► <a href=\"https://www.instagram.com/Jason.Martocci\">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href=\"https://www.youtube.com/@JasonMartocci/shorts\">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href=\"https://vidiq.com/JasonMartocci\">https://vidiq.com/JasonMartocci</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>#MartocciMayhem, #JasonMartocci, #aiasmr</p>
@@ -167,27 +174,27 @@ From insa</p>
           <h2>Recommended Videos</h2>
           <ul>
             
-            <li>
-              <div class="thumbnail-wrapper">
-                <picture>
-                  <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
-                  <img src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!" title="This Glass Apple Looks Normal But Watch What’s Inside!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-                </picture>
-              </div>
-              <a href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">This Glass Apple Looks Normal But Watch What’s Inside!</a>
-            </li>
-            
-            <li>
+            <li onclick="window.location.href='/videos/are-crystal-candies-actually-dangerous.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/Lb2icdcbKak/hqdefault.jpg" type="image/jpg">
-                  <img src="https://i.ytimg.com/vi/Lb2icdcbKak/hqdefault.jpg" alt="Are Crystal Candies Actually Dangerous?" title="Are Crystal Candies Actually Dangerous?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+                  <img src="https://i.ytimg.com/vi/Lb2icdcbKak/hqdefault.jpg" alt="Are Crystal Candies Actually Dangerous?" title="Are Crystal Candies Actually Dangerous?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
                 </picture>
               </div>
               <a href="/videos/are-crystal-candies-actually-dangerous.html">Are Crystal Candies Actually Dangerous?</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html'">
+              <div class="thumbnail-wrapper">
+                <picture>
+                  <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
+                  <img src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!" title="This Glass Apple Looks Normal But Watch What’s Inside!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
+                </picture>
+              </div>
+              <a href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">This Glass Apple Looks Normal But Watch What’s Inside!</a>
+            </li>
+            
+            <li onclick="window.location.href='/videos/will-ai-replace-human-mukbangs.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
@@ -197,7 +204,7 @@ From insa</p>
               <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg" type="image/jpg">
@@ -207,7 +214,7 @@ From insa</p>
               <a href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/the-most-satisfying-mangosteen-slices.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" type="image/jpg">
@@ -217,7 +224,7 @@ From insa</p>
               <a href="/videos/the-most-satisfying-mangosteen-slices.html">The Most Satisfying Mangosteen Slices</a>
             </li>
             
-            <li>
+            <li onclick="window.location.href='/videos/martocci-mayhem-how-technology-is-revolutionizing-.html'">
               <div class="thumbnail-wrapper">
                 <picture>
                   <source srcset="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg" type="image/jpg">
