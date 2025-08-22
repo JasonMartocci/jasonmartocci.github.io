@@ -31,7 +31,6 @@
     h1 { color: #ffffff; text-align: center; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; border-radius: 6px; }
-    .nav-tabs { margin-bottom: 20px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; cursor: pointer; }
     .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
@@ -42,7 +41,6 @@
     .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
     .video-card a { color: #3ea6ff; text-decoration: none; cursor: pointer; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    .hidden { display: none; }
   </style>
   <script type="application/ld+json">{{ web_site_schema | tojson | safe }}</script>
   <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
@@ -76,33 +74,19 @@
     <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
     <p class="page-header">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
     <input type="text" id="search" placeholder="Search videos...">
-    <ul class="nav nav-tabs" id="categoryTabs">
-      {% for cat in categories %}
-      <li class="nav-item">
-        <a class="nav-link {{ 'active' if loop.first else '' }}" href="#cat-{{ cat.id }}" data-bs-toggle="tab">{{ cat.name }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    <div class="tab-content">
-      {% for cat in categories %}
-      <div class="tab-pane fade {{ 'show active' if loop.first else '' }}" id="cat-{{ cat.id }}">
-        <div class="video-grid" id="video-list-{{ cat.id }}">
-          {% for v in cat.videos %}
-          <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'">
-            <div class="thumbnail-wrapper">
-              <picture>
-                <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
-                <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
-              </picture>
-            </div>
-            <div class="video-card-body">
-              <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
-              <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
-            </div>
-          </div>
-          {% endfor %}
+    <div class="video-grid" id="video-list">
+      {% for v in videos %}
+      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'">
+        <div class="thumbnail-wrapper">
+          <picture>
+            <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
+            <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
+          </picture>
         </div>
-        <button class="btn btn-load-more" onclick="loadMore('{{ cat.id }}')">Load More</button>
+        <div class="video-card-body">
+          <a href="/videos/{{ v.slug }}.html" class="video-card-title">{{ v.title }}</a>
+          <p class="video-card-desc">{{ v.desc | truncate(100) }}</p>
+        </div>
       </div>
       {% endfor %}
     </div>
