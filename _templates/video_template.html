@@ -26,15 +26,21 @@
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    #columns { display: flex; flex-direction: row; gap: 20px; }
+    #primary { flex: 2; }
+    #secondary { flex: 1; }
     header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
     h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
     .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .metadata { margin-bottom: 20px; color: #ddd; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
     .description a { color: #3ea6ff; text-decoration: underline; }
     .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-top: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; }
     .faq-section { margin: 40px 0; }
     .whiteLink { color: #ffffff; text-decoration: underline; }
     details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
@@ -44,15 +50,19 @@
     .social-buttons { text-align: center; margin: 20px 0; }
     .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
     .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
+    .related-videos ul { list-style: none; padding: 0; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; margin-bottom: 20px; }
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .related-videos img { width: 100%; height: 100%; object-fit: cover; }
     .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
     .related-videos a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    @media (max-width: 768px) { 
+      #columns { flex-direction: column; } 
+      #secondary { order: -1; } /* Stack related above on mobile if desired, or remove */
+      h1 { font-size: 1.8rem; } .container { padding: 10px; } 
+    }
   </style>
   <script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
   <script type="application/ld+json">{{ video_schema | tojson | safe }}</script>
@@ -87,39 +97,55 @@
     <h1>{{ title | truncate(60) }}</h1>
   </header>
   <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen title="{{ title }}"></iframe>
-    </div>
-    <div class="description">
-      {{ formatted_desc | safe }}
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      {% for q, a in faqs %}
-      <details>
-        <summary>{{ q }}</summary>
-        <p>{{ a }}</p>
-      </details>
-      {% endfor %}
-    </div>
-    {% if related %}
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        {% for r in related %}
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
-            </picture>
+    <div id="columns">
+      <div id="primary">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen title="{{ title }}"></iframe>
+        </div>
+        <h1>{{ title }}</h1>
+        <div class="metadata">
+          <a href="https://www.youtube.com/channel/{{ channel_id }}" target="_blank">{{ channel_title }} ({{ subscriber_count }} subscribers)</a> - {{ view_count }} views - {{ like_count }} likes - {{ comment_count }} comments - Uploaded: {{ upload_date }}
+        </div>
+        <div class="description">
+          {{ formatted_desc | safe }}
+        </div>
+        <div class="comments">
+          <h2>Top Comments</h2>
+          {% for comment in comments %}
+          <div class="comment">
+            <strong>{{ comment.author }}</strong>: {{ comment.text }}
           </div>
-          <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+          {% endfor %}
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          {% for q, a in faqs %}
+          <details>
+            <summary>{{ q }}</summary>
+            <p>{{ a }}</p>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+      <div id="secondary">
+        <div class="related-videos" id="related-list">
+          <h2>Recommended Videos</h2>
+          <ul>
+            {% for r in related %}
+            <li>
+              <div class="thumbnail-wrapper">
+                <picture>
+                  <source srcset="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" type="image/jpg">
+                  <img src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" title="{{ r.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
+                </picture>
+              </div>
+              <a href="/videos/{{ r.slug }}.html">{{ r.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
-    {% endif %}
     <div class="social-buttons">
       <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" class="btn btn-social">Watch on YouTube</a>
       <a href="https://twitter.com/intent/tweet?url={{ (site_url ~ '/videos/' ~ slug ~ '.html') | urlencode }}&amp;text={{ ('Check out ' ~ title ~ '!') | urlencode }}" target="_blank" class="btn btn-social">Share on X</a>
