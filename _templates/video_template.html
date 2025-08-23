@@ -66,10 +66,10 @@
     .related-videos .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
     .related-videos .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { 
-      #columns { flex-direction: column; } 
-      #secondary { order: -1; } 
-      h1 { font-size: 1.8rem; } .container { padding: 10px; } 
+    @media (max-width: 768px) {
+      #columns { flex-direction: column; }
+      #secondary { order: -1; }
+      h1 { font-size: 1.8rem; } .container { padding: 10px; }
     }
   </style>
   <script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
@@ -120,8 +120,8 @@
           </div>
         </div>
         <div class="metadata">
-          <span onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}', '_blank')">{{ view_count }} views</span> - 
-          <span onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}', '_blank')">{{ like_count }} likes</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}', '_blank')">{{ view_count }} views</span> -
+          <span onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}', '_blank')">{{ like_count }} likes</span> -
           <span onclick="window.open('https://www.youtube.com/watch?v={{ video_id }}#comments', '_blank')">{{ comment_count }} comments</span> - Uploaded: {{ upload_date }} - Last Edited: {{ last_edited_date }}
         </div>
         <div class="description">

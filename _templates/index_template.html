@@ -95,12 +95,8 @@
         `;
         grid.appendChild(card);
       });
-      // Update category bar active
       document.querySelectorAll('.category-bar a').forEach(a => a.style.fontWeight = (a.textContent === cat ? 'bold' : 'normal'));
     }
-    // Initial load
-    filterVideos('All');
-    // Category bar click handlers
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.category-bar a').forEach(a => {
         a.onclick = (e) => {
@@ -108,6 +104,7 @@
           filterVideos(a.textContent);
         };
       });
+      filterVideos('All');
     });
   </script>
 </head>
@@ -124,7 +121,6 @@
       {% endfor %}
     </div>
     <div class="video-grid" id="video-grid">
-      <!-- Videos populated by JS -->
     </div>
   </div>
   <footer>
