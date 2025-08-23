@@ -31,20 +31,24 @@
     h1 { color: #ffffff; text-align: center; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border: 1px solid #ccc; color: #333333; border-radius: 6px; }
-    .category-bar { display: flex; overflow-x: auto; margin-bottom: 20px; }
-    .category-bar button { background: #3ea6ff; color: #ffffff; border: none; padding: 10px 15px; margin-right: 10px; cursor: pointer; border-radius: 5px; }
-    .category-bar button.active { background: #0b3f04; }
+    .nav-tabs { margin-bottom: 20px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .video-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: left; cursor: pointer; } /* Left align */
     .video-card .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
-    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; }
+    .video-card .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .video-card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
-    .video-card-body { padding: 15px; text-align: left; }
-    .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
-    .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
+    .video-card a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
+    .video-card a:hover { text-decoration: underline; }
+    .video-card .video-card-body { padding: 15px; text-align: left; }
+    .video-card .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
+    .video-card .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
+    .category-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .category-bar a { color: #3ea6ff; cursor: pointer; text-decoration: none; }
+    .category-bar a:hover { text-decoration: underline; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
+    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
   </style>
-  <script type="application/ld+json">{{ web_site_schema | tojson | safe }}</script>
+  <script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
   <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -66,26 +70,38 @@
 
 <script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/YNlxTGMpHVIg.js";o.head.appendChild(scr);}})()</script>
 
+  <script>
+    let page = 1;
+    const loadMore = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        fetchMoreVideos(page++);
+      }
+    };
+    window.addEventListener('scroll', loadMore);
+    function fetchMoreVideos(page) {
+      // AJAX to load more videos, append to grid
+      // Example: fetch('/more-videos?page=' + page).then(res => res.text()).then(html => document.querySelector('.video-grid').insertAdjacentHTML('beforeend', html));
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1>Martocci Mayhem Hub</h1>
+    <h1>Unlock ASMR Magic & Epic Savage Grandma Now | Martocci Mayhem</h1>
     <a href="{{ site_url }}" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
   </header>
   <div class="container">
-    <h2 class="page-header">Insane ASMR Roleplays & Savage Chaos</h2>
-    <p class="page-header">Welcome to the chaos! Dive into insane ASMR roleplays from Martocci Mayhem.</p>
-    <input type="text" id="search" placeholder="Search videos...">
-    <div class="category-bar" id="category-bar">
-      <!-- JS will populate -->
+    <div class="category-bar">
+      {% for cat in unique_categories %}
+      <a onclick="filterVideos('{{ cat }}')">{{ cat }}</a>
+      {% endfor %}
     </div>
-    <div class="video-grid" id="video-list">
+    <div class="video-grid">
       {% for v in videos %}
-      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'" data-date="{{ v.published_at }}" data-views="{{ v.view_count }}" data-tags="{{ v.tags | join(',') }}" data-category="{{ v.category_id }}">
+      <div class="video-card" onclick="window.location.href='/videos/{{ v.slug }}.html'">
         <div class="thumbnail-wrapper">
           <picture>
             <source srcset="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" type="image/jpg">
-            <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" {% if loop.index == 1 %} fetchpriority="high" loading="eager" {% endif %}>
+            <img src="https://i.ytimg.com/vi/{{ v.video_id }}/hqdefault.jpg" alt="{{ v.title }}" title="{{ v.title }}" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270">
           </picture>
         </div>
         <div class="video-card-body">
@@ -97,80 +113,13 @@
     </div>
   </div>
   <footer>
-    &copy; {{ current_year }} Martocci Mayhem | Follow on <a href="https://twitter.com/JasonMartocci" target="_blank" class="whiteLink">X</a>
+    &copy; {{ current_year }} Martocci Mayhem | <a href="{{ site_url }}" class="whiteLink">All The Mayhem</a> | <a href="https://github.com/JasonMartocci" class="whiteLink">GitHub</a>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function debounce(func, wait) {
-      let timeout;
-      return function(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), wait);
-      };
+    function filterVideos(cat) {
+      // JS to filter grid by cat (e.g., hide non-matching)
     }
-    const search = document.getElementById('search');
-    const debouncedSearch = debounce(e => {
-      const value = e.target.value.toLowerCase();
-      const cards = document.querySelectorAll('.video-card');
-      cards.forEach(card => {
-        const title = card.querySelector('.video-card-title').textContent.toLowerCase();
-        card.style.display = title.includes(value) ? '' : 'none';
-      });
-    }, 300);
-    search.addEventListener('input', debouncedSearch);
-    // Handle query param from redirects (e.g., ?search=query)
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('search');
-    if (query) {
-      search.value = query;
-      search.dispatchEvent(new Event('input'));
-    }
-    // Sorting fix: Sort by date or views
-    function sortVideos(by) {
-      const grid = document.getElementById('video-list');
-      const cards = Array.from(grid.children);
-      cards.sort((a, b) => {
-        if (by === 'date_new') {
-          return new Date(b.dataset.date) - new Date(a.dataset.date);
-        } else if (by === 'date_old') {
-          return new Date(a.dataset.date) - new Date(b.dataset.date);
-        } else if (by === 'views') {
-          return b.dataset.views - a.dataset.views;
-        }
-        return 0;
-      });
-      cards.forEach(card => grid.appendChild(card));
-    }
-    // Assume data-date and data-views are added via Jinja or JS fetch
-    // Infinite scroll
-    let visibleCount = 20;
-    const grid = document.getElementById('video-list');
-    const cards = grid.querySelectorAll('.video-card');
-    cards.forEach((card, idx) => {
-      if (idx >= visibleCount) card.style.display = 'none';
-    });
-    window.addEventListener('scroll', () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        for (let i = visibleCount; i < Math.min(visibleCount + 20, cards.length); i++) {
-          cards[i].style.display = 'grid';
-        }
-        visibleCount += 20;
-      }
-    });
-    // Category filter bar
-    const categories = [...new Set(Array.from(cards).flatMap(card => card.dataset.tags.split(',')).map(tag => tag.trim()))]; // Unique tags
-    const categoryBar = document.getElementById('category-bar');
-    categories.forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat;
-      btn.onclick = () => {
-        cards.forEach(card => {
-          card.style.display = card.dataset.tags.includes(cat) ? '' : 'none';
-        });
-        categoryBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      };
-      categoryBar.appendChild(btn);
-    });
   </script>
 </body>
 </html>

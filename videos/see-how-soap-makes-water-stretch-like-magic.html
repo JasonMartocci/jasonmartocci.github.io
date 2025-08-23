@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="See How Soap Makes Water Stretch Like Magic!">
-  <meta name="description" content="Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-docume">
+  <meta name="description" content="Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m...">
   <meta name="keywords" content="ASMR, insane ASMR, Savage Grandma, chaos, mayhem, asmr, asmr relaxation, asmr video, bubble, bubble pop ASMR, bubble science, bubbles, buoyancy physics, calming asmr, calming sounds, colorful bubbles, educational ASMR, floating bubble, floating science, fluid dynamics, fluid motion, iridescence, micro bubble, micro shots, relaxing science video, science ASMR, science experiments, science therapy, slow motion ASMR, soap bubble, stress relief ASMR, surface tension, visual science, jason martocci, martocci mayhem, ai, aiasmr">
   <meta property="og:title" content="See How Soap Makes Water Stretch Like Magic!">
   <meta property="og:description" content="Step inside a world you’ve never seen before—where every...">
@@ -25,41 +25,57 @@
   <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1d1a1b; color: #ffffff; margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; }
+    .container { width: 100%; padding: 0 20px; box-sizing: border-box; max-width: none; }
+    #columns { display: flex; flex-direction: row; gap: 20px; }
+    #primary { flex: 2; }
+    #secondary { flex: 0.8; } /* 20% smaller */
+    header { background: #1d1a1b; padding: 15px; text-align: center; border-bottom: 2px solid #0b3f04; position: relative; }
+    .branding { position: absolute; top: 10px; left: 20px; font-size: 1rem; color: #fff; text-decoration: none; display: flex; align-items: center; cursor: pointer; }
+    .branding img { width: 30px; height: auto; margin-right: 10px; }
     #search { width: 100%; padding: 10px; margin-bottom: 20px; background: #ffffff; border-radius: 6px; border: 1px solid #ccc; color: #1d1a1b; }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #ffffff; cursor: pointer; }
     h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; }
-    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 2px solid #0b3f04; border-radius: 8px; margin: 20px 0; cursor: pointer; }
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .metadata { margin-bottom: 20px; color: #ddd; }
+    .metadata a, .metadata span { cursor: pointer; color: #3ea6ff; }
+    .channel-info { display: flex; align-items: center; cursor: pointer; }
+    .channel-logo { width: 40px; margin-right: 10px; }
     .description p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
-    .description a { color: #3ea6ff; text-decoration: underline; }
+    .description a { color: #3ea6ff; text-decoration: underline; cursor: pointer; }
     .description {border: 1px solid #0b3f04; border-radius: 6px; padding: 15px; background-color: #222222; color: #eeeeee;}
+    .comments { margin-top: 40px; }
+    .comment { border-bottom: 1px solid #444; padding: 10px 0; cursor: pointer; }
     .faq-section { margin: 40px 0; }
-    .whiteLink { color: #ffffff; text-decoration: underline; }
-    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
+    .whiteLink { color: #ffffff; text-decoration: underline; cursor: pointer; }
+    details { background: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; cursor: pointer; }
     summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3f04; }
     details[open] summary { color: #333333; }
     details p { padding: 0 15px 15px; color: #666; }
     .social-buttons { text-align: center; margin: 20px 0; }
-    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; }
+    .btn-social { background: #3ea6ff; color: #ffffff; margin: 5px; cursor: pointer; }
     .related-videos { margin: 40px 0; }
-    .related-videos ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: center; }
+    .related-videos ul { list-style: none; padding: 0; }
+    .related-videos li { background: #f8f8f8; border: 1px solid #0b3f04; border-radius: 8px; overflow: hidden; text-align: left; margin-bottom: 20px; cursor: pointer; } /* Left align */
     .related-videos .thumbnail-wrapper { aspect-ratio: 16 / 9; position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
     .related-videos .thumbnail-wrapper picture { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    .related-videos img { width: 100%; height: 100%; object-fit: cover; }
-    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; }
+    .related-videos img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+    .related-videos a { color: #3ea6ff; text-decoration: none; display: block; padding: 10px; cursor: pointer; }
     .related-videos a:hover { text-decoration: underline; }
+    .related-videos .video-card-body { padding: 15px; text-align: left; }
+    .related-videos .video-card-title { color: #0b3f04; font-size: 1rem; cursor: pointer; }
+    .related-videos .video-card-desc { font-size: 0.9rem; color: #666; cursor: pointer; }
     footer { background: #1d1a1b; padding: 15px; text-align: center; font-size: 0.9rem; border-top: 2px solid #0b3f04; }
-    @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 10px; } }
+    @media (max-width: 768px) { 
+      #columns { flex-direction: column; } 
+      #secondary { order: -1; } 
+      h1 { font-size: 1.8rem; } .container { padding: 10px; } 
+    }
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "description": "Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-docume", "mainEntity": {"@id": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html#video"}, "name": "See How Soap Makes Water Stretch Like Magic! - Martocci Mayhem ASMR", "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".description", ".faq-section"]}, "url": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html#video", "@type": "VideoObject", "author": {"@type": "Person", "name": "Jason Martocci", "url": "https://twitter.com/JasonMartocci"}, "contentUrl": "https://www.youtube.com/watch?v=SqA9KTP37z0", "description": "Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-documentary, we explore:\n \n\ud83d\udd39 The Anatomy of a Bubble: Watch soap and water molecules form a perfect elastic membrane.\n\ud83d\udd39 Surface Tension Secrets: See a soap-film demo that makes bubbles possible.\n\ud83d\udd39 Bubble Physics in Motion: Learn why bubbles rise, float, and burst\u2014the interplay of buoyancy and gravity.\n\ud83d\udd39 Iridescent Wonders \u0026 Temperature Effects: Marvel as rainbow colors dance across the film and bubbles freeze into crystal sculptures.\n \nNo music. No fake laugh tracks. Just crisp ASMR pops, gentle ambient foley, and a soothing TTS narration guiding you through the hidden beauty and mechanics behind these everyday marvels.\n \n\ud83d\udc4d If you found this relaxing\u2014or learned something new\u2014please Like, Comment, and Subscribe for more bite-sized ASMR science videos!\n\ud83d\udcac Tell us: Which bubble effect blew your mind?\n \n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\n  \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 Travel \u0026 Mayhem On-The Road \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\n\u2022 Mukbang \u0026 Extreme Food Challenges \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 GitHub \u25ba https://github.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n \n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n#MartocciMayhem, #JasonMartocci, #AIASMR", "duration": "PT0H0M57S", "embedUrl": "https://www.youtube.com/embed/SqA9KTP37z0", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 21}, "name": "See How Soap Makes Water Stretch Like Magic!", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem"}, "thumbnailUrl": ["https://i.ytimg.com/vi/SqA9KTP37z0/defaultdefault.jpg", "https://i.ytimg.com/vi/SqA9KTP37z0/mqdefault.jpg", "https://i.ytimg.com/vi/SqA9KTP37z0/hqdefault.jpg", "https://i.ytimg.com/vi/SqA9KTP37z0/sddefault.jpg"], "uploadDate": "2025-07-03T22:30:16Z"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/", "name": "Videos", "position": 2}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html", "name": "See How Soap Makes Water Stretch Like Magic!", "position": 3}]}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-docume"}, "name": "What is this video about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "2025-07-03"}, "name": "When was this video uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "0h 0m 57s"}, "name": "How long is this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "asmr, asmr relaxation, asmr video, bubble, bubble pop ASMR, bubble science, bubbles, buoyancy physics, calming asmr, calming sounds, colorful bubbles, educational ASMR, floating bubble, floating science, fluid dynamics, fluid motion, iridescence, micro bubble, micro shots, relaxing science video, science ASMR, science experiments, science therapy, slow motion ASMR, soap bubble, stress relief ASMR, surface tension, visual science, jason martocci, martocci mayhem, ai, aiasmr"}, "name": "What tags are associated with this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "24"}, "name": "What category is this video in?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "21"}, "name": "How many views does this video have?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "1"}, "name": "How many likes does this video have?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "1"}, "name": "How many comments does this video have?"}]}</script>
-  
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "name": "Crystals That Are Actually Candy", "position": 1, "url": "https://jasonmartocci.com/videos/crystals-that-are-actually-candy.html"}, {"@type": "ListItem", "name": "I Made a Rainbow Glass Fruit Garden", "position": 2, "url": "https://jasonmartocci.com/videos/i-made-a-rainbow-glass-fruit-garden.html"}, {"@type": "ListItem", "name": "This Glass Apple Looks Normal But Watch What\u2019s Inside!", "position": 3, "url": "https://jasonmartocci.com/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html"}, {"@type": "ListItem", "name": "The Most Satisfying Mangosteen Slices", "position": 4, "url": "https://jasonmartocci.com/videos/the-most-satisfying-mangosteen-slices.html"}, {"@type": "ListItem", "name": "Watch This Coconut Split in Seconds!", "position": 5, "url": "https://jasonmartocci.com/videos/watch-this-coconut-split-in-seconds.html"}, {"@type": "ListItem", "name": "Will AI Replace Human Mukbangs?", "position": 6, "url": "https://jasonmartocci.com/videos/will-ai-replace-human-mukbangs.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "dateModified": "2025-08-23T03:23:24.836234", "datePublished": "2025-07-03", "description": "Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m...", "name": "See How Soap Makes Water Stretch Like Magic!", "url": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=SqA9KTP37z0", "description": "Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-documentary, we explore:\n \n\ud83d\udd39 The Anatomy of a Bubble: Watch soap and water molecules form a perfect elastic membrane.\n\ud83d\udd39 Surface Tension Secrets: See a soap-film demo that makes bubbles possible.\n\ud83d\udd39 Bubble Physics in Motion: Learn why bubbles rise, float, and burst\u2014the interplay of buoyancy and gravity.\n\ud83d\udd39 Iridescent Wonders \u0026 Temperature Effects: Marvel as rainbow colors dance across the film and bubbles freeze into crystal sculptures.\n \nNo music. No fake laugh tracks. Just crisp ASMR pops, gentle ambient foley, and a soothing TTS narration guiding you through the hidden beauty and mechanics behind these everyday marvels.\n \n\ud83d\udc4d If you found this relaxing\u2014or learned something new\u2014please Like, Comment, and Subscribe for more bite-sized ASMR science videos!\n\ud83d\udcac Tell us: Which bubble effect blew your mind?\n \n\ud83d\udc51 SUBSCRIBE OR I\u0027LL TAKE YOUR GOLDFISH! \ud83d\udc51\n  \n\u2554\u2550\u2566\u2557\u2554\u2566\u2557\u2554\u2550\u2566\u2550\u2566\u2566\u2566\u2566\u2557\u2554\u2550\u2557\n\u2551\u255a\u2563\u2551\u2551\u2551\u255a\u2563\u255a\u2563\u2554\u2563\u2554\u2563\u2551\u255a\u2563\u2550\u2563\n\u2560\u2557\u2551\u255a\u255d\u2551\u2551\u2560\u2557\u2551\u255a\u2563\u2551\u2551\u2551\u2551\u2551\u2550\u2563\n\u255a\u2550\u2569\u2550\u2550\u2569\u2550\u2569\u2550\u2569\u2550\u2569\u255d\u255a\u2569\u2550\u2569\u2550\u255d\n \nIf you have any questions about this video, please feel free to let me know in the comments.\n \n\ud83d\udd14  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks \u0026 ASMR slices.\n \n\ud83d\udc40  BINGE THE PLAYLISTS\n\u2022 Savage Grandma Roasts \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG\u0026si=RHshAqz83xnjl659\n\u2022 Luxury Melts \u0026 Smash Tests \u2192 https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY\u0026si=5Ep9rK1lplGaV8q-\n\u2022 Travel \u0026 Mayhem On-The Road \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\n\u2022 Mukbang \u0026 Extreme Food Challenges \u2192 https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\n\u2022 ASMR Knife-Cut Satisfiers \u2192 https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa\u0026si=_PXu8LpaZWLBMK0g\n \n\ud83c\udf10  FOLLOW THE MAYHEM EVERYWHERE\n\u2022 TikTok   \u25ba https://www.tiktok.com/@JasonMartocci\n\u2022 X (Twitter) \u25ba https://twitter.com/JasonMartocci\n\u2022 Facebook \u25ba https://www.facebook.com/JasonMartocci\n\u2022 GitHub \u25ba https://github.com/JasonMartocci\n\u2022 Instagram \u25ba https://www.instagram.com/Jason.Martocci\n\u2022 Shorts mirror \u25ba https://www.youtube.com/@JasonMartocci/shorts\n \n\u2709\ufe0f Business/collabs: edevelopersusa@gmail.com\n\ud83d\udcec  Fan mail: X.com (Chat - JasonMartocci) \n\n\u2699\ufe0f  GEAR \u0026 TOOLS (affiliate links help fuel the chaos)\n\u2022 vidIQ (YouTube Help) \u2013 https://vidiq.com/JasonMartocci\n \n\u26a0\ufe0f  DISCLAIMER  \nAll stunts are performed in a controlled environment; don\u0027t attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.\n\n#MartocciMayhem, #JasonMartocci, #AIASMR", "duration": "PT0M57S", "embedUrl": "https://www.youtube.com/embed/SqA9KTP37z0", "interactionStatistic": [{"@type": "InteractionCounter", "interactionType": "WatchAction", "userInteractionCount": "21"}, {"@type": "InteractionCounter", "interactionType": "LikeAction", "userInteractionCount": "1"}, {"@type": "InteractionCounter", "interactionType": "CommentAction", "userInteractionCount": "1"}], "name": "See How Soap Makes Water Stretch Like Magic!", "publisher": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://i.ytimg.com/vi/SqA9KTP37z0/hqdefault.jpg"}, "name": "Martocci Mayhem"}, "thumbnailUrl": "https://i.ytimg.com/vi/SqA9KTP37z0/hqdefault.jpg", "uploadDate": "2025-07-03"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html", "name": "See How Soap Makes Water Stretch Like Magic!", "position": 2}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The \u0027See How Soap Makes Water Stretch Like Magic!\u0027 video dives into Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m.... It\u0027s an engaging piece in the Entertainment category, perfect for enthusiasts of asmr, asmr relaxation, asmr video. Whether you\u0027re seeking relaxation or excitement, this video delivers with its unique chaos and creativity."}, "name": "What is the \u0027See How Soap Makes Water Stretch Like Magic!\u0027 video all about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "This captivating video was uploaded on 2025-07-03 and has garnered 21 views, 1 likes, and 1 comments so far. It\u0027s a must-watch for fans of asmr, asmr relaxation, asmr video, lasting approximately 0 minutes."}, "name": "When was the \u0027See How Soap Makes Water Stretch Like Magic!\u0027 video uploaded and how has it performed?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "\u0027See How Soap Makes Water Stretch Like Magic!\u0027 falls under the Entertainment category, offering a blend of asmr, asmr relaxation, asmr video that makes it ideal for viewers interested in immersive and entertaining content. Its high engagement shows it\u0027s resonating well with the audience."}, "name": "What category does \u0027See How Soap Makes Water Stretch Like Magic!\u0027 belong to and why should I watch it?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The video runs for about 0 minutes and 57 seconds, standing out due to its creative approach to Step inside a world you\u2019ve never seen before\u2014where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m.... If you enjoy Entertainment with elements of asmr, asmr relaxation, asmr video, this is a great addition to your watchlist."}, "name": "How long is \u0027See How Soap Makes Water Stretch Like Magic!\u0027 and what makes it stand out?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Fans of asmr, asmr relaxation, asmr video and Entertainment will particularly enjoy \u0027See How Soap Makes Water Stretch Like Magic!\u0027, as it combines unique storytelling with engaging visuals. With 21 views already, it\u0027s proving to be a hit among similar content lovers."}, "name": "Who would enjoy \u0027See How Soap Makes Water Stretch Like Magic!\u0027 the most?"}]}</script>
   
 
 <!-- Clarity tracking code for https://jasonmartocci.com/ -->
@@ -85,126 +101,73 @@
 <body>
   <header>
     <h1>See How Soap Makes Water Stretch Like Magic!</h1>
+    <a href="https://jasonmartocci.com" class="branding"><img src="/images/JasonMartocci_Logo.png" alt="Logo"> Martocci Mayhem</a>
   </header>
   <div class="container">
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/SqA9KTP37z0" frameborder="0" allowfullscreen title="See How Soap Makes Water Stretch Like Magic!"></iframe>
+    <div id="columns">
+      <div id="primary">
+        <div class="video-embed" onclick="window.open('https://www.youtube.com/watch?v=SqA9KTP37z0', '_blank')">
+          <iframe src="https://www.youtube.com/embed/SqA9KTP37z0" frameborder="0" allowfullscreen title="See How Soap Makes Water Stretch Like Magic!"></iframe>
+        </div>
+        <h1 onclick="window.open('https://www.youtube.com/watch?v=SqA9KTP37z0', '_blank')">See How Soap Makes Water Stretch Like Magic!</h1>
+        <div class="channel-info" onclick="window.open('https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw?sub_confirmation=1', '_blank')">
+          <img src="/images/JasonMartocci_Logo.png" alt="Channel Logo" class="channel-logo">
+          <div>
+            <a href="https://www.youtube.com/channel/UCeYkoM3-cxitd1WmV0qy7Uw" target="_blank">Martocci Mayhem</a><br>
+            194 subscribers
+          </div>
+        </div>
+        <div class="metadata">
+          <span onclick="window.open('https://www.youtube.com/watch?v=SqA9KTP37z0', '_blank')">21 views</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=SqA9KTP37z0', '_blank')">1 likes</span> - 
+          <span onclick="window.open('https://www.youtube.com/watch?v=SqA9KTP37z0#comments', '_blank')">1 comments</span> - Uploaded: 2025-07-03 - Last Edited: 2025-08-23T03:23:24.836234
+        </div>
+        <div class="description">
+          Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-documentary, we explore:<br> <br>🔹 The Anatomy of a Bubble: Watch soap and water molecules form a perfect elastic membrane.<br>🔹 Surface Tension Secrets: See a soap-film demo that makes bubbles possible.<br>🔹 Bubble Physics in Motion: Learn why bubbles rise, float, and burst—the interplay of buoyancy and gravity.<br>🔹 Iridescent Wonders & Temperature Effects: Marvel as rainbow colors dance across the film and bubbles freeze into crystal sculptures.<br> <br>No music. No fake laugh tracks. Just crisp ASMR pops, gentle ambient foley, and a soothing TTS narration guiding you through the hidden beauty and mechanics behind these everyday marvels.<br> <br>👍 If you found this relaxing—or learned something new—please Like, Comment, and Subscribe for more bite-sized ASMR science videos!<br>💬 Tell us: Which bubble effect blew your mind?<br> <br>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑<br>  <br>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗<br>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣<br>╠╗║╚╝║║╠╗║╚╣║║║║║═╣<br>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝<br> <br>If you have any questions about this video, please feel free to let me know in the comments.<br> <br>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.<br> <br>👀  BINGE THE PLAYLISTS<br>• Savage Grandma Roasts → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659<br>•" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659<br>•</a> Luxury Melts & Smash Tests → <a href="https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-<br>•" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-<br>•</a> Travel & Mayhem On-The Road → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33<br>•" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33<br>•</a> Mukbang & Extreme Food Challenges → <a href="https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z<br>•" target="_blank">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z<br>•</a> ASMR Knife-Cut Satisfiers → <a href="https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g<br>" target="_blank">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g<br></a> <br>🌐  FOLLOW THE MAYHEM EVERYWHERE<br>• TikTok   ► <a href="https://www.tiktok.com/@JasonMartocci<br>•" target="_blank">https://www.tiktok.com/@JasonMartocci<br>•</a> X (Twitter) ► <a href="https://twitter.com/JasonMartocci<br>•" target="_blank">https://twitter.com/JasonMartocci<br>•</a> Facebook ► <a href="https://www.facebook.com/JasonMartocci<br>•" target="_blank">https://www.facebook.com/JasonMartocci<br>•</a> GitHub ► <a href="https://github.com/JasonMartocci<br>•" target="_blank">https://github.com/JasonMartocci<br>•</a> Instagram ► <a href="https://www.instagram.com/Jason.Martocci<br>•" target="_blank">https://www.instagram.com/Jason.Martocci<br>•</a> Shorts mirror ► <a href="https://www.youtube.com/@JasonMartocci/shorts<br>" target="_blank">https://www.youtube.com/@JasonMartocci/shorts<br></a> <br>✉️ Business/collabs: edevelopersusa@gmail.com<br>📬  Fan mail: X.com (Chat - JasonMartocci) <br>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)<br>• vidIQ (YouTube Help) – <a href="https://vidiq.com/JasonMartocci<br>" target="_blank">https://vidiq.com/JasonMartocci<br></a> <br>⚠️  DISCLAIMER  <br>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.<br>#MartocciMayhem, #JasonMartocci, #AIASMR
+        </div>
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
+            <summary>What is the 'See How Soap Makes Water Stretch Like Magic!' video all about?</summary>
+            <p>The 'See How Soap Makes Water Stretch Like Magic!' video dives into Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m.... It's an engaging piece in the Entertainment category, perfect for enthusiasts of asmr, asmr relaxation, asmr video. Whether you're seeking relaxation or excitement, this video delivers with its unique chaos and creativity.</p>
+          </details>
+          
+          <details>
+            <summary>When was the 'See How Soap Makes Water Stretch Like Magic!' video uploaded and how has it performed?</summary>
+            <p>This captivating video was uploaded on 2025-07-03 and has garnered 21 views, 1 likes, and 1 comments so far. It's a must-watch for fans of asmr, asmr relaxation, asmr video, lasting approximately 0 minutes.</p>
+          </details>
+          
+          <details>
+            <summary>What category does 'See How Soap Makes Water Stretch Like Magic!' belong to and why should I watch it?</summary>
+            <p>'See How Soap Makes Water Stretch Like Magic!' falls under the Entertainment category, offering a blend of asmr, asmr relaxation, asmr video that makes it ideal for viewers interested in immersive and entertaining content. Its high engagement shows it's resonating well with the audience.</p>
+          </details>
+          
+          <details>
+            <summary>How long is 'See How Soap Makes Water Stretch Like Magic!' and what makes it stand out?</summary>
+            <p>The video runs for about 0 minutes and 57 seconds, standing out due to its creative approach to Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second m.... If you enjoy Entertainment with elements of asmr, asmr relaxation, asmr video, this is a great addition to your watchlist.</p>
+          </details>
+          
+          <details>
+            <summary>Who would enjoy 'See How Soap Makes Water Stretch Like Magic!' the most?</summary>
+            <p>Fans of asmr, asmr relaxation, asmr video and Entertainment will particularly enjoy 'See How Soap Makes Water Stretch Like Magic!', as it combines unique storytelling with engaging visuals. With 21 views already, it's proving to be a hit among similar content lovers.</p>
+          </details>
+          
+        </div>
+        <div class="comments">
+          <h2>Top Comments</h2>
+          
+        </div>
+      </div>
+      <div id="secondary">
+        <div class="related-videos" id="related-list">
+          <h2>Recommended Videos</h2>
+          <ul>
+            
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="description">
-      <p><strong>Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-documentary, we explore:</strong></p><p>🔹 The Anatomy of a Bubble: Watch soap and water molecules form a perfect elastic membrane.</p><p>🔹 Surface Tension Secrets: See a soap-film demo that makes bubbles possible.</p><p>🔹 Bubble Physics in Motion: Learn why bubbles rise, float, and burst—the interplay of buoyancy and gravity.</p><p>🔹 Iridescent Wonders & Temperature Effects: Marvel as rainbow colors dance across the film and bubbles freeze into crystal sculptures.</p><p>No music. No fake laugh tracks. Just crisp ASMR pops, gentle ambient foley, and a soothing TTS narration guiding you through the hidden beauty and mechanics behind these everyday marvels.</p><p>👍 If you found this relaxing—or learned something new—please Like, Comment, and Subscribe for more bite-sized ASMR science videos!</p><p>💬 Tell us: Which bubble effect blew your mind?</p><p>👑 SUBSCRIBE OR I'LL TAKE YOUR GOLDFISH! 👑</p><p>╔═╦╗╔╦╗╔═╦═╦╦╦╦╗╔═╗</p><p>║╚╣║║║╚╣╚╣╔╣╔╣║╚╣═╣</p><p>╠╗║╚╝║║╠╗║╚╣║║║║║═╣</p><p>╚═╩══╩═╩═╩═╩╝╚╩═╩═╝</p><p>If you have any questions about this video, please feel free to let me know in the comments.</p><p>🔔  SUBSCRIBE for savage roasts, luxury destruction, viral fruit hacks & ASMR slices.</p><p>👀  BINGE THE PLAYLISTS</p><p>• Savage Grandma Roasts → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659\">https://youtube.com/playlist?list=PLxilLfhDKqlcal64PfL75ou_gz2g49GdG&si=RHshAqz83xnjl659</a></p><p>• Luxury Melts & Smash Tests → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-\">https://youtube.com/playlist?list=PLxilLfhDKqlfc0ocAlYEp9N86PSrhoKLY&si=5Ep9rK1lplGaV8q-</a></p><p>• Travel & Mayhem On-The Road → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33\">https://www.youtube.com/playlist?list=PLxilLfhDKqleK1NXTw8YaB4ErXtO9In33</a></p><p>• Mukbang & Extreme Food Challenges → <a href=\"https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z\">https://www.youtube.com/playlist?list=PLxilLfhDKqlfojlmtC_S5wFxi3dDrR21z</a></p><p>• ASMR Knife-Cut Satisfiers → <a href=\"https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g\">https://youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa&si=_PXu8LpaZWLBMK0g</a></p><p>🌐  FOLLOW THE MAYHEM EVERYWHERE</p><p>• TikTok   ► <a href=\"https://www.tiktok.com/@JasonMartocci\">https://www.tiktok.com/@JasonMartocci</a></p><p>• X (Twitter) ► <a href=\"https://twitter.com/JasonMartocci\">https://twitter.com/JasonMartocci</a></p><p>• Facebook ► <a href=\"https://www.facebook.com/JasonMartocci\">https://www.facebook.com/JasonMartocci</a></p><p>• GitHub ► <a href=\"https://github.com/JasonMartocci\">https://github.com/JasonMartocci</a></p><p>• Instagram ► <a href=\"https://www.instagram.com/Jason.Martocci\">https://www.instagram.com/Jason.Martocci</a></p><p>• Shorts mirror ► <a href=\"https://www.youtube.com/@JasonMartocci/shorts\">https://www.youtube.com/@JasonMartocci/shorts</a></p><p>✉️ Business/collabs: edevelopersusa@gmail.com</p><p>📬  Fan mail: X.com (Chat - JasonMartocci)</p><p>⚙️  GEAR & TOOLS (affiliate links help fuel the chaos)</p><p>• vidIQ (YouTube Help) – <a href=\"https://vidiq.com/JasonMartocci\">https://vidiq.com/JasonMartocci</a></p><p>⚠️  DISCLAIMER</p><p>All stunts are performed in a controlled environment; don't attempt them at home. Some links on this page are affiliate links; I earn a small commission at no additional cost to you.</p><p>#MartocciMayhem, #JasonMartocci, #AIASMR</p>
-    </div>
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      
-      <details>
-        <summary>What is this video about?</summary>
-        <p>Step inside a world you’ve never seen before—where every bubble pop, ripple, and shimmer is captured in stunning slow-motion ASMR. In this 56-second mini-docume</p>
-      </details>
-      
-      <details>
-        <summary>When was this video uploaded?</summary>
-        <p>2025-07-03</p>
-      </details>
-      
-      <details>
-        <summary>How long is this video?</summary>
-        <p>0h 0m 57s</p>
-      </details>
-      
-      <details>
-        <summary>What tags are associated with this video?</summary>
-        <p>asmr, asmr relaxation, asmr video, bubble, bubble pop ASMR, bubble science, bubbles, buoyancy physics, calming asmr, calming sounds, colorful bubbles, educational ASMR, floating bubble, floating science, fluid dynamics, fluid motion, iridescence, micro bubble, micro shots, relaxing science video, science ASMR, science experiments, science therapy, slow motion ASMR, soap bubble, stress relief ASMR, surface tension, visual science, jason martocci, martocci mayhem, ai, aiasmr</p>
-      </details>
-      
-      <details>
-        <summary>What category is this video in?</summary>
-        <p>24</p>
-      </details>
-      
-      <details>
-        <summary>How many views does this video have?</summary>
-        <p>21</p>
-      </details>
-      
-      <details>
-        <summary>How many likes does this video have?</summary>
-        <p>1</p>
-      </details>
-      
-      <details>
-        <summary>How many comments does this video have?</summary>
-        <p>1</p>
-      </details>
-      
-    </div>
-    
-    <div class="related-videos" id="related-list">
-      <h2>Check Out These Related Videos</h2>
-      <ul>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/CRSqHvIJx3s/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/CRSqHvIJx3s/hqdefault.jpg" alt="Crystals That Are Actually Candy" title="Crystals That Are Actually Candy" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270"  fetchpriority="high" loading="eager" >
-            </picture>
-          </div>
-          <a href="/videos/crystals-that-are-actually-candy.html">Crystals That Are Actually Candy</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" alt="I Made a Rainbow Glass Fruit Garden" title="I Made a Rainbow Glass Fruit Garden" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
-          </div>
-          <a href="/videos/i-made-a-rainbow-glass-fruit-garden.html">I Made a Rainbow Glass Fruit Garden</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!" title="This Glass Apple Looks Normal But Watch What’s Inside!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
-          </div>
-          <a href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">This Glass Apple Looks Normal But Watch What’s Inside!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" alt="The Most Satisfying Mangosteen Slices" title="The Most Satisfying Mangosteen Slices" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
-          </div>
-          <a href="/videos/the-most-satisfying-mangosteen-slices.html">The Most Satisfying Mangosteen Slices</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/G4lcamHGWXA/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/G4lcamHGWXA/hqdefault.jpg" alt="Watch This Coconut Split in Seconds!" title="Watch This Coconut Split in Seconds!" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
-          </div>
-          <a href="/videos/watch-this-coconut-split-in-seconds.html">Watch This Coconut Split in Seconds!</a>
-        </li>
-        
-        <li>
-          <div class="thumbnail-wrapper">
-            <picture>
-              <source srcset="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" type="image/jpg">
-              <img src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?" title="Will AI Replace Human Mukbangs?" onerror="this.src='/images/default_thumbnail.png'; this.onerror=null;" loading="lazy" width="480" height="270" >
-            </picture>
-          </div>
-          <a href="/videos/will-ai-replace-human-mukbangs.html">Will AI Replace Human Mukbangs?</a>
-        </li>
-        
-      </ul>
-    </div>
-    
     <div class="social-buttons">
       <a href="https://www.youtube.com/watch?v=SqA9KTP37z0" target="_blank" class="btn btn-social">Watch on YouTube</a>
       <a href="https://twitter.com/intent/tweet?url=https%3A//jasonmartocci.com/videos/see-how-soap-makes-water-stretch-like-magic.html&amp;text=Check%20out%20See%20How%20Soap%20Makes%20Water%20Stretch%20Like%20Magic%21%21" target="_blank" class="btn btn-social">Share on X</a>
