@@ -188,6 +188,7 @@
     img.loading = "lazy";
     img.src = "https://i.ytimg.com/vi/" + v.video_id + "/hqdefault.jpg";
     img.alt = v.title || "";
+    img.onerror = function(){ this.onerror=null; this.src='/images/default-thumbnail.png'; };
 
     var body = document.createElement("div"); body.className = "body";
     var t = document.createElement("div"); t.style.fontWeight="700"; t.style.marginBottom="6px"; t.textContent = v.title || "";
