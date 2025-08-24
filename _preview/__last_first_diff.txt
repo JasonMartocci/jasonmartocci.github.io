@@ -1,35 +1,18 @@
 --- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
 +++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
-@@ -10,7 +10,7 @@
- <meta property="og:type" content="video.other">
+@@ -2,7 +2,7 @@
+ <html lang="en"><head>
 
- <meta property="og:title" content="Can You Really Sleep On A Bed Of Weed?">
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 
- <meta property="og:site_name" content="Martocci Mayhem">
+ <title>Can You Really Sleep On A Bed Of Weed? - Martocci Mayhem</title>
 
--<meta property="og:description" content="What happens when you compare unusual beds? Prepare for total ASM...">
+-<meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
 
-+<meta property="og:description" content="What happens when you compare unusual beds? Prepare for tota...">
++<meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which ex...">
 
- <meta property="og:url" content="https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html">
+ <link rel="canonical" href="https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html">
 
- <meta property="og:image" content="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg">
-
- 
-
-@@ -18,7 +18,7 @@
- <meta name="twitter:card" content="summary_large_image">
-
- <meta name="twitter:title" content="Can You Really Sleep On A Bed Of Weed?">
-
- <meta name="twitter:site" content="@JasonMartocci">
-
--<meta name="twitter:description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
-
-+<meta name="twitter:description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and...">
-
- <meta name="twitter:image" content="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg">
+ <link rel="icon" href="/images/favicon.ico">
 
  
-
- <style>
