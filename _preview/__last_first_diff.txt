@@ -1,18 +1,18 @@
 --- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
 +++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
-@@ -2,7 +2,7 @@
+@@ -1,7 +1,7 @@
+ <!DOCTYPE html>
+
  <html lang="en"><head>
 
  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 
- <title>Can You Really Sleep On A Bed Of Weed? - Martocci Mayhem</title>
+-<title>Can You Really Sleep On A Bed Of Weed? - Martocci Mayhem</title>
 
--<meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
++<title>Can You Really Sleep On A Bed Of Weed?</title>
 
-+<meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which ex...">
+ <meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which ex...">
 
  <link rel="canonical" href="https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html">
 
  <link rel="icon" href="/images/favicon.ico">
-
- 
