@@ -1,22 +1,5 @@
 --- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:old
 +++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:new
-@@ -10,7 +10,7 @@
- 
-
- <!-- Open Graph -->
-
- <meta property="og:type" content="video.other">
-
--<meta property="og:title" content="Martocci Mayhem: How Technology is Revolutionizing AI ASMR">
-
-+<meta property="og:title" content="Martocci Mayhem: How Technology is Revolutionizing AI AS...">
-
- <meta property="og:site_name" content="Martocci Mayhem">
-
- <meta property="og:description" content="Greetings, Traveler! Welcome to Martocci Mayhem.
-
-  
-
 @@ -20,7 +20,7 @@
  
 
@@ -24,9 +7,9 @@
 
  <meta name="twitter:card" content="summary_large_image">
 
--<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing AI A...">
+-<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing AI...">
 
-+<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing AI...">
++<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing ...">
 
  <meta name="twitter:site" content="@JasonMartocci">
 
