@@ -3,7 +3,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Martocci Mayhem — Unlock ASMR Magic & Epic Savage Grandma</title>
 <meta name="description" content="Explore the full Martocci Mayhem catalog: ASMR, comedy, shorts, tech experiments and more.">
-<link rel="canonical" href="{{ site_url }}"><link rel="icon" href="/images/favicon.ico">
+<link rel="canonical" href="{{ site_url }}">
+<link rel="icon" href="/images/favicon.ico">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -19,7 +20,6 @@
 <meta name="twitter:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
 <meta name="twitter:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
 
-
 <style>
   :root { color-scheme: dark; }
   *{box-sizing:border-box}
@@ -28,19 +28,16 @@
   header { display:flex; align-items:center; justify-content:center; gap:12px; padding:14px 16px; border-bottom:1px solid; position:sticky; top:0; background:#0f0f0f; z-index:5; }
   header a.brand { position:absolute; left:16px; top:10px; color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:600; }
 
-  /* full width with comfy padding */
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); max-width:none; }
-
   .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px }
   .filters { display:flex; flex-wrap:wrap; gap:8px; }
   .filters button { background:#1a1a1a; border:1px solid #222; color:#bbb; padding:8px 12px; border-radius:999px; cursor:pointer }
   .filters button.active { color:#fff; border-color:#3ea6ff }
-
   .search { flex:1; min-width:220px }
   .search input { width:100%; padding:10px 12px; border-radius:999px; border:1px solid #222; background:#111; color:#ddd; }
 
   .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; /* add: */ margin-bottom:14px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block }
   .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block }
   .body { padding:10px 12px }
   a, .link { color:#3ea6ff; text-decoration:none; }
@@ -48,9 +45,18 @@
   #sentinel { height:1px }
 </style>
 
-<script id="all-json" type="application/json">{{ videos | tojson }}</script>
-<script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
-<script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
+<!-- JSON-LD (escaped so '</script>' inside data can't break the page) -->
+<script type="application/ld+json">
+{{ web_page_schema | tojson | replace("</","<\\/") | safe }}
+</script>
+<script type="application/ld+json">
+{{ item_list_schema | tojson | replace("</","<\\/") | safe }}
+</script>
+
+<!-- Raw data as JSON, not JS -->
+<script id="__data" type="application/json">
+{{ videos | tojson | replace("</","<\\/") | safe }}
+</script>
 </head>
 <body>
 <header>
@@ -73,134 +79,130 @@
 </footer>
 
 <script>
-  // --- utilities ---
-  const ALL = JSON.parse(document.getElementById('all-json').textContent);
-  const pretty = (d) => {
-    if (!d) return "";
-    try {
-      const dt = new Date(d);
-      return dt.toLocaleDateString(undefined, { month:"long", day:"2-digit", year:"numeric" });
-    } catch { return d; }
-  };
-  const debounce = (fn, ms=250) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms);} };
+"use strict";
+(function(){
+  // --- utils ---
+  function pretty(d){
+    if(!d) return "";
+    try{ var dt=new Date(d); return dt.toLocaleDateString(undefined,{month:"long",day:"2-digit",year:"numeric"}); }
+    catch(e){ return String(d); }
+  }
+  function debounce(fn,ms){ var t; return function(){ var a=arguments; clearTimeout(t); t=setTimeout(function(){ fn.apply(null,a); }, ms||250); }; }
 
-  // normalize/augment data for fast filtering
-  const DATA = ALL.map(v => ({
-    ...v,
-    _t: (v.title || "").toLowerCase(),
-    _d: (v.desc || "").toLowerCase(),
-    _tags: (v.tags || []).map(t=>String(t).toLowerCase()),
-    updated_pretty: pretty(v.last_edited_date || v.creation_date)
-  }));
+  // Parse JSON safely
+  var RAW = document.getElementById("__data");
+  var ALL = [];
+  try { ALL = JSON.parse(RAW && RAW.textContent || "[]"); } catch(e){ console.error("Bad data JSON", e); }
 
-  // categories (unique, sorted; "All" first)
-  const cats = ["All", ...Array.from(new Set(DATA.map(v => v.category || "People & Blogs"))).sort((a,b)=>a.localeCompare(b))];
+  // Normalize
+  var DATA = ALL.map(function(v){
+    return Object.assign({}, v, {
+      _t: (v.title||"").toLowerCase(),
+      _d: (v.desc||"").toLowerCase(),
+      _tags: (v.tags||[]).map(function(t){ return String(t).toLowerCase(); }),
+      updated_pretty: pretty(v.last_edited_date || v.creation_date)
+    });
+  });
 
-  const filters = document.getElementById("filters");
-  const grid    = document.getElementById("grid");
-  const qEl     = document.getElementById("q");
-  const sentinel= document.getElementById("sentinel");
+  // Categories
+  var catsSet = new Set(DATA.map(function(v){ return v.category || "People & Blogs"; }));
+  var cats = ["All"].concat(Array.from(catsSet).sort(function(a,b){ return a.localeCompare(b); }));
+
+  // DOM
+  var filters  = document.getElementById("filters");
+  var grid     = document.getElementById("grid");
+  var qEl      = document.getElementById("q");
+  var sentinel = document.getElementById("sentinel");
 
   // state
-  let currentCat = "All";
-  let query      = "";
-  let filtered   = [];
-  let pageSize   = 30;
-  let cursor     = 0;
-  let observer;
+  var currentCat = "All";
+  var query = "";
+  var filtered = [];
+  var pageSize = 30;
+  var cursor = 0;
+  var observer = null;
 
-  // build filter chips
-  cats.forEach(c => {
-    const b = document.createElement("button");
+  // chips
+  cats.forEach(function(c){
+    var b = document.createElement("button");
     b.textContent = c;
-    b.onclick = () => { currentCat = c; applyFilters(); };
-    if (c === currentCat) b.classList.add("active");
+    b.addEventListener("click", function(){ currentCat=c; applyFilters(); });
+    if (c===currentCat) b.classList.add("active");
     filters.appendChild(b);
   });
 
   // search
-  qEl.addEventListener("input", debounce(e => { query = (e.target.value || "").toLowerCase().trim(); applyFilters(); }, 200));
+  qEl.addEventListener("input", debounce(function(e){
+    query = (e.target.value||"").toLowerCase().trim();
+    applyFilters();
+  }, 200));
+
+  function matchesQuery(v, q){
+    if (!q) return true;
+    var parts = q.split(/\s+/);
+    return parts.every(function(tok){
+      if (tok.indexOf("tag:")===0){
+        var t = tok.slice(4);
+        return v._tags.some(function(x){ return x.indexOf(t) >= 0; });
+      }
+      if (tok.indexOf("id:")===0){
+        return String(v.video_id||"").toLowerCase().indexOf(tok.slice(3)) >= 0;
+      }
+      return v._t.indexOf(tok) >= 0 || v._d.indexOf(tok) >= 0 || v._tags.some(function(x){ return x.indexOf(tok) >= 0; });
+    });
+  }
 
   function applyFilters(){
-    // toggle active chip
-    [...filters.children].forEach(b=>b.classList.toggle("active", b.textContent===currentCat));
-    // compute filtered list
-    filtered = DATA.filter(v => (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query))
-                   .sort((a,b)=> String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||"")));
-    // reset grid & infinite scroll
-    grid.innerHTML = "";
+    Array.prototype.forEach.call(filters.children, function(b){ b.classList.toggle("active", b.textContent===currentCat); });
+
+    filtered = DATA
+      .filter(function(v){ return (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query); })
+      .sort(function(a,b){ return String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||"")); });
+
+    grid.textContent = "";
     cursor = 0;
     if (observer) observer.disconnect();
-    loadMore();  // initial batch
-    observer = new IntersectionObserver(entries => {
+    loadMore();
+    observer = new IntersectionObserver(function(entries){
       if (entries[0].isIntersecting) loadMore();
     }, { rootMargin: "1200px" });
     observer.observe(sentinel);
   }
 
-  function matchesQuery(v, q){
-    if (!q) return true;
-    // simple operators: tag:xyz  id:abc
-    const parts = q.split(/\s+/);
-    return parts.every(tok => {
-      if (tok.startsWith("tag:")) {
-        const t = tok.slice(4);
-        return v._tags.some(x => x.includes(t));
-      }
-      if (tok.startsWith("id:")) {
-        return (v.video_id||"").toLowerCase().includes(tok.slice(3));
-      }
-      return v._t.includes(tok) || v._d.includes(tok) || v._tags.some(x=>x.includes(tok));
-    });
-  }
-
   function loadMore(){
     if (cursor >= filtered.length) return;
-    const end = Math.min(cursor + pageSize, filtered.length);
-    const slice = filtered.slice(cursor, end);
-    const frag = document.createDocumentFragment();
-    for (const v of slice) frag.appendChild(card(v));
+    var end = Math.min(cursor + pageSize, filtered.length);
+    var frag = document.createDocumentFragment();
+    for (var i=cursor; i<end; i++) frag.appendChild(card(filtered[i]));
     grid.appendChild(frag);
     cursor = end;
   }
 
   function card(v){
-    const a = document.createElement("a");
-    a.href = "videos/" + v.slug + ".html";
+    var a = document.createElement("a");
+    a.href = "/videos/" + (v.slug||"") + ".html";
     a.className = "card";
-    a.innerHTML = `
-      <img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/${v.video_id}/hqdefault.jpg" alt="${escapeHtml(v.title||"")}">
-      <div class="body">
-        <div style="font-weight:700;margin-bottom:6px">${escapeHtml(v.title||"")}</div>
-        <div class="subtle">${escapeHtml((v.category||"").toString())}</div>
-        <div style="color:#9aa;margin-top:6px">${escapeHtml((v.desc||"").slice(0,90))}${(v.desc||"").length>90?"…":""}</div>
-        <div style="color:#666;margin-top:6px;font-size:.88rem">Views: ${Number(v.view_count||0).toLocaleString()} · Updated: ${v.updated_pretty||""}</div>
-      </div>`;
+
+    var img = document.createElement("img");
+    img.className = "thumb";
+    img.loading = "lazy";
+    img.src = "https://i.ytimg.com/vi/" + v.video_id + "/hqdefault.jpg";
+    img.alt = v.title || "";
+
+    var body = document.createElement("div"); body.className = "body";
+    var t = document.createElement("div"); t.style.fontWeight="700"; t.style.marginBottom="6px"; t.textContent = v.title || "";
+    var cat = document.createElement("div"); cat.className="subtle"; cat.textContent = String(v.category||"");
+    var desc = document.createElement("div"); desc.style.color="#9aa"; desc.style.marginTop="6px"; desc.textContent = (v.desc||"").slice(0,90) + ((v.desc||"").length>90 ? "…" : "");
+    var meta = document.createElement("div"); meta.style.color="#666"; meta.style.marginTop="6px"; meta.style.fontSize=".88rem";
+    meta.textContent = "Views: " + Number(v.view_count||0).toLocaleString() + " · Updated: " + (v.updated_pretty||"");
+
+    body.appendChild(t); body.appendChild(cat); body.appendChild(desc); body.appendChild(meta);
+    a.appendChild(img); a.appendChild(body);
     return a;
   }
 
-  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;'}[m])); }
-
   // initial render
   applyFilters();
-</script>
-<script>
-    // state
-    let currentCat = "All";
-    let query = "";
-    let filtered = [];
-    let pageSize = 30;
-    let cursor = 0;
-    let observer;
-
-    function loadMore(){
-    if (cursor >= filtered.length) return;
-    const end = Math.min(cursor + pageSize, filtered.length);
-    const slice = filtered.slice(cursor, end);
-    const frag = document.createDocumentFragment();
-    for (const v of slice) frag.appendChild(card(v));
-    grid.appendChild(frag);
-    cursor = end;
-    }
+})();
 </script>
 </body></html>
