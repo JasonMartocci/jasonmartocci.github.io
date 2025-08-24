@@ -1,51 +1,35 @@
---- index.html:old
-+++ index.html:new
-@@ -1,14 +1,14 @@
- <!DOCTYPE html>
-
- <html lang="en"><head>
-
- <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-
--<title>Martocci Mayhem — Unlock ASMR Magic & Epic Savage Grandma</title>
-
-+<title>Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem</title>
-
- <meta name="description" content="Explore the full Martocci Mayhem catalog: ASMR, comedy, shorts, tech experiments and more.">
-
- <link rel="canonical" href="https://jasonmartocci.com">
-
- <link rel="icon" href="/images/favicon.ico">
-
+--- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:old
++++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:new
+@@ -10,7 +10,7 @@
  
 
  <!-- Open Graph -->
 
- <meta property="og:type" content="website">
+ <meta property="og:type" content="video.other">
 
--<meta property="og:title" content="Martocci Mayhem — Unlock ASMR Magic & Epic Savage Grandma">
+-<meta property="og:title" content="Martocci Mayhem: How Technology is Revolutionizing AI ASMR">
 
-+<meta property="og:title" content="Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem">
++<meta property="og:title" content="Martocci Mayhem: How Technology is Revolutionizing AI AS...">
 
  <meta property="og:site_name" content="Martocci Mayhem">
 
- <meta property="og:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+ <meta property="og:description" content="Greetings, Traveler! Welcome to Martocci Mayhem.
 
- <meta property="og:url" content="https://jasonmartocci.com">
+  
 
-@@ -16,7 +16,7 @@
+@@ -20,7 +20,7 @@
  
 
  <!-- Twitter -->
 
  <meta name="twitter:card" content="summary_large_image">
 
--<meta name="twitter:title" content="Martocci Mayhem — Unlock ASMR Magic & Epic Savage Grandma">
+-<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing AI A...">
 
-+<meta name="twitter:title" content="Unlock ASMR Magic & Epic Savage Grandma">
++<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing AI...">
 
  <meta name="twitter:site" content="@JasonMartocci">
 
- <meta name="twitter:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+ <meta name="twitter:description" content="Greetings, Traveler! Welcome to Martocci Mayhem.
 
- <meta name="twitter:image" content="https://jasonmartocci.com/images/JasonMartocci_Logo.png">
+  
