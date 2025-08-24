@@ -53,15 +53,6 @@
 <script type="application/ld+json">
 {{ item_list_schema | tojson | replace("</","<\\/") | safe }}
 </script>
-{% raw %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-M23LKR14B1');
-</script>
-{% endraw %}
 <!-- Raw data as JSON, not JS -->
 <script id="__data" type="application/json">
 {{ videos | tojson | replace("</","<\\/") | safe }}
