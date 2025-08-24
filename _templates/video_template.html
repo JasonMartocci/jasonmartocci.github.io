@@ -102,7 +102,7 @@
 
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
-      <h1 class="block-title">{{ title }}</h1>
+      <h1 class="block-title">{{ title | truncate(55) }}</h1>
       <div class="subtle">Subscribers: {{ subs_raw and subscriber_count or "—" }}</div>
       <div class="meta">
         <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Views: {{ view_count }}</a>
