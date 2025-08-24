@@ -1,16 +1,18 @@
---- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
-+++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
-@@ -17,6 +17,7 @@
- <!-- Twitter -->
+--- index.html:old
++++ index.html:new
+@@ -62,7 +62,7 @@
+ <body>
 
- <meta name="twitter:card" content="summary_large_image">
+ <header>
 
- <meta name="twitter:title" content="Can You Really Sleep On A Bed Of Weed?">
+   <a class="brand" href="https://jasonmartocci.com"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"> Martocci Mayhem</a>
 
-+<meta name="twitter:site" content="@JasonMartocci">
+-  <div>Unlock ASMR Magic & Epic Savage Grandma</div>
 
- <meta name="twitter:description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
++  <div><h1>Unlock ASMR Magic & Epic Savage Grandma</h1></div>
 
- <meta name="twitter:image" content="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg">
+ </header>
 
  
+
+ <main>
