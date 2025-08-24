@@ -1,18 +1,18 @@
---- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:old
-+++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html:new
-@@ -20,7 +20,7 @@
- 
+--- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html:old
++++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html:new
+@@ -1,7 +1,7 @@
+ <!DOCTYPE html>
 
- <!-- Twitter -->
+ <html lang="en"><head>
 
- <meta name="twitter:card" content="summary_large_image">
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 
--<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing ...">
+-<title>EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fr...</title>
 
-+<meta name="twitter:title" content="Martocci Mayhem: How Technology is Revolutionizing...">
++<title>EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon F...</title>
 
- <meta name="twitter:site" content="@JasonMartocci">
+ <meta name="description" content="Immerse yourself in the calming atmosphere and indulge in the satisfying sounds of slicing open a mesmerizing glass dragon fruit! This ...">
 
- <meta name="twitter:description" content="Greetings, Traveler! Welcome to Martocci Mayhem.
+ <link rel="canonical" href="https://jasonmartocci.com/videos/experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html">
 
-  
+ <link rel="icon" href="/images/favicon.ico">
