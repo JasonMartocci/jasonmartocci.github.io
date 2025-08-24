@@ -1,18 +1,35 @@
---- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:old
-+++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:new
-@@ -39,7 +39,7 @@
- ╠╗║╚╝║║╠╗║╚╣║║║║║═╣
+--- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
++++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
+@@ -1,7 +1,7 @@
+ <!DOCTYPE html>
 
- ╚═╩══╩═╩═╩═╩╝╚╩═╩═╝
+ <html lang="en"><head>
 
-  
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 
--If you have any questions about t">
+-<title>Can You Really Sleep On A Bed Of Weed?</title>
 
-+If you have any questions ab...">
++<title>Can You Really Sleep On A Bed Of Weed? - Martocci Mayhem</title>
 
- <meta name="twitter:image" content="https://i.ytimg.com/vi/iTijX3CfdLs/hqdefault.jpg">
+ <meta name="description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
+
+ <link rel="canonical" href="https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html">
+
+ <link rel="icon" href="/images/favicon.ico">
+
+@@ -10,7 +10,7 @@
+ <meta property="og:type" content="video.other">
+
+ <meta property="og:title" content="Can You Really Sleep On A Bed Of Weed?">
+
+ <meta property="og:site_name" content="Martocci Mayhem">
+
+-<meta property="og:description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
+
++<meta property="og:description" content="What happens when you compare unusual beds? Prepare for total ASM...">
+
+ <meta property="og:url" content="https://jasonmartocci.com/videos/can-you-really-sleep-on-a-bed-of-weed.html">
+
+ <meta property="og:image" content="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg">
 
  
-
- <style>
