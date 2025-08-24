@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;What Happens When You Scratch A Planet?&#34;,
-    "description": &#34;Just scratching the surface of these realistic AI models! This Cosmic ASMR experience features the planets in our solar system. Subscribe for more deep space co...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/IqjycuJgrp8/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-16&#34;,
-    "duration": &#34;PT31S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=IqjycuJgrp8&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/IqjycuJgrp8&#34;,
-    "interactionCount": 993
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "What Happens When You Scratch A Planet?", "description": "Just scratching the surface of these realistic AI models! This Cosmic ASMR experience features the planets in our solar system. Subscribe for more deep space co...", "thumbnailUrl": "https://i.ytimg.com/vi/IqjycuJgrp8/hqdefault.jpg", "uploadDate": "2025-07-16", "contentUrl": "https://www.youtube.com/watch?v=IqjycuJgrp8", "embedUrl": "https://www.youtube.com/embed/IqjycuJgrp8", "interactionCount": 993, "duration": "PT31S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "What Happens When You Scratch A Planet?", "item": "https://jasonmartocci.com/videos/what-happens-when-you-scratch-a-planet.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “What Happens When You Scratch A Planet?” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“What Happens When You Scratch A Planet?” is a people &amp; blogs video on Martocci Mayhem. It highlights themes like asmr, astro asmr, astro vibes, celestial ambience, cosmic ambience, cosmic asmr, galactic vibes, galaxy soothing, heavenly ambience, heavenly nails. Watch it in full here: https://www.youtube.com/watch?v=IqjycuJgrp8&#34;}},{"@type":"Question","name": &#34;How long is “What Happens When You Scratch A Planet?”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:31.&#34;}},{"@type":"Question","name": &#34;When was “What Happens When You Scratch A Planet?” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 16, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 993 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=IqjycuJgrp8&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under People &amp; Blogs with common keywords such as: asmr, astro asmr, astro vibes, celestial ambience, cosmic ambience, cosmic asmr, galactic vibes, galaxy soothing, heavenly ambience, heavenly nails.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “What Happens When You Scratch A Planet?” about?", "acceptedAnswer": {"@type": "Answer", "text": "“What Happens When You Scratch A Planet?” is a people & blogs video on Martocci Mayhem. It highlights themes like asmr, astro asmr, astro vibes, celestial ambience, cosmic ambience, cosmic asmr, galactic vibes, galaxy soothing, heavenly ambience, heavenly nails. Watch it in full here: https://www.youtube.com/watch?v=IqjycuJgrp8"}}, {"@type": "Question", "name": "How long is “What Happens When You Scratch A Planet?”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:31."}}, {"@type": "Question", "name": "When was “What Happens When You Scratch A Planet?” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 16, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 993 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=IqjycuJgrp8"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under People & Blogs with common keywords such as: asmr, astro asmr, astro vibes, celestial ambience, cosmic ambience, cosmic asmr, galactic vibes, galaxy soothing, heavenly ambience, heavenly nails."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">What Happens When You Scratch A Planet?</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=IqjycuJgrp8" target="_blank" rel="noopener">Views: 993</a>
         <a href="https://www.youtube.com/watch?v=IqjycuJgrp8" target="_blank" rel="noopener">Likes: 3</a>
         <a href="https://www.youtube.com/watch?v=IqjycuJgrp8#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 16, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 16, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=IqjycuJgrp8" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 16, 2025 &nbsp;&middot;&nbsp; Last Edited: July 16, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=IqjycuJgrp8" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="galactic-asmr-saturn-jupiter-neptune-soundscapes.html">
+          <a class="item" href="/videos/galactic-asmr-saturn-jupiter-neptune-soundscapes.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/vA4YB8jxCc4/hqdefault.jpg" alt="Galactic ASMR: Saturn, Jupiter &amp; Neptune Soundscapes 🌌🔊">
             <div>
               <div class="link" style="font-weight:700">Galactic ASMR: Saturn, Jupiter &amp; Neptune Soundscapes 🌌🔊</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="i-sliced-a-gummy-and-this-happened.html">
+          <a class="item" href="/videos/i-sliced-a-gummy-and-this-happened.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/dxrMR2PTczA/hqdefault.jpg" alt="I Sliced a Gummy Bear with a Huge Knife">
             <div>
               <div class="link" style="font-weight:700">I Sliced a Gummy Bear with a Huge Knife</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
+          <a class="item" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg" alt="What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15">
             <div>
               <div class="link" style="font-weight:700">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="can-a-superheated-blade-destroy-ice-instantly.html">
+          <a class="item" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg" alt="Can a Superheated Blade Destroy Ice Instantly?">
             <div>
               <div class="link" style="font-weight:700">Can a Superheated Blade Destroy Ice Instantly?</div>
@@ -182,7 +185,7 @@
             </div>
           </a>
         
-          <a class="item" href="what-happens-when-you-cut-objects-in-reverse-asmr.html">
+          <a class="item" href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg" alt="What Happens When You Cut Objects in REVERSE ASMR">
             <div>
               <div class="link" style="font-weight:700">What Happens When You Cut Objects in REVERSE ASMR</div>
@@ -191,7 +194,7 @@
             </div>
           </a>
         
-          <a class="item" href="why-asmr-is-more-than-just-weird-noises.html">
+          <a class="item" href="/videos/why-asmr-is-more-than-just-weird-noises.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg" alt="Why ASMR Is More Than Just Weird Noises">
             <div>
               <div class="link" style="font-weight:700">Why ASMR Is More Than Just Weird Noises</div>
@@ -200,7 +203,7 @@
             </div>
           </a>
         
-          <a class="item" href="slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
+          <a class="item" href="/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/f4sYNCqHooo/hqdefault.jpg" alt="Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction">
             <div>
               <div class="link" style="font-weight:700">Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction</div>
@@ -209,7 +212,7 @@
             </div>
           </a>
         
-          <a class="item" href="carnival-cruises-disturbing-secrets.html">
+          <a class="item" href="/videos/carnival-cruises-disturbing-secrets.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" alt="Carnival Cruise&#39;s Disturbing Secrets">
             <div>
               <div class="link" style="font-weight:700">Carnival Cruise&#39;s Disturbing Secrets</div>
@@ -218,7 +221,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-glass-apple-looks-normal-but-watch-what-s-ins.html">
+          <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!">
             <div>
               <div class="link" style="font-weight:700">This Glass Apple Looks Normal But Watch What’s Inside!</div>
@@ -227,7 +230,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-shocking-secrets-of-venus-flytraps.html">
+          <a class="item" href="/videos/the-shocking-secrets-of-venus-flytraps.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/QguSXsx5mgs/hqdefault.jpg" alt="The Shocking Secrets of Venus Flytraps">
             <div>
               <div class="link" style="font-weight:700">The Shocking Secrets of Venus Flytraps</div>

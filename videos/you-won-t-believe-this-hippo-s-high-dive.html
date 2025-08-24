@@ -36,13 +36,17 @@ Watch as this surprisingly...">
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -50,33 +54,36 @@ Watch as this surprisingly...">
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;You Won’t Believe This Hippo’s High Dive! 😱🐘💦&#34;,
-    "description": &#34;What happens when a hippo hits the high dive? You get the most unexpected, hilarious, and jaw-dropping performance of the summer. 🤯\n \nWatch as this surprisingly...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/6I_kW76PiY8/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-06&#34;,
-    "duration": &#34;PT8S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=6I_kW76PiY8&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/6I_kW76PiY8&#34;,
-    "interactionCount": 49
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "You Won’t Believe This Hippo’s High Dive! 😱🐘💦", "description": "What happens when a hippo hits the high dive? You get the most unexpected, hilarious, and jaw-dropping performance of the summer. 🤯\n \nWatch as this surprisingly...", "thumbnailUrl": "https://i.ytimg.com/vi/6I_kW76PiY8/hqdefault.jpg", "uploadDate": "2025-07-06", "contentUrl": "https://www.youtube.com/watch?v=6I_kW76PiY8", "embedUrl": "https://www.youtube.com/embed/6I_kW76PiY8", "interactionCount": 49, "duration": "PT8S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "You Won’t Believe This Hippo’s High Dive! 😱🐘💦", "item": "https://jasonmartocci.com/videos/you-won-t-believe-this-hippo-s-high-dive.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “You Won’t Believe This Hippo’s High Dive! 😱🐘💦” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“You Won’t Believe This Hippo’s High Dive! 😱🐘💦” is a entertainment video on Martocci Mayhem. It highlights themes like AI video, Veo3, ai footage, animal bloopers, animal comedy, animal fails, animal reactions, cinematic animal short, cinematic clips, comedy shorts. Watch it in full here: https://www.youtube.com/watch?v=6I_kW76PiY8&#34;}},{"@type":"Question","name": &#34;How long is “You Won’t Believe This Hippo’s High Dive! 😱🐘💦”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:08.&#34;}},{"@type":"Question","name": &#34;When was “You Won’t Believe This Hippo’s High Dive! 😱🐘💦” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 06, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 49 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=6I_kW76PiY8&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: AI video, Veo3, ai footage, animal bloopers, animal comedy, animal fails, animal reactions, cinematic animal short, cinematic clips, comedy shorts.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “You Won’t Believe This Hippo’s High Dive! 😱🐘💦” about?", "acceptedAnswer": {"@type": "Answer", "text": "“You Won’t Believe This Hippo’s High Dive! 😱🐘💦” is a entertainment video on Martocci Mayhem. It highlights themes like AI video, Veo3, ai footage, animal bloopers, animal comedy, animal fails, animal reactions, cinematic animal short, cinematic clips, comedy shorts. Watch it in full here: https://www.youtube.com/watch?v=6I_kW76PiY8"}}, {"@type": "Question", "name": "How long is “You Won’t Believe This Hippo’s High Dive! 😱🐘💦”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:08."}}, {"@type": "Question", "name": "When was “You Won’t Believe This Hippo’s High Dive! 😱🐘💦” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 06, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 49 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=6I_kW76PiY8"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: AI video, Veo3, ai footage, animal bloopers, animal comedy, animal fails, animal reactions, cinematic animal short, cinematic clips, comedy shorts."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -95,21 +102,17 @@ Watch as this surprisingly...">
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">You Won’t Believe This Hippo’s High Dive! 😱🐘💦</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=6I_kW76PiY8" target="_blank" rel="noopener">Views: 49</a>
         <a href="https://www.youtube.com/watch?v=6I_kW76PiY8" target="_blank" rel="noopener">Likes: 1</a>
         <a href="https://www.youtube.com/watch?v=6I_kW76PiY8#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 06, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 06, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=6I_kW76PiY8" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 06, 2025 &nbsp;&middot;&nbsp; Last Edited: July 06, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=6I_kW76PiY8" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -152,7 +155,7 @@ Watch as this surprisingly...">
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="what-s-inside-exotic-fruits-when-you-cut-them-open.html">
+          <a class="item" href="/videos/what-s-inside-exotic-fruits-when-you-cut-them-open.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/I6nP0XNGGUY/hqdefault.jpg" alt="What&#39;s Inside EXOTIC Fruits When You Cut Them Open">
             <div>
               <div class="link" style="font-weight:700">What&#39;s Inside EXOTIC Fruits When You Cut Them Open</div>
@@ -161,7 +164,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="watch-me-taste-the-biggest-crab-ever.html">
+          <a class="item" href="/videos/watch-me-taste-the-biggest-crab-ever.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg" alt="Can I Eat This Giant Crab All By Myself?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab All By Myself?</div>
@@ -170,7 +173,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="this-squirrel-chef-cooks-better-than-me.html">
+          <a class="item" href="/videos/this-squirrel-chef-cooks-better-than-me.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/lieIUJo5Bkk/hqdefault.jpg" alt="This Squirrel Chef Cooks Better Than Me!">
             <div>
               <div class="link" style="font-weight:700">This Squirrel Chef Cooks Better Than Me!</div>
@@ -179,7 +182,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="the-most-beautiful-july-4th-you-ll-see-satisfying-.html">
+          <a class="item" href="/videos/the-most-beautiful-july-4th-you-ll-see-satisfying-.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/-Lpa-ObHvgk/hqdefault.jpg" alt="The Most Beautiful July 4th You’ll See | Satisfying Fireworks">
             <div>
               <div class="link" style="font-weight:700">The Most Beautiful July 4th You’ll See | Satisfying Fireworks</div>
@@ -188,7 +191,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="can-i-eat-this-giant-crab-in-one-sitting.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg" alt="Can I Eat This Giant Crab in One Sitting?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab in One Sitting?</div>
@@ -197,7 +200,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="83-years-old-whistler-a-blizzard-you-won-t-believe.html">
+          <a class="item" href="/videos/83-years-old-whistler-a-blizzard-you-won-t-believe.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/LBoqeM2tCts/hqdefault.jpg" alt="🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS.">
             <div>
               <div class="link" style="font-weight:700">🎥 83 YEARS OLD. WHISTLER. A BLIZZARD. YOU WON’T BELIEVE THIS.</div>
@@ -206,7 +209,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="i-bet-you-cant-tell-which-is-real-fruit-and-which-is-glass-fruit.html">
+          <a class="item" href="/videos/i-bet-you-cant-tell-which-is-real-fruit-and-which-is-glass-fruit.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/mlJkSexJ2So/hqdefault.jpg" alt="I Bet You Can&#39;t Tell Which is Real Fruit and Which is Glass Fruit?">
             <div>
               <div class="link" style="font-weight:700">I Bet You Can&#39;t Tell Which is Real Fruit and Which is Glass Fruit?</div>
@@ -215,7 +218,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="this-bed-melts-when-you-sleep-on-it.html">
+          <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg" alt="This Bed MELTS When You Sleep On It!">
             <div>
               <div class="link" style="font-weight:700">This Bed MELTS When You Sleep On It!</div>
@@ -224,7 +227,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="squirrel-vs-cat-kitchen-showdown.html">
+          <a class="item" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg" alt="Squirrel vs Cat Kitchen Showdown!">
             <div>
               <div class="link" style="font-weight:700">Squirrel vs Cat Kitchen Showdown!</div>
@@ -233,7 +236,7 @@ Watch as this surprisingly...">
             </div>
           </a>
         
-          <a class="item" href="what-really-happens-on-a-carnival-cruise.html">
+          <a class="item" href="/videos/what-really-happens-on-a-carnival-cruise.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/wu-IO0odXls/hqdefault.jpg" alt="What REALLY Happens on a CARNIVAL Cruise">
             <div>
               <div class="link" style="font-weight:700">What REALLY Happens on a CARNIVAL Cruise</div>

@@ -36,13 +36,17 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -50,33 +54,36 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;The TOP 6 MOST Savage Grandma Clips&#34;,
-    "description": &#34;They said Grandma was sweet… until she opened her mouth.\n \nDive into the six funniest, most savage one-liners from everyone’s favorite Southern firecracker. Fro...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-18&#34;,
-    "duration": &#34;PT48S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=v9j_3UVMx-E&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/v9j_3UVMx-E&#34;,
-    "interactionCount": 751
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "The TOP 6 MOST Savage Grandma Clips", "description": "They said Grandma was sweet… until she opened her mouth.\n \nDive into the six funniest, most savage one-liners from everyone’s favorite Southern firecracker. Fro...", "thumbnailUrl": "https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg", "uploadDate": "2025-07-18", "contentUrl": "https://www.youtube.com/watch?v=v9j_3UVMx-E", "embedUrl": "https://www.youtube.com/embed/v9j_3UVMx-E", "interactionCount": 751, "duration": "PT48S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "The TOP 6 MOST Savage Grandma Clips", "item": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “The TOP 6 MOST Savage Grandma Clips” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“The TOP 6 MOST Savage Grandma Clips” is a comedy video on Martocci Mayhem. It highlights themes like FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes, best roast, daily humor, daily sarcasm. Watch it in full here: https://www.youtube.com/watch?v=v9j_3UVMx-E&#34;}},{"@type":"Question","name": &#34;How long is “The TOP 6 MOST Savage Grandma Clips”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:48.&#34;}},{"@type":"Question","name": &#34;When was “The TOP 6 MOST Savage Grandma Clips” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 18, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 751 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=v9j_3UVMx-E&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Comedy with common keywords such as: FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes, best roast, daily humor, daily sarcasm.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “The TOP 6 MOST Savage Grandma Clips” about?", "acceptedAnswer": {"@type": "Answer", "text": "“The TOP 6 MOST Savage Grandma Clips” is a comedy video on Martocci Mayhem. It highlights themes like FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes, best roast, daily humor, daily sarcasm. Watch it in full here: https://www.youtube.com/watch?v=v9j_3UVMx-E"}}, {"@type": "Question", "name": "How long is “The TOP 6 MOST Savage Grandma Clips”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:48."}}, {"@type": "Question", "name": "When was “The TOP 6 MOST Savage Grandma Clips” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 18, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 751 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=v9j_3UVMx-E"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Comedy with common keywords such as: FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes, best roast, daily humor, daily sarcasm."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -95,21 +102,17 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">The TOP 6 MOST Savage Grandma Clips</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Views: 751</a>
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Likes: 11</a>
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E#comments" target="_blank" rel="noopener">Comments: 4</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 18, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 18, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 18, 2025 &nbsp;&middot;&nbsp; Last Edited: July 18, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -152,7 +155,7 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="the-joke-that-changed-comedy-forever.html">
+          <a class="item" href="/videos/the-joke-that-changed-comedy-forever.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" alt="The Joke That Changed Comedy Forever">
             <div>
               <div class="link" style="font-weight:700">The Joke That Changed Comedy Forever</div>
@@ -161,7 +164,7 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-the-entire-internet.html">
+          <a class="item" href="/videos/savage-grandma-roasts-the-entire-internet.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg" alt="Savage Grandma Roasts the Entire Internet">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts the Entire Internet</div>
@@ -170,7 +173,7 @@ Dive into the six funniest, most savage one-liners from everyone’s favorite So
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-s-marriage-tips.html">
+          <a class="item" href="/videos/savage-grandma-s-marriage-tips.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/_jHQfc24AxM/hqdefault.jpg" alt="Savage Grandma&#39;s Marriage Tips">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma&#39;s Marriage Tips</div>
@@ -181,7 +184,7 @@ Savage Grandma is back with another legendary one-liner — this time about her 
             </div>
           </a>
         
-          <a class="item" href="the-most-powerful-client-list-in-history.html">
+          <a class="item" href="/videos/the-most-powerful-client-list-in-history.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/sp4_MZ58KQU/hqdefault.jpg" alt="The Most Powerful Client List in History">
             <div>
               <div class="link" style="font-weight:700">The Most Powerful Client List in History</div>
@@ -191,7 +194,7 @@ Watch Savage Grandma drop an 8-second truth abou...</div>
             </div>
           </a>
         
-          <a class="item" href="the-funniest-jokes-from-legendary-comedians.html">
+          <a class="item" href="/videos/the-funniest-jokes-from-legendary-comedians.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/RamX-8oShZA/hqdefault.jpg" alt="The Funniest Jokes From Legendary Comedians">
             <div>
               <div class="link" style="font-weight:700">The Funniest Jokes From Legendary Comedians</div>
@@ -203,7 +206,7 @@ And no one&#39;s safe. 😂🔥...</div>
             </div>
           </a>
         
-          <a class="item" href="what-happens-when-you-stop-drinking.html">
+          <a class="item" href="/videos/what-happens-when-you-stop-drinking.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg" alt="What Happens When You Stop Drinking?">
             <div>
               <div class="link" style="font-weight:700">What Happens When You Stop Drinking?</div>
@@ -212,7 +215,7 @@ And no one&#39;s safe. 😂🔥...</div>
             </div>
           </a>
         
-          <a class="item" href="funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
+          <a class="item" href="/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg" alt="Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg">
             <div>
               <div class="link" style="font-weight:700">Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</div>
@@ -224,7 +227,7 @@ That’s peak Mitch Hedberg — dry, weird, and sneakily brilliant...</div>
             </div>
           </a>
         
-          <a class="item" href="george-carlin-was-right-about-everything.html">
+          <a class="item" href="/videos/george-carlin-was-right-about-everything.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg" alt="George Carlin Was Right About Everything">
             <div>
               <div class="link" style="font-weight:700">George Carlin Was Right About Everything</div>
@@ -234,7 +237,7 @@ That’s the kind of joke only George Carlin could get...</div>
             </div>
           </a>
         
-          <a class="item" href="italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
+          <a class="item" href="/videos/italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/QWlO6Ngm6-M/hqdefault.jpg" alt="Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner">
             <div>
               <div class="link" style="font-weight:700">Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner</div>
@@ -243,7 +246,7 @@ That’s the kind of joke only George Carlin could get...</div>
             </div>
           </a>
         
-          <a class="item" href="grandma-s-epic-burn-will-make-you-laugh.html">
+          <a class="item" href="/videos/grandma-s-epic-burn-will-make-you-laugh.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" alt="Grandma&#39;s Epic Burn Will Make You Laugh!">
             <div>
               <div class="link" style="font-weight:700">Grandma&#39;s Epic Burn Will Make You Laugh!</div>

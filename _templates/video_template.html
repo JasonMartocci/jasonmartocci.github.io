@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,39 +48,38 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": {{ title | tojson }},
-    "description": {{ short_desc | tojson }},
-    "thumbnailUrl": {{ ("https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg") | tojson }},
-    "uploadDate": {{ upload_date | tojson }}{% if duration_seconds and duration_seconds > 0 %},
-    "duration": {{ ('PT' ~ duration_seconds ~ 'S') | tojson }}{% endif %},
-    "contentUrl": {{ ("https://www.youtube.com/watch?v=" ~ video_id) | tojson }},
-    "embedUrl": {{ ("https://www.youtube.com/embed/" ~ video_id) | tojson }},
-    "interactionCount": {{ view_count_raw }}
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+{% set video_ld = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": title,
+  "description": short_desc,
+  "thumbnailUrl": "https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg",
+  "uploadDate": upload_date,
+  "contentUrl": "https://www.youtube.com/watch?v=" ~ video_id,
+  "embedUrl": "https://www.youtube.com/embed/" ~ video_id,
+  "interactionCount": view_count_raw
+} %}
+{% if duration_seconds and duration_seconds > 0 %}
+  {% set _ = video_ld.update({"duration": "PT" ~ duration_seconds ~ "S"}) %}
+{% endif %}
+<script type="application/ld+json">{{ video_ld | tojson | safe }}</script>
 
-<script type="application/ld+json">{{ {
+<!-- JSON-LD: BreadcrumbList -->
+{% set breadcrumbs = {
 "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Home","item": site_url},
  {"@type":"ListItem","position":2,"name": title,"item": site_url + "/videos/" + slug + ".html"}
-]} | tojson | safe }}</script>
+]} %}
+<script type="application/ld+json">{{ breadcrumbs | tojson | safe }}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {% for q, a in faqs -%}
-    {"@type":"Question","name": {{ q | tojson }},"acceptedAnswer":{"@type":"Answer","text": {{ a | tojson }}}}{% if not loop.last %},{% endif %}
-  {%- endfor %}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+{% set faq_entities = [] %}
+{% for q,a in faqs %}
+  {% set _ = faq_entities.append({"@type":"Question","name": q,"acceptedAnswer":{"@type":"Answer","text": a}}) %}
+{% endfor %}
+{% set faq_ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity": faq_entities} %}
+<script type="application/ld+json">{{ faq_ld | tojson | safe }}</script>
 
 </head>
 <body>
@@ -95,21 +98,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">{{ title }}</h1>
-    <div class="subtle">
-        Subscribers: {{ subscriber_count if subs_raw > 0 else "—" }}
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: {{ subs_raw and subscriber_count or "—" }}</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Views: {{ view_count }}</a>
         <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Likes: {{ like_count }}</a>
         <a href="https://www.youtube.com/watch?v={{ video_id }}#comments" target="_blank" rel="noopener">Comments: {{ comment_count }}</a>
-        <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">
-        Channel: {{ channel_title or ("@" ~ channel_handle) }}</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: {{ upload_date_pretty or "—" }} &nbsp;&middot;&nbsp;
-        Last Edited: {{ last_edited_date_pretty or "—" }}
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">Channel: {{ channel_title or ("@" ~ channel_handle) }}</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: {{ upload_date_pretty or "—" }} &nbsp;&middot;&nbsp; Last Edited: {{ last_edited_date_pretty or "—" }}
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -140,7 +139,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       {% if related and related|length > 0 %}
         {% for r in related %}
-          <a class="item" href="{{ r.slug }}.html">
+          <a class="item" href="/videos/{{ r.slug }}.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}">
             <div>
               <div class="link" style="font-weight:700">{{ r.title }}</div>

@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨&#34;,
-    "description": &#34;You won’t believe your eyes—watch as a hyper-realistic mini dragon bursts into life on the palm of a woman’s hand, then takes its very first flight! In this cin...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/e5AKApY-6LA/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-10&#34;,
-    "duration": &#34;PT8S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=e5AKApY-6LA&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/e5AKApY-6LA&#34;,
-    "interactionCount": 63
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨", "description": "You won’t believe your eyes—watch as a hyper-realistic mini dragon bursts into life on the palm of a woman’s hand, then takes its very first flight! In this cin...", "thumbnailUrl": "https://i.ytimg.com/vi/e5AKApY-6LA/hqdefault.jpg", "uploadDate": "2025-07-10", "contentUrl": "https://www.youtube.com/watch?v=e5AKApY-6LA", "embedUrl": "https://www.youtube.com/embed/e5AKApY-6LA", "interactionCount": 63, "duration": "PT8S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨", "item": "https://jasonmartocci.com/videos/i-brought-a-dragon-to-life-on-my-hand-and-it-soare.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” is a entertainment video on Martocci Mayhem. It highlights themes like 3d dragon, CGI dragon, VFX breakdown, animated dragons, cgi creatures, cgi fantasy, digital creature design, digital dragons, drago, dragon. Watch it in full here: https://www.youtube.com/watch?v=e5AKApY-6LA&#34;}},{"@type":"Question","name": &#34;How long is “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:08.&#34;}},{"@type":"Question","name": &#34;When was “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 10, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 63 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=e5AKApY-6LA&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: 3d dragon, CGI dragon, VFX breakdown, animated dragons, cgi creatures, cgi fantasy, digital creature design, digital dragons, drago, dragon.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” about?", "acceptedAnswer": {"@type": "Answer", "text": "“I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” is a entertainment video on Martocci Mayhem. It highlights themes like 3d dragon, CGI dragon, VFX breakdown, animated dragons, cgi creatures, cgi fantasy, digital creature design, digital dragons, drago, dragon. Watch it in full here: https://www.youtube.com/watch?v=e5AKApY-6LA"}}, {"@type": "Question", "name": "How long is “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:08."}}, {"@type": "Question", "name": "When was “I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 10, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 63 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=e5AKApY-6LA"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: 3d dragon, CGI dragon, VFX breakdown, animated dragons, cgi creatures, cgi fantasy, digital creature design, digital dragons, drago, dragon."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">I Brought a Dragon to Life on My Hand…And It SOARED! 🐉✨</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=e5AKApY-6LA" target="_blank" rel="noopener">Views: 63</a>
         <a href="https://www.youtube.com/watch?v=e5AKApY-6LA" target="_blank" rel="noopener">Likes: 4</a>
         <a href="https://www.youtube.com/watch?v=e5AKApY-6LA#comments" target="_blank" rel="noopener">Comments: 8</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 10, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 10, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=e5AKApY-6LA" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 10, 2025 &nbsp;&middot;&nbsp; Last Edited: July 10, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=e5AKApY-6LA" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="tiny-dragon-hatches-will-it-fly.html">
+          <a class="item" href="/videos/tiny-dragon-hatches-will-it-fly.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/MgUKExtb5Q8/hqdefault.jpg" alt="Tiny Dragon Hatches—Will It Fly? 🐉🔥">
             <div>
               <div class="link" style="font-weight:700">Tiny Dragon Hatches—Will It Fly? 🐉🔥</div>
@@ -157,7 +160,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="tiny-dragon-on-my-finger-breathes-fire-epic-miniat.html">
+          <a class="item" href="/videos/tiny-dragon-on-my-finger-breathes-fire-epic-miniat.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/nYO3Xfymiy8/hqdefault.jpg" alt="Tiny Dragon on My Finger Breathes Fire: Epic Miniature Magic">
             <div>
               <div class="link" style="font-weight:700">Tiny Dragon on My Finger Breathes Fire: Epic Miniature Magic</div>
@@ -166,7 +169,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-made-a-glass-fruit-smoothie-then-brought-it-to-l.html">
+          <a class="item" href="/videos/i-made-a-glass-fruit-smoothie-then-brought-it-to-l.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Bb3w54pNsRY/hqdefault.jpg" alt="I Made a Glass Fruit Smoothie, Then Brought It To Life">
             <div>
               <div class="link" style="font-weight:700">I Made a Glass Fruit Smoothie, Then Brought It To Life</div>
@@ -175,7 +178,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-cracked-open-dragon-fruit-and-found-a-wild-anima.html">
+          <a class="item" href="/videos/i-cracked-open-dragon-fruit-and-found-a-wild-anima.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/rAK4XnhiPzY/hqdefault.jpg" alt="I Cracked Open DRAGON Fruit and Found a WILD Animal Inside!">
             <div>
               <div class="link" style="font-weight:700">I Cracked Open DRAGON Fruit and Found a WILD Animal Inside!</div>
@@ -184,7 +187,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-made-a-glass-pomegranate-cut-it-open.html">
+          <a class="item" href="/videos/i-made-a-glass-pomegranate-cut-it-open.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/oqhl4YwaaLQ/hqdefault.jpg" alt="I Made A Glass Pomegranate &amp; Cut It Open">
             <div>
               <div class="link" style="font-weight:700">I Made A Glass Pomegranate &amp; Cut It Open</div>
@@ -193,7 +196,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-made-a-rainbow-glass-fruit-garden.html">
+          <a class="item" href="/videos/i-made-a-rainbow-glass-fruit-garden.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" alt="I Made a Rainbow Glass Fruit Garden">
             <div>
               <div class="link" style="font-weight:700">I Made a Rainbow Glass Fruit Garden</div>
@@ -202,7 +205,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-turned-a-watermelon-into-a-cute-puppy.html">
+          <a class="item" href="/videos/i-turned-a-watermelon-into-a-cute-puppy.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/lOO4n2TUPns/hqdefault.jpg" alt="I Turned a Watermelon Into a Cute Puppy">
             <div>
               <div class="link" style="font-weight:700">I Turned a Watermelon Into a Cute Puppy</div>
@@ -211,7 +214,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="can-you-guess-what-these-weird-objects-are.html">
+          <a class="item" href="/videos/can-you-guess-what-these-weird-objects-are.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg" alt="Can You Guess What These Weird Objects Are?">
             <div>
               <div class="link" style="font-weight:700">Can You Guess What These Weird Objects Are?</div>
@@ -220,7 +223,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="i-bet-you-cant-tell-which-is-real-fruit-and-which-is-glass-fruit.html">
+          <a class="item" href="/videos/i-bet-you-cant-tell-which-is-real-fruit-and-which-is-glass-fruit.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/mlJkSexJ2So/hqdefault.jpg" alt="I Bet You Can&#39;t Tell Which is Real Fruit and Which is Glass Fruit?">
             <div>
               <div class="link" style="font-weight:700">I Bet You Can&#39;t Tell Which is Real Fruit and Which is Glass Fruit?</div>
@@ -229,7 +232,7 @@ Prepare to have your mind blown! In this jaw-dropping short, ...</div>
             </div>
           </a>
         
-          <a class="item" href="bigfoot-eats-bugs-and-it-gets-wild.html">
+          <a class="item" href="/videos/bigfoot-eats-bugs-and-it-gets-wild.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/rOrx30yN4G4/hqdefault.jpg" alt="Bigfoot Eats Bugs and It Gets Wild!">
             <div>
               <div class="link" style="font-weight:700">Bigfoot Eats Bugs and It Gets Wild!</div>

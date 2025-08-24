@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!&#34;,
-    "description": &#34;Get ready for a vibrant visual treat! Watch as colorful candy undergoes a mesmerizing melt, creating an abstract painting right before your eyes. This satisfyin...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/b40gRYUXv8U/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-06-27&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=b40gRYUXv8U&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/b40gRYUXv8U&#34;,
-    "interactionCount": 437
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!", "description": "Get ready for a vibrant visual treat! Watch as colorful candy undergoes a mesmerizing melt, creating an abstract painting right before your eyes. This satisfyin...", "thumbnailUrl": "https://i.ytimg.com/vi/b40gRYUXv8U/hqdefault.jpg", "uploadDate": "2025-06-27", "contentUrl": "https://www.youtube.com/watch?v=b40gRYUXv8U", "embedUrl": "https://www.youtube.com/embed/b40gRYUXv8U", "interactionCount": 437, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!", "item": "https://jasonmartocci.com/videos/neon-slime-lava-will-it-pop.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” is a entertainment video on Martocci Mayhem. It highlights themes like ai generated food video, ai mukbang, asmr eating, asmr food, binge eating, crunch sounds, crunchy bites, eating show, eating sounds, extreme mukbang. Watch it in full here: https://www.youtube.com/watch?v=b40gRYUXv8U&#34;}},{"@type":"Question","name": &#34;How long is “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on June 27, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 437 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=b40gRYUXv8U&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: ai generated food video, ai mukbang, asmr eating, asmr food, binge eating, crunch sounds, crunchy bites, eating show, eating sounds, extreme mukbang.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” about?", "acceptedAnswer": {"@type": "Answer", "text": "“NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” is a entertainment video on Martocci Mayhem. It highlights themes like ai generated food video, ai mukbang, asmr eating, asmr food, binge eating, crunch sounds, crunchy bites, eating show, eating sounds, extreme mukbang. Watch it in full here: https://www.youtube.com/watch?v=b40gRYUXv8U"}}, {"@type": "Question", "name": "How long is “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on June 27, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 437 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=b40gRYUXv8U"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: ai generated food video, ai mukbang, asmr eating, asmr food, binge eating, crunch sounds, crunchy bites, eating show, eating sounds, extreme mukbang."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=b40gRYUXv8U" target="_blank" rel="noopener">Views: 437</a>
         <a href="https://www.youtube.com/watch?v=b40gRYUXv8U" target="_blank" rel="noopener">Likes: 2</a>
         <a href="https://www.youtube.com/watch?v=b40gRYUXv8U#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: June 27, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: June 27, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=b40gRYUXv8U" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: June 27, 2025 &nbsp;&middot;&nbsp; Last Edited: June 27, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=b40gRYUXv8U" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="the-ultimate-asmr-food-bliss.html">
+          <a class="item" href="/videos/the-ultimate-asmr-food-bliss.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" alt="The Ultimate ASMR Food Bliss">
             <div>
               <div class="link" style="font-weight:700">The Ultimate ASMR Food Bliss</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="asmr-lava-cheesecake-bite-melty-delicious-sounds.html">
+          <a class="item" href="/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" alt="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds">
             <div>
               <div class="link" style="font-weight:700">ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="culinary-disturbia-pasta-horror-stories.html">
+          <a class="item" href="/videos/culinary-disturbia-pasta-horror-stories.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" alt="Culinary Disturbia: Pasta Horror Stories">
             <div>
               <div class="link" style="font-weight:700">Culinary Disturbia: Pasta Horror Stories</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="slime-donuts-asmr-the-sweetest-squish.html">
+          <a class="item" href="/videos/slime-donuts-asmr-the-sweetest-squish.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/dUOtfyfa_Ho/hqdefault.jpg" alt="Slime Donuts ASMR - The Sweetest Squish">
             <div>
               <div class="link" style="font-weight:700">Slime Donuts ASMR - The Sweetest Squish</div>
@@ -184,7 +187,7 @@ Get ready for the most mind-blowing 9-second ASMR experience you’ve e...</div>
             </div>
           </a>
         
-          <a class="item" href="can-i-eat-this-giant-burger-in-one-bite.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-burger-in-one-bite.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" alt="Can I Eat This Giant Burger In One Bite?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Burger In One Bite?</div>
@@ -193,7 +196,7 @@ Get ready for the most mind-blowing 9-second ASMR experience you’ve e...</div>
             </div>
           </a>
         
-          <a class="item" href="the-disturbing-lava-mukbang-trend.html">
+          <a class="item" href="/videos/the-disturbing-lava-mukbang-trend.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" alt="The Disturbing &#39;Lava&#39; Mukbang Trend">
             <div>
               <div class="link" style="font-weight:700">The Disturbing &#39;Lava&#39; Mukbang Trend</div>
@@ -202,7 +205,7 @@ Get ready for the most mind-blowing 9-second ASMR experience you’ve e...</div>
             </div>
           </a>
         
-          <a class="item" href="dante-s-inferno-food-challenge-can-she-survive-the.html">
+          <a class="item" href="/videos/dante-s-inferno-food-challenge-can-she-survive-the.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/eENyUuykhLI/hqdefault.jpg" alt="Dante’s Inferno Food Challenge 🌶🔥 | Can She Survive the Lava Heat?">
             <div>
               <div class="link" style="font-weight:700">Dante’s Inferno Food Challenge 🌶🔥 | Can She Survive the Lava Heat?</div>
@@ -212,7 +215,7 @@ Welcome to the Dante’s Inferno Challenge — the spiciest mukbang ASMR...</div
             </div>
           </a>
         
-          <a class="item" href="why-lava-mukbangs-are-more-disturbing-than-you-tho.html">
+          <a class="item" href="/videos/why-lava-mukbangs-are-more-disturbing-than-you-tho.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/URYGgY4UeIY/hqdefault.jpg" alt="Why Lava Mukbangs Are More Disturbing Than You Thought">
             <div>
               <div class="link" style="font-weight:700">Why Lava Mukbangs Are More Disturbing Than You Thought</div>
@@ -224,7 +227,7 @@ Would you try a molten mukbang? T...</div>
             </div>
           </a>
         
-          <a class="item" href="watch-this-donut-turn-into-neon-slime.html">
+          <a class="item" href="/videos/watch-this-donut-turn-into-neon-slime.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/uC_0W0jJL9o/hqdefault.jpg" alt="Watch This Donut Turn Into Neon Slime!">
             <div>
               <div class="link" style="font-weight:700">Watch This Donut Turn Into Neon Slime!</div>
@@ -233,7 +236,7 @@ Would you try a molten mukbang? T...</div>
             </div>
           </a>
         
-          <a class="item" href="can-i-eat-this-giant-crab-in-one-sitting.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg" alt="Can I Eat This Giant Crab in One Sitting?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab in One Sitting?</div>

@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;MIND-BLOWING SEAFOOD MUKBANG Moments!&#34;,
-    "description": &#34;Join me on this epic Asian seafood mukbang adventure, with a dash of dad jokes, as we dive into a mouth-watering spread of fresh prawns, lobster, crab, and many...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-08-06&#34;,
-    "duration": &#34;PT65S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=Osu7q_6hOI8&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/Osu7q_6hOI8&#34;,
-    "interactionCount": 717
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "MIND-BLOWING SEAFOOD MUKBANG Moments!", "description": "Join me on this epic Asian seafood mukbang adventure, with a dash of dad jokes, as we dive into a mouth-watering spread of fresh prawns, lobster, crab, and many...", "thumbnailUrl": "https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg", "uploadDate": "2025-08-06", "contentUrl": "https://www.youtube.com/watch?v=Osu7q_6hOI8", "embedUrl": "https://www.youtube.com/embed/Osu7q_6hOI8", "interactionCount": 717, "duration": "PT65S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "MIND-BLOWING SEAFOOD MUKBANG Moments!", "item": "https://jasonmartocci.com/videos/mind-blowing-seafood-mukbang-moments.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “MIND-BLOWING SEAFOOD MUKBANG Moments!” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“MIND-BLOWING SEAFOOD MUKBANG Moments!” is a entertainment video on Martocci Mayhem. It highlights themes like jason martocci, weird asmr, viral shorts, cinematic challenge, satisfying experiment, epic hook, martocci mayhem, mukbang, food challenge, food vlog. Watch it in full here: https://www.youtube.com/watch?v=Osu7q_6hOI8&#34;}},{"@type":"Question","name": &#34;How long is “MIND-BLOWING SEAFOOD MUKBANG Moments!”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 1:05.&#34;}},{"@type":"Question","name": &#34;When was “MIND-BLOWING SEAFOOD MUKBANG Moments!” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on August 06, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 717 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=Osu7q_6hOI8&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: jason martocci, weird asmr, viral shorts, cinematic challenge, satisfying experiment, epic hook, martocci mayhem, mukbang, food challenge, food vlog.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “MIND-BLOWING SEAFOOD MUKBANG Moments!” about?", "acceptedAnswer": {"@type": "Answer", "text": "“MIND-BLOWING SEAFOOD MUKBANG Moments!” is a entertainment video on Martocci Mayhem. It highlights themes like jason martocci, weird asmr, viral shorts, cinematic challenge, satisfying experiment, epic hook, martocci mayhem, mukbang, food challenge, food vlog. Watch it in full here: https://www.youtube.com/watch?v=Osu7q_6hOI8"}}, {"@type": "Question", "name": "How long is “MIND-BLOWING SEAFOOD MUKBANG Moments!”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 1:05."}}, {"@type": "Question", "name": "When was “MIND-BLOWING SEAFOOD MUKBANG Moments!” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on August 06, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 717 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=Osu7q_6hOI8"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: jason martocci, weird asmr, viral shorts, cinematic challenge, satisfying experiment, epic hook, martocci mayhem, mukbang, food challenge, food vlog."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">MIND-BLOWING SEAFOOD MUKBANG Moments!</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=Osu7q_6hOI8" target="_blank" rel="noopener">Views: 717</a>
         <a href="https://www.youtube.com/watch?v=Osu7q_6hOI8" target="_blank" rel="noopener">Likes: 7</a>
         <a href="https://www.youtube.com/watch?v=Osu7q_6hOI8#comments" target="_blank" rel="noopener">Comments: 5</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: August 06, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: August 06, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=Osu7q_6hOI8" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 06, 2025 &nbsp;&middot;&nbsp; Last Edited: August 06, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=Osu7q_6hOI8" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="top-comedian-reveals-best-shellfish-joke-techniques.html">
+          <a class="item" href="/videos/top-comedian-reveals-best-shellfish-joke-techniques.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/bXQzLNFQZLE/hqdefault.jpg" alt="Top Comedian Reveals Best Shellfish Joke Techniques">
             <div>
               <div class="link" style="font-weight:700">Top Comedian Reveals Best Shellfish Joke Techniques</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="will-ai-replace-human-mukbangs.html">
+          <a class="item" href="/videos/will-ai-replace-human-mukbangs.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?">
             <div>
               <div class="link" style="font-weight:700">Will AI Replace Human Mukbangs?</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="can-i-eat-this-giant-crab-in-one-sitting.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg" alt="Can I Eat This Giant Crab in One Sitting?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab in One Sitting?</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="watch-me-taste-the-biggest-crab-ever.html">
+          <a class="item" href="/videos/watch-me-taste-the-biggest-crab-ever.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg" alt="Can I Eat This Giant Crab All By Myself?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab All By Myself?</div>
@@ -182,7 +185,7 @@
             </div>
           </a>
         
-          <a class="item" href="weird-food-mukbangs-the-500-challenge.html">
+          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge">
             <div>
               <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>
@@ -191,7 +194,7 @@
             </div>
           </a>
         
-          <a class="item" href="neon-slime-lava-will-it-pop.html">
+          <a class="item" href="/videos/neon-slime-lava-will-it-pop.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/b40gRYUXv8U/hqdefault.jpg" alt="NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!">
             <div>
               <div class="link" style="font-weight:700">NEON LIQUID MELTS Satisfying Food in CRAZY Color Change!</div>
@@ -200,7 +203,7 @@
             </div>
           </a>
         
-          <a class="item" href="dante-s-inferno-food-challenge-can-she-survive-the.html">
+          <a class="item" href="/videos/dante-s-inferno-food-challenge-can-she-survive-the.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/eENyUuykhLI/hqdefault.jpg" alt="Dante’s Inferno Food Challenge 🌶🔥 | Can She Survive the Lava Heat?">
             <div>
               <div class="link" style="font-weight:700">Dante’s Inferno Food Challenge 🌶🔥 | Can She Survive the Lava Heat?</div>
@@ -210,7 +213,7 @@ Welcome to the Dante’s Inferno Challenge — the spiciest mukbang ASMR...</div
             </div>
           </a>
         
-          <a class="item" href="family-dinner-gets-wild-with-grandmas-secret.html">
+          <a class="item" href="/videos/family-dinner-gets-wild-with-grandmas-secret.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/P5VrYObsphY/hqdefault.jpg" alt="Family Dinner Gets Wild With Grandma’s Secret!">
             <div>
               <div class="link" style="font-weight:700">Family Dinner Gets Wild With Grandma’s Secret!</div>
@@ -219,7 +222,7 @@ Welcome to the Dante’s Inferno Challenge — the spiciest mukbang ASMR...</div
             </div>
           </a>
         
-          <a class="item" href="i-tested-the-weird-asmr-keyboard-trend.html">
+          <a class="item" href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg" alt="I Tested The Weird ASMR Keyboard Trend">
             <div>
               <div class="link" style="font-weight:700">I Tested The Weird ASMR Keyboard Trend</div>
@@ -228,7 +231,7 @@ Welcome to the Dante’s Inferno Challenge — the spiciest mukbang ASMR...</div
             </div>
           </a>
         
-          <a class="item" href="i-let-ai-create-an-unusual-food-feast.html">
+          <a class="item" href="/videos/i-let-ai-create-an-unusual-food-feast.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/YT2bBo4s2m4/hqdefault.jpg" alt="I Let AI Create An Unusual Food Feast">
             <div>
               <div class="link" style="font-weight:700">I Let AI Create An Unusual Food Feast</div>

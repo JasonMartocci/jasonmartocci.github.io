@@ -36,13 +36,17 @@ Savage Grandma is back with another legendary one-liner — this time about her 
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -50,33 +54,36 @@ Savage Grandma is back with another legendary one-liner — this time about her 
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Savage Grandma&#39;s Marriage Tips&#34;,
-    "description": &#34;She said it, not us 👵💅\n \nSavage Grandma is back with another legendary one-liner — this time about her marriage history. Rodney Dangerfield never sounded this f...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/_jHQfc24AxM/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-06-27&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=_jHQfc24AxM&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/_jHQfc24AxM&#34;,
-    "interactionCount": 1300
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Savage Grandma's Marriage Tips", "description": "She said it, not us 👵💅\n \nSavage Grandma is back with another legendary one-liner — this time about her marriage history. Rodney Dangerfield never sounded this f...", "thumbnailUrl": "https://i.ytimg.com/vi/_jHQfc24AxM/hqdefault.jpg", "uploadDate": "2025-06-27", "contentUrl": "https://www.youtube.com/watch?v=_jHQfc24AxM", "embedUrl": "https://www.youtube.com/embed/_jHQfc24AxM", "interactionCount": 1300, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Savage Grandma's Marriage Tips", "item": "https://jasonmartocci.com/videos/savage-grandma-s-marriage-tips.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Savage Grandma&#39;s Marriage Tips” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Savage Grandma&#39;s Marriage Tips” is a comedy video on Martocci Mayhem. It highlights themes like comedic shorts, comedic skits, comedy clips, comedyshorts, dysfunctional families, dysfunctional family, family jokes, funny grandma, funny skits, grandma humor. Watch it in full here: https://www.youtube.com/watch?v=_jHQfc24AxM&#34;}},{"@type":"Question","name": &#34;How long is “Savage Grandma&#39;s Marriage Tips”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “Savage Grandma&#39;s Marriage Tips” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on June 27, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 1,300 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=_jHQfc24AxM&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Comedy with common keywords such as: comedic shorts, comedic skits, comedy clips, comedyshorts, dysfunctional families, dysfunctional family, family jokes, funny grandma, funny skits, grandma humor.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Savage Grandma's Marriage Tips” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Savage Grandma's Marriage Tips” is a comedy video on Martocci Mayhem. It highlights themes like comedic shorts, comedic skits, comedy clips, comedyshorts, dysfunctional families, dysfunctional family, family jokes, funny grandma, funny skits, grandma humor. Watch it in full here: https://www.youtube.com/watch?v=_jHQfc24AxM"}}, {"@type": "Question", "name": "How long is “Savage Grandma's Marriage Tips”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “Savage Grandma's Marriage Tips” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on June 27, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 1,300 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=_jHQfc24AxM"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Comedy with common keywords such as: comedic shorts, comedic skits, comedy clips, comedyshorts, dysfunctional families, dysfunctional family, family jokes, funny grandma, funny skits, grandma humor."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -95,21 +102,17 @@ Savage Grandma is back with another legendary one-liner — this time about her 
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Savage Grandma&#39;s Marriage Tips</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=_jHQfc24AxM" target="_blank" rel="noopener">Views: 1,300</a>
         <a href="https://www.youtube.com/watch?v=_jHQfc24AxM" target="_blank" rel="noopener">Likes: 13</a>
         <a href="https://www.youtube.com/watch?v=_jHQfc24AxM#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: June 27, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: June 27, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=_jHQfc24AxM" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: June 27, 2025 &nbsp;&middot;&nbsp; Last Edited: June 27, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=_jHQfc24AxM" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -152,7 +155,7 @@ Savage Grandma is back with another legendary one-liner — this time about her 
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="southern-grandma-throws-epic-shade.html">
+          <a class="item" href="/videos/southern-grandma-throws-epic-shade.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/FYI6w0AN84w/hqdefault.jpg" alt="Southern Grandma Throws Epic Shade! 😂👵">
             <div>
               <div class="link" style="font-weight:700">Southern Grandma Throws Epic Shade! 😂👵</div>
@@ -165,7 +168,7 @@ Savag...</div>
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-carnival-cruises-this-ain-t-.html">
+          <a class="item" href="/videos/savage-grandma-roasts-carnival-cruises-this-ain-t-.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/velarGA8nCI/hqdefault.jpg" alt="Savage Grandma Roasts Carnival Cruises 😂 “This Ain’t a Vacation, It’s an Episode of COPS!”">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts Carnival Cruises 😂 “This Ain’t a Vacation, It’s an Episode of COPS!”</div>
@@ -176,7 +179,7 @@ Carnival Cruise Line? Honey, she’s ...</div>
             </div>
           </a>
         
-          <a class="item" href="grandma-s-epic-burn-will-make-you-laugh.html">
+          <a class="item" href="/videos/grandma-s-epic-burn-will-make-you-laugh.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/DIDmWHbndBo/hqdefault.jpg" alt="Grandma&#39;s Epic Burn Will Make You Laugh!">
             <div>
               <div class="link" style="font-weight:700">Grandma&#39;s Epic Burn Will Make You Laugh!</div>
@@ -185,7 +188,7 @@ Carnival Cruise Line? Honey, she’s ...</div>
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-romance-again.html">
+          <a class="item" href="/videos/savage-grandma-roasts-romance-again.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Bmi-QNfpSUc/hqdefault.jpg" alt="Savage Grandma Roasts Romance (Again)!">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts Romance (Again)!</div>
@@ -194,7 +197,7 @@ Carnival Cruise Line? Honey, she’s ...</div>
             </div>
           </a>
         
-          <a class="item" href="wife-s-unusual-demand-for-plumbers.html">
+          <a class="item" href="/videos/wife-s-unusual-demand-for-plumbers.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg" alt="Wife&#39;s Unusual Demand for Plumbers">
             <div>
               <div class="link" style="font-weight:700">Wife&#39;s Unusual Demand for Plumbers</div>
@@ -203,7 +206,7 @@ Carnival Cruise Line? Honey, she’s ...</div>
             </div>
           </a>
         
-          <a class="item" href="the-top-6-most-savage-grandma-clips.html">
+          <a class="item" href="/videos/the-top-6-most-savage-grandma-clips.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg" alt="The TOP 6 MOST Savage Grandma Clips">
             <div>
               <div class="link" style="font-weight:700">The TOP 6 MOST Savage Grandma Clips</div>
@@ -214,7 +217,7 @@ Dive into the six funniest, most savage one-liners from every...</div>
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-the-entire-internet.html">
+          <a class="item" href="/videos/savage-grandma-roasts-the-entire-internet.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg" alt="Savage Grandma Roasts the Entire Internet">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts the Entire Internet</div>
@@ -223,7 +226,7 @@ Dive into the six funniest, most savage one-liners from every...</div>
             </div>
           </a>
         
-          <a class="item" href="is-mcdonald-s-drive-thru-getting-out-of-hand.html">
+          <a class="item" href="/videos/is-mcdonald-s-drive-thru-getting-out-of-hand.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/qKroZ9jiHvc/hqdefault.jpg" alt="Is McDonald&#39;s Drive-Thru Getting Out of Hand?">
             <div>
               <div class="link" style="font-weight:700">Is McDonald&#39;s Drive-Thru Getting Out of Hand?</div>
@@ -232,7 +235,7 @@ Dive into the six funniest, most savage one-liners from every...</div>
             </div>
           </a>
         
-          <a class="item" href="what-happens-when-you-stop-drinking.html">
+          <a class="item" href="/videos/what-happens-when-you-stop-drinking.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg" alt="What Happens When You Stop Drinking?">
             <div>
               <div class="link" style="font-weight:700">What Happens When You Stop Drinking?</div>
@@ -241,7 +244,7 @@ Dive into the six funniest, most savage one-liners from every...</div>
             </div>
           </a>
         
-          <a class="item" href="grandma-stories-that-will-leave-you-dying-laughing.html">
+          <a class="item" href="/videos/grandma-stories-that-will-leave-you-dying-laughing.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Q9ji34RHk0A/hqdefault.jpg" alt="GRANDMA STORIES That Will Leave You DYING Laughing">
             <div>
               <div class="link" style="font-weight:700">GRANDMA STORIES That Will Leave You DYING Laughing</div>

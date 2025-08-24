@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Watch This Turtle&#39;s Amazing Rescue!&#34;,
-    "description": &#34;Witness a heartwarming animal rescue as divers find a sea turtle struggling with a plastic container stuck on its head. The divers carefully remove the plastic,...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/j8JH5B8gBfE/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-06-24&#34;,
-    "duration": &#34;PT30S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=j8JH5B8gBfE&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/j8JH5B8gBfE&#34;,
-    "interactionCount": 1109
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Watch This Turtle's Amazing Rescue!", "description": "Witness a heartwarming animal rescue as divers find a sea turtle struggling with a plastic container stuck on its head. The divers carefully remove the plastic,...", "thumbnailUrl": "https://i.ytimg.com/vi/j8JH5B8gBfE/hqdefault.jpg", "uploadDate": "2025-06-24", "contentUrl": "https://www.youtube.com/watch?v=j8JH5B8gBfE", "embedUrl": "https://www.youtube.com/embed/j8JH5B8gBfE", "interactionCount": 1109, "duration": "PT30S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Watch This Turtle's Amazing Rescue!", "item": "https://jasonmartocci.com/videos/watch-this-turtle-s-amazing-rescue.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Watch This Turtle&#39;s Amazing Rescue!” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Watch This Turtle&#39;s Amazing Rescue!” is a pets &amp; animals video on Martocci Mayhem. It highlights themes like AI, AI Art, ASMR, Digital Nature, Marine Life, Ocean Pollution, Plastic Free Oceans, Sea Turtles, Turtle Rescue, Turtles. Watch it in full here: https://www.youtube.com/watch?v=j8JH5B8gBfE&#34;}},{"@type":"Question","name": &#34;How long is “Watch This Turtle&#39;s Amazing Rescue!”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:30.&#34;}},{"@type":"Question","name": &#34;When was “Watch This Turtle&#39;s Amazing Rescue!” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on June 24, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 1,109 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=j8JH5B8gBfE&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Pets &amp; Animals with common keywords such as: AI, AI Art, ASMR, Digital Nature, Marine Life, Ocean Pollution, Plastic Free Oceans, Sea Turtles, Turtle Rescue, Turtles.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Watch This Turtle's Amazing Rescue!” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Watch This Turtle's Amazing Rescue!” is a pets & animals video on Martocci Mayhem. It highlights themes like AI, AI Art, ASMR, Digital Nature, Marine Life, Ocean Pollution, Plastic Free Oceans, Sea Turtles, Turtle Rescue, Turtles. Watch it in full here: https://www.youtube.com/watch?v=j8JH5B8gBfE"}}, {"@type": "Question", "name": "How long is “Watch This Turtle's Amazing Rescue!”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:30."}}, {"@type": "Question", "name": "When was “Watch This Turtle's Amazing Rescue!” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on June 24, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 1,109 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=j8JH5B8gBfE"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Pets & Animals with common keywords such as: AI, AI Art, ASMR, Digital Nature, Marine Life, Ocean Pollution, Plastic Free Oceans, Sea Turtles, Turtle Rescue, Turtles."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Watch This Turtle&#39;s Amazing Rescue!</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=j8JH5B8gBfE" target="_blank" rel="noopener">Views: 1,109</a>
         <a href="https://www.youtube.com/watch?v=j8JH5B8gBfE" target="_blank" rel="noopener">Likes: 10</a>
         <a href="https://www.youtube.com/watch?v=j8JH5B8gBfE#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: June 24, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: June 24, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=j8JH5B8gBfE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: June 24, 2025 &nbsp;&middot;&nbsp; Last Edited: June 24, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=j8JH5B8gBfE" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="watch-this-coconut-split-in-seconds.html">
+          <a class="item" href="/videos/watch-this-coconut-split-in-seconds.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/G4lcamHGWXA/hqdefault.jpg" alt="Watch This Coconut Split in Seconds!">
             <div>
               <div class="link" style="font-weight:700">Watch This Coconut Split in Seconds!</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="turtle-tortoise-race-showdown-shell-shocking-facts.html">
+          <a class="item" href="/videos/turtle-tortoise-race-showdown-shell-shocking-facts.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/PQKno1vN03Y/hqdefault.jpg" alt="Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!">
             <div>
               <div class="link" style="font-weight:700">Turtle &amp; Tortoise Race Showdown: Shell-Shocking Facts &amp; Finish!</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-glass-apple-looks-normal-but-watch-what-s-ins.html">
+          <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg" alt="This Glass Apple Looks Normal But Watch What’s Inside!">
             <div>
               <div class="link" style="font-weight:700">This Glass Apple Looks Normal But Watch What’s Inside!</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-bed-melts-when-you-sleep-on-it.html">
+          <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg" alt="This Bed MELTS When You Sleep On It!">
             <div>
               <div class="link" style="font-weight:700">This Bed MELTS When You Sleep On It!</div>
@@ -182,7 +185,7 @@
             </div>
           </a>
         
-          <a class="item" href="lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
+          <a class="item" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg" alt="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!">
             <div>
               <div class="link" style="font-weight:700">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</div>
@@ -191,7 +194,7 @@
             </div>
           </a>
         
-          <a class="item" href="i-turned-a-watermelon-into-a-cute-puppy.html">
+          <a class="item" href="/videos/i-turned-a-watermelon-into-a-cute-puppy.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/lOO4n2TUPns/hqdefault.jpg" alt="I Turned a Watermelon Into a Cute Puppy">
             <div>
               <div class="link" style="font-weight:700">I Turned a Watermelon Into a Cute Puppy</div>
@@ -200,7 +203,7 @@
             </div>
           </a>
         
-          <a class="item" href="slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
+          <a class="item" href="/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/f4sYNCqHooo/hqdefault.jpg" alt="Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction">
             <div>
               <div class="link" style="font-weight:700">Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction</div>
@@ -209,7 +212,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-most-satisfying-mangosteen-slices.html">
+          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" alt="The Most Satisfying Mangosteen Slices">
             <div>
               <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
@@ -218,7 +221,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-shocking-secrets-of-venus-flytraps.html">
+          <a class="item" href="/videos/the-shocking-secrets-of-venus-flytraps.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/QguSXsx5mgs/hqdefault.jpg" alt="The Shocking Secrets of Venus Flytraps">
             <div>
               <div class="link" style="font-weight:700">The Shocking Secrets of Venus Flytraps</div>
@@ -227,7 +230,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-most-satisfying-pineapple-asmr.html">
+          <a class="item" href="/videos/the-most-satisfying-pineapple-asmr.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg" alt="The Most Satisfying Pineapple ASMR">
             <div>
               <div class="link" style="font-weight:700">The Most Satisfying Pineapple ASMR</div>

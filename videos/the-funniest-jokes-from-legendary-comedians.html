@@ -45,13 +45,17 @@ What happens when Rodney, Richard, Ed...">
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -59,33 +63,36 @@ What happens when Rodney, Richard, Ed...">
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;The Funniest Jokes From Legendary Comedians&#34;,
-    "description": &#34;🎤 Famous Comedians, TOP TEN AI JOKES to Make You Laugh!\n \nThe Mount Rushmore of Comedy Just Spoke.\nAnd no one&#39;s safe. 😂🔥\n \nWhat happens when Rodney, Richard, Ed...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/RamX-8oShZA/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-06-24&#34;,
-    "duration": &#34;PT107S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=RamX-8oShZA&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/RamX-8oShZA&#34;,
-    "interactionCount": 1214
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "The Funniest Jokes From Legendary Comedians", "description": "🎤 Famous Comedians, TOP TEN AI JOKES to Make You Laugh!\n \nThe Mount Rushmore of Comedy Just Spoke.\nAnd no one's safe. 😂🔥\n \nWhat happens when Rodney, Richard, Ed...", "thumbnailUrl": "https://i.ytimg.com/vi/RamX-8oShZA/hqdefault.jpg", "uploadDate": "2025-06-24", "contentUrl": "https://www.youtube.com/watch?v=RamX-8oShZA", "embedUrl": "https://www.youtube.com/embed/RamX-8oShZA", "interactionCount": 1214, "duration": "PT107S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "The Funniest Jokes From Legendary Comedians", "item": "https://jasonmartocci.com/videos/the-funniest-jokes-from-legendary-comedians.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “The Funniest Jokes From Legendary Comedians” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“The Funniest Jokes From Legendary Comedians” is a comedy video on Martocci Mayhem. It highlights themes like ai comedy, andrew dice clay, best punchlines, comedic storytelling, comedy clips, comedy gems, comedyclip, comedygold, dice clay, dirty jokes. Watch it in full here: https://www.youtube.com/watch?v=RamX-8oShZA&#34;}},{"@type":"Question","name": &#34;How long is “The Funniest Jokes From Legendary Comedians”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 1:47.&#34;}},{"@type":"Question","name": &#34;When was “The Funniest Jokes From Legendary Comedians” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on June 24, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 1,214 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=RamX-8oShZA&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Comedy with common keywords such as: ai comedy, andrew dice clay, best punchlines, comedic storytelling, comedy clips, comedy gems, comedyclip, comedygold, dice clay, dirty jokes.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “The Funniest Jokes From Legendary Comedians” about?", "acceptedAnswer": {"@type": "Answer", "text": "“The Funniest Jokes From Legendary Comedians” is a comedy video on Martocci Mayhem. It highlights themes like ai comedy, andrew dice clay, best punchlines, comedic storytelling, comedy clips, comedy gems, comedyclip, comedygold, dice clay, dirty jokes. Watch it in full here: https://www.youtube.com/watch?v=RamX-8oShZA"}}, {"@type": "Question", "name": "How long is “The Funniest Jokes From Legendary Comedians”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 1:47."}}, {"@type": "Question", "name": "When was “The Funniest Jokes From Legendary Comedians” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on June 24, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 1,214 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=RamX-8oShZA"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Comedy with common keywords such as: ai comedy, andrew dice clay, best punchlines, comedic storytelling, comedy clips, comedy gems, comedyclip, comedygold, dice clay, dirty jokes."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -104,21 +111,17 @@ What happens when Rodney, Richard, Ed...">
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">The Funniest Jokes From Legendary Comedians</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=RamX-8oShZA" target="_blank" rel="noopener">Views: 1,214</a>
         <a href="https://www.youtube.com/watch?v=RamX-8oShZA" target="_blank" rel="noopener">Likes: 6</a>
         <a href="https://www.youtube.com/watch?v=RamX-8oShZA#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: June 24, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: June 24, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=RamX-8oShZA" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: June 24, 2025 &nbsp;&middot;&nbsp; Last Edited: June 24, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=RamX-8oShZA" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -161,7 +164,7 @@ What happens when Rodney, Richard, Ed...">
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="the-joke-that-changed-comedy-forever.html">
+          <a class="item" href="/videos/the-joke-that-changed-comedy-forever.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg" alt="The Joke That Changed Comedy Forever">
             <div>
               <div class="link" style="font-weight:700">The Joke That Changed Comedy Forever</div>
@@ -170,7 +173,7 @@ What happens when Rodney, Richard, Ed...">
             </div>
           </a>
         
-          <a class="item" href="the-ladder-joke-that-explains-inflation.html">
+          <a class="item" href="/videos/the-ladder-joke-that-explains-inflation.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/JwqSMVmNG9E/hqdefault.jpg" alt="The Ladder Joke that Explains Inflation">
             <div>
               <div class="link" style="font-weight:700">The Ladder Joke that Explains Inflation</div>
@@ -179,7 +182,7 @@ What happens when Rodney, Richard, Ed...">
             </div>
           </a>
         
-          <a class="item" href="the-top-6-most-savage-grandma-clips.html">
+          <a class="item" href="/videos/the-top-6-most-savage-grandma-clips.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg" alt="The TOP 6 MOST Savage Grandma Clips">
             <div>
               <div class="link" style="font-weight:700">The TOP 6 MOST Savage Grandma Clips</div>
@@ -190,7 +193,7 @@ Dive into the six funniest, most savage one-liners from every...</div>
             </div>
           </a>
         
-          <a class="item" href="southern-grandma-throws-epic-shade.html">
+          <a class="item" href="/videos/southern-grandma-throws-epic-shade.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/FYI6w0AN84w/hqdefault.jpg" alt="Southern Grandma Throws Epic Shade! 😂👵">
             <div>
               <div class="link" style="font-weight:700">Southern Grandma Throws Epic Shade! 😂👵</div>
@@ -203,7 +206,7 @@ Savag...</div>
             </div>
           </a>
         
-          <a class="item" href="nikki-glaser-said-what-savage-joke-you-can-t-unhea.html">
+          <a class="item" href="/videos/nikki-glaser-said-what-savage-joke-you-can-t-unhea.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/HEIGcD9EXO4/hqdefault.jpg" alt="Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥">
             <div>
               <div class="link" style="font-weight:700">Nikki Glaser Said WHAT?! 🤯 | Savage Joke You Can’t Unhear 💥</div>
@@ -216,7 +219,7 @@ Whet...</div>
             </div>
           </a>
         
-          <a class="item" href="dumbest-beach-interview-fails.html">
+          <a class="item" href="/videos/dumbest-beach-interview-fails.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/fMi2dJ7qUUc/hqdefault.jpg" alt="Dumbest Beach Interview Fails">
             <div>
               <div class="link" style="font-weight:700">Dumbest Beach Interview Fails</div>
@@ -225,7 +228,7 @@ Whet...</div>
             </div>
           </a>
         
-          <a class="item" href="grandma-stories-that-will-leave-you-dying-laughing.html">
+          <a class="item" href="/videos/grandma-stories-that-will-leave-you-dying-laughing.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Q9ji34RHk0A/hqdefault.jpg" alt="GRANDMA STORIES That Will Leave You DYING Laughing">
             <div>
               <div class="link" style="font-weight:700">GRANDMA STORIES That Will Leave You DYING Laughing</div>
@@ -234,7 +237,7 @@ Whet...</div>
             </div>
           </a>
         
-          <a class="item" href="italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
+          <a class="item" href="/videos/italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/QWlO6Ngm6-M/hqdefault.jpg" alt="Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner">
             <div>
               <div class="link" style="font-weight:700">Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner</div>
@@ -243,7 +246,7 @@ Whet...</div>
             </div>
           </a>
         
-          <a class="item" href="you-won-t-believe-how-life-advice-changes-with-age.html">
+          <a class="item" href="/videos/you-won-t-believe-how-life-advice-changes-with-age.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg" alt="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age">
             <div>
               <div class="link" style="font-weight:700">You Won&#39;t Believe How LIFE ADVICE CHANGES with Age</div>
@@ -252,7 +255,7 @@ Whet...</div>
             </div>
           </a>
         
-          <a class="item" href="funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
+          <a class="item" href="/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg" alt="Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg">
             <div>
               <div class="link" style="font-weight:700">Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</div>

@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Can I Eat This Giant Crab All By Myself?&#34;,
-    "description": &#34;Get ready for an intense ASMR eating experience! This mukbang features a massive crab feast that&#39;s sure to make your mouth water. Watch as I dive into this king...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-08-20&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=MKG9TFicMHc&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/MKG9TFicMHc&#34;,
-    "interactionCount": 988
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Can I Eat This Giant Crab All By Myself?", "description": "Get ready for an intense ASMR eating experience! This mukbang features a massive crab feast that's sure to make your mouth water. Watch as I dive into this king...", "thumbnailUrl": "https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg", "uploadDate": "2025-08-20", "contentUrl": "https://www.youtube.com/watch?v=MKG9TFicMHc", "embedUrl": "https://www.youtube.com/embed/MKG9TFicMHc", "interactionCount": 988, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Can I Eat This Giant Crab All By Myself?", "item": "https://jasonmartocci.com/videos/watch-me-taste-the-biggest-crab-ever.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Can I Eat This Giant Crab All By Myself?” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Can I Eat This Giant Crab All By Myself?” is a entertainment video on Martocci Mayhem. It highlights themes like Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral, satisfying, bite sized chaos, ASMR surprises. Watch it in full here: https://www.youtube.com/watch?v=MKG9TFicMHc&#34;}},{"@type":"Question","name": &#34;How long is “Can I Eat This Giant Crab All By Myself?”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “Can I Eat This Giant Crab All By Myself?” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on August 20, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 988 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=MKG9TFicMHc&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral, satisfying, bite sized chaos, ASMR surprises.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Can I Eat This Giant Crab All By Myself?” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Can I Eat This Giant Crab All By Myself?” is a entertainment video on Martocci Mayhem. It highlights themes like Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral, satisfying, bite sized chaos, ASMR surprises. Watch it in full here: https://www.youtube.com/watch?v=MKG9TFicMHc"}}, {"@type": "Question", "name": "How long is “Can I Eat This Giant Crab All By Myself?”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “Can I Eat This Giant Crab All By Myself?” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on August 20, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 988 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=MKG9TFicMHc"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral, satisfying, bite sized chaos, ASMR surprises."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Can I Eat This Giant Crab All By Myself?</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=MKG9TFicMHc" target="_blank" rel="noopener">Views: 988</a>
         <a href="https://www.youtube.com/watch?v=MKG9TFicMHc" target="_blank" rel="noopener">Likes: 6</a>
         <a href="https://www.youtube.com/watch?v=MKG9TFicMHc#comments" target="_blank" rel="noopener">Comments: 0</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: August 20, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: August 20, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=MKG9TFicMHc" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 20, 2025 &nbsp;&middot;&nbsp; Last Edited: August 20, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=MKG9TFicMHc" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="can-i-eat-this-giant-crab-in-one-sitting.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg" alt="Can I Eat This Giant Crab in One Sitting?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Crab in One Sitting?</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-squirrel-chef-cooks-better-than-me.html">
+          <a class="item" href="/videos/this-squirrel-chef-cooks-better-than-me.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/lieIUJo5Bkk/hqdefault.jpg" alt="This Squirrel Chef Cooks Better Than Me!">
             <div>
               <div class="link" style="font-weight:700">This Squirrel Chef Cooks Better Than Me!</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="giant-gummy-bear-meets-red-hot-knife.html">
+          <a class="item" href="/videos/giant-gummy-bear-meets-red-hot-knife.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/85CrbTqoT-Q/hqdefault.jpg" alt="GIANT Gummy Bear MEETS Red Hot Knife!">
             <div>
               <div class="link" style="font-weight:700">GIANT Gummy Bear MEETS Red Hot Knife!</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="squirrel-vs-cat-kitchen-showdown.html">
+          <a class="item" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg" alt="Squirrel vs Cat Kitchen Showdown!">
             <div>
               <div class="link" style="font-weight:700">Squirrel vs Cat Kitchen Showdown!</div>
@@ -182,7 +185,7 @@
             </div>
           </a>
         
-          <a class="item" href="let-s-chat-and-chill.html">
+          <a class="item" href="/videos/let-s-chat-and-chill.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/iTijX3CfdLs/hqdefault.jpg" alt="Let’s chat and chill">
             <div>
               <div class="link" style="font-weight:700">Let’s chat and chill</div>
@@ -196,7 +199,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-bed-melts-when-you-sleep-on-it.html">
+          <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg" alt="This Bed MELTS When You Sleep On It!">
             <div>
               <div class="link" style="font-weight:700">This Bed MELTS When You Sleep On It!</div>
@@ -205,7 +208,7 @@
             </div>
           </a>
         
-          <a class="item" href="i-sliced-a-gummy-and-this-happened.html">
+          <a class="item" href="/videos/i-sliced-a-gummy-and-this-happened.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/dxrMR2PTczA/hqdefault.jpg" alt="I Sliced a Gummy Bear with a Huge Knife">
             <div>
               <div class="link" style="font-weight:700">I Sliced a Gummy Bear with a Huge Knife</div>
@@ -214,7 +217,7 @@
             </div>
           </a>
         
-          <a class="item" href="can-i-eat-this-giant-burger-in-one-bite.html">
+          <a class="item" href="/videos/can-i-eat-this-giant-burger-in-one-bite.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/8ZJRQ2FnwMs/hqdefault.jpg" alt="Can I Eat This Giant Burger In One Bite?">
             <div>
               <div class="link" style="font-weight:700">Can I Eat This Giant Burger In One Bite?</div>
@@ -223,7 +226,7 @@
             </div>
           </a>
         
-          <a class="item" href="lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
+          <a class="item" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg" alt="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!">
             <div>
               <div class="link" style="font-weight:700">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</div>
@@ -232,7 +235,7 @@
             </div>
           </a>
         
-          <a class="item" href="weird-food-mukbangs-the-500-challenge.html">
+          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge">
             <div>
               <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>

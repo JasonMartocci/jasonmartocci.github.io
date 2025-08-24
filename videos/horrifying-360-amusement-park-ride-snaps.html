@@ -36,13 +36,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -50,33 +54,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Horrifying 360 Amusement Park Ride Snaps&#34;,
-    "description": &#34;Terrifying Park Ride: Get ready for a heart-pounding thrill as a swinging amusement park ride spirals into chaos!\n \n An Amusement Park Ride Splits In Half, and ...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/6TQ3p17iEHk/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-05&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=6TQ3p17iEHk&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/6TQ3p17iEHk&#34;,
-    "interactionCount": 15
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Horrifying 360 Amusement Park Ride Snaps", "description": "Terrifying Park Ride: Get ready for a heart-pounding thrill as a swinging amusement park ride spirals into chaos!\n \n An Amusement Park Ride Splits In Half, and ...", "thumbnailUrl": "https://i.ytimg.com/vi/6TQ3p17iEHk/hqdefault.jpg", "uploadDate": "2025-07-05", "contentUrl": "https://www.youtube.com/watch?v=6TQ3p17iEHk", "embedUrl": "https://www.youtube.com/embed/6TQ3p17iEHk", "interactionCount": 15, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Horrifying 360 Amusement Park Ride Snaps", "item": "https://jasonmartocci.com/videos/horrifying-360-amusement-park-ride-snaps.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Horrifying 360 Amusement Park Ride Snaps” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Horrifying 360 Amusement Park Ride Snaps” is a people &amp; blogs video on Martocci Mayhem. It highlights themes like adrenaline adrenaline, adrenaline rush, adrenaline thrill, immersive sound design, mechanical issues, mechanical mishaps, ride accidents, ride breakdowns, ride footage, spectator shock. Watch it in full here: https://www.youtube.com/watch?v=6TQ3p17iEHk&#34;}},{"@type":"Question","name": &#34;How long is “Horrifying 360 Amusement Park Ride Snaps”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “Horrifying 360 Amusement Park Ride Snaps” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 05, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 15 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=6TQ3p17iEHk&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under People &amp; Blogs with common keywords such as: adrenaline adrenaline, adrenaline rush, adrenaline thrill, immersive sound design, mechanical issues, mechanical mishaps, ride accidents, ride breakdowns, ride footage, spectator shock.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Horrifying 360 Amusement Park Ride Snaps” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Horrifying 360 Amusement Park Ride Snaps” is a people & blogs video on Martocci Mayhem. It highlights themes like adrenaline adrenaline, adrenaline rush, adrenaline thrill, immersive sound design, mechanical issues, mechanical mishaps, ride accidents, ride breakdowns, ride footage, spectator shock. Watch it in full here: https://www.youtube.com/watch?v=6TQ3p17iEHk"}}, {"@type": "Question", "name": "How long is “Horrifying 360 Amusement Park Ride Snaps”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “Horrifying 360 Amusement Park Ride Snaps” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 05, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 15 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=6TQ3p17iEHk"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under People & Blogs with common keywords such as: adrenaline adrenaline, adrenaline rush, adrenaline thrill, immersive sound design, mechanical issues, mechanical mishaps, ride accidents, ride breakdowns, ride footage, spectator shock."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -95,21 +102,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Horrifying 360 Amusement Park Ride Snaps</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=6TQ3p17iEHk" target="_blank" rel="noopener">Views: 15</a>
         <a href="https://www.youtube.com/watch?v=6TQ3p17iEHk" target="_blank" rel="noopener">Likes: 1</a>
         <a href="https://www.youtube.com/watch?v=6TQ3p17iEHk#comments" target="_blank" rel="noopener">Comments: 3</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 05, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 05, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=6TQ3p17iEHk" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 05, 2025 &nbsp;&middot;&nbsp; Last Edited: July 05, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=6TQ3p17iEHk" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -152,7 +155,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="kingda-ka-s-fastest-demise-revealed.html">
+          <a class="item" href="/videos/kingda-ka-s-fastest-demise-revealed.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/YHfgduMAfds/hqdefault.jpg" alt="Kingda Ka&#39;s FASTEST Demise Revealed">
             <div>
               <div class="link" style="font-weight:700">Kingda Ka&#39;s FASTEST Demise Revealed</div>
@@ -161,7 +164,7 @@
             </div>
           </a>
         
-          <a class="item" href="savage-grandmas-brutal-roast.html">
+          <a class="item" href="/videos/savage-grandmas-brutal-roast.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/7Vdbu4nJako/hqdefault.jpg" alt="Savage Grandma’s Brutal Roast">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma’s Brutal Roast</div>
@@ -170,7 +173,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-ultimate-asmr-food-bliss.html">
+          <a class="item" href="/videos/the-ultimate-asmr-food-bliss.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg" alt="The Ultimate ASMR Food Bliss">
             <div>
               <div class="link" style="font-weight:700">The Ultimate ASMR Food Bliss</div>
@@ -179,7 +182,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-disturbing-lava-mukbang-trend.html">
+          <a class="item" href="/videos/the-disturbing-lava-mukbang-trend.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/2LrlSppdY6I/hqdefault.jpg" alt="The Disturbing &#39;Lava&#39; Mukbang Trend">
             <div>
               <div class="link" style="font-weight:700">The Disturbing &#39;Lava&#39; Mukbang Trend</div>
@@ -188,7 +191,7 @@
             </div>
           </a>
         
-          <a class="item" href="why-i-quit-drinking-but-still-mess-up.html">
+          <a class="item" href="/videos/why-i-quit-drinking-but-still-mess-up.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Mde2TglHZSA/hqdefault.jpg" alt="Why I Quit Drinking But Still Mess Up!">
             <div>
               <div class="link" style="font-weight:700">Why I Quit Drinking But Still Mess Up!</div>
@@ -197,7 +200,7 @@
             </div>
           </a>
         
-          <a class="item" href="asmr-lava-cheesecake-bite-melty-delicious-sounds.html">
+          <a class="item" href="/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/k6k6kyXlp6g/hqdefault.jpg" alt="ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds">
             <div>
               <div class="link" style="font-weight:700">ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds</div>
@@ -206,7 +209,7 @@
             </div>
           </a>
         
-          <a class="item" href="culinary-disturbia-pasta-horror-stories.html">
+          <a class="item" href="/videos/culinary-disturbia-pasta-horror-stories.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/wVTnNRX67Ec/hqdefault.jpg" alt="Culinary Disturbia: Pasta Horror Stories">
             <div>
               <div class="link" style="font-weight:700">Culinary Disturbia: Pasta Horror Stories</div>
@@ -215,7 +218,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-spicy-lava-cake-almost-defeated-me.html">
+          <a class="item" href="/videos/this-spicy-lava-cake-almost-defeated-me.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg" alt="This Spicy Lava Cake Almost Defeated Me!">
             <div>
               <div class="link" style="font-weight:700">This Spicy Lava Cake Almost Defeated Me!</div>
@@ -224,7 +227,7 @@
             </div>
           </a>
         
-          <a class="item" href="carnival-cruises-disturbing-secrets.html">
+          <a class="item" href="/videos/carnival-cruises-disturbing-secrets.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" alt="Carnival Cruise&#39;s Disturbing Secrets">
             <div>
               <div class="link" style="font-weight:700">Carnival Cruise&#39;s Disturbing Secrets</div>
@@ -233,7 +236,7 @@
             </div>
           </a>
         
-          <a class="item" href="whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
+          <a class="item" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg" alt="What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15">
             <div>
               <div class="link" style="font-weight:700">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>

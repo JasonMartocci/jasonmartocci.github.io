@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;I Tested The Most Insane ASMR Blankets&#34;,
-    "description": &#34;Bizarre sleep study of cozy bedrooms that are ready to float away into a peaceful state of sleep? We built 15 completely different ASMR blankets, made from mone...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/h7AlqDdAgyg/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-28&#34;,
-    "duration": &#34;PT97S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=h7AlqDdAgyg&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/h7AlqDdAgyg&#34;,
-    "interactionCount": 345
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "I Tested The Most Insane ASMR Blankets", "description": "Bizarre sleep study of cozy bedrooms that are ready to float away into a peaceful state of sleep? We built 15 completely different ASMR blankets, made from mone...", "thumbnailUrl": "https://i.ytimg.com/vi/h7AlqDdAgyg/hqdefault.jpg", "uploadDate": "2025-07-28", "contentUrl": "https://www.youtube.com/watch?v=h7AlqDdAgyg", "embedUrl": "https://www.youtube.com/embed/h7AlqDdAgyg", "interactionCount": 345, "duration": "PT97S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "I Tested The Most Insane ASMR Blankets", "item": "https://jasonmartocci.com/videos/i-tested-the-most-insane-asmr-blankets.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “I Tested The Most Insane ASMR Blankets” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“I Tested The Most Insane ASMR Blankets” is a entertainment video on Martocci Mayhem. It highlights themes like ASMR Blankets, ai, asmp sleep, asmr, asmr comfort, asmr sleep, bed, bed design, bubble wrap, chill room. Watch it in full here: https://www.youtube.com/watch?v=h7AlqDdAgyg&#34;}},{"@type":"Question","name": &#34;How long is “I Tested The Most Insane ASMR Blankets”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 1:37.&#34;}},{"@type":"Question","name": &#34;When was “I Tested The Most Insane ASMR Blankets” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 28, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 345 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=h7AlqDdAgyg&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: ASMR Blankets, ai, asmp sleep, asmr, asmr comfort, asmr sleep, bed, bed design, bubble wrap, chill room.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “I Tested The Most Insane ASMR Blankets” about?", "acceptedAnswer": {"@type": "Answer", "text": "“I Tested The Most Insane ASMR Blankets” is a entertainment video on Martocci Mayhem. It highlights themes like ASMR Blankets, ai, asmp sleep, asmr, asmr comfort, asmr sleep, bed, bed design, bubble wrap, chill room. Watch it in full here: https://www.youtube.com/watch?v=h7AlqDdAgyg"}}, {"@type": "Question", "name": "How long is “I Tested The Most Insane ASMR Blankets”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 1:37."}}, {"@type": "Question", "name": "When was “I Tested The Most Insane ASMR Blankets” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 28, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 345 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=h7AlqDdAgyg"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: ASMR Blankets, ai, asmp sleep, asmr, asmr comfort, asmr sleep, bed, bed design, bubble wrap, chill room."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">I Tested The Most Insane ASMR Blankets</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=h7AlqDdAgyg" target="_blank" rel="noopener">Views: 345</a>
         <a href="https://www.youtube.com/watch?v=h7AlqDdAgyg" target="_blank" rel="noopener">Likes: 3</a>
         <a href="https://www.youtube.com/watch?v=h7AlqDdAgyg#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 28, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 28, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=h7AlqDdAgyg" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 28, 2025 &nbsp;&middot;&nbsp; Last Edited: July 28, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=h7AlqDdAgyg" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="crazy-things-people-use-as-blankets.html">
+          <a class="item" href="/videos/crazy-things-people-use-as-blankets.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/xQPjDGRtKNU/hqdefault.jpg" alt="Crazy Things People Use as Blankets!">
             <div>
               <div class="link" style="font-weight:700">Crazy Things People Use as Blankets!</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-most-satisfying-mangosteen-slices.html">
+          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" alt="The Most Satisfying Mangosteen Slices">
             <div>
               <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html">
+          <a class="item" href="/videos/martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg" alt="Martocci Mayhem: How Technology is Revolutionizing AI ASMR">
             <div>
               <div class="link" style="font-weight:700">Martocci Mayhem: How Technology is Revolutionizing AI ASMR</div>
@@ -175,7 +178,7 @@
             </div>
           </a>
         
-          <a class="item" href="ivy-vs-tall-grass-cast-your-vote.html">
+          <a class="item" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/pLr1GbyX1xQ/hqdefault.jpg" alt="Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!">
             <div>
               <div class="link" style="font-weight:700">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
@@ -184,7 +187,7 @@
             </div>
           </a>
         
-          <a class="item" href="i-made-a-rainbow-glass-fruit-garden.html">
+          <a class="item" href="/videos/i-made-a-rainbow-glass-fruit-garden.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" alt="I Made a Rainbow Glass Fruit Garden">
             <div>
               <div class="link" style="font-weight:700">I Made a Rainbow Glass Fruit Garden</div>
@@ -193,7 +196,7 @@
             </div>
           </a>
         
-          <a class="item" href="weird-food-mukbangs-the-500-challenge.html">
+          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg" alt="Weird Food Mukbangs: The $500 Challenge">
             <div>
               <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>
@@ -202,7 +205,7 @@
             </div>
           </a>
         
-          <a class="item" href="whats-really-inside-this-asmr-glass-fruit.html">
+          <a class="item" href="/videos/whats-really-inside-this-asmr-glass-fruit.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg" alt="What&#39;s REALLY Inside this ASMR Glass Fruit?">
             <div>
               <div class="link" style="font-weight:700">What&#39;s REALLY Inside this ASMR Glass Fruit?</div>
@@ -211,7 +214,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-strange-future-of-asmr-in-reverse.html">
+          <a class="item" href="/videos/the-strange-future-of-asmr-in-reverse.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/0VIYnfChoxo/hqdefault.jpg" alt="The Strange Future of ASMR (in REVERSE)">
             <div>
               <div class="link" style="font-weight:700">The Strange Future of ASMR (in REVERSE)</div>
@@ -220,7 +223,7 @@
             </div>
           </a>
         
-          <a class="item" href="will-ai-replace-human-mukbangs.html">
+          <a class="item" href="/videos/will-ai-replace-human-mukbangs.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg" alt="Will AI Replace Human Mukbangs?">
             <div>
               <div class="link" style="font-weight:700">Will AI Replace Human Mukbangs?</div>
@@ -229,7 +232,7 @@
             </div>
           </a>
         
-          <a class="item" href="watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
+          <a class="item" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg" alt="Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!">
             <div>
               <div class="link" style="font-weight:700">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</div>

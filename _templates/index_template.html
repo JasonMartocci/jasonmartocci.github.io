@@ -48,7 +48,7 @@
   #sentinel { height:1px }
 </style>
 
-<script>const ALL={{ videos | tojson | safe }};</script>
+<script id="all-json" type="application/json">{{ videos | tojson }}</script>
 <script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
 <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
 </head>
@@ -74,6 +74,7 @@
 
 <script>
   // --- utilities ---
+  const ALL = JSON.parse(document.getElementById('all-json').textContent);
   const pretty = (d) => {
     if (!d) return "";
     try {

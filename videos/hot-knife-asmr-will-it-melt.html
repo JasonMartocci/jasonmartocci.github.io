@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Hot Knife ASMR! Will It MELT?&#34;,
-    "description": &#34;Immerse yourself in this unique and incredible ASMR experience as a knife slices through a stunning passionfruit made entirely of glass! As you watch, you will ...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-07-01&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=poDPPlsCfuY&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/poDPPlsCfuY&#34;,
-    "interactionCount": 10408
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Hot Knife ASMR! Will It MELT?", "description": "Immerse yourself in this unique and incredible ASMR experience as a knife slices through a stunning passionfruit made entirely of glass! As you watch, you will ...", "thumbnailUrl": "https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg", "uploadDate": "2025-07-01", "contentUrl": "https://www.youtube.com/watch?v=poDPPlsCfuY", "embedUrl": "https://www.youtube.com/embed/poDPPlsCfuY", "interactionCount": 10408, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Hot Knife ASMR! Will It MELT?", "item": "https://jasonmartocci.com/videos/hot-knife-asmr-will-it-melt.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Hot Knife ASMR! Will It MELT?” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Hot Knife ASMR! Will It MELT?” is a entertainment video on Martocci Mayhem. It highlights themes like AI asmr glass cutting video, ai asmr, ai cutting asmr, ai shorts, ai slicing, ai trends, ai videos, asmr cutting video, asmr shorts, asmr slicing. Watch it in full here: https://www.youtube.com/watch?v=poDPPlsCfuY&#34;}},{"@type":"Question","name": &#34;How long is “Hot Knife ASMR! Will It MELT?”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “Hot Knife ASMR! Will It MELT?” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on July 01, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 10,408 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=poDPPlsCfuY&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Entertainment with common keywords such as: AI asmr glass cutting video, ai asmr, ai cutting asmr, ai shorts, ai slicing, ai trends, ai videos, asmr cutting video, asmr shorts, asmr slicing.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Hot Knife ASMR! Will It MELT?” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Hot Knife ASMR! Will It MELT?” is a entertainment video on Martocci Mayhem. It highlights themes like AI asmr glass cutting video, ai asmr, ai cutting asmr, ai shorts, ai slicing, ai trends, ai videos, asmr cutting video, asmr shorts, asmr slicing. Watch it in full here: https://www.youtube.com/watch?v=poDPPlsCfuY"}}, {"@type": "Question", "name": "How long is “Hot Knife ASMR! Will It MELT?”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “Hot Knife ASMR! Will It MELT?” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on July 01, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 10,408 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=poDPPlsCfuY"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Entertainment with common keywords such as: AI asmr glass cutting video, ai asmr, ai cutting asmr, ai shorts, ai slicing, ai trends, ai videos, asmr cutting video, asmr shorts, asmr slicing."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Hot Knife ASMR! Will It MELT?</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=poDPPlsCfuY" target="_blank" rel="noopener">Views: 10,408</a>
         <a href="https://www.youtube.com/watch?v=poDPPlsCfuY" target="_blank" rel="noopener">Likes: 33</a>
         <a href="https://www.youtube.com/watch?v=poDPPlsCfuY#comments" target="_blank" rel="noopener">Comments: 1</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: July 01, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: July 01, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=poDPPlsCfuY" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 01, 2025 &nbsp;&middot;&nbsp; Last Edited: July 01, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=poDPPlsCfuY" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="i-tried-the-new-asmr-fruit-cutting-trend.html">
+          <a class="item" href="/videos/i-tried-the-new-asmr-fruit-cutting-trend.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/FxBGneFYvxc/hqdefault.jpg" alt="I Tried The New ASMR Fruit Cutting Trend">
             <div>
               <div class="link" style="font-weight:700">I Tried The New ASMR Fruit Cutting Trend</div>
@@ -157,7 +160,7 @@
             </div>
           </a>
         
-          <a class="item" href="asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html">
+          <a class="item" href="/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/08AfEsiLjnU/hqdefault.jpg" alt="ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying">
             <div>
               <div class="link" style="font-weight:700">ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying</div>
@@ -168,7 +171,7 @@ This no-talk...</div>
             </div>
           </a>
         
-          <a class="item" href="satisfying-black-molten-cake-slime.html">
+          <a class="item" href="/videos/satisfying-black-molten-cake-slime.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/SuawP9hgKcs/hqdefault.jpg" alt="Satisfying Black Molten Cake SLIME">
             <div>
               <div class="link" style="font-weight:700">Satisfying Black Molten Cake SLIME</div>
@@ -177,7 +180,7 @@ This no-talk...</div>
             </div>
           </a>
         
-          <a class="item" href="how-to-make-the-best-berry-toast.html">
+          <a class="item" href="/videos/how-to-make-the-best-berry-toast.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/KVG_5Vta1ps/hqdefault.jpg" alt="How to Make the *Best* Berry Toast">
             <div>
               <div class="link" style="font-weight:700">How to Make the *Best* Berry Toast</div>
@@ -186,7 +189,7 @@ This no-talk...</div>
             </div>
           </a>
         
-          <a class="item" href="cutting-asmr-hot-knife-foam-slicing.html">
+          <a class="item" href="/videos/cutting-asmr-hot-knife-foam-slicing.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/eW0RBZttYQU/hqdefault.jpg" alt="Cutting ASMR - Hot Knife Foam Slicing">
             <div>
               <div class="link" style="font-weight:700">Cutting ASMR - Hot Knife Foam Slicing</div>
@@ -197,7 +200,7 @@ In complete silence, a red-hot blade cuts through what appears to be ordinary fo
             </div>
           </a>
         
-          <a class="item" href="the-unusual-asmr-of-star-fruit.html">
+          <a class="item" href="/videos/the-unusual-asmr-of-star-fruit.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/6lCtLuY7G5g/hqdefault.jpg" alt="The Unusual ASMR of Star Fruit">
             <div>
               <div class="link" style="font-weight:700">The Unusual ASMR of Star Fruit</div>
@@ -207,7 +210,7 @@ In complete silence, a red-hot blade cuts through what appears to be ordinary fo
             </div>
           </a>
         
-          <a class="item" href="the-most-satisfying-durian-asmr.html">
+          <a class="item" href="/videos/the-most-satisfying-durian-asmr.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/oufd--dmu0c/hqdefault.jpg" alt="The Most Satisfying Durian ASMR">
             <div>
               <div class="link" style="font-weight:700">The Most Satisfying Durian ASMR</div>
@@ -216,7 +219,7 @@ In complete silence, a red-hot blade cuts through what appears to be ordinary fo
             </div>
           </a>
         
-          <a class="item" href="the-insane-art-of-advanced-fruit-carving.html">
+          <a class="item" href="/videos/the-insane-art-of-advanced-fruit-carving.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/CGkLQCHVX-g/hqdefault.jpg" alt="The Insane Art of Advanced Fruit Carving">
             <div>
               <div class="link" style="font-weight:700">The Insane Art of Advanced Fruit Carving</div>
@@ -227,7 +230,7 @@ In this short but mesmerizing video, you&#39;ll...</div>
             </div>
           </a>
         
-          <a class="item" href="the-yellow-slime-you-wish-you-had-as-a-kid.html">
+          <a class="item" href="/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/7mfoSu1AFvM/hqdefault.jpg" alt="The Yellow Slime You Wish You Had As A Kid">
             <div>
               <div class="link" style="font-weight:700">The Yellow Slime You Wish You Had As A Kid</div>
@@ -236,7 +239,7 @@ In this short but mesmerizing video, you&#39;ll...</div>
             </div>
           </a>
         
-          <a class="item" href="we-cooked-a-turkey-with-crystal-geodes.html">
+          <a class="item" href="/videos/we-cooked-a-turkey-with-crystal-geodes.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/ao7maf1fDMM/hqdefault.jpg" alt="We Cooked a Turkey With Crystal Geodes">
             <div>
               <div class="link" style="font-weight:700">We Cooked a Turkey With Crystal Geodes</div>

@@ -30,13 +30,17 @@
   main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); margin-bottom:14px; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  /* extra breathing room between stacked cards in the left column */
+  section .card + .card { margin-top:16px; }
+
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
   .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
@@ -44,33 +48,36 @@
   .subtle{color:#9aa}
 </style>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": &#34;Savage Grandma Roasts The Internet&#34;,
-    "description": &#34;Get ready for a dose of Southern charm and humor as Savage Grandma invites you to relax on her cozy porch! In this heartwarming video, Grandma shares her wisdom...&#34;,
-    "thumbnailUrl": &#34;https://i.ytimg.com/vi/RfQvg6O8OO0/hqdefault.jpg&#34;,
-    "uploadDate": &#34;2025-08-14&#34;,
-    "duration": &#34;PT9S&#34;,
-    "contentUrl": &#34;https://www.youtube.com/watch?v=RfQvg6O8OO0&#34;,
-    "embedUrl": &#34;https://www.youtube.com/embed/RfQvg6O8OO0&#34;,
-    "interactionCount": 21
-    }
-</script>
+<!-- JSON-LD: VideoObject -->
+
+
+  
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Savage Grandma Roasts The Internet", "description": "Get ready for a dose of Southern charm and humor as Savage Grandma invites you to relax on her cozy porch! In this heartwarming video, Grandma shares her wisdom...", "thumbnailUrl": "https://i.ytimg.com/vi/RfQvg6O8OO0/hqdefault.jpg", "uploadDate": "2025-08-14", "contentUrl": "https://www.youtube.com/watch?v=RfQvg6O8OO0", "embedUrl": "https://www.youtube.com/embed/RfQvg6O8OO0", "interactionCount": 21, "duration": "PT9S"}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jasonmartocci.com"}, {"@type": "ListItem", "position": 2, "name": "Savage Grandma Roasts The Internet", "item": "https://jasonmartocci.com/videos/savage-grandma-roasts-the-internet.html"}]}</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-  {"@type":"Question","name": &#34;What is “Savage Grandma Roasts The Internet” about?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;“Savage Grandma Roasts The Internet” is a comedy video on Martocci Mayhem. It highlights themes like Southern lifestyle, Southern porch, balls, best comedy, comedy, comedy shorts, comedy special, comedy video, cooter, cozy atmosphere. Watch it in full here: https://www.youtube.com/watch?v=RfQvg6O8OO0&#34;}},{"@type":"Question","name": &#34;How long is “Savage Grandma Roasts The Internet”?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;The runtime is 0:09.&#34;}},{"@type":"Question","name": &#34;When was “Savage Grandma Roasts The Internet” published?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It was published on August 14, 2025.&#34;}},{"@type":"Question","name": &#34;How popular is it?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It has approximately 21 views, with likes and comments available on YouTube.&#34;}},{"@type":"Question","name": &#34;Where can I watch and interact?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=RfQvg6O8OO0&#34;}},{"@type":"Question","name": &#34;Which category and keywords apply?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;It’s categorized under Comedy with common keywords such as: Southern lifestyle, Southern porch, balls, best comedy, comedy, comedy shorts, comedy special, comedy video, cooter, cozy atmosphere.&#34;}},{"@type":"Question","name": &#34;How can I find related videos?&#34;,"acceptedAnswer":{"@type":"Answer","text": &#34;See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more.&#34;}}
-  ]
-}
-</script>
+<!-- JSON-LD: FAQPage -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is “Savage Grandma Roasts The Internet” about?", "acceptedAnswer": {"@type": "Answer", "text": "“Savage Grandma Roasts The Internet” is a comedy video on Martocci Mayhem. It highlights themes like Southern lifestyle, Southern porch, balls, best comedy, comedy, comedy shorts, comedy special, comedy video, cooter, cozy atmosphere. Watch it in full here: https://www.youtube.com/watch?v=RfQvg6O8OO0"}}, {"@type": "Question", "name": "How long is “Savage Grandma Roasts The Internet”?", "acceptedAnswer": {"@type": "Answer", "text": "The runtime is 0:09."}}, {"@type": "Question", "name": "When was “Savage Grandma Roasts The Internet” published?", "acceptedAnswer": {"@type": "Answer", "text": "It was published on August 14, 2025."}}, {"@type": "Question", "name": "How popular is it?", "acceptedAnswer": {"@type": "Answer", "text": "It has approximately 21 views, with likes and comments available on YouTube."}}, {"@type": "Question", "name": "Where can I watch and interact?", "acceptedAnswer": {"@type": "Answer", "text": "You can watch, like, comment, and subscribe on YouTube: https://www.youtube.com/watch?v=RfQvg6O8OO0"}}, {"@type": "Question", "name": "Which category and keywords apply?", "acceptedAnswer": {"@type": "Answer", "text": "It’s categorized under Comedy with common keywords such as: Southern lifestyle, Southern porch, balls, best comedy, comedy, comedy shorts, comedy special, comedy video, cooter, cozy atmosphere."}}, {"@type": "Question", "name": "How can I find related videos?", "acceptedAnswer": {"@type": "Answer", "text": "See the Recommended Videos panel on this page or open the channel Martocci Mayhem for more."}}]}</script>
 
 </head>
 <body>
@@ -89,21 +96,17 @@
     <!-- 2) Video features / stats (clickable) -->
     <div class="card">
       <h1 class="block-title">Savage Grandma Roasts The Internet</h1>
-    <div class="subtle">
-        Subscribers: 198
-    </div>
-
-    <div class="meta">
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=RfQvg6O8OO0" target="_blank" rel="noopener">Views: 21</a>
         <a href="https://www.youtube.com/watch?v=RfQvg6O8OO0" target="_blank" rel="noopener">Likes: 1</a>
         <a href="https://www.youtube.com/watch?v=RfQvg6O8OO0#comments" target="_blank" rel="noopener">Comments: 0</a>
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">
-        Channel: Martocci Mayhem</a>
-    </div>
-    <div class="subtle" style="margin-top:6px">
-        Uploaded: August 14, 2025 &nbsp;&middot;&nbsp;
-        Last Edited: August 14, 2025
-        <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=RfQvg6O8OO0" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 14, 2025 &nbsp;&middot;&nbsp; Last Edited: August 14, 2025
+      </div>
+      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v=RfQvg6O8OO0" target="_blank" rel="noopener">Watch on YouTube</a></p>
     </div>
 
     <!-- 3) Description (auto-linkified) -->
@@ -146,7 +149,7 @@
       <h2 class="block-title">Recommended Videos</h2>
       
         
-          <a class="item" href="savage-grandmas-brutal-roast.html">
+          <a class="item" href="/videos/savage-grandmas-brutal-roast.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/7Vdbu4nJako/hqdefault.jpg" alt="Savage Grandma’s Brutal Roast">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma’s Brutal Roast</div>
@@ -155,7 +158,7 @@
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-the-entire-internet.html">
+          <a class="item" href="/videos/savage-grandma-roasts-the-entire-internet.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg" alt="Savage Grandma Roasts the Entire Internet">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts the Entire Internet</div>
@@ -164,7 +167,7 @@
             </div>
           </a>
         
-          <a class="item" href="whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
+          <a class="item" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg" alt="What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15">
             <div>
               <div class="link" style="font-weight:700">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
@@ -173,7 +176,7 @@
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-outsmarts-bad-guys-with-her-wisdom.html">
+          <a class="item" href="/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/HaynzHs2q9I/hqdefault.jpg" alt="Savage Grandma Outsmarts Bad Guys with Her Wisdom">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Outsmarts Bad Guys with Her Wisdom</div>
@@ -182,7 +185,7 @@
             </div>
           </a>
         
-          <a class="item" href="this-grandma-has-a-wild-idea-for-safety.html">
+          <a class="item" href="/videos/this-grandma-has-a-wild-idea-for-safety.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/HYVMT2hXy6M/hqdefault.jpg" alt="This Grandma Has a Wild Idea for Safety!">
             <div>
               <div class="link" style="font-weight:700">This Grandma Has a Wild Idea for Safety!</div>
@@ -191,7 +194,7 @@
             </div>
           </a>
         
-          <a class="item" href="carnival-cruises-disturbing-secrets.html">
+          <a class="item" href="/videos/carnival-cruises-disturbing-secrets.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" alt="Carnival Cruise&#39;s Disturbing Secrets">
             <div>
               <div class="link" style="font-weight:700">Carnival Cruise&#39;s Disturbing Secrets</div>
@@ -200,7 +203,7 @@
             </div>
           </a>
         
-          <a class="item" href="savage-grandma-roasts-romance-again.html">
+          <a class="item" href="/videos/savage-grandma-roasts-romance-again.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/Bmi-QNfpSUc/hqdefault.jpg" alt="Savage Grandma Roasts Romance (Again)!">
             <div>
               <div class="link" style="font-weight:700">Savage Grandma Roasts Romance (Again)!</div>
@@ -209,7 +212,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-shocking-italian-joke-that-s-got-everyone-laug.html">
+          <a class="item" href="/videos/the-shocking-italian-joke-that-s-got-everyone-laug.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/QUrc0ezDMeE/hqdefault.jpg" alt="The Shocking Italian Joke That&#39;s Got Everyone Laughing">
             <div>
               <div class="link" style="font-weight:700">The Shocking Italian Joke That&#39;s Got Everyone Laughing</div>
@@ -218,7 +221,7 @@
             </div>
           </a>
         
-          <a class="item" href="family-dinner-gets-wild-with-grandmas-secret.html">
+          <a class="item" href="/videos/family-dinner-gets-wild-with-grandmas-secret.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/P5VrYObsphY/hqdefault.jpg" alt="Family Dinner Gets Wild With Grandma’s Secret!">
             <div>
               <div class="link" style="font-weight:700">Family Dinner Gets Wild With Grandma’s Secret!</div>
@@ -227,7 +230,7 @@
             </div>
           </a>
         
-          <a class="item" href="the-real-reason-trolls-get-owned-by-savage-moments.html">
+          <a class="item" href="/videos/the-real-reason-trolls-get-owned-by-savage-moments.html">
             <img loading="lazy" src="https://i.ytimg.com/vi/9LKt1XWqcSA/hqdefault.jpg" alt="The REAL Reason Trolls Get Owned by SAVAGE Moments">
             <div>
               <div class="link" style="font-weight:700">The REAL Reason Trolls Get Owned by SAVAGE Moments</div>
