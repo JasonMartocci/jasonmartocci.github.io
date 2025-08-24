@@ -58,7 +58,11 @@
   "uploadDate": upload_date,
   "contentUrl": "https://www.youtube.com/watch?v=" ~ video_id,
   "embedUrl": "https://www.youtube.com/embed/" ~ video_id,
-  "interactionCount": view_count_raw
+  "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": { "@type": "WatchAction" },
+        "userInteractionCount": view_count_raw
+    }
 } %}
 {% if duration_seconds and duration_seconds > 0 %}
   {% set _ = video_ld.update({"duration": "PT" ~ duration_seconds ~ "S"}) %}
