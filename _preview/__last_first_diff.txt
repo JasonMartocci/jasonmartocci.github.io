@@ -1,18 +1,16 @@
 --- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
 +++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
-@@ -53,7 +53,7 @@
- 
+@@ -17,6 +17,7 @@
+ <!-- Twitter -->
 
-   
+ <meta name="twitter:card" content="summary_large_image">
 
- 
+ <meta name="twitter:title" content="Can You Really Sleep On A Bed Of Weed?">
 
--<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Can You Really Sleep On A Bed Of Weed?", "description": "What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...", "thumbnailUrl": "https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg", "uploadDate": "2025-07-28T06:58:52Z", "contentUrl": "https://www.youtube.com/watch?v=c70UNav6wyA", "embedUrl": "https://www.youtube.com/embed/c70UNav6wyA", "interactionCount": 100, "duration": "PT18S"}</script>
++<meta name="twitter:site" content="@JasonMartocci">
 
-+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Can You Really Sleep On A Bed Of Weed?", "description": "What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...", "thumbnailUrl": "https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg", "uploadDate": "2025-07-28T06:58:52Z", "contentUrl": "https://www.youtube.com/watch?v=c70UNav6wyA", "embedUrl": "https://www.youtube.com/embed/c70UNav6wyA", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 100}, "duration": "PT18S"}</script>
+ <meta name="twitter:description" content="What happens when you compare unusual beds? Prepare for total ASMR as we explore unique beds filled with wildflowers and buds. Which experience will p...">
 
- 
-
- <!-- JSON-LD: BreadcrumbList -->
+ <meta name="twitter:image" content="https://i.ytimg.com/vi/c70UNav6wyA/hqdefault.jpg">
 
  
