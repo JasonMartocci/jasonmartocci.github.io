@@ -1,23 +1,23 @@
---- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:old
-+++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:new
-@@ -180,6 +180,15 @@
+--- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:old
++++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\can-you-really-sleep-on-a-bed-of-weed.html:new
+@@ -177,6 +177,15 @@
              </div>
 
            </a>
 
          
 
-+          <a class="item" href="/videos/unbelievable-dating-secrets-from-a-savage-grandma.html">
++          <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
 
-+            <img loading="lazy" src="https://i.ytimg.com/vi/rteOODNXSfk/hqdefault.jpg" alt="Unbelievable Dating Secrets from a Savage Grandma!">
++            <img loading="lazy" src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg" alt="Hot Knife ASMR! Can You Handle the MELT?">
 
 +            <div>
 
-+              <div class="link" style="font-weight:700">Unbelievable Dating Secrets from a Savage Grandma!</div>
++              <div class="link" style="font-weight:700">Hot Knife ASMR! Can You Handle the MELT?</div>
 
-+              <div style="color:#aaa">Get ready for some straight-shooting, no-nonsense dating advice from a sassy senior who&#39;s been around the block a few ti...</div>
++              <div style="color:#aaa">Immerse yourself in this unique and incredible ASMR experience as a knife slices through a stunning passionfruit made en...</div>
 
-+              <div class="subtle">Views: 573 · Updated: August 23, 2025</div>
++              <div class="subtle">Views: 10,408 · Updated: July 01, 2025</div>
 
 +            </div>
 
@@ -25,49 +25,18 @@
 
 +        
 
-           <a class="item" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
+           <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
 
-             <img loading="lazy" src="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg" alt="Squirrel vs Cat Kitchen Showdown!">
-
-             <div>
-
-@@ -198,6 +207,15 @@
-             </div>
-
-           </a>
-
-         
-
-+          <a class="item" href="/videos/shocking-dating-tips-from-savage-grandma.html">
-
-+            <img loading="lazy" src="https://i.ytimg.com/vi/3ufWZzNZDiY/hqdefault.jpg" alt="Shocking Dating Tips from Savage Grandma!">
-
-+            <div>
-
-+              <div class="link" style="font-weight:700">Shocking Dating Tips from Savage Grandma!</div>
-
-+              <div style="color:#aaa">Get ready for the most epic and hilarious grandma interview ever! In this video, we uncover the shocking dating secrets ...</div>
-
-+              <div class="subtle">Views: 32 · Updated: August 23, 2025</div>
-
-+            </div>
-
-+          </a>
-
-+        
-
-           <a class="item" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
-
-             <img loading="lazy" src="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg" alt="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!">
+             <img loading="lazy" src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg" alt="The Most Satisfying Mangosteen Slices">
 
              <div>
 
-@@ -231,24 +249,6 @@
-               <div class="link" style="font-weight:700">I Sliced a Gummy Bear with a Huge Knife</div>
+@@ -228,15 +237,6 @@
+               <div class="link" style="font-weight:700">GLASS FRUIT REVEALED in a RAINBOW of REALISTIC TEXTURES!</div>
 
-               <div style="color:#aaa">Get ready for some bright gummy fun! Watch as a knife slices into some bright gummy candy and orange goo oozes out. This...</div>
+               <div style="color:#aaa">Experience the satisfying video of crystal-like glass fruit being blended into a delicious smoothie. Watch asmr visuals ...</div>
 
-               <div class="subtle">Views: 199 · Updated: August 18, 2025</div>
+               <div class="subtle">Views: 11 · Updated: July 23, 2025</div>
 
 -            </div>
 
@@ -75,35 +44,17 @@
 
 -        
 
--          <a class="item" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
+-          <a class="item" href="/videos/i-made-a-rainbow-glass-fruit-garden.html">
 
--            <img loading="lazy" src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg" alt="The Ultimate Satisfying ASMR Experiment">
-
--            <div>
-
--              <div class="link" style="font-weight:700">The Ultimate Satisfying ASMR Experiment</div>
-
--              <div style="color:#aaa">Get ready to experience the most unconventional ASMR session of your life! In tonight&#39;s video, we&#39;re throwing out the ru...</div>
-
--              <div class="subtle">Views: 13 · Updated: August 16, 2025</div>
-
--            </div>
-
--          </a>
-
--        
-
--          <a class="item" href="/videos/carnival-cruises-disturbing-secrets.html">
-
--            <img loading="lazy" src="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg" alt="Carnival Cruise&#39;s Disturbing Secrets">
+-            <img loading="lazy" src="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg" alt="I Made a Rainbow Glass Fruit Garden">
 
 -            <div>
 
--              <div class="link" style="font-weight:700">Carnival Cruise&#39;s Disturbing Secrets</div>
+-              <div class="link" style="font-weight:700">I Made a Rainbow Glass Fruit Garden</div>
 
--              <div style="color:#aaa">Carnival ain&#39;t a cruise line; it&#39;s a floating episode of &#34;Cops!&#34; This funny skit will have you laughing at the wild situ...</div>
+-              <div style="color:#aaa">Witness the mesmerizing transformation of RAINBOW glass fruit as they come to life in stunning slow motion! Get ready to...</div>
 
--              <div class="subtle">Views: 1,061 · Updated: July 31, 2025</div>
+-              <div class="subtle">Views: 1,205 · Updated: July 31, 2025</div>
 
              </div>
 
