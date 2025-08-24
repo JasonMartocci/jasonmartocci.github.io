@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ title | truncate(60) }}</title>
-<meta name="description" content="{{ short_desc }}">
+<title>{{ title | truncate(60) }} - Martocci Mayhem</title>
+<meta name="description" content="{{ short_desc | truncate(153) }}">
 <link rel="canonical" href="{{ site_url }}/videos/{{ slug }}.html">
 <link rel="icon" href="/images/favicon.ico">
 
@@ -10,7 +10,7 @@
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="{{ title | truncate(70) }}">
 <meta property="og:site_name" content="Martocci Mayhem">
-<meta property="og:description" content="{{ short_desc }}">
+<meta property="og:description" content="{{ short_desc | truncate(65) }}">
 <meta property="og:url" content="{{ site_url }}/videos/{{ slug }}.html">
 <meta property="og:image" content="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg">
 

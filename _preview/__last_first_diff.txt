@@ -1,18 +1,18 @@
---- index.html:old
-+++ index.html:new
-@@ -62,7 +62,7 @@
- <body>
+--- C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:old
++++ C:\Users\marto\OneDrive\Desktop\eDeveloper Solutions\Jason Martocci\JasonMartocci.github.io\videos\let-s-chat-and-chill.html:new
+@@ -39,7 +39,7 @@
+ ╠╗║╚╝║║╠╗║╚╣║║║║║═╣
 
- <header>
+ ╚═╩══╩═╩═╩═╩╝╚╩═╩═╝
 
-   <a class="brand" href="https://jasonmartocci.com"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"> Martocci Mayhem</a>
+  
 
--  <div>Unlock ASMR Magic & Epic Savage Grandma</div>
+-If you have any questions about t">
 
-+  <div><h1>Unlock ASMR Magic & Epic Savage Grandma</h1></div>
++If you have any questions ab...">
 
- </header>
+ <meta name="twitter:image" content="https://i.ytimg.com/vi/iTijX3CfdLs/hqdefault.jpg">
 
  
 
- <main>
+ <style>
