@@ -2,23 +2,52 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Martocci Mayhem — Unlock ASMR Magic & Epic Savage Grandma</title>
+<meta name="description" content="Explore the full Martocci Mayhem catalog: ASMR, comedy, shorts, tech experiments and more.">
 <link rel="canonical" href="{{ site_url }}"><link rel="icon" href="/images/favicon.ico">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Martocci Mayhem">
+<meta property="og:site_name" content="Martocci Mayhem">
+<meta property="og:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+<meta property="og:url" content="{{ site_url }}">
+<meta property="og:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Martocci Mayhem">
+<meta name="twitter:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+<meta name="twitter:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
+
+
 <style>
   :root { color-scheme: dark; }
+  *{box-sizing:border-box}
   body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0f0f0f; color:#fff; }
   header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px; padding:14px 16px; border-bottom:1px solid; position:sticky; top:0; background:#0f0f0f; z-index:2; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px; padding:14px 16px; border-bottom:1px solid; position:sticky; top:0; background:#0f0f0f; z-index:5; }
   header a.brand { position:absolute; left:16px; top:10px; color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:600; }
-  main { max-width:1280px; margin:0 auto; padding:16px; }
-  .filters { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px }
+
+  /* full width with comfy padding */
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); max-width:none; }
+
+  .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; }
   .filters button { background:#1a1a1a; border:1px solid #222; color:#bbb; padding:8px 12px; border-radius:999px; cursor:pointer }
   .filters button.active { color:#fff; border-color:#3ea6ff }
+
+  .search { flex:1; min-width:220px }
+  .search input { width:100%; padding:10px 12px; border-radius:999px; border:1px solid #222; background:#111; color:#ddd; }
+
   .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; }
-  .card { background:#111; border:1px solid #222; border-radius:10px; overflow:hidden; }
+  .card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; /* add: */ margin-bottom:14px; }
   .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block }
   .body { padding:10px 12px }
   a, .link { color:#3ea6ff; text-decoration:none; }
+  .subtle { color:#9aa }
+  #sentinel { height:1px }
 </style>
+
 <script>const ALL={{ videos | tojson | safe }};</script>
 <script type="application/ld+json">{{ web_page_schema | tojson | safe }}</script>
 <script type="application/ld+json">{{ item_list_schema | tojson | safe }}</script>
@@ -28,32 +57,149 @@
   <a class="brand" href="{{ site_url }}"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"> Martocci Mayhem</a>
   <div>Unlock ASMR Magic & Epic Savage Grandma</div>
 </header>
+
 <main>
-  <div class="filters" id="filters"></div>
+  <div class="toolbar">
+    <div class="filters" id="filters"></div>
+    <div class="search"><input id="q" type="search" placeholder="Search titles, descriptions, tags…"></div>
+  </div>
+
   <div class="grid" id="grid"></div>
+  <div id="sentinel"></div>
 </main>
+
 <footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © {{ current_year }} Martocci Mayhem · <a class="link" href="{{ site_url }}">All The Mayhem</a>
 </footer>
+
 <script>
-  const cats = ["All", ...Array.from(new Set(ALL.map(v => v.category || "People & Blogs")))];
+  // --- utilities ---
+  const pretty = (d) => {
+    if (!d) return "";
+    try {
+      const dt = new Date(d);
+      return dt.toLocaleDateString(undefined, { month:"long", day:"2-digit", year:"numeric" });
+    } catch { return d; }
+  };
+  const debounce = (fn, ms=250) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms);} };
+
+  // normalize/augment data for fast filtering
+  const DATA = ALL.map(v => ({
+    ...v,
+    _t: (v.title || "").toLowerCase(),
+    _d: (v.desc || "").toLowerCase(),
+    _tags: (v.tags || []).map(t=>String(t).toLowerCase()),
+    updated_pretty: pretty(v.last_edited_date || v.creation_date)
+  }));
+
+  // categories (unique, sorted; "All" first)
+  const cats = ["All", ...Array.from(new Set(DATA.map(v => v.category || "People & Blogs"))).sort((a,b)=>a.localeCompare(b))];
+
   const filters = document.getElementById("filters");
   const grid    = document.getElementById("grid");
-  let current = "All";
-  cats.forEach(c => { const b = document.createElement("button"); b.textContent=c; b.onclick=()=>{current=c; render();}; if(c==="All") b.classList.add("active"); filters.appendChild(b); });
-  function render(){
-    [...filters.children].forEach(b=>b.classList.toggle("active", b.textContent===current));
+  const qEl     = document.getElementById("q");
+  const sentinel= document.getElementById("sentinel");
+
+  // state
+  let currentCat = "All";
+  let query      = "";
+  let filtered   = [];
+  let pageSize   = 30;
+  let cursor     = 0;
+  let observer;
+
+  // build filter chips
+  cats.forEach(c => {
+    const b = document.createElement("button");
+    b.textContent = c;
+    b.onclick = () => { currentCat = c; applyFilters(); };
+    if (c === currentCat) b.classList.add("active");
+    filters.appendChild(b);
+  });
+
+  // search
+  qEl.addEventListener("input", debounce(e => { query = (e.target.value || "").toLowerCase().trim(); applyFilters(); }, 200));
+
+  function applyFilters(){
+    // toggle active chip
+    [...filters.children].forEach(b=>b.classList.toggle("active", b.textContent===currentCat));
+    // compute filtered list
+    filtered = DATA.filter(v => (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query))
+                   .sort((a,b)=> String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||"")));
+    // reset grid & infinite scroll
     grid.innerHTML = "";
-    const list = ALL.filter(v => current==="All" || v.category===current).sort((a,b)=> (b.last_edited_date||"").localeCompare(a.last_edited_date||""));
-    for (const v of list){
-      const card = document.createElement("a"); card.href="/videos/"+v.slug+".html"; card.className="card";
-      card.innerHTML = `<img class="thumb" src="https://i.ytimg.com/vi/${v.video_id}/hqdefault.jpg" alt="${v.title}">
-        <div class="body"><div style="font-weight:700;margin-bottom:6px">${v.title}</div>
-        <div style="color:#9aa">${(v.desc||"").slice(0,90)}...</div>
-        <div style="color:#666;margin-top:6px;font-size:.88rem">Views: ${v.view_count} · Updated: ${v.last_edited_date||""}</div></div>`;
-      grid.appendChild(card);
-    }
+    cursor = 0;
+    if (observer) observer.disconnect();
+    loadMore();  // initial batch
+    observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) loadMore();
+    }, { rootMargin: "1200px" });
+    observer.observe(sentinel);
   }
-  render();
+
+  function matchesQuery(v, q){
+    if (!q) return true;
+    // simple operators: tag:xyz  id:abc
+    const parts = q.split(/\s+/);
+    return parts.every(tok => {
+      if (tok.startsWith("tag:")) {
+        const t = tok.slice(4);
+        return v._tags.some(x => x.includes(t));
+      }
+      if (tok.startsWith("id:")) {
+        return (v.video_id||"").toLowerCase().includes(tok.slice(3));
+      }
+      return v._t.includes(tok) || v._d.includes(tok) || v._tags.some(x=>x.includes(tok));
+    });
+  }
+
+  function loadMore(){
+    if (cursor >= filtered.length) return;
+    const end = Math.min(cursor + pageSize, filtered.length);
+    const slice = filtered.slice(cursor, end);
+    const frag = document.createDocumentFragment();
+    for (const v of slice) frag.appendChild(card(v));
+    grid.appendChild(frag);
+    cursor = end;
+  }
+
+  function card(v){
+    const a = document.createElement("a");
+    a.href = "videos/" + v.slug + ".html";
+    a.className = "card";
+    a.innerHTML = `
+      <img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/${v.video_id}/hqdefault.jpg" alt="${escapeHtml(v.title||"")}">
+      <div class="body">
+        <div style="font-weight:700;margin-bottom:6px">${escapeHtml(v.title||"")}</div>
+        <div class="subtle">${escapeHtml((v.category||"").toString())}</div>
+        <div style="color:#9aa;margin-top:6px">${escapeHtml((v.desc||"").slice(0,90))}${(v.desc||"").length>90?"…":""}</div>
+        <div style="color:#666;margin-top:6px;font-size:.88rem">Views: ${Number(v.view_count||0).toLocaleString()} · Updated: ${v.updated_pretty||""}</div>
+      </div>`;
+    return a;
+  }
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;'}[m])); }
+
+  // initial render
+  applyFilters();
+</script>
+<script>
+    // state
+    let currentCat = "All";
+    let query = "";
+    let filtered = [];
+    let pageSize = 30;
+    let cursor = 0;
+    let observer;
+
+    function loadMore(){
+    if (cursor >= filtered.length) return;
+    const end = Math.min(cursor + pageSize, filtered.length);
+    const slice = filtered.slice(cursor, end);
+    const frag = document.createDocumentFragment();
+    for (const v of slice) frag.appendChild(card(v));
+    grid.appendChild(frag);
+    cursor = end;
+    }
 </script>
 </body></html>
