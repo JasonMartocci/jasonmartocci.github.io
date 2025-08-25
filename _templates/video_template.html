@@ -19,23 +19,31 @@
 <meta name="twitter:title" content="{{ title | truncate(50) }}">
 <meta name="twitter:site" content="@JasonMartocci">
 <meta name="twitter:description" content="{{ short_desc | truncate(120) }}">
-<meta name="twitter:alt" content="Martocci Mayhem {{ title }}">
+<meta name="twitter:image:alt" content="Martocci Mayhem {{ title }}">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
   *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0f0f0f; color:#fff; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
   header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px; padding:14px 16px; border-bottom:1px solid; position:sticky; top:0; background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr); gap:clamp(14px,2vw,28px); }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
   section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
@@ -43,7 +51,8 @@
   a, .link { color:#3ea6ff; text-decoration:none; }
   .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222; border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
   .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
   .block-title{font-weight:800;margin:.2rem 0 .6rem}
   .subtle{color:#9aa}
@@ -63,7 +72,7 @@
         "@type": "InteractionCounter",
         "interactionType": { "@type": "WatchAction" },
         "userInteractionCount": view_count_raw
-    }
+  }
 } %}
 {% if duration_seconds and duration_seconds > 0 %}
   {% set _ = video_ld.update({"duration": "PT" ~ duration_seconds ~ "S"}) %}
@@ -81,14 +90,22 @@
 <!-- JSON-LD: FAQPage -->
 {% set faq_entities = [] %}
 {% for q,a in faqs %}
-  {% set _ = faq_entities.append({"@type":"Question","name": q,"acceptedAnswer":{"@type":"Answer","text": a}}) %}
+  {% set _ = faq_entities.append({
+      "@type":"Question",
+      "name": q,
+      "acceptedAnswer":{"@type":"Answer","text": a}
+  }) %}
 {% endfor %}
 {% set faq_ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity": faq_entities} %}
 <script type="application/ld+json">{{ faq_ld | tojson | safe }}</script>
+
 </head>
 <body>
 <header>
-  <a class="brand" href="{{ site_url }}"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"> Martocci Mayhem</a>
+  <a class="brand" href="{{ site_url }}">
+    <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
+    Martocci Mayhem
+  </a>
   <div>{{ title | truncate(60) }}</div>
 </header>
 
@@ -96,10 +113,12 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/{{ video_id }}" title="{{ title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/{{ video_id }}"
+              title="{{ title }}" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- 2) Video features / stats (clickable) -->
+    <!-- 2) Stats -->
     <div class="card">
       <h1 class="block-title">{{ title | truncate(55) }}</h1>
       <div class="subtle">Subscribers: {{ subs_raw and subscriber_count or "—" }}</div>
@@ -110,26 +129,32 @@
         <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">Channel: {{ channel_title or ("@" ~ channel_handle) }}</a>
       </div>
       <div class="subtle" style="margin-top:6px">
-        Uploaded: {{ upload_date_pretty or "—" }} &nbsp;&middot;&nbsp; Last Edited: {{ last_edited_date_pretty or "—" }}
+        Uploaded: {{ upload_date_pretty or "—" }} &middot;
+        Last Edited: {{ last_edited_date_pretty or "—" }}
       </div>
-      <p style="margin:.7rem 0 0"><a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a></p>
+      <p style="margin:.7rem 0 0">
+        <a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
     </div>
 
-    <!-- 3) Description (auto-linkified) -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">{{ formatted_desc | safe }}</div>
     </div>
 
-    <!-- 4) FAQ (7 items + schema above) -->
+    <!-- 4) FAQ -->
     <div class="card">
       <h2 class="block-title">Frequently Asked Questions</h2>
       {% for q,a in faqs %}
-        <details><summary>{{ q }}</summary><div style="padding:.6rem 0;color:#ccc">{{ a|safe }}</div></details>
+        <details>
+          <summary>{{ q }}</summary>
+          <div style="padding:.6rem 0;color:#ccc">{{ a|safe }}</div>
+        </details>
       {% endfor %}
     </div>
 
-    <!-- 5) Comments (send to YouTube) -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -137,14 +162,17 @@
     </div>
   </section>
 
-  <!-- Right column: Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
       {% if related and related|length > 0 %}
         {% for r in related %}
           <a class="item" href="/videos/{{ r.slug }}.html">
-            <img loading="lazy" src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg" alt="{{ r.title }}" onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
+            <img loading="lazy"
+                 src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg"
+                 alt="{{ r.title }}"
+                 onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
               <div class="link" style="font-weight:700">{{ r.title }}</div>
               <div style="color:#aaa">{{ r.desc | truncate(120) }}</div>
@@ -160,6 +188,8 @@
 </main>
 
 <footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
-  © {{ current_year }} Martocci Mayhem · <a class="link" href="{{ site_url }}">All The Mayhem</a> · <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
+  © {{ current_year }} Martocci Mayhem ·
+  <a class="link" href="{{ site_url }}">All The Mayhem</a> ·
+  <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
 </footer>
 </body></html>

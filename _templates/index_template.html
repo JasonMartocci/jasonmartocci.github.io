@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Unlock ASMR Magic & Epic Savage Grandma">
 <meta name="twitter:site" content="@JasonMartocci">
 <meta name="twitter:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
-<meta name="twitter:alt" content="Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem">
+<meta name="twitter:image:alt" content="Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem">
 <meta name="twitter:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
 
 <style>
@@ -82,7 +82,6 @@
 <script>
 "use strict";
 (function(){
-  // --- utils ---
   function pretty(d){
     if(!d) return "";
     try{ var dt=new Date(d); return dt.toLocaleDateString(undefined,{month:"long",day:"2-digit",year:"numeric"}); }
@@ -90,12 +89,10 @@
   }
   function debounce(fn,ms){ var t; return function(){ var a=arguments; clearTimeout(t); t=setTimeout(function(){ fn.apply(null,a); }, ms||250); }; }
 
-  // Parse JSON safely
   var RAW = document.getElementById("__data");
   var ALL = [];
   try { ALL = JSON.parse(RAW && RAW.textContent || "[]"); } catch(e){ console.error("Bad data JSON", e); }
 
-  // Normalize
   var DATA = ALL.map(function(v){
     return Object.assign({}, v, {
       _t: (v.title||"").toLowerCase(),
@@ -105,17 +102,14 @@
     });
   });
 
-  // Categories
   var catsSet = new Set(DATA.map(function(v){ return v.category || "People & Blogs"; }));
   var cats = ["All"].concat(Array.from(catsSet).sort(function(a,b){ return a.localeCompare(b); }));
 
-  // DOM
   var filters  = document.getElementById("filters");
   var grid     = document.getElementById("grid");
   var qEl      = document.getElementById("q");
   var sentinel = document.getElementById("sentinel");
 
-  // state
   var currentCat = "All";
   var query = "";
   var filtered = [];
@@ -123,7 +117,6 @@
   var cursor = 0;
   var observer = null;
 
-  // chips
   cats.forEach(function(c){
     var b = document.createElement("button");
     b.textContent = c;
@@ -132,7 +125,6 @@
     filters.appendChild(b);
   });
 
-  // search
   qEl.addEventListener("input", debounce(function(e){
     query = (e.target.value||"").toLowerCase().trim();
     applyFilters();
@@ -203,7 +195,6 @@
     return a;
   }
 
-  // initial render
   applyFilters();
 })();
 </script>
