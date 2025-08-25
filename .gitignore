@@ -1,9 +1,18 @@
-﻿# Never ship tool code or private data to the website repo
-*.py
-*.pyc
-__pycache__/
+﻿# Python env & cache
 .venv/
-_preview/
+__pycache__/
+*.pyc
+
+# Local settings & secrets
 .env
 mm_settings.json
+quota_tracker.json
+token.pickle
+credentials.json
+
+# Local previews & logs
+_preview/
+*.log
+
+# Large/derived data
 videos.json
