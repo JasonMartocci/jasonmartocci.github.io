@@ -1,5 +1,9 @@
+﻿# Never ship tool code or private data to the website repo
+*.py
 *.pyc
 __pycache__/
-.DS_Store
-Thumbs.db
-# Add more as needed, e.g., node_modules/
+.venv/
+_preview/
+.env
+mm_settings.json
+videos.json
