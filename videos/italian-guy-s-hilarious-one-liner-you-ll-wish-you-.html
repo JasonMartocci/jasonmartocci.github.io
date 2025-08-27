@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Check out this hefty Italian-looking guy delivering a killer one-liner that will have you in stitches: &#34;How do you...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/QWlO6Ngm6-M/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/QWlO6Ngm6-M"
-              title="Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/QWlO6Ngm6-M"
+        title="Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -153,7 +195,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -233,6 +275,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/you-won-t-believe-how-life-advice-changes-with-age.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/XJaWQzM-KX0/hqdefault.jpg"
+                width="168" height="94"
                  alt="You Won&#39;t Believe How LIFE ADVICE CHANGES with Age"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -244,6 +287,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/seeing-two-sides-the-art-of-perspective.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/F0jUT-jYM8s/hqdefault.jpg"
+                width="168" height="94"
                  alt="Seeing Two Sides: The Art of Perspective"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -255,6 +299,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-most-expensive-dog-joke-ever.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/3TcXeaqeGu8/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Most Expensive Dog Joke Ever"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -266,6 +311,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/why-three-blind-mice-is-a-hilarious-joke.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/bpkDlq89ohg/hqdefault.jpg"
+                width="168" height="94"
                  alt="Why Three Blind Mice is a Hilarious Joke"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -277,6 +323,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-ladder-joke-that-explains-inflation.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/JwqSMVmNG9E/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Ladder Joke that Explains Inflation"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -288,6 +335,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/is-mcdonald-s-drive-thru-getting-out-of-hand.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/qKroZ9jiHvc/hqdefault.jpg"
+                width="168" height="94"
                  alt="Is McDonald&#39;s Drive-Thru Getting Out of Hand?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -299,6 +347,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/savage-yet-genius-relationship-advice.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Yla2OhXNdfM/hqdefault.jpg"
+                width="168" height="94"
                  alt="Savage Yet Genius Relationship Advice"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -312,6 +361,7 @@ Get ready...</div>
           <a class="item" href="/videos/what-happens-when-you-stop-drinking.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg"
+                width="168" height="94"
                  alt="What Happens When You Stop Drinking?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -323,6 +373,7 @@ Get ready...</div>
           <a class="item" href="/videos/savage-grandma-destroys-carnival-cruise-line-in-hilarious-roast.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/0l2lHbKonk0/hqdefault.jpg"
+                width="168" height="94"
                  alt="Savage Grandma DESTROYS Carnival Cruise Line in HILARIOUS Roast"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -334,6 +385,7 @@ Get ready...</div>
           <a class="item" href="/videos/wife-s-unusual-demand-for-plumbers.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Oge2fAKO3zw/hqdefault.jpg"
+                width="168" height="94"
                  alt="Wife&#39;s Unusual Demand for Plumbers"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

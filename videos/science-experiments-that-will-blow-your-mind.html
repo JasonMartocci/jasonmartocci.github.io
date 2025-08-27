@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Check out these cool science experiments that feature gas evolution reactions, colorful reactions, and even a small...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Science Experiments That Will Blow Your Mind!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/RIH3IlUQkaI/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/RIH3IlUQkaI"
-              title="Science Experiments That Will Blow Your Mind!" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/RIH3IlUQkaI"
+        title="Science Experiments That Will Blow Your Mind!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -158,7 +200,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -238,6 +280,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-top-3-crazy-things-she-did-in-30-seconds.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/m4Z-9XArzDw/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Top 3 CRAZY Things She Did In 30 Seconds!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -249,6 +292,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/see-how-soap-makes-water-stretch-like-magic.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/SqA9KTP37z0/hqdefault.jpg"
+                width="168" height="94"
                  alt="See How Soap Makes Water Stretch Like Magic!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -260,6 +304,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/supercar-sledgehammer-showdown-lamborghini-bugatti.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/R0ppeMOqH3w/hqdefault.jpg"
+                width="168" height="94"
                  alt="Supercar Sledgehammer Showdown! Lamborghini, Bugatti &amp; More"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -271,6 +316,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg"
+                width="168" height="94"
                  alt="Can a Superheated Blade Destroy Ice Instantly?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -282,6 +328,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-strange-future-of-asmr-in-reverse.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/0VIYnfChoxo/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Strange Future of ASMR (in REVERSE)"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -293,6 +340,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/watch-this-unique-fruit-reveal-its-delicious-secret-inside.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Mc0YAsZ7M6I/hqdefault.jpg"
+                width="168" height="94"
                  alt="Watch This Unique Fruit Reveal Its Delicious Secret Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -304,6 +352,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/steaming-hot-knife-cuts-through-frozen-chunk.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/qsGqwpv5-uY/hqdefault.jpg"
+                width="168" height="94"
                  alt="STEAMING HOT Knife Cuts Through Frozen Chunk!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -315,6 +364,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/glass-passion-fruit-splits-open-in-slow-motion.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/DBzzPlwpZT0/hqdefault.jpg"
+                width="168" height="94"
                  alt="Glass Passion Fruit Splits Open in SLOW MOTION!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -326,6 +376,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg"
+                width="168" height="94"
                  alt="What Happens When You Cut Objects in REVERSE ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -337,6 +388,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/frozen-in-time-1994-baby-born-30-years-later.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/z6ND2mKXftU/hqdefault.jpg"
+                width="168" height="94"
                  alt="FROZEN IN TIME! 1994 Baby Born 30 Years Later?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

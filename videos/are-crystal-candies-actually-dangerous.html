@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Dive into this intensely satisfying ASMR experience, featuring edible crystal rock candy that&#39;s almost too beautiful...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Are Crystal Candies Actually Dangerous?">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/Lb2icdcbKak/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/Lb2icdcbKak"
-              title="Are Crystal Candies Actually Dangerous?" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/Lb2icdcbKak"
+        title="Are Crystal Candies Actually Dangerous?" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -164,7 +206,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -244,6 +286,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Fq7fMnoqLkM/hqdefault.jpg"
+                width="168" height="94"
                  alt="Mind-Blowing Beds You’ll Want To Sleep In 😴✨ | Ultra-Real ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -255,6 +298,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Weird Food Mukbangs: The $500 Challenge"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -266,6 +310,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg"
+                width="168" height="94"
                  alt="Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -277,6 +322,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Most Satisfying Mangosteen Slices"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -288,6 +334,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/will-ai-replace-human-mukbangs.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg"
+                width="168" height="94"
                  alt="Is AI Set to Dominate Human Mukbangs Forever?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -299,6 +346,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-ultimate-asmr-food-bliss.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Most Satisfying ASMR Food Journey"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -310,6 +358,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Hot Knife ASMR! Can You Handle the MELT?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -321,6 +370,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/whats-really-inside-this-asmr-glass-fruit.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg"
+                width="168" height="94"
                  alt="What&#39;s REALLY Inside this ASMR Glass Fruit?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -332,6 +382,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg"
+                width="168" height="94"
                  alt="This Glass Apple Looks Normal But Watch What’s Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -343,6 +394,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/satisfying-glass-dragon-fruit-slicing-asmr.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/tQKP3KcQOI4/hqdefault.jpg"
+                width="168" height="94"
                  alt="Satisfying Glass Dragon Fruit Slicing ASMR!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Dive into a unique ASMR experience as a knife slices through a stunning dragon fruit made entirely of glass! Enjoy...">
 <meta name="twitter:image:alt" content="Martocci Mayhem ASMR Glass Dragon Fruit Sliced by Knife: Mesmerizing Sounds">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/QPJ9q_cYJ5w/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/QPJ9q_cYJ5w"
-              title="ASMR Glass Dragon Fruit Sliced by Knife: Mesmerizing Sounds" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/QPJ9q_cYJ5w"
+        title="ASMR Glass Dragon Fruit Sliced by Knife: Mesmerizing Sounds" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -151,7 +193,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -231,6 +273,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/satisfying-fruit-art-chef-turns-fruit-into-floral-.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/f5sQ9DvQ6Gs/hqdefault.jpg"
+                width="168" height="94"
                  alt="Satisfying Fruit Art: Chef Turns Fruit into Floral Masterpieces 🌸🍍"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -243,6 +286,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/satisfying-black-molten-cake-slime.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/SuawP9hgKcs/hqdefault.jpg"
+                width="168" height="94"
                  alt="Satisfying Black Molten Cake SLIME"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -254,6 +298,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/i-tried-the-new-asmr-fruit-cutting-trend.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/FxBGneFYvxc/hqdefault.jpg"
+                width="168" height="94"
                  alt="I Tried The New ASMR Fruit Cutting Trend"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -267,6 +312,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/7mfoSu1AFvM/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Yellow Slime You Wish You Had As A Kid"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -278,6 +324,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/a-red-hot-knife-meets-its-softest-opponent-yet-a-s.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/w0uDjS1-7KQ/hqdefault.jpg"
+                width="168" height="94"
                  alt="A red-hot knife meets its softest opponent yet — a solid foam block."
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -289,6 +336,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/neon-dessert-asmr-a-feast-for-the-senses.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/tLOEMBOdc6s/hqdefault.jpg"
+                width="168" height="94"
                  alt="Neon Dessert ASMR - A Feast for the Senses"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -300,6 +348,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/asmr-gold-brick-vs-hot-knife-scratch-melt-satisfyi.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/PIr8dj6aQBs/hqdefault.jpg"
+                width="168" height="94"
                  alt="ASMR Gold Brick vs. Hot Knife: Scratch &amp; Melt Satisfying Sounds"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -311,6 +360,7 @@ In this jaw-dropping short, a professional chef uses next-level knife skills...<
           <a class="item" href="/videos/cutting-asmr-hot-knife-foam-slicing.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/eW0RBZttYQU/hqdefault.jpg"
+                width="168" height="94"
                  alt="Cutting ASMR - Hot Knife Foam Slicing"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -324,6 +374,7 @@ In complete silence, a red-hot blade cuts through what appears to be ordinary fo
           <a class="item" href="/videos/cutting-pure-gold-with-a-red-hot-knife.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/32KggH-612g/hqdefault.jpg"
+                width="168" height="94"
                  alt="Cutting Pure Gold With a Red Hot Knife"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -337,6 +388,7 @@ A molten-hot blade slowly scrapes across a...</div>
           <a class="item" href="/videos/red-hot-knife-vs-butter-the-smoothest-melt-ever.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/YtmM2xQnfA8/hqdefault.jpg"
+                width="168" height="94"
                  alt="Red-Hot Knife vs. Butter: The Smoothest Melt Ever"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

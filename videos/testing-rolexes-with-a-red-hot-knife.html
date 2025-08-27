@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Prepare to witness pure, unadulterated destruction as a glowing red hot knife meets Luxury Rolexes. The satisfying...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Testing Rolexes With a Red Hot Knife">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/DJsRjOdkyOs/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/DJsRjOdkyOs"
-              title="Testing Rolexes With a Red Hot Knife" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/DJsRjOdkyOs"
+        title="Testing Rolexes With a Red Hot Knife" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -165,7 +207,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -245,6 +287,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/can-a-40-000-rolex-survive-an-800-red-hot-knife.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/jcdvJvQSNuY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Can a $40,000 Rolex Survive an 800° Red Hot Knife?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -256,6 +299,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/rolex-vs-red-hot-knife-ultimate-slow-mo-destructio.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/R0bB4tCrGd0/hqdefault.jpg"
+                width="168" height="94"
                  alt="🔥 Rolex vs Red Hot Knife — Ultimate Slow-Mo Destruction"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -267,6 +311,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Hot Knife ASMR! Can You Handle the MELT?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -278,6 +323,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/rolex-gets-sliced-by-a-red-hot-knife-in-stunning-4.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/wMWLH438h8o/hqdefault.jpg"
+                width="168" height="94"
                  alt="Rolex Gets Sliced by a Red-Hot Knife in Stunning 4K Slow Motion"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -289,6 +335,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/whats-really-inside-this-asmr-glass-fruit.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg"
+                width="168" height="94"
                  alt="What&#39;s REALLY Inside this ASMR Glass Fruit?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -300,6 +347,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg"
+                width="168" height="94"
                  alt="This Glass Apple Looks Normal But Watch What’s Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -311,6 +359,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/can-you-guess-what-these-weird-objects-are.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/zXUYA0MHBEo/hqdefault.jpg"
+                width="168" height="94"
                  alt="Can You Guess What These Weird Objects Are?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -322,6 +371,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg"
+                width="168" height="94"
                  alt="What Happens When You Cut Objects in REVERSE ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -333,6 +383,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/asmr-visual-trick-to-make-you-feel-calm-and-surpri.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/pUmFo5HR7JY/hqdefault.jpg"
+                width="168" height="94"
                  alt="ASMR Visual Trick to Make You Feel Calm and Surprised!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -347,6 +398,7 @@ New Martocci...</div>
           <a class="item" href="/videos/is-dragon-fruit-a-superfood-or-a-scam.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/BPQ0zKPwQTc/hqdefault.jpg"
+                width="168" height="94"
                  alt="Is Dragon Fruit a Superfood or a Scam?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

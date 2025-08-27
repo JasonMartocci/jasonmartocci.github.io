@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="ASMR Visual Trick to Make You Feel Calm and Surprised!">
 <meta name="twitter:image:alt" content="Martocci Mayhem ASMR Visual Trick to Make You Feel Calm and Surprised!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/pUmFo5HR7JY/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/pUmFo5HR7JY"
-              title="ASMR Visual Trick to Make You Feel Calm and Surprised!" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/pUmFo5HR7JY"
+        title="ASMR Visual Trick to Make You Feel Calm and Surprised!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -118,7 +160,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -198,6 +240,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/f4sYNCqHooo/hqdefault.jpg"
+                width="168" height="94"
                  alt="Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -209,6 +252,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/watch-this-coconut-split-in-seconds.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/G4lcamHGWXA/hqdefault.jpg"
+                width="168" height="94"
                  alt="Watch This Coconut Split in Seconds!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -220,6 +264,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/is-dragon-fruit-a-superfood-or-a-scam.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/BPQ0zKPwQTc/hqdefault.jpg"
+                width="168" height="94"
                  alt="Is Dragon Fruit a Superfood or a Scam?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -231,6 +276,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/i-turned-a-watermelon-into-a-cute-puppy.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/lOO4n2TUPns/hqdefault.jpg"
+                width="168" height="94"
                  alt="I Turned a Watermelon Into a Cute Puppy"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -242,6 +288,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/how-to-make-the-best-berry-toast.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/KVG_5Vta1ps/hqdefault.jpg"
+                width="168" height="94"
                  alt="How to Make the *Best* Berry Toast"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -253,6 +300,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Hot Knife ASMR! Can You Handle the MELT?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -264,6 +312,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/the-unusual-asmr-of-star-fruit.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/6lCtLuY7G5g/hqdefault.jpg"
+                width="168" height="94"
                  alt="Star Fruit ASMR: An Unforgettable Unusual Experience"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -275,6 +324,7 @@ New Martocci Mayhem every Saturday at noon ET!
           <a class="item" href="/videos/cutting-pure-gold-with-a-red-hot-knife.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/32KggH-612g/hqdefault.jpg"
+                width="168" height="94"
                  alt="Cutting Pure Gold With a Red Hot Knife"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -288,6 +338,7 @@ A molten-hot blade slowly scrapes across a...</div>
           <a class="item" href="/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/7mfoSu1AFvM/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Yellow Slime You Wish You Had As A Kid"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -299,6 +350,7 @@ A molten-hot blade slowly scrapes across a...</div>
           <a class="item" href="/videos/the-most-satisfying-pineapple-asmr.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Most Satisfying Pineapple ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>

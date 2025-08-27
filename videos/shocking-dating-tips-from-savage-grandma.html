@@ -21,41 +21,76 @@
 <meta name="twitter:description" content="Get ready for the most epic and hilarious grandma interview ever! In this video, we uncover the shocking dating...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Shocking Dating Tips from Savage Grandma!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/3ufWZzNZDiY/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+
+  header, footer { border-color: #222; }
+  header {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
+    background: #0f0f0f; z-index: 5;
+  }
+  header a.brand {
+    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
+    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  }
+
+  main {
+    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
+    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap: clamp(14px, 2vw, 28px);
+  }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Video wrapper reserves height immediately to prevent CLS */
+  .video {
+    position: relative; width: 100%; max-width: 100vw;
+    aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
+    background: #000; /* no white flash before player paints */
+  }
+  .video iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
+  }
+  /* Fallback for browsers without aspect-ratio support */
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  .card {
+    background: #111; border: 1px solid #222; border-radius: 12px;
+    padding: clamp(12px, 1.6vw, 18px);
+  }
+  section .card + .card { margin-top: 16px; }
 
-  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
-  a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
-  details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+  .meta a {
+    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+  }
+  .meta a:hover { color: #fff; border-color: #3ea6ff; }
+  a, .link { color: #3ea6ff; text-decoration: none; }
+
+  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
+  details summary { cursor: pointer; }
+
+  .rec .item {
+    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
+    border-radius: 10px; margin-bottom: 10px; background: #111;
+  }
+  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+
+  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
+  .subtle { color: #9aa; }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -84,9 +119,16 @@
   <section>
     <!-- 1) Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/3ufWZzNZDiY"
-              title="Shocking Dating Tips from Savage Grandma!" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+        <!-- intrinsic aspect ratio -->
+        <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/3ufWZzNZDiY"
+        title="Shocking Dating Tips from Savage Grandma!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+        </iframe>
+
     </div>
 
     <!-- 2) Stats -->
@@ -153,7 +195,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #AIASMR</div>
     </div>
 
-<!-- 4) FAQ -->
+    <!-- 4) FAQ -->
         <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
             <details>
@@ -233,6 +275,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/unbelievable-dating-secrets-from-a-savage-grandma.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/rteOODNXSfk/hqdefault.jpg"
+                width="168" height="94"
                  alt="Unbelievable Dating Secrets from a Savage Grandma!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -244,6 +287,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg"
+                width="168" height="94"
                  alt="Squirrel vs Cat: The Ultimate Kitchen Showdown!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -255,6 +299,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/watch-me-taste-the-biggest-crab-ever.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg"
+                width="168" height="94"
                  alt="Can I Eat This Giant Crab All By Myself?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -266,6 +311,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/this-squirrel-chef-cooks-better-than-me.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/lieIUJo5Bkk/hqdefault.jpg"
+                width="168" height="94"
                  alt="This Squirrel Chef Cooks Better Than Me!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -277,6 +323,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg"
+                width="168" height="94"
                  alt="Can I Eat This Giant Crab in One Sitting?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -288,6 +335,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg"
+                width="168" height="94"
                  alt="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -299,6 +347,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg"
+                width="168" height="94"
                  alt="This Bed MELTS When You Sleep On It!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -310,6 +359,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/giant-gummy-bear-meets-red-hot-knife.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/85CrbTqoT-Q/hqdefault.jpg"
+                width="168" height="94"
                  alt="GIANT Gummy Bear MEETS Red Hot Knife!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -321,6 +371,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/i-sliced-a-gummy-and-this-happened.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/dxrMR2PTczA/hqdefault.jpg"
+                width="168" height="94"
                  alt="I Sliced a Gummy Bear with a Huge Knife"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
@@ -332,6 +383,7 @@ All stunts are performed in a controlled environment; don't attempt them at home
           <a class="item" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
             <img loading="lazy"
                  src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg"
+                width="168" height="94"
                  alt="The Ultimate Satisfying ASMR Experiment"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
             <div>
