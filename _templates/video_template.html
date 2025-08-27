@@ -167,17 +167,17 @@
 
 <!-- 4) FAQ -->
     {% if faqs and faqs|length > 0 %}
-    <div class="card faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
-      <h2 class="block-title">Frequently Asked Questions</h2>
-      {% for q,a in faqs %}
-        <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">{{ q }}</summary>
-          <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" style="padding:.6rem 0;color:#ccc">
-            <div itemprop="text">{{ a|safe }}</div>
-          </div>
-        </details>
-      {% endfor %}
-    </div>
+        <div class="card faq" id="faq">
+        <h2 class="block-title">Frequently Asked Questions</h2>
+        {% for q,a in faqs %}
+            <details>
+            <summary>{{ q }}</summary>
+            <div class="answer" style="padding:.6rem 0;color:#ccc">
+                <div>{{ a|safe }}</div>
+            </div>
+            </details>
+        {% endfor %}
+        </div>
     {% endif %}
 
     <!-- 5) Comments -->
