@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5,6 +6,12 @@
 <meta name="description" content="Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html">
 <link rel="icon" href="/images/favicon.ico">
+
+<!-- Preconnect / DNS -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -21,94 +28,147 @@
 <meta name="twitter:description" content="Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and...">
 <meta name="twitter:image:alt" content="Martocci Mayhem The Most Satisfying Pineapple ASMR">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
-  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Header: logo left, H1 centered (no overlap on mobile) */
+  header {
+    position: relative;
+    display:flex; align-items:center; gap:10px; padding:10px 12px;
+    border-bottom:1px solid #222; background:#0f0f0f;
+  }
+  header .brand {
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
+  }
+  header .brand img { width:28px; height:28px; }
+  header .page-title {
+    position:absolute; left:50%; transform:translateX(-50%);
+    margin:0; font-weight:800; color:#eee;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
+  }
+  @media (max-width:560px){
+    header { flex-direction:column; align-items:flex-start; }
+    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  /* Full-width content */
+  main {
+    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
+    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap:clamp(14px, 2vw, 28px);
+  }
+  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
+
+  /* Video wrapper reserves height to prevent CLS */
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top: 16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
+  .meta a:hover { color:#fff; border-color:#3ea6ff; }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
+
+  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+
+  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
+  .subtle { color:#9aa; }
+
+  /* Recommended uses the same grid card layout as index */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+  .body { padding:10px 12px; }
+  .title { font-weight:800; margin-bottom:6px; }
+  .mini { color:#9aa; font-size:.92rem; }
+  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
+
+  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 </style>
 
-<!-- JSON-LD: VideoObject -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=hqESN2Zcjfk", "description": "Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board\u2014every peel a\u2026", "duration": "PT13S", "embedUrl": "https://www.youtube.com/embed/hqESN2Zcjfk", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 780}, "name": "The Most Satisfying Pineapple ASMR", "thumbnailUrl": "https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg", "uploadDate": "2025-07-10T00:00:00Z"}</script>
+<!-- Organization + WebSite (sitewide graph) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@id": "https://jasonmartocci.com/#org", "@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem", "sameAs": ["https://x.com/JasonMartocci", "https://www.tiktok.com/@JasonMartocci", "https://www.youtube.com/@JasonMartocci", "https://www.instagram.com/Jason.Martocci", "https://www.facebook.com/MartocciMayhem"], "url": "https://jasonmartocci.com"}, {"@id": "https://jasonmartocci.com/#website", "@type": "WebSite", "inLanguage": "en", "name": "Martocci Mayhem", "publisher": {"@id": "https://jasonmartocci.com/#org"}, "url": "https://jasonmartocci.com"}]}
+</script>
 
-<!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html", "name": "The Most Satisfying Pineapple ASMR", "position": 2}]}</script>
+<!-- VideoObject (strongest signal for the watch page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html#video", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=hqESN2Zcjfk", "description": "Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board\u2014every peel a\u2026", "duration": "PT13S", "embedUrl": "https://www.youtube.com/embed/hqESN2Zcjfk", "genre": "People \u0026 Blogs", "inLanguage": "en", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 780}, "isFamilyFriendly": true, "keywords": null, "mainEntityOfPage": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html#webpage", "name": "The Most Satisfying Pineapple ASMR", "potentialAction": [{"@type": "WatchAction", "target": "https://www.youtube.com/watch?v=hqESN2Zcjfk"}, {"@type": "SeekToAction", "startOffset-input": "required name=seek_to_second_number", "target": "https://www.youtube.com/watch?v=hqESN2Zcjfk\u0026t={seek_to_second_number}s"}], "publisher": {"@id": "https://jasonmartocci.com/#org"}, "sameAs": ["https://www.youtube.com/watch?v=hqESN2Zcjfk"], "thumbnail": {"@type": "ImageObject", "height": 360, "url": "https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg", "width": 480}, "thumbnailUrl": "https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg", "uploadDate": "2025-07-10T00:00:00Z", "url": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html"}
+</script>
 
-<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board\u2014every peel a\u2026"}, "name": "What is \u201cThe Most Satisfying Pineapple ASMR\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=hqESN2Zcjfk\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=hqESN2Zcjfk\u003c/a\u003e."}, "name": "Where can I watch \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "13s."}, "name": "How long is \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 10, 2025."}, "name": "When was \u201cThe Most Satisfying Pineapple ASMR\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 780 \u00b7 Likes: 11 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI asmr glass cutting video, ai asmr, ai cutting asmr, ai relaxation, ai trends, ai videos, asmr"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- WebPage (the actual watch page container) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html#webpage", "@type": "WebPage", "about": {"@id": "https://jasonmartocci.com/#org"}, "breadcrumb": {"@id": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html#breadcrumb"}, "datePublished": "2025-07-10T00:00:00Z", "description": "Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board\u2014every peel a\u2026", "inLanguage": "en", "isPartOf": {"@id": "https://jasonmartocci.com/#website"}, "name": "The Most Satisfying Pineapple ASMR", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://i.ytimg.com/vi/hqESN2Zcjfk/hqdefault.jpg"}, "url": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html"}
+</script>
 
-    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html"}</script>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/the-most-satisfying-pineapple-asmr.html", "name": "The Most Satisfying Pineapple ASMR", "position": 2}]}
+</script>
+
+<!-- FAQPage (only include if FAQs are visibly on the page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board\u2014every peel a\u2026"}, "name": "What is \u201cThe Most Satisfying Pineapple ASMR\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=hqESN2Zcjfk\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=hqESN2Zcjfk\u003c/a\u003e."}, "name": "Where can I watch \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "13s."}, "name": "How long is \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 10, 2025."}, "name": "When was \u201cThe Most Satisfying Pineapple ASMR\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 780 \u00b7 Likes: 11 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI asmr glass cutting video, ai asmr, ai cutting asmr, ai relaxation, ai trends, ai videos, asmr"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThe Most Satisfying Pineapple ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
+</script>
 
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    Martocci Mayhem
+    <span>Martocci Mayhem</span>
   </a>
-  <div>The Most Satisfying Pineapple ASMR</div>
+  <h1 class="page-title">The Most Satisfying Pineapple ASMR</h1>
 </header>
 
 <main>
   <section>
-    <!-- 1) Video -->
+    <!-- Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/hqESN2Zcjfk"
-              title="The Most Satisfying Pineapple ASMR" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+      <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/hqESN2Zcjfk"
+        title="The Most Satisfying Pineapple ASMR" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+      </iframe>
     </div>
 
-    <!-- 2) Stats -->
+    <!-- Stats -->
     <div class="card">
-      <h1 class="block-title">The Most Satisfying Pineapple ASMR</h1>
-      <div class="subtle">Subscribers: 198</div>
-      <div class="meta">
+      <h2 class="block-title" style="margin-top:0">The Most Satisfying Pineapple ASMR</h2>
+      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+        Subscribers: 198
+      </div>
+      <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v=hqESN2Zcjfk" target="_blank" rel="noopener">Views: 780</a>
         <a href="https://www.youtube.com/watch?v=hqESN2Zcjfk" target="_blank" rel="noopener">Likes: 11</a>
         <a href="https://www.youtube.com/watch?v=hqESN2Zcjfk#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <div class="subtle" style="margin-top:6px">
-        Uploaded: July 10, 2025 &middot;
-        Last Edited: July 10, 2025
-      </div>
-      <p style="margin:.7rem 0 0">
+      <p style="margin:.8rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=hqESN2Zcjfk" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- 3) Description -->
+    <!-- Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board—every peel and drip captured in stunning detail.
@@ -157,72 +217,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
-        <div class="card faq" id="faq">
+    <!-- FAQ (visual) -->
+      <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-            <details>
+          <details>
             <summary>What is “The Most Satisfying Pineapple ASMR” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board—every peel a…</div>
+              <div>Get ready for a zesty 8-second Pineapple ASMR hit! Watch polished hands expertly remove the tough pineapple skin and slice into its juicy core on a crystal-clear board—every peel a…</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Who created “The Most Satisfying Pineapple ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Where can I watch “The Most Satisfying Pineapple ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=hqESN2Zcjfk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hqESN2Zcjfk</a>.</div>
+              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=hqESN2Zcjfk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hqESN2Zcjfk</a>.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How long is “The Most Satisfying Pineapple ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>13s.</div>
+              <div>13s.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>When was “The Most Satisfying Pineapple ASMR” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>July 10, 2025.</div>
+              <div>July 10, 2025.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Entertainment.</div>
+              <div>Entertainment.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How popular is “The Most Satisfying Pineapple ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Views: 780 · Likes: 11 · Comments: 1 (counts update on YouTube).</div>
+              <div>Views: 780 · Likes: 11 · Comments: 1 (counts update on YouTube).</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>AI asmr glass cutting video, ai asmr, ai cutting asmr, ai relaxation, ai trends, ai videos, asmr</div>
+              <div>AI asmr glass cutting video, ai asmr, ai cutting asmr, ai relaxation, ai trends, ai videos, asmr</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Can I share or embed “The Most Satisfying Pineapple ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-            </details>
-        </div>
+          </details>
+      </div>
 
-    <!-- 5) Comments -->
+    <!-- Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -230,132 +290,144 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar -->
+  <!-- Sidebar / Recommended -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-          <a class="item" href="/videos/the-most-satisfying-durian-asmr.html">
-            <img loading="lazy"
+      <div class="grid">
+          <a class="rec-card" href="/videos/the-most-satisfying-durian-asmr.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/oufd--dmu0c/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Unbelievably Satisfying Durian ASMR!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Unbelievably Satisfying Durian ASMR!</div>
-              <div style="color:#aaa">Get ready for the most satisfying 8-second ASMR you&#39;ve ever seen! Watch manicured hands with glossy nail polish...</div>
-              <div class="subtle">Views: 571 · Updated: 2025-07-14</div>
+            <div class="body">
+              <div class="title">Unbelievably Satisfying Durian ASMR!</div>
+              <div class="mini">Get ready for the most satisfying 8-second ASMR you&#39;ve ever seen! Watch manicured...</div>
+              <div class="mini-meta">Views: 571</div>
             </div>
           </a>
-          <a class="item" href="/videos/cutting-asmr-hot-knife-foam-slicing.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/cutting-asmr-hot-knife-foam-slicing.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/eW0RBZttYQU/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Cutting ASMR - Hot Knife Foam Slicing"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Cutting ASMR - Hot Knife Foam Slicing</div>
-              <div style="color:#aaa">CUT THROUGH TO THE NEXT VIDEO
+            <div class="body">
+              <div class="title">Cutting ASMR - Hot Knife Foam Slicing</div>
+              <div class="mini">CUT THROUGH TO THE NEXT VIDEO
  
-In complete silence, a red-hot blade cuts through what appears to be ordinary foam —...</div>
-              <div class="subtle">Views: 2,819 · Updated: 2025-06-24</div>
+In complete silence, a red-hot blade cuts through what...</div>
+              <div class="mini-meta">Views: 2,819</div>
             </div>
           </a>
-          <a class="item" href="/videos/satisfying-fruit-art-chef-turns-fruit-into-floral-.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/satisfying-fruit-art-chef-turns-fruit-into-floral-.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/f5sQ9DvQ6Gs/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Satisfying Fruit Art: Chef Turns Fruit into Floral Masterpieces 🌸🍍"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Satisfying Fruit Art: Chef Turns Fruit into Floral Masterpieces 🌸🍍</div>
-              <div style="color:#aaa">Ever seen a fruit become a flower? 🍓🍊🍍
-In this jaw-dropping short, a professional chef uses next-level knife skills...</div>
-              <div class="subtle">Views: 7 · Updated: 2025-07-05</div>
+            <div class="body">
+              <div class="title">Satisfying Fruit Art: Chef Turns Fruit into Floral Masterpieces 🌸🍍</div>
+              <div class="mini">Ever seen a fruit become a flower? 🍓🍊🍍
+In this jaw-dropping short, a professional chef...</div>
+              <div class="mini-meta">Views: 7</div>
             </div>
           </a>
-          <a class="item" href="/videos/mind-blowing-transformations-in-nature.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/mind-blowing-transformations-in-nature.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/SzCDDJJIaME/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Mind-Blowing Transformations in Nature"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Mind-Blowing Transformations in Nature</div>
-              <div style="color:#aaa">ASMR Trigger Words: In just 8 seconds, witness the impossible: a crisp star fruit on a glass cutting board...</div>
-              <div class="subtle">Views: 1,545 · Updated: 2025-07-09</div>
+            <div class="body">
+              <div class="title">Mind-Blowing Transformations in Nature</div>
+              <div class="mini">ASMR Trigger Words: In just 8 seconds, witness the impossible: a crisp star fruit on a...</div>
+              <div class="mini-meta">Views: 1,545</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-insane-art-of-advanced-fruit-carving.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-insane-art-of-advanced-fruit-carving.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/CGkLQCHVX-g/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Insane Art of Advanced Fruit Carving"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Insane Art of Advanced Fruit Carving</div>
-              <div style="color:#aaa">Watch a master chef transform ordinary fruit into stunning edible art! 🍊🍓🍍
+            <div class="body">
+              <div class="title">The Insane Art of Advanced Fruit Carving</div>
+              <div class="mini">Watch a master chef transform ordinary fruit into stunning edible art! 🍊🍓🍍
  
-In this short but mesmerizing video,...</div>
-              <div class="subtle">Views: 1,820 · Updated: 2025-07-05</div>
+In this...</div>
+              <div class="mini-meta">Views: 1,820</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-unusual-asmr-of-star-fruit.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-unusual-asmr-of-star-fruit.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/6lCtLuY7G5g/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Star Fruit ASMR: An Unforgettable Unusual Experience"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Star Fruit ASMR: An Unforgettable Unusual Experience</div>
-              <div style="color:#aaa">Enjoy the ultimate ASMR relaxation experience with this beautifully crafted glass-textured Star Fruit slicing video!...</div>
-              <div class="subtle">Views: 1,796 · Updated: 2025-07-03</div>
+            <div class="body">
+              <div class="title">Star Fruit ASMR: An Unforgettable Unusual Experience</div>
+              <div class="mini">Enjoy the ultimate ASMR relaxation experience with this beautifully crafted...</div>
+              <div class="mini-meta">Views: 1,796</div>
             </div>
           </a>
-          <a class="item" href="/videos/cutting-pure-gold-with-a-red-hot-knife.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/cutting-pure-gold-with-a-red-hot-knife.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/32KggH-612g/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Cutting Pure Gold With a Red Hot Knife"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Cutting Pure Gold With a Red Hot Knife</div>
-              <div style="color:#aaa">This isn’t CGI. This isn’t a prank.
+            <div class="body">
+              <div class="title">Cutting Pure Gold With a Red Hot Knife</div>
+              <div class="mini">This isn’t CGI. This isn’t a prank.
 It’s pure destruction… of luxury.
-A molten-hot blade slowly scrapes across a...</div>
-              <div class="subtle">Views: 1,081 · Updated: 2025-06-25</div>
+A molten-hot...</div>
+              <div class="mini-meta">Views: 1,081</div>
             </div>
           </a>
-          <a class="item" href="/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/slicing-open-a-glass-pomegranate-for-pure-asmr-sat.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/f4sYNCqHooo/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction</div>
-              <div style="color:#aaa">In today&#39;s soothing pomegranate-satisfying video, I carefully slice sugar beads and tap through a realistic,...</div>
-              <div class="subtle">Views: 1,069 · Updated: 2025-07-03</div>
+            <div class="body">
+              <div class="title">Slicing Open a Glass Pomegranate for Pure ASMR Satisfaction</div>
+              <div class="mini">In today&#39;s soothing pomegranate-satisfying video, I carefully slice sugar beads and...</div>
+              <div class="mini-meta">Views: 1,069</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-yellow-slime-you-wish-you-had-as-a-kid.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/7mfoSu1AFvM/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Yellow Slime You Wish You Had As A Kid"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Yellow Slime You Wish You Had As A Kid</div>
-              <div style="color:#aaa">Witness a jaw-dropping 8-second ASMR yellow slime transformation as frosty blueberries on toast instantly morph into...</div>
-              <div class="subtle">Views: 789 · Updated: 2025-07-11</div>
+            <div class="body">
+              <div class="title">The Yellow Slime You Wish You Had As A Kid</div>
+              <div class="mini">Witness a jaw-dropping 8-second ASMR yellow slime transformation as frosty blueberries...</div>
+              <div class="mini-meta">Views: 789</div>
             </div>
           </a>
-          <a class="item" href="/videos/a-red-hot-knife-meets-its-softest-opponent-yet-a-s.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/a-red-hot-knife-meets-its-softest-opponent-yet-a-s.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/w0uDjS1-7KQ/hqdefault.jpg"
+                 width="320" height="180"
                  alt="A red-hot knife meets its softest opponent yet — a solid foam block."
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">A red-hot knife meets its softest opponent yet — a solid foam block.</div>
-              <div style="color:#aaa">Watch as the glowing blade slices effortlessly through dense foam, creating clean, satisfying cuts with every glide....</div>
-              <div class="subtle">Views: 34 · Updated: 2025-06-24</div>
+            <div class="body">
+              <div class="title">A red-hot knife meets its softest opponent yet — a solid foam block.</div>
+              <div class="mini">Watch as the glowing blade slices effortlessly through dense foam, creating clean,...</div>
+              <div class="mini-meta">Views: 34</div>
             </div>
           </a>
+      </div>
     </div>
   </aside>
 </main>
 
-<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+<footer>
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5,6 +6,12 @@
 <meta name="description" content="Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
 <link rel="icon" href="/images/favicon.ico">
+
+<!-- Preconnect / DNS -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -21,94 +28,147 @@
 <meta name="twitter:description" content="Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to...">
 <meta name="twitter:image:alt" content="Martocci Mayhem LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
-  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Header: logo left, H1 centered (no overlap on mobile) */
+  header {
+    position: relative;
+    display:flex; align-items:center; gap:10px; padding:10px 12px;
+    border-bottom:1px solid #222; background:#0f0f0f;
+  }
+  header .brand {
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
+  }
+  header .brand img { width:28px; height:28px; }
+  header .page-title {
+    position:absolute; left:50%; transform:translateX(-50%);
+    margin:0; font-weight:800; color:#eee;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
+  }
+  @media (max-width:560px){
+    header { flex-direction:column; align-items:flex-start; }
+    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  /* Full-width content */
+  main {
+    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
+    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap:clamp(14px, 2vw, 28px);
+  }
+  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
+
+  /* Video wrapper reserves height to prevent CLS */
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top: 16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
+  .meta a:hover { color:#fff; border-color:#3ea6ff; }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
+
+  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+
+  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
+  .subtle { color:#9aa; }
+
+  /* Recommended uses the same grid card layout as index */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+  .body { padding:10px 12px; }
+  .title { font-weight:800; margin-bottom:6px; }
+  .mini { color:#9aa; font-size:.92rem; }
+  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
+
+  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 </style>
 
-<!-- JSON-LD: VideoObject -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=WsutEXb-Gds", "description": "Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It\u0027s a smart home meets surr\u2026", "duration": "PT25S", "embedUrl": "https://www.youtube.com/embed/WsutEXb-Gds", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 1236}, "name": "LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!", "thumbnailUrl": "https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg", "uploadDate": "2025-08-19T00:00:00Z"}</script>
+<!-- Organization + WebSite (sitewide graph) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@id": "https://jasonmartocci.com/#org", "@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem", "sameAs": ["https://x.com/JasonMartocci", "https://www.tiktok.com/@JasonMartocci", "https://www.youtube.com/@JasonMartocci", "https://www.instagram.com/Jason.Martocci", "https://www.facebook.com/MartocciMayhem"], "url": "https://jasonmartocci.com"}, {"@id": "https://jasonmartocci.com/#website", "@type": "WebSite", "inLanguage": "en", "name": "Martocci Mayhem", "publisher": {"@id": "https://jasonmartocci.com/#org"}, "url": "https://jasonmartocci.com"}]}
+</script>
 
-<!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html", "name": "LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!", "position": 2}]}</script>
+<!-- VideoObject (strongest signal for the watch page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html#video", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=WsutEXb-Gds", "description": "Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It\u0027s a smart home meets surr\u2026", "duration": "PT25S", "embedUrl": "https://www.youtube.com/embed/WsutEXb-Gds", "genre": "People \u0026 Blogs", "inLanguage": "en", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 1236}, "isFamilyFriendly": true, "keywords": null, "mainEntityOfPage": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html#webpage", "name": "LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!", "potentialAction": [{"@type": "WatchAction", "target": "https://www.youtube.com/watch?v=WsutEXb-Gds"}, {"@type": "SeekToAction", "startOffset-input": "required name=seek_to_second_number", "target": "https://www.youtube.com/watch?v=WsutEXb-Gds\u0026t={seek_to_second_number}s"}], "publisher": {"@id": "https://jasonmartocci.com/#org"}, "sameAs": ["https://www.youtube.com/watch?v=WsutEXb-Gds"], "thumbnail": {"@type": "ImageObject", "height": 360, "url": "https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg", "width": 480}, "thumbnailUrl": "https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg", "uploadDate": "2025-08-19T00:00:00Z", "url": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html"}
+</script>
 
-<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It\u0027s a smart home meets surr\u2026"}, "name": "What is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=WsutEXb-Gds\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=WsutEXb-Gds\u003c/a\u003e."}, "name": "Where can I watch \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "25s."}, "name": "How long is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 19, 2025."}, "name": "When was \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,236 \u00b7 Likes: 7 \u00b7 Comments: 2 (counts update on YouTube)."}, "name": "How popular is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- WebPage (the actual watch page container) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html#webpage", "@type": "WebPage", "about": {"@id": "https://jasonmartocci.com/#org"}, "breadcrumb": {"@id": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html#breadcrumb"}, "datePublished": "2025-08-19T00:00:00Z", "description": "Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It\u0027s a smart home meets surr\u2026", "inLanguage": "en", "isPartOf": {"@id": "https://jasonmartocci.com/#website"}, "name": "LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg"}, "url": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html"}
+</script>
 
-    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html"}</script>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html", "name": "LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!", "position": 2}]}
+</script>
+
+<!-- FAQPage (only include if FAQs are visibly on the page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It\u0027s a smart home meets surr\u2026"}, "name": "What is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=WsutEXb-Gds\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=WsutEXb-Gds\u003c/a\u003e."}, "name": "Where can I watch \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "25s."}, "name": "How long is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 19, 2025."}, "name": "When was \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,236 \u00b7 Likes: 7 \u00b7 Comments: 2 (counts update on YouTube)."}, "name": "How popular is \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cLAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
+</script>
 
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    Martocci Mayhem
+    <span>Martocci Mayhem</span>
   </a>
-  <div>LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</div>
+  <h1 class="page-title">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</h1>
 </header>
 
 <main>
   <section>
-    <!-- 1) Video -->
+    <!-- Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/WsutEXb-Gds"
-              title="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+      <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/WsutEXb-Gds"
+        title="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+      </iframe>
     </div>
 
-    <!-- 2) Stats -->
+    <!-- Stats -->
     <div class="card">
-      <h1 class="block-title">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</h1>
-      <div class="subtle">Subscribers: 198</div>
-      <div class="meta">
+      <h2 class="block-title" style="margin-top:0">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</h2>
+      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+        Subscribers: 198
+      </div>
+      <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v=WsutEXb-Gds" target="_blank" rel="noopener">Views: 1,236</a>
         <a href="https://www.youtube.com/watch?v=WsutEXb-Gds" target="_blank" rel="noopener">Likes: 7</a>
         <a href="https://www.youtube.com/watch?v=WsutEXb-Gds#comments" target="_blank" rel="noopener">Comments: 2</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <div class="subtle" style="margin-top:6px">
-        Uploaded: August 19, 2025 &middot;
-        Last Edited: August 19, 2025
-      </div>
-      <p style="margin:.7rem 0 0">
+      <p style="margin:.8rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=WsutEXb-Gds" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- 3) Description -->
+    <!-- Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It's a smart home meets surreal horror, creating an unforgettable sleeping experience.
@@ -153,72 +213,72 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #aiasmr</div>
     </div>
 
-<!-- 4) FAQ -->
-        <div class="card faq" id="faq">
+    <!-- FAQ (visual) -->
+      <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-            <details>
+          <details>
             <summary>What is “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It's a smart home meets surr…</div>
+              <div>Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to lava, in this visual ASMR adventure. It's a smart home meets surr…</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Who created “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Where can I watch “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=WsutEXb-Gds" target="_blank" rel="noopener">https://www.youtube.com/watch?v=WsutEXb-Gds</a>.</div>
+              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=WsutEXb-Gds" target="_blank" rel="noopener">https://www.youtube.com/watch?v=WsutEXb-Gds</a>.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How long is “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>25s.</div>
+              <div>25s.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>When was “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>August 19, 2025.</div>
+              <div>August 19, 2025.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Entertainment.</div>
+              <div>Entertainment.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How popular is “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Views: 1,236 · Likes: 7 · Comments: 2 (counts update on YouTube).</div>
+              <div>Views: 1,236 · Likes: 7 · Comments: 2 (counts update on YouTube).</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral</div>
+              <div>Martocci Mayhem, Jason Martocci, ASMR, comedy, chaos, funny, viral</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Can I share or embed “LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-            </details>
-        </div>
+          </details>
+      </div>
 
-    <!-- 5) Comments -->
+    <!-- Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -226,125 +286,137 @@ All stunts are performed in a controlled environment; don't attempt them at home
     </div>
   </section>
 
-  <!-- Sidebar -->
+  <!-- Sidebar / Recommended -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-          <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
-            <img loading="lazy"
+      <div class="grid">
+          <a class="rec-card" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg"
+                 width="320" height="180"
                  alt="This Bed MELTS When You Sleep On It!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">This Bed MELTS When You Sleep On It!</div>
-              <div style="color:#aaa">Immerse yourself in a one-of-a-kind LAVA BEDROOM ASMR EXPERIENCE, where the soft glow of flowing lava furniture sets...</div>
-              <div class="subtle">Views: 49 · Updated: 2025-08-19</div>
+            <div class="body">
+              <div class="title">This Bed MELTS When You Sleep On It!</div>
+              <div class="mini">Immerse yourself in a one-of-a-kind LAVA BEDROOM ASMR EXPERIENCE, where the soft glow...</div>
+              <div class="mini-meta">Views: 49</div>
             </div>
           </a>
-          <a class="item" href="/videos/giant-gummy-bear-meets-red-hot-knife.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/giant-gummy-bear-meets-red-hot-knife.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/85CrbTqoT-Q/hqdefault.jpg"
+                 width="320" height="180"
                  alt="GIANT Gummy Bear MEETS Red Hot Knife!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">GIANT Gummy Bear MEETS Red Hot Knife!</div>
-              <div style="color:#aaa">Get ready for a sweet and sizzling experiment! In this epic video, we&#39;re putting a giant gummy bear to the test...</div>
-              <div class="subtle">Views: 59 · Updated: 2025-08-18</div>
+            <div class="body">
+              <div class="title">GIANT Gummy Bear MEETS Red Hot Knife!</div>
+              <div class="mini">Get ready for a sweet and sizzling experiment! In this epic video, we&#39;re putting a...</div>
+              <div class="mini-meta">Views: 59</div>
             </div>
           </a>
-          <a class="item" href="/videos/i-sliced-a-gummy-and-this-happened.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/i-sliced-a-gummy-and-this-happened.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/dxrMR2PTczA/hqdefault.jpg"
+                 width="320" height="180"
                  alt="I Sliced a Gummy Bear with a Huge Knife"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">I Sliced a Gummy Bear with a Huge Knife</div>
-              <div style="color:#aaa">Get ready for some bright gummy fun! Watch as a knife slices into some bright gummy candy and orange goo oozes out....</div>
-              <div class="subtle">Views: 199 · Updated: 2025-08-18</div>
+            <div class="body">
+              <div class="title">I Sliced a Gummy Bear with a Huge Knife</div>
+              <div class="mini">Get ready for some bright gummy fun! Watch as a knife slices into some bright gummy...</div>
+              <div class="mini-meta">Views: 199</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Ultimate Satisfying ASMR Experiment"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Ultimate Satisfying ASMR Experiment</div>
-              <div style="color:#aaa">Get ready to experience the most unconventional ASMR session of your life! In tonight&#39;s video, we&#39;re throwing out...</div>
-              <div class="subtle">Views: 13 · Updated: 2025-08-16</div>
+            <div class="body">
+              <div class="title">The Ultimate Satisfying ASMR Experiment</div>
+              <div class="mini">Get ready to experience the most unconventional ASMR session of your life! In...</div>
+              <div class="mini-meta">Views: 13</div>
             </div>
           </a>
-          <a class="item" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/squirrel-vs-cat-kitchen-showdown.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/1QQoT7SwEfk/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Squirrel vs Cat: The Ultimate Kitchen Showdown!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Squirrel vs Cat: The Ultimate Kitchen Showdown!</div>
-              <div style="color:#aaa">Get ready for a wild ride in the kitchen! You won&#39;t believe what this sneaky squirrel is up to! With a twist that...</div>
-              <div class="subtle">Views: 37 · Updated: 2025-08-21</div>
+            <div class="body">
+              <div class="title">Squirrel vs Cat: The Ultimate Kitchen Showdown!</div>
+              <div class="mini">Get ready for a wild ride in the kitchen! You won&#39;t believe what this sneaky squirrel...</div>
+              <div class="mini-meta">Views: 37</div>
             </div>
           </a>
-          <a class="item" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/can-i-eat-this-giant-crab-in-one-sitting.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/gUyQ414JJbY/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Can I Eat This Giant Crab in One Sitting?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Can I Eat This Giant Crab in One Sitting?</div>
-              <div style="color:#aaa">Get ready for a seafood extravaganza! Join me for a GIANT Crab Legs Mukbang Delight, where I&#39;ll be indulging in a...</div>
-              <div class="subtle">Views: 24 · Updated: 2025-08-20</div>
+            <div class="body">
+              <div class="title">Can I Eat This Giant Crab in One Sitting?</div>
+              <div class="mini">Get ready for a seafood extravaganza! Join me for a GIANT Crab Legs Mukbang Delight,...</div>
+              <div class="mini-meta">Views: 24</div>
             </div>
           </a>
-          <a class="item" href="/videos/unbelievable-dating-secrets-from-a-savage-grandma.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/unbelievable-dating-secrets-from-a-savage-grandma.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/rteOODNXSfk/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Unbelievable Dating Secrets from a Savage Grandma!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Unbelievable Dating Secrets from a Savage Grandma!</div>
-              <div style="color:#aaa">Get ready for some straight-shooting, no-nonsense dating advice from a sassy senior who&#39;s been around the block a...</div>
-              <div class="subtle">Views: 573 · Updated: 2025-08-23</div>
+            <div class="body">
+              <div class="title">Unbelievable Dating Secrets from a Savage Grandma!</div>
+              <div class="mini">Get ready for some straight-shooting, no-nonsense dating advice from a sassy senior...</div>
+              <div class="mini-meta">Views: 573</div>
             </div>
           </a>
-          <a class="item" href="/videos/watch-me-taste-the-biggest-crab-ever.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/watch-me-taste-the-biggest-crab-ever.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/MKG9TFicMHc/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Can I Eat This Giant Crab All By Myself?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Can I Eat This Giant Crab All By Myself?</div>
-              <div style="color:#aaa">Get ready for an intense ASMR eating experience! This mukbang features a massive crab feast that&#39;s sure to make your...</div>
-              <div class="subtle">Views: 992 · Updated: 2025-08-20</div>
+            <div class="body">
+              <div class="title">Can I Eat This Giant Crab All By Myself?</div>
+              <div class="mini">Get ready for an intense ASMR eating experience! This mukbang features a massive crab...</div>
+              <div class="mini-meta">Views: 992</div>
             </div>
           </a>
-          <a class="item" href="/videos/this-squirrel-chef-cooks-better-than-me.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/this-squirrel-chef-cooks-better-than-me.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/lieIUJo5Bkk/hqdefault.jpg"
+                 width="320" height="180"
                  alt="This Squirrel Chef Cooks Better Than Me!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">This Squirrel Chef Cooks Better Than Me!</div>
-              <div style="color:#aaa">Get ready for a wild ride as a sneaky squirrel takes over the kitchen! This funny animal video shows a squirrel...</div>
-              <div class="subtle">Views: 809 · Updated: 2025-08-21</div>
+            <div class="body">
+              <div class="title">This Squirrel Chef Cooks Better Than Me!</div>
+              <div class="mini">Get ready for a wild ride as a sneaky squirrel takes over the kitchen! This funny...</div>
+              <div class="mini-meta">Views: 809</div>
             </div>
           </a>
-          <a class="item" href="/videos/shocking-dating-tips-from-savage-grandma.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/shocking-dating-tips-from-savage-grandma.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/3ufWZzNZDiY/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Shocking Dating Tips from Savage Grandma!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Shocking Dating Tips from Savage Grandma!</div>
-              <div style="color:#aaa">Get ready for the most epic and hilarious grandma interview ever! In this video, we uncover the shocking dating...</div>
-              <div class="subtle">Views: 44 · Updated: 2025-08-23</div>
+            <div class="body">
+              <div class="title">Shocking Dating Tips from Savage Grandma!</div>
+              <div class="mini">Get ready for the most epic and hilarious grandma interview ever! In this video, we...</div>
+              <div class="mini-meta">Views: 44</div>
             </div>
           </a>
+      </div>
     </div>
   </aside>
 </main>
 
-<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+<footer>
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

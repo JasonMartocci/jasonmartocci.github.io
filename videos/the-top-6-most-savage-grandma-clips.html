@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5,6 +6,12 @@
 <meta name="description" content="They said Grandma was sweet… until she opened her mouth.">
 <link rel="canonical" href="https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html">
 <link rel="icon" href="/images/favicon.ico">
+
+<!-- Preconnect / DNS -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -21,94 +28,147 @@
 <meta name="twitter:description" content="They said Grandma was sweet… until she opened her mouth.">
 <meta name="twitter:image:alt" content="Martocci Mayhem The TOP 6 MOST Savage Grandma Clips">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
-  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Header: logo left, H1 centered (no overlap on mobile) */
+  header {
+    position: relative;
+    display:flex; align-items:center; gap:10px; padding:10px 12px;
+    border-bottom:1px solid #222; background:#0f0f0f;
+  }
+  header .brand {
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
+  }
+  header .brand img { width:28px; height:28px; }
+  header .page-title {
+    position:absolute; left:50%; transform:translateX(-50%);
+    margin:0; font-weight:800; color:#eee;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
+  }
+  @media (max-width:560px){
+    header { flex-direction:column; align-items:flex-start; }
+    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  /* Full-width content */
+  main {
+    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
+    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap:clamp(14px, 2vw, 28px);
+  }
+  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
+
+  /* Video wrapper reserves height to prevent CLS */
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top: 16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
+  .meta a:hover { color:#fff; border-color:#3ea6ff; }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
+
+  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+
+  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
+  .subtle { color:#9aa; }
+
+  /* Recommended uses the same grid card layout as index */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+  .body { padding:10px 12px; }
+  .title { font-weight:800; margin-bottom:6px; }
+  .mini { color:#9aa; font-size:.92rem; }
+  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
+
+  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 </style>
 
-<!-- JSON-LD: VideoObject -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=v9j_3UVMx-E", "description": "They said Grandma was sweet\u2026 until she opened her mouth.", "duration": "PT48S", "embedUrl": "https://www.youtube.com/embed/v9j_3UVMx-E", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 751}, "name": "The TOP 6 MOST Savage Grandma Clips", "thumbnailUrl": "https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg", "uploadDate": "2025-07-18T00:00:00Z"}</script>
+<!-- Organization + WebSite (sitewide graph) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@id": "https://jasonmartocci.com/#org", "@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem", "sameAs": ["https://x.com/JasonMartocci", "https://www.tiktok.com/@JasonMartocci", "https://www.youtube.com/@JasonMartocci", "https://www.instagram.com/Jason.Martocci", "https://www.facebook.com/MartocciMayhem"], "url": "https://jasonmartocci.com"}, {"@id": "https://jasonmartocci.com/#website", "@type": "WebSite", "inLanguage": "en", "name": "Martocci Mayhem", "publisher": {"@id": "https://jasonmartocci.com/#org"}, "url": "https://jasonmartocci.com"}]}
+</script>
 
-<!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html", "name": "The TOP 6 MOST Savage Grandma Clips", "position": 2}]}</script>
+<!-- VideoObject (strongest signal for the watch page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html#video", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=v9j_3UVMx-E", "description": "They said Grandma was sweet\u2026 until she opened her mouth.", "duration": "PT48S", "embedUrl": "https://www.youtube.com/embed/v9j_3UVMx-E", "genre": "People \u0026 Blogs", "inLanguage": "en", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 751}, "isFamilyFriendly": true, "keywords": null, "mainEntityOfPage": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html#webpage", "name": "The TOP 6 MOST Savage Grandma Clips", "potentialAction": [{"@type": "WatchAction", "target": "https://www.youtube.com/watch?v=v9j_3UVMx-E"}, {"@type": "SeekToAction", "startOffset-input": "required name=seek_to_second_number", "target": "https://www.youtube.com/watch?v=v9j_3UVMx-E\u0026t={seek_to_second_number}s"}], "publisher": {"@id": "https://jasonmartocci.com/#org"}, "sameAs": ["https://www.youtube.com/watch?v=v9j_3UVMx-E"], "thumbnail": {"@type": "ImageObject", "height": 360, "url": "https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg", "width": 480}, "thumbnailUrl": "https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg", "uploadDate": "2025-07-18T00:00:00Z", "url": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html"}
+</script>
 
-<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "They said Grandma was sweet\u2026 until she opened her mouth."}, "name": "What is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=v9j_3UVMx-E\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=v9j_3UVMx-E\u003c/a\u003e."}, "name": "Where can I watch \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "48s."}, "name": "How long is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 18, 2025."}, "name": "When was \u201cThe TOP 6 MOST Savage Grandma Clips\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Comedy."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 751 \u00b7 Likes: 11 \u00b7 Comments: 4 (counts update on YouTube)."}, "name": "How popular is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- WebPage (the actual watch page container) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html#webpage", "@type": "WebPage", "about": {"@id": "https://jasonmartocci.com/#org"}, "breadcrumb": {"@id": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html#breadcrumb"}, "datePublished": "2025-07-18T00:00:00Z", "description": "They said Grandma was sweet\u2026 until she opened her mouth.", "inLanguage": "en", "isPartOf": {"@id": "https://jasonmartocci.com/#website"}, "name": "The TOP 6 MOST Savage Grandma Clips", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://i.ytimg.com/vi/v9j_3UVMx-E/hqdefault.jpg"}, "url": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html"}
+</script>
 
-    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html"}</script>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/the-top-6-most-savage-grandma-clips.html", "name": "The TOP 6 MOST Savage Grandma Clips", "position": 2}]}
+</script>
+
+<!-- FAQPage (only include if FAQs are visibly on the page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "They said Grandma was sweet\u2026 until she opened her mouth."}, "name": "What is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=v9j_3UVMx-E\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=v9j_3UVMx-E\u003c/a\u003e."}, "name": "Where can I watch \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "48s."}, "name": "How long is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 18, 2025."}, "name": "When was \u201cThe TOP 6 MOST Savage Grandma Clips\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Comedy."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 751 \u00b7 Likes: 11 \u00b7 Comments: 4 (counts update on YouTube)."}, "name": "How popular is \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThe TOP 6 MOST Savage Grandma Clips\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
+</script>
 
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    Martocci Mayhem
+    <span>Martocci Mayhem</span>
   </a>
-  <div>The TOP 6 MOST Savage Grandma Clips</div>
+  <h1 class="page-title">The TOP 6 MOST Savage Grandma Clips</h1>
 </header>
 
 <main>
   <section>
-    <!-- 1) Video -->
+    <!-- Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/v9j_3UVMx-E"
-              title="The TOP 6 MOST Savage Grandma Clips" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+      <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/v9j_3UVMx-E"
+        title="The TOP 6 MOST Savage Grandma Clips" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+      </iframe>
     </div>
 
-    <!-- 2) Stats -->
+    <!-- Stats -->
     <div class="card">
-      <h1 class="block-title">The TOP 6 MOST Savage Grandma Clips</h1>
-      <div class="subtle">Subscribers: 198</div>
-      <div class="meta">
+      <h2 class="block-title" style="margin-top:0">The TOP 6 MOST Savage Grandma Clips</h2>
+      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+        Subscribers: 198
+      </div>
+      <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Views: 751</a>
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Likes: 11</a>
         <a href="https://www.youtube.com/watch?v=v9j_3UVMx-E#comments" target="_blank" rel="noopener">Comments: 4</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <div class="subtle" style="margin-top:6px">
-        Uploaded: July 18, 2025 &middot;
-        Last Edited: July 18, 2025
-      </div>
-      <p style="margin:.7rem 0 0">
+      <p style="margin:.8rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- 3) Description -->
+    <!-- Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">They said Grandma was sweet… until she opened her mouth.
@@ -153,72 +213,72 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #AIASMR</div>
     </div>
 
-<!-- 4) FAQ -->
-        <div class="card faq" id="faq">
+    <!-- FAQ (visual) -->
+      <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-            <details>
+          <details>
             <summary>What is “The TOP 6 MOST Savage Grandma Clips” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>They said Grandma was sweet… until she opened her mouth.</div>
+              <div>They said Grandma was sweet… until she opened her mouth.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Who created “The TOP 6 MOST Savage Grandma Clips”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Where can I watch “The TOP 6 MOST Savage Grandma Clips”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9j_3UVMx-E</a>.</div>
+              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=v9j_3UVMx-E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9j_3UVMx-E</a>.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How long is “The TOP 6 MOST Savage Grandma Clips”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>48s.</div>
+              <div>48s.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>When was “The TOP 6 MOST Savage Grandma Clips” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>July 18, 2025.</div>
+              <div>July 18, 2025.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Comedy.</div>
+              <div>Comedy.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How popular is “The TOP 6 MOST Savage Grandma Clips”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Views: 751 · Likes: 11 · Comments: 4 (counts update on YouTube).</div>
+              <div>Views: 751 · Likes: 11 · Comments: 4 (counts update on YouTube).</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes</div>
+              <div>FYP, For Your Page, adult comedy, adult jokes, adult memes, best dark jokes, best jokes</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Can I share or embed “The TOP 6 MOST Savage Grandma Clips”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-            </details>
-        </div>
+          </details>
+      </div>
 
-    <!-- 5) Comments -->
+    <!-- Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -226,135 +286,146 @@ All stunts are performed in a controlled environment; don't attempt them at home
     </div>
   </section>
 
-  <!-- Sidebar -->
+  <!-- Sidebar / Recommended -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-          <a class="item" href="/videos/the-joke-that-changed-comedy-forever.html">
-            <img loading="lazy"
+      <div class="grid">
+          <a class="rec-card" href="/videos/the-joke-that-changed-comedy-forever.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/VBTsuUdbmfU/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Joke That Changed Comedy Forever"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Joke That Changed Comedy Forever</div>
-              <div style="color:#aaa">Why was Little Boy Blue sad?  Because he needed the money! Prepare for some dark humor and a hilarious punchline in...</div>
-              <div class="subtle">Views: 1,585 · Updated: 2025-06-26</div>
+            <div class="body">
+              <div class="title">The Joke That Changed Comedy Forever</div>
+              <div class="mini">Why was Little Boy Blue sad?  Because he needed the money! Prepare for some dark humor...</div>
+              <div class="mini-meta">Views: 1,585</div>
             </div>
           </a>
-          <a class="item" href="/videos/savage-grandma-roasts-the-entire-internet.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/savage-grandma-roasts-the-entire-internet.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Savage Grandma Roasts the Entire Internet"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Savage Grandma Roasts the Entire Internet</div>
-              <div style="color:#aaa">Get ready for some laughs as the savage Grandma reacts to something unbelievable on TV! Watch her react with...</div>
-              <div class="subtle">Views: 70 · Updated: 2025-07-18</div>
+            <div class="body">
+              <div class="title">Savage Grandma Roasts the Entire Internet</div>
+              <div class="mini">Get ready for some laughs as the savage Grandma reacts to something unbelievable on...</div>
+              <div class="mini-meta">Views: 70</div>
             </div>
           </a>
-          <a class="item" href="/videos/what-happens-when-you-stop-drinking.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/what-happens-when-you-stop-drinking.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/JWjlWFO30b0/hqdefault.jpg"
+                 width="320" height="180"
                  alt="What Happens When You Stop Drinking?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">What Happens When You Stop Drinking?</div>
-              <div style="color:#aaa">Get ready to laugh out loud with the most savage grandma jokes ever! In this hilarious video, we bring you the...</div>
-              <div class="subtle">Views: 195 · Updated: 2025-08-15</div>
+            <div class="body">
+              <div class="title">What Happens When You Stop Drinking?</div>
+              <div class="mini">Get ready to laugh out loud with the most savage grandma jokes ever! In this hilarious...</div>
+              <div class="mini-meta">Views: 195</div>
             </div>
           </a>
-          <a class="item" href="/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/funniest-line-ever-i-used-to-do-drugs-mitchhedberg.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/3NECwF6hKNA/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</div>
-              <div style="color:#aaa">“I used to do drugs.
+            <div class="body">
+              <div class="title">Funniest Line Ever? 🤯 | “I Used to Do Drugs…” #mitchhedberg</div>
+              <div class="mini">“I used to do drugs.
 I still do, but I used to too.” 😳😂
  
-That’s peak Mitch Hedberg — dry, weird, and sneakily...</div>
-              <div class="subtle">Views: 2,497 · Updated: 2025-06-26</div>
+That’s peak Mitch Hedberg —...</div>
+              <div class="mini-meta">Views: 2,497</div>
             </div>
           </a>
-          <a class="item" href="/videos/george-carlin-was-right-about-everything.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/george-carlin-was-right-about-everything.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/1CdzLuEZt_E/hqdefault.jpg"
+                 width="320" height="180"
                  alt="George Carlin Was Right About Everything"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">George Carlin Was Right About Everything</div>
-              <div style="color:#aaa">“Why do they call it tourist season… if we can’t shoot at them?” 😳💥
-That’s the kind of joke only George Carlin could...</div>
-              <div class="subtle">Views: 2,238 · Updated: 2025-06-26</div>
+            <div class="body">
+              <div class="title">George Carlin Was Right About Everything</div>
+              <div class="mini">“Why do they call it tourist season… if we can’t shoot at them?” 😳💥
+That’s the kind of...</div>
+              <div class="mini-meta">Views: 2,238</div>
             </div>
           </a>
-          <a class="item" href="/videos/savage-grandma-s-marriage-tips.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/savage-grandma-s-marriage-tips.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/_jHQfc24AxM/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Savage Grandma&#39;s Hilarious Marriage Tips"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Savage Grandma&#39;s Hilarious Marriage Tips</div>
-              <div style="color:#aaa">She said it, not us 👵💅
+            <div class="body">
+              <div class="title">Savage Grandma&#39;s Hilarious Marriage Tips</div>
+              <div class="mini">She said it, not us 👵💅
  
-Savage Grandma is back with another legendary one-liner — this time about her marriage...</div>
-              <div class="subtle">Views: 1,300 · Updated: 2025-06-27</div>
+Savage Grandma is back with another legendary one-liner —...</div>
+              <div class="mini-meta">Views: 1,300</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-funniest-jokes-from-legendary-comedians.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-funniest-jokes-from-legendary-comedians.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/RamX-8oShZA/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Funniest Jokes From Legendary Comedians"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Funniest Jokes From Legendary Comedians</div>
-              <div style="color:#aaa">🎤 Famous Comedians, TOP TEN AI JOKES to Make You Laugh!
+            <div class="body">
+              <div class="title">The Funniest Jokes From Legendary Comedians</div>
+              <div class="mini">🎤 Famous Comedians, TOP TEN AI JOKES to Make You Laugh!
  
-The Mount Rushmore of Comedy Just Spoke.
-And no one&#39;s...</div>
-              <div class="subtle">Views: 1,214 · Updated: 2025-06-24</div>
+The Mount Rushmore of Comedy...</div>
+              <div class="mini-meta">Views: 1,214</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-most-powerful-client-list-in-history.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-most-powerful-client-list-in-history.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/sp4_MZ58KQU/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Most Powerful Client List in History"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Most Powerful Client List in History</div>
-              <div style="color:#aaa">&#34;Twenty years for trafficking kids to nobody? Grandma&#39;s got questions!&#34;
-Watch Savage Grandma drop an 8-second truth...</div>
-              <div class="subtle">Views: 771 · Updated: 2025-07-14</div>
+            <div class="body">
+              <div class="title">The Most Powerful Client List in History</div>
+              <div class="mini">&#34;Twenty years for trafficking kids to nobody? Grandma&#39;s got questions!&#34;
+Watch Savage...</div>
+              <div class="mini-meta">Views: 771</div>
             </div>
           </a>
-          <a class="item" href="/videos/italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/italian-guy-s-hilarious-one-liner-you-ll-wish-you-.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/QWlO6Ngm6-M/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner</div>
-              <div style="color:#aaa">Check out this hefty Italian-looking guy delivering a killer one-liner that will have you in stitches: &#34;How do you...</div>
-              <div class="subtle">Views: 15 · Updated: 2025-07-01</div>
+            <div class="body">
+              <div class="title">Italian Guy’s Hilarious One-Liner You’ll Wish You Heard Sooner</div>
+              <div class="mini">Check out this hefty Italian-looking guy delivering a killer one-liner that will have...</div>
+              <div class="mini-meta">Views: 15</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-real-reason-trolls-get-owned-by-savage-moments.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-real-reason-trolls-get-owned-by-savage-moments.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/9LKt1XWqcSA/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The REAL Reason Trolls Get Owned by SAVAGE Moments"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The REAL Reason Trolls Get Owned by SAVAGE Moments</div>
-              <div style="color:#aaa">One-take wonder, grandma never misses savage moments or a chance for funny roasts. At the remarkable age of 70, she...</div>
-              <div class="subtle">Views: 1,073 · Updated: 2025-07-10</div>
+            <div class="body">
+              <div class="title">The REAL Reason Trolls Get Owned by SAVAGE Moments</div>
+              <div class="mini">One-take wonder, grandma never misses savage moments or a chance for funny roasts. At...</div>
+              <div class="mini-meta">Views: 1,073</div>
             </div>
           </a>
+      </div>
     </div>
   </aside>
 </main>
 
-<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+<footer>
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

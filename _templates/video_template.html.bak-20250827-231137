@@ -215,9 +215,21 @@
 </script>
 
 <!-- FAQPage (only include if FAQs are visibly on the page) -->
-{% if faq_schema %}
+{% if faqs and faqs|length > 0 %}
 <script type="application/ld+json">
-{{ faq_schema | tojson | replace("</","<\\/") | safe }}
+{{ {
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity": [
+    {% for q,a in faqs -%}
+    {
+      "@type":"Question",
+      "name": q,
+      "acceptedAnswer":{"@type":"Answer","text": a}
+    }{{ "," if not loop.last else "" }}
+    {%- endfor %}
+  ]
+} | tojson | replace("</","<\\/") | safe }}
 </script>
 {% endif %}
 

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem</title>
+<meta name="description" content="Explore the full Martocci Mayhem catalog: ASMR, comedy, shorts, tech experiments and more.">
+<link rel="canonical" href="{{ site_url }}">
+<link rel="icon" href="/images/favicon.ico">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem">
+<meta property="og:site_name" content="Martocci Mayhem">
+<meta property="og:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+<meta property="og:url" content="{{ site_url }}">
+<meta property="og:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unlock ASMR Magic & Epic Savage Grandma">
+<meta name="twitter:site" content="@JasonMartocci">
+<meta name="twitter:description" content="Explore ASMR, comedy, shorts and tech-heavy experiments.">
+<meta name="twitter:image:alt" content="Unlock ASMR Magic & Epic Savage Grandma at Martocci Mayhem">
+<meta name="twitter:image" content="{{ site_url }}/images/JasonMartocci_Logo.png">
+
+<style>
+  :root { color-scheme: dark; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px; padding:14px 16px; border-bottom:1px solid; position:sticky; top:0; background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px; font-weight:600; }
+
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px); max-width:none; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; }
+  .filters button { background:#1a1a1a; border:1px solid #222; color:#bbb; padding:8px 12px; border-radius:999px; cursor:pointer }
+  .filters button.active { color:#fff; border-color:#3ea6ff }
+  .search { flex:1; min-width:220px }
+  .search input { width:100%; padding:10px 12px; border-radius:999px; border:1px solid #222; background:#111; color:#ddd; }
+
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block }
+  .body { padding:10px 12px }
+  a, .link { color:#3ea6ff; text-decoration:none; }
+  .subtle { color:#9aa }
+  #sentinel { height:1px }
+</style>
+
+<!-- JSON-LD (escaped so '</script>' inside data can't break the page) -->
+<script type="application/ld+json">
+{{ web_page_schema | tojson | replace("</","<\\/") | safe }}
+</script>
+<script type="application/ld+json">
+{{ item_list_schema | tojson | replace("</","<\\/") | safe }}
+</script>
+<!-- Raw data as JSON, not JS -->
+<script id="__data" type="application/json">
+{{ videos | tojson | replace("</","<\\/") | safe }}
+</script>
+</head>
+<body>
+<header>
+  <a class="brand" href="{{ site_url }}"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"> Martocci Mayhem</a>
+  <div><h1>Unlock ASMR Magic & Epic Savage Grandma</h1></div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <div class="filters" id="filters"></div>
+    <div class="search"><input id="q" type="search" placeholder="Search titles, descriptions, tags…"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div id="sentinel"></div>
+</main>
+
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+  © {{ current_year }} Martocci Mayhem · <a class="link" href="{{ site_url }}">All The Mayhem</a>
+</footer>
+
+<script>
+"use strict";
+(function(){
+  function pretty(d){
+    if(!d) return "";
+    try{ var dt=new Date(d); return dt.toLocaleDateString(undefined,{month:"long",day:"2-digit",year:"numeric"}); }
+    catch(e){ return String(d); }
+  }
+  function debounce(fn,ms){ var t; return function(){ var a=arguments; clearTimeout(t); t=setTimeout(function(){ fn.apply(null,a); }, ms||250); }; }
+
+  var RAW = document.getElementById("__data");
+  var ALL = [];
+  try { ALL = JSON.parse(RAW && RAW.textContent || "[]"); } catch(e){ console.error("Bad data JSON", e); }
+
+  var DATA = ALL.map(function(v){
+    return Object.assign({}, v, {
+      _t: (v.title||"").toLowerCase(),
+      _d: (v.desc||"").toLowerCase(),
+      _tags: (v.tags||[]).map(function(t){ return String(t).toLowerCase(); }),
+      updated_pretty: pretty(v.last_edited_date || v.creation_date)
+    });
+  });
+
+  var catsSet = new Set(DATA.map(function(v){ return v.category || "People & Blogs"; }));
+  var cats = ["All"].concat(Array.from(catsSet).sort(function(a,b){ return a.localeCompare(b); }));
+
+  var filters  = document.getElementById("filters");
+  var grid     = document.getElementById("grid");
+  var qEl      = document.getElementById("q");
+  var sentinel = document.getElementById("sentinel");
+
+  var currentCat = "All";
+  var query = "";
+  var filtered = [];
+  var pageSize = 30;
+  var cursor = 0;
+  var observer = null;
+
+  cats.forEach(function(c){
+    var b = document.createElement("button");
+    b.textContent = c;
+    b.addEventListener("click", function(){ currentCat=c; applyFilters(); });
+    if (c===currentCat) b.classList.add("active");
+    filters.appendChild(b);
+  });
+
+  qEl.addEventListener("input", debounce(function(e){
+    query = (e.target.value||"").toLowerCase().trim();
+    applyFilters();
+  }, 200));
+
+  function matchesQuery(v, q){
+    if (!q) return true;
+    var parts = q.split(/\s+/);
+    return parts.every(function(tok){
+      if (tok.indexOf("tag:")===0){
+        var t = tok.slice(4);
+        return v._tags.some(function(x){ return x.indexOf(t) >= 0; });
+      }
+      if (tok.indexOf("id:")===0){
+        return String(v.video_id||"").toLowerCase().indexOf(tok.slice(3)) >= 0;
+      }
+      return v._t.indexOf(tok) >= 0 || v._d.indexOf(tok) >= 0 || v._tags.some(function(x){ return x.indexOf(tok) >= 0; });
+    });
+  }
+
+  function applyFilters(){
+    Array.prototype.forEach.call(filters.children, function(b){ b.classList.toggle("active", b.textContent===currentCat); });
+
+    filtered = DATA
+      .filter(function(v){ return (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query); })
+      .sort(function(a,b){ return String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||"")); });
+
+    grid.textContent = "";
+    cursor = 0;
+    if (observer) observer.disconnect();
+    loadMore();
+    observer = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting) loadMore();
+    }, { rootMargin: "1200px" });
+    observer.observe(sentinel);
+  }
+
+  function loadMore(){
+    if (cursor >= filtered.length) return;
+    var end = Math.min(cursor + pageSize, filtered.length);
+    var frag = document.createDocumentFragment();
+    for (var i=cursor; i<end; i++) frag.appendChild(card(filtered[i]));
+    grid.appendChild(frag);
+    cursor = end;
+  }
+
+  function card(v){
+    var a = document.createElement("a");
+    a.href = "/videos/" + (v.slug||"") + ".html";
+    a.className = "card";
+
+    var img = document.createElement("img");
+    img.className = "thumb";
+    img.loading = "lazy";
+    img.src = "https://i.ytimg.com/vi/" + v.video_id + "/hqdefault.jpg";
+    img.alt = v.title || "";
+    img.onerror = function(){ this.onerror=null; this.src='/images/default-thumbnail.png'; };
+
+    var body = document.createElement("div"); body.className = "body";
+    var t = document.createElement("div"); t.style.fontWeight="700"; t.style.marginBottom="6px"; t.textContent = v.title || "";
+    var cat = document.createElement("div"); cat.className="subtle"; cat.textContent = String(v.category||"");
+    var desc = document.createElement("div"); desc.style.color="#9aa"; desc.style.marginTop="6px"; desc.textContent = (v.desc||"").slice(0,90) + ((v.desc||"").length>90 ? "…" : "");
+    var meta = document.createElement("div"); meta.style.color="#666"; meta.style.marginTop="6px"; meta.style.fontSize=".88rem";
+    meta.textContent = "Views: " + Number(v.view_count||0).toLocaleString() + " · Updated: " + (v.updated_pretty||"");
+
+    body.appendChild(t); body.appendChild(cat); body.appendChild(desc); body.appendChild(meta);
+    a.appendChild(img); a.appendChild(body);
+    return a;
+  }
+
+  applyFilters();
+})();
+</script>
+</body></html>

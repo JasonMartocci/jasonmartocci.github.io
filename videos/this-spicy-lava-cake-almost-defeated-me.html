@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5,6 +6,12 @@
 <meta name="description" content="I take on the daring Dante&#39;s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html">
 <link rel="icon" href="/images/favicon.ico">
+
+<!-- Preconnect / DNS -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -21,94 +28,147 @@
 <meta name="twitter:description" content="I take on the daring Dante&#39;s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that...">
 <meta name="twitter:image:alt" content="Martocci Mayhem This Spicy Lava Cake Almost Defeated Me!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg">
+
 <style>
   :root { color-scheme: dark; }
-  *{box-sizing:border-box}
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-         background:#0f0f0f; color:#fff; }
-  header,footer { border-color:#222; }
-  header { display:flex; align-items:center; justify-content:center; gap:12px;
-           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
-           background:#0f0f0f; z-index:5; }
-  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
-                   text-decoration:none; display:flex; align-items:center;
-                   gap:8px; font-weight:600; }
-  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
-         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
-         gap:clamp(14px,2vw,28px); }
-  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #0f0f0f; color: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
-           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  /* Header: logo left, H1 centered (no overlap on mobile) */
+  header {
+    position: relative;
+    display:flex; align-items:center; gap:10px; padding:10px 12px;
+    border-bottom:1px solid #222; background:#0f0f0f;
+  }
+  header .brand {
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
+  }
+  header .brand img { width:28px; height:28px; }
+  header .page-title {
+    position:absolute; left:50%; transform:translateX(-50%);
+    margin:0; font-weight:800; color:#eee;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
+  }
+  @media (max-width:560px){
+    header { flex-direction:column; align-items:flex-start; }
+    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
+  }
 
-  .card { background:#111; border:1px solid #222; border-radius:12px;
-          padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top:16px; }
+  /* Full-width content */
+  main {
+    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
+    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap:clamp(14px, 2vw, 28px);
+  }
+  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
+
+  /* Video wrapper reserves height to prevent CLS */
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @supports not (aspect-ratio: 16/9) {
+    .video { height: 0; padding-top: 56.25%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+  }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top: 16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover{ color:#fff; border-color:#3ea6ff }
+  .meta a:hover { color:#fff; border-color:#3ea6ff; }
   a, .link { color:#3ea6ff; text-decoration:none; }
-  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
+
+  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
-               border-radius:10px; margin-bottom:10px; background:#111; }
-  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
-  .block-title{font-weight:800;margin:.2rem 0 .6rem}
-  .subtle{color:#9aa}
+
+  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
+  .subtle { color:#9aa; }
+
+  /* Recommended uses the same grid card layout as index */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+  .body { padding:10px 12px; }
+  .title { font-weight:800; margin-bottom:6px; }
+  .mini { color:#9aa; font-size:.92rem; }
+  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
+
+  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 </style>
 
-<!-- JSON-LD: VideoObject -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=v4FVQ3pl_7E", "description": "I take on the daring Dante\u0027s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as \u2026", "duration": "PT9S", "embedUrl": "https://www.youtube.com/embed/v4FVQ3pl_7E", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 1087}, "name": "This Spicy Lava Cake Almost Defeated Me!", "thumbnailUrl": "https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg", "uploadDate": "2025-07-25T00:00:00Z"}</script>
+<!-- Organization + WebSite (sitewide graph) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@id": "https://jasonmartocci.com/#org", "@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://jasonmartocci.com/images/JasonMartocci_Logo.png"}, "name": "Martocci Mayhem", "sameAs": ["https://x.com/JasonMartocci", "https://www.tiktok.com/@JasonMartocci", "https://www.youtube.com/@JasonMartocci", "https://www.instagram.com/Jason.Martocci", "https://www.facebook.com/MartocciMayhem"], "url": "https://jasonmartocci.com"}, {"@id": "https://jasonmartocci.com/#website", "@type": "WebSite", "inLanguage": "en", "name": "Martocci Mayhem", "publisher": {"@id": "https://jasonmartocci.com/#org"}, "url": "https://jasonmartocci.com"}]}
+</script>
 
-<!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html", "name": "This Spicy Lava Cake Almost Defeated Me!", "position": 2}]}</script>
+<!-- VideoObject (strongest signal for the watch page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html#video", "@type": "VideoObject", "contentUrl": "https://www.youtube.com/watch?v=v4FVQ3pl_7E", "description": "I take on the daring Dante\u0027s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as \u2026", "duration": "PT9S", "embedUrl": "https://www.youtube.com/embed/v4FVQ3pl_7E", "genre": "People \u0026 Blogs", "inLanguage": "en", "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 1087}, "isFamilyFriendly": true, "keywords": null, "mainEntityOfPage": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html#webpage", "name": "This Spicy Lava Cake Almost Defeated Me!", "potentialAction": [{"@type": "WatchAction", "target": "https://www.youtube.com/watch?v=v4FVQ3pl_7E"}, {"@type": "SeekToAction", "startOffset-input": "required name=seek_to_second_number", "target": "https://www.youtube.com/watch?v=v4FVQ3pl_7E\u0026t={seek_to_second_number}s"}], "publisher": {"@id": "https://jasonmartocci.com/#org"}, "sameAs": ["https://www.youtube.com/watch?v=v4FVQ3pl_7E"], "thumbnail": {"@type": "ImageObject", "height": 360, "url": "https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg", "width": 480}, "thumbnailUrl": "https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg", "uploadDate": "2025-07-25T00:00:00Z", "url": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html"}
+</script>
 
-<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "I take on the daring Dante\u0027s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as \u2026"}, "name": "What is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=v4FVQ3pl_7E\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=v4FVQ3pl_7E\u003c/a\u003e."}, "name": "Where can I watch \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 25, 2025."}, "name": "When was \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,087 \u00b7 Likes: 5 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "24 hours challenge, Challenge, Dante Inferno, Mukbang, asmr, asmr eating, asmr food"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- WebPage (the actual watch page container) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html#webpage", "@type": "WebPage", "about": {"@id": "https://jasonmartocci.com/#org"}, "breadcrumb": {"@id": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html#breadcrumb"}, "datePublished": "2025-07-25T00:00:00Z", "description": "I take on the daring Dante\u0027s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as \u2026", "inLanguage": "en", "isPartOf": {"@id": "https://jasonmartocci.com/#website"}, "name": "This Spicy Lava Cake Almost Defeated Me!", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://i.ytimg.com/vi/v4FVQ3pl_7E/hqdefault.jpg"}, "url": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html"}
+</script>
 
-    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html"}</script>
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@id": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html#breadcrumb", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/this-spicy-lava-cake-almost-defeated-me.html", "name": "This Spicy Lava Cake Almost Defeated Me!", "position": 2}]}
+</script>
+
+<!-- FAQPage (only include if FAQs are visibly on the page) -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "I take on the daring Dante\u0027s Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as \u2026"}, "name": "What is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=v4FVQ3pl_7E\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=v4FVQ3pl_7E\u003c/a\u003e."}, "name": "Where can I watch \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 25, 2025."}, "name": "When was \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,087 \u00b7 Likes: 5 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "24 hours challenge, Challenge, Dante Inferno, Mukbang, asmr, asmr eating, asmr food"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cThis Spicy Lava Cake Almost Defeated Me!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
+</script>
 
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    Martocci Mayhem
+    <span>Martocci Mayhem</span>
   </a>
-  <div>This Spicy Lava Cake Almost Defeated Me!</div>
+  <h1 class="page-title">This Spicy Lava Cake Almost Defeated Me!</h1>
 </header>
 
 <main>
   <section>
-    <!-- 1) Video -->
+    <!-- Video -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/v4FVQ3pl_7E"
-              title="This Spicy Lava Cake Almost Defeated Me!" frameborder="0"
-              allowfullscreen loading="lazy"></iframe>
+      <iframe
+        width="560" height="315"
+        src="https://www.youtube.com/embed/v4FVQ3pl_7E"
+        title="This Spicy Lava Cake Almost Defeated Me!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"
+        referrerpolicy="origin-when-cross-origin">
+      </iframe>
     </div>
 
-    <!-- 2) Stats -->
+    <!-- Stats -->
     <div class="card">
-      <h1 class="block-title">This Spicy Lava Cake Almost Defeated Me!</h1>
-      <div class="subtle">Subscribers: 198</div>
-      <div class="meta">
+      <h2 class="block-title" style="margin-top:0">This Spicy Lava Cake Almost Defeated Me!</h2>
+      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+        Subscribers: 198
+      </div>
+      <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v=v4FVQ3pl_7E" target="_blank" rel="noopener">Views: 1,087</a>
         <a href="https://www.youtube.com/watch?v=v4FVQ3pl_7E" target="_blank" rel="noopener">Likes: 5</a>
         <a href="https://www.youtube.com/watch?v=v4FVQ3pl_7E#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <div class="subtle" style="margin-top:6px">
-        Uploaded: July 25, 2025 &middot;
-        Last Edited: July 25, 2025
-      </div>
-      <p style="margin:.7rem 0 0">
+      <p style="margin:.8rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=v4FVQ3pl_7E" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- 3) Description -->
+    <!-- Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">I take on the daring Dante's Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as I bravely dive into this fiery treat, reacting to the intense heat with a mix of surprise, determination, and a little humor.
@@ -155,72 +215,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-<!-- 4) FAQ -->
-        <div class="card faq" id="faq">
+    <!-- FAQ (visual) -->
+      <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-            <details>
+          <details>
             <summary>What is “This Spicy Lava Cake Almost Defeated Me!” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>I take on the daring Dante's Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as …</div>
+              <div>I take on the daring Dante's Inferno Eating Challenge, where I attempt to conquer an incredibly spicy dessert that resembles molten lava cake in both appearance and heat. Watch as …</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Who created “This Spicy Lava Cake Almost Defeated Me!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Where can I watch “This Spicy Lava Cake Almost Defeated Me!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=v4FVQ3pl_7E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v4FVQ3pl_7E</a>.</div>
+              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=v4FVQ3pl_7E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v4FVQ3pl_7E</a>.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How long is “This Spicy Lava Cake Almost Defeated Me!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>9s.</div>
+              <div>9s.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>When was “This Spicy Lava Cake Almost Defeated Me!” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>July 25, 2025.</div>
+              <div>July 25, 2025.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>People & Blogs.</div>
+              <div>People & Blogs.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How popular is “This Spicy Lava Cake Almost Defeated Me!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Views: 1,087 · Likes: 5 · Comments: 1 (counts update on YouTube).</div>
+              <div>Views: 1,087 · Likes: 5 · Comments: 1 (counts update on YouTube).</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>24 hours challenge, Challenge, Dante Inferno, Mukbang, asmr, asmr eating, asmr food</div>
+              <div>24 hours challenge, Challenge, Dante Inferno, Mukbang, asmr, asmr eating, asmr food</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Can I share or embed “This Spicy Lava Cake Almost Defeated Me!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-            </details>
-        </div>
+          </details>
+      </div>
 
-    <!-- 5) Comments -->
+    <!-- Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -228,127 +288,137 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar -->
+  <!-- Sidebar / Recommended -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-          <a class="item" href="/videos/will-ai-replace-human-mukbangs.html">
-            <img loading="lazy"
+      <div class="grid">
+          <a class="rec-card" href="/videos/will-ai-replace-human-mukbangs.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Is AI Set to Dominate Human Mukbangs Forever?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Is AI Set to Dominate Human Mukbangs Forever?</div>
-              <div style="color:#aaa">Get ready to have your mind blown by the most realistic AI-generated mukbang creations that will leave you...</div>
-              <div class="subtle">Views: 650 · Updated: 2025-08-13</div>
+            <div class="body">
+              <div class="title">Is AI Set to Dominate Human Mukbangs Forever?</div>
+              <div class="mini">Get ready to have your mind blown by the most realistic AI-generated mukbang creations...</div>
+              <div class="mini-meta">Views: 650</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-most-satisfying-mangosteen-slices.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg"
+                 width="320" height="180"
                  alt="The Most Satisfying Mangosteen Slices"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
-              <div style="color:#aaa">Get ready to feast your eyes on a visually stunning display of a fresh, ripe mangosteen being sliced open! The...</div>
-              <div class="subtle">Views: 984 · Updated: 2025-07-28</div>
+            <div class="body">
+              <div class="title">The Most Satisfying Mangosteen Slices</div>
+              <div class="mini">Get ready to feast your eyes on a visually stunning display of a fresh, ripe...</div>
+              <div class="mini-meta">Views: 984</div>
             </div>
           </a>
-          <a class="item" href="/videos/satisfying-glass-dragon-fruit-slicing-asmr.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/satisfying-glass-dragon-fruit-slicing-asmr.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/tQKP3KcQOI4/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Satisfying Glass Dragon Fruit Slicing ASMR!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Satisfying Glass Dragon Fruit Slicing ASMR!</div>
-              <div style="color:#aaa">Get ready for a genuinely unique ASMR experience as we slice open the mysterious Glass Dragon Fruit! This exotic...</div>
-              <div class="subtle">Views: 769 · Updated: 2025-07-29</div>
+            <div class="body">
+              <div class="title">Satisfying Glass Dragon Fruit Slicing ASMR!</div>
+              <div class="mini">Get ready for a genuinely unique ASMR experience as we slice open the mysterious Glass...</div>
+              <div class="mini-meta">Views: 769</div>
             </div>
           </a>
-          <a class="item" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/pLr1GbyX1xQ/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
-              <div style="color:#aaa">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a simple bed frame gets a...</div>
-              <div class="subtle">Views: 648 · Updated: 2025-07-28</div>
+            <div class="body">
+              <div class="title">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
+              <div class="mini">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a...</div>
+              <div class="mini-meta">Views: 648</div>
             </div>
           </a>
-          <a class="item" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Crazy Food Combo Experiments You Have To See!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Crazy Food Combo Experiments You Have To See!</div>
-              <div style="color:#aaa">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the boundaries of flavor and sound...</div>
-              <div class="subtle">Views: 85 · Updated: 2025-08-12</div>
+            <div class="body">
+              <div class="title">Crazy Food Combo Experiments You Have To See!</div>
+              <div class="mini">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the...</div>
+              <div class="mini-meta">Views: 85</div>
             </div>
           </a>
-          <a class="item" href="/videos/glass-fruit-revealed-in-a-rainbow-of-realistic-tex.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/glass-fruit-revealed-in-a-rainbow-of-realistic-tex.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/0ErldPsx-4g/hqdefault.jpg"
+                 width="320" height="180"
                  alt="GLASS FRUIT REVEALED in a RAINBOW of REALISTIC TEXTURES!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">GLASS FRUIT REVEALED in a RAINBOW of REALISTIC TEXTURES!</div>
-              <div style="color:#aaa">Experience the satisfying video of crystal-like glass fruit being blended into a delicious smoothie. Watch asmr...</div>
-              <div class="subtle">Views: 11 · Updated: 2025-07-23</div>
+            <div class="body">
+              <div class="title">GLASS FRUIT REVEALED in a RAINBOW of REALISTIC TEXTURES!</div>
+              <div class="mini">Experience the satisfying video of crystal-like glass fruit being blended into a...</div>
+              <div class="mini-meta">Views: 11</div>
             </div>
           </a>
-          <a class="item" href="/videos/bigfoot-eats-bugs-and-it-gets-wild.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/bigfoot-eats-bugs-and-it-gets-wild.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/rOrx30yN4G4/hqdefault.jpg"
+                 width="320" height="180"
                  alt="What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet</div>
-              <div style="color:#aaa">You won&#39;t believe what Bigfoot actually eats—watch till the end for the chaos! (IF YOU CAN MAKE IT)
- 
-⚠️ Do NOT try...</div>
-              <div class="subtle">Views: 6 · Updated: 2025-07-26</div>
+            <div class="body">
+              <div class="title">What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet</div>
+              <div class="mini">You won&#39;t believe what Bigfoot actually eats—watch till the end for the chaos! (IF YOU...</div>
+              <div class="mini-meta">Views: 6</div>
             </div>
           </a>
-          <a class="item" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Can a Superheated Blade Destroy Ice Instantly?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Can a Superheated Blade Destroy Ice Instantly?</div>
-              <div style="color:#aaa">Check out this hot knife being used in an interesting experiment! This satisfying compilation of a glowing hotknife...</div>
-              <div class="subtle">Views: 32 · Updated: 2025-08-04</div>
+            <div class="body">
+              <div class="title">Can a Superheated Blade Destroy Ice Instantly?</div>
+              <div class="mini">Check out this hot knife being used in an interesting experiment! This satisfying...</div>
+              <div class="mini-meta">Views: 32</div>
             </div>
           </a>
-          <a class="item" href="/videos/watch-this-donut-turn-into-neon-slime.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/watch-this-donut-turn-into-neon-slime.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/uC_0W0jJL9o/hqdefault.jpg"
+                 width="320" height="180"
                  alt="Watch This Donut Turn Into Neon Slime!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Watch This Donut Turn Into Neon Slime!</div>
-              <div style="color:#aaa">Dive into AI mukbang, an ASMR short neon slime experience, with this vibrant neon donut break video! Watch as we...</div>
-              <div class="subtle">Views: 1,634 · Updated: 2025-06-29</div>
+            <div class="body">
+              <div class="title">Watch This Donut Turn Into Neon Slime!</div>
+              <div class="mini">Dive into AI mukbang, an ASMR short neon slime experience, with this vibrant neon...</div>
+              <div class="mini-meta">Views: 1,634</div>
             </div>
           </a>
-          <a class="item" href="/videos/i-made-a-rainbow-glass-fruit-garden.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/i-made-a-rainbow-glass-fruit-garden.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/posEf8jtBgQ/hqdefault.jpg"
+                 width="320" height="180"
                  alt="I Made a Rainbow Glass Fruit Garden"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">I Made a Rainbow Glass Fruit Garden</div>
-              <div style="color:#aaa">Witness the mesmerizing transformation of RAINBOW glass fruit as they come to life in stunning slow motion! Get...</div>
-              <div class="subtle">Views: 1,205 · Updated: 2025-07-31</div>
+            <div class="body">
+              <div class="title">I Made a Rainbow Glass Fruit Garden</div>
+              <div class="mini">Witness the mesmerizing transformation of RAINBOW glass fruit as they come to life in...</div>
+              <div class="mini-meta">Views: 1,205</div>
             </div>
           </a>
+      </div>
     </div>
   </aside>
 </main>
 
-<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+<footer>
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

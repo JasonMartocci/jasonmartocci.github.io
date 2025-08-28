@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title | truncate(59) }}</title>
+<meta name="description" content="{{ short_desc | truncate(135) }}">
+<link rel="canonical" href="{{ site_url }}/videos/{{ slug }}.html">
+<link rel="icon" href="/images/favicon.ico">
+
+<!-- Open Graph -->
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="{{ title | truncate(55) }}">
+<meta property="og:site_name" content="Martocci Mayhem">
+<meta property="og:description" content="{{ short_desc | truncate(60) }}">
+<meta property="og:url" content="{{ site_url }}/videos/{{ slug }}.html">
+<meta property="og:image" content="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title | truncate(50) }}">
+<meta name="twitter:site" content="@JasonMartocci">
+<meta name="twitter:description" content="{{ short_desc | truncate(120) }}">
+<meta name="twitter:image:alt" content="Martocci Mayhem {{ title }}">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/{{ video_id }}/hqdefault.jpg">
+<style>
+  :root { color-scheme: dark; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
+
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
+
+  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
+  a, .link { color:#3ea6ff; text-decoration:none; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
+  details summary { cursor:pointer; }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
+</style>
+
+<!-- JSON-LD: VideoObject -->
+{% set video_ld = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": title,
+  "description": short_desc,
+  "thumbnailUrl": "https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg",
+  "uploadDate": upload_date,
+  "contentUrl": "https://www.youtube.com/watch?v=" ~ video_id,
+  "embedUrl": "https://www.youtube.com/embed/" ~ video_id,
+  "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": { "@type": "WatchAction" },
+        "userInteractionCount": view_count_raw
+  }
+} %}
+{% if duration_seconds and duration_seconds > 0 %}
+  {% set _ = video_ld.update({"duration": "PT" ~ duration_seconds ~ "S"}) %}
+{% endif %}
+<script type="application/ld+json">{{ video_ld | tojson | safe }}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+{% set breadcrumbs = {
+"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item": site_url},
+ {"@type":"ListItem","position":2,"name": title,"item": site_url + "/videos/" + slug + ".html"}
+]} %}
+<script type="application/ld+json">{{ breadcrumbs | tojson | safe }}</script>
+
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+{% if faqs and faqs|length > 0 %}
+  {% set faq_entities = [] %}
+  {% for q, a in faqs %}
+    {% set q_s = (q|string).strip() %}
+    {% set a_s = (a|string).strip() %}
+    {% if q_s and a_s %}
+      {% set _ = faq_entities.append({
+        "@type": "Question",
+        "name": q_s,
+        "acceptedAnswer": { "@type": "Answer", "text": a_s }
+      }) %}
+    {% endif %}
+  {% endfor %}
+  {% if faq_entities and faq_entities|length > 0 %}
+    <script type="application/ld+json">{{ {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq_entities
+    } | tojson | safe }}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{{ {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": site_url ~ "/videos/" ~ slug ~ ".html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".faq summary", ".faq .answer"]
+      }
+    } | tojson | safe }}</script>
+  {% endif %}
+{% endif %}
+
+</head>
+<body>
+<header>
+  <a class="brand" href="{{ site_url }}">
+    <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
+    Martocci Mayhem
+  </a>
+  <div>{{ title | truncate(60) }}</div>
+</header>
+
+<main>
+  <section>
+    <!-- 1) Video -->
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/{{ video_id }}"
+              title="{{ title }}" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <!-- 2) Stats -->
+    <div class="card">
+      <h1 class="block-title">{{ title | truncate(55) }}</h1>
+      <div class="subtle">Subscribers: {{ subs_raw and subscriber_count or "—" }}</div>
+      <div class="meta">
+        <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Views: {{ view_count }}</a>
+        <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Likes: {{ like_count }}</a>
+        <a href="https://www.youtube.com/watch?v={{ video_id }}#comments" target="_blank" rel="noopener">Comments: {{ comment_count }}</a>
+        <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">Channel: {{ channel_title or ("@" ~ channel_handle) }}</a>
+      </div>
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: {{ upload_date_pretty or "—" }} &middot;
+        Last Edited: {{ last_edited_date_pretty or "—" }}
+      </div>
+      <p style="margin:.7rem 0 0">
+        <a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- 3) Description -->
+    <div class="card">
+      <h2 class="block-title">Description</h2>
+      <div class="desc">{{ formatted_desc | safe }}</div>
+    </div>
+
+<!-- 4) FAQ -->
+    {% if faqs and faqs|length > 0 %}
+        <div class="card faq" id="faq">
+        <h2 class="block-title">Frequently Asked Questions</h2>
+        {% for q,a in faqs %}
+            <details>
+            <summary>{{ q }}</summary>
+            <div class="answer" style="padding:.6rem 0;color:#ccc">
+                <div>{{ a|safe }}</div>
+            </div>
+            </details>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- 5) Comments -->
+    <div class="card">
+      <h2 class="block-title">Comments</h2>
+      <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
+      <p><a class="link" href="https://www.youtube.com/watch?v={{ video_id }}#comments" target="_blank" rel="noopener">Open comments on YouTube</a></p>
+    </div>
+  </section>
+
+  <!-- Sidebar -->
+  <aside class="rec">
+    <div class="card">
+      <h2 class="block-title">Recommended Videos</h2>
+      {% if related and related|length > 0 %}
+        {% for r in related %}
+          <a class="item" href="/videos/{{ r.slug }}.html">
+            <img loading="lazy"
+                 src="https://i.ytimg.com/vi/{{ r.video_id }}/hqdefault.jpg"
+                 alt="{{ r.title }}"
+                 onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
+            <div>
+              <div class="link" style="font-weight:700">{{ r.title }}</div>
+              <div style="color:#aaa">{{ r.desc | truncate(120) }}</div>
+              <div class="subtle">Views: {{ r.view_count }} · Updated: {{ r.last_edited_date }}</div>
+            </div>
+          </a>
+        {% endfor %}
+      {% else %}
+        <div class="subtle">More suggestions coming soon.</div>
+      {% endif %}
+    </div>
+  </aside>
+</main>
+
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+  © {{ current_year }} Martocci Mayhem ·
+  <a class="link" href="{{ site_url }}">All The Mayhem</a> ·
+  <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
+</footer>
+</body></html>
