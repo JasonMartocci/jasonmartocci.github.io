@@ -202,7 +202,7 @@
         src="https://www.youtube.com/embed/{{ video_id }}"
         title="{{ title }}" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowfullscreen loading="lazy"
         referrerpolicy="origin-when-cross-origin">
       </iframe>
     </div>
@@ -211,7 +211,7 @@
     <div class="card">
       <h2 class="block-title" style="margin-top:0">{{ title | truncate(55) }}</h2>
       <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: {{ subs_known and subscriber_count or "—" }}
+        Subscribers: {{ subs_raw and subscriber_count or "—" }}
       </div>
       <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Views: {{ view_count }}</a>
