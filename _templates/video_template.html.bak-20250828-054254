@@ -99,7 +99,7 @@
   /* for box-drawing / ASCII lines */
   .desc pre.ascii {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    white-space: pre;         /* never wrap */
+    white-space: pre;           /* never wrap */
     overflow: auto;
     max-width: 100%;
     background:#0c0c0c;
