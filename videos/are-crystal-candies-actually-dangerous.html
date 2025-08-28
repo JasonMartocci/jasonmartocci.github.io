@@ -6,6 +6,12 @@
 <link rel="canonical" href="https://jasonmartocci.com/videos/are-crystal-candies-actually-dangerous.html">
 <link rel="icon" href="/images/favicon.ico">
 
+<!-- Preconnect / DNS -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
+
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="Are Crystal Candies Actually Dangerous?">
@@ -32,65 +38,69 @@
     background: #0f0f0f; color: #fff;
     -webkit-text-size-adjust: 100%;
   }
-  img, svg, video, canvas, iframe { display: block; max-width: 100%; }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  header, footer { border-color: #222; }
+  /* Header (not sticky), mobile-safe layout, no overlap */
   header {
-    display: flex; align-items: center; justify-content: center; gap: 12px;
-    padding: 14px 16px; border-bottom: 1px solid; position: sticky; top: 0;
-    background: #0f0f0f; z-index: 5;
+    display:flex; align-items:center; gap:10px; padding:10px 12px;
+    border-bottom:1px solid #222; background:#0f0f0f; flex-wrap:wrap;
   }
-  header a.brand {
-    position: absolute; left: 16px; top: 10px; color: #fff; text-decoration: none;
-    display: flex; align-items: center; gap: 8px; font-weight: 600;
+  header .brand {
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700;
+  }
+  header .brand img { width:28px; height:28px; }
+  header .page-title {
+    margin:0; font-weight:800; color:#eee;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2;
+    flex:1 1 320px;
   }
 
   main {
-    width: 100%; margin: 0 auto; padding: clamp(12px, 2vw, 24px);
-    display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap: clamp(14px, 2vw, 28px);
+    width:100%; margin:0 auto; padding:clamp(12px, 2vw, 24px); max-width:1400px;
+    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
+    gap:clamp(14px, 2vw, 28px);
   }
   @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Video wrapper reserves height immediately to prevent CLS */
+  /* Video wrapper reserves height to prevent CLS */
   .video {
-    position: relative; width: 100%; max-width: 100vw;
-    aspect-ratio: 16/9; overflow: hidden;
-    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px;
-    background: #000; /* no white flash before player paints */
+    position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden;
+    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px; background:#000;
   }
-  .video iframe {
-    position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
-  }
-  /* Fallback for browsers without aspect-ratio support */
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   @supports not (aspect-ratio: 16/9) {
     .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .video iframe { position: absolute; inset:0; width:100%; height:100%; }
   }
 
   .card {
-    background: #111; border: 1px solid #222; border-radius: 12px;
-    padding: clamp(12px, 1.6vw, 18px);
+    background:#111; border:1px solid #222; border-radius:12px;
+    padding:clamp(12px,1.6vw,18px);
   }
   section .card + .card { margin-top: 16px; }
 
   .meta a {
-    color: #bbb; margin-right: 14px; text-decoration: none; border-bottom: 1px dotted #444;
+    color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444;
   }
-  .meta a:hover { color: #fff; border-color: #3ea6ff; }
-  a, .link { color: #3ea6ff; text-decoration: none; }
+  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  a, .link { color:#3ea6ff; text-decoration:none; }
 
-  .desc { color: #ddd; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
-  details summary { cursor: pointer; }
+  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  details summary { cursor:pointer; }
 
-  .rec .item {
-    display: flex; gap: 10px; padding: 10px; border: 1px solid #222;
-    border-radius: 10px; margin-bottom: 10px; background: #111;
-  }
-  .rec img { width: 168px; height: 94px; object-fit: cover; border-radius: 8px; }
+  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
+  .subtle { color:#9aa; }
 
-  .block-title { font-weight: 800; margin: .2rem 0 .6rem; }
-  .subtle { color: #9aa; }
+  /* Recommended uses the same grid card layout as index */
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
+  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+  .body { padding:10px 12px; }
+  .title { font-weight:800; margin-bottom:6px; }
+  .mini { color:#9aa; font-size:.92rem; }
+  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
+
+  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -98,59 +108,48 @@
 
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/are-crystal-candies-actually-dangerous.html", "name": "Are Crystal Candies Actually Dangerous?", "position": 2}]}</script>
-
-<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Dive into this intensely satisfying ASMR experience, featuring edible crystal rock candy that\u0027s almost too beautiful to eat! \ud83d\udc8e\u2728"}, "name": "What is \u201cAre Crystal Candies Actually Dangerous?\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cAre Crystal Candies Actually Dangerous?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=Lb2icdcbKak\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=Lb2icdcbKak\u003c/a\u003e."}, "name": "Where can I watch \u201cAre Crystal Candies Actually Dangerous?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "15s."}, "name": "How long is \u201cAre Crystal Candies Actually Dangerous?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 21, 2025."}, "name": "When was \u201cAre Crystal Candies Actually Dangerous?\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 106 \u00b7 Likes: 1 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cAre Crystal Candies Actually Dangerous?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ASMR eating sounds, ambient asmr, asmr, asmr ambience, asmr eating, asmr for sleep, asmr for sleep no talking"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cAre Crystal Candies Actually Dangerous?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
-
-    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/are-crystal-candies-actually-dangerous.html"}</script>
-
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    Martocci Mayhem
+    <span>Martocci Mayhem</span>
   </a>
-  <div>Are Crystal Candies Actually Dangerous?</div>
+  <h1 class="page-title">Are Crystal Candies Actually Dangerous?</h1>
 </header>
 
 <main>
   <section>
-    <!-- 1) Video -->
+    <!-- Video -->
     <div class="video">
-        <!-- intrinsic aspect ratio -->
-        <iframe
+      <iframe
         width="560" height="315"
         src="https://www.youtube.com/embed/Lb2icdcbKak"
         title="Are Crystal Candies Actually Dangerous?" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen loading="lazy"
         referrerpolicy="origin-when-cross-origin">
-        </iframe>
-
+      </iframe>
     </div>
 
-    <!-- 2) Stats -->
+    <!-- Stats -->
     <div class="card">
-      <h1 class="block-title">Are Crystal Candies Actually Dangerous?</h1>
-      <div class="subtle">Subscribers: 198</div>
-      <div class="meta">
+      <h2 class="block-title" style="margin-top:0">Are Crystal Candies Actually Dangerous?</h2>
+      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+        Subscribers: 198
+      </div>
+      <div class="meta" style="margin-top:8px;">
         <a href="https://www.youtube.com/watch?v=Lb2icdcbKak" target="_blank" rel="noopener">Views: 106</a>
         <a href="https://www.youtube.com/watch?v=Lb2icdcbKak" target="_blank" rel="noopener">Likes: 1</a>
         <a href="https://www.youtube.com/watch?v=Lb2icdcbKak#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <div class="subtle" style="margin-top:6px">
-        Uploaded: July 21, 2025 &middot;
-        Last Edited: July 21, 2025
-      </div>
-      <p style="margin:.7rem 0 0">
+      <p style="margin:.8rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=Lb2icdcbKak" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- 3) Description -->
+    <!-- Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Dive into this intensely satisfying ASMR experience, featuring edible crystal rock candy that's almost too beautiful to eat! 💎✨ 
@@ -206,72 +205,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-    <!-- 4) FAQ -->
-        <div class="card faq" id="faq">
+    <!-- FAQ -->
+      <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-            <details>
+          <details>
             <summary>What is “Are Crystal Candies Actually Dangerous?” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Dive into this intensely satisfying ASMR experience, featuring edible crystal rock candy that's almost too beautiful to eat! 💎✨</div>
+              <div>Dive into this intensely satisfying ASMR experience, featuring edible crystal rock candy that's almost too beautiful to eat! 💎✨</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Who created “Are Crystal Candies Actually Dangerous?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Where can I watch “Are Crystal Candies Actually Dangerous?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=Lb2icdcbKak" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Lb2icdcbKak</a>.</div>
+              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=Lb2icdcbKak" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Lb2icdcbKak</a>.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How long is “Are Crystal Candies Actually Dangerous?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>15s.</div>
+              <div>15s.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>When was “Are Crystal Candies Actually Dangerous?” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>July 21, 2025.</div>
+              <div>July 21, 2025.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>People & Blogs.</div>
+              <div>People & Blogs.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>How popular is “Are Crystal Candies Actually Dangerous?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Views: 106 · Likes: 1 · Comments: 1 (counts update on YouTube).</div>
+              <div>Views: 106 · Likes: 1 · Comments: 1 (counts update on YouTube).</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>ASMR eating sounds, ambient asmr, asmr, asmr ambience, asmr eating, asmr for sleep, asmr for sleep no talking</div>
+              <div>ASMR eating sounds, ambient asmr, asmr, asmr ambience, asmr eating, asmr for sleep, asmr for sleep no talking</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Can I share or embed “Are Crystal Candies Actually Dangerous?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-            </details>
-            <details>
+          </details>
+          <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-            </details>
-        </div>
+          </details>
+      </div>
 
-    <!-- 5) Comments -->
+    <!-- Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -279,135 +278,137 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar -->
+  <!-- Sidebar / Recommended -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-          <a class="item" href="/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html">
-            <img loading="lazy"
+      <div class="grid">
+          <a class="rec-card" href="/videos/mind-blowing-beds-you-ll-want-to-sleep-in-ultra-re.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/Fq7fMnoqLkM/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Mind-Blowing Beds You’ll Want To Sleep In 😴✨ | Ultra-Real ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Mind-Blowing Beds You’ll Want To Sleep In 😴✨ | Ultra-Real ASMR</div>
-              <div style="color:#aaa">ASMR, you can watch as people try to sleep in the strangest and bizarre beds, from water beds to lava beds! Their...</div>
-              <div class="subtle">Views: 3,305 · Updated: 2025-07-25</div>
+            <div class="body">
+              <div class="title">Mind-Blowing Beds You’ll Want To Sleep In 😴✨ | Ultra-Real ASMR</div>
+              <div class="mini">ASMR, you can watch as people try to sleep in the strangest and bizarre beds, from...</div>
+              <div class="mini-meta">Views: 3,305</div>
             </div>
           </a>
-          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/weird-food-mukbangs-the-500-challenge.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Weird Food Mukbangs: The $500 Challenge"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>
-              <div style="color:#aaa">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a whirlwind of blades and chaos...</div>
-              <div class="subtle">Views: 1,038 · Updated: 2025-08-10</div>
+            <div class="body">
+              <div class="title">Weird Food Mukbangs: The $500 Challenge</div>
+              <div class="mini">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a...</div>
+              <div class="mini-meta">Views: 1,038</div>
             </div>
           </a>
-          <a class="item" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</div>
-              <div style="color:#aaa">Immerse yourself in the satisfying sounds of crisp apple cutting in this ASMR-inducing video! Get ready to relax and...</div>
-              <div class="subtle">Views: 158 · Updated: 2025-07-29</div>
+            <div class="body">
+              <div class="title">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</div>
+              <div class="mini">Immerse yourself in the satisfying sounds of crisp apple cutting in this ASMR-inducing...</div>
+              <div class="mini-meta">Views: 158</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-most-satisfying-mangosteen-slices.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="The Most Satisfying Mangosteen Slices"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
-              <div style="color:#aaa">Get ready to feast your eyes on a visually stunning display of a fresh, ripe mangosteen being sliced open! The...</div>
-              <div class="subtle">Views: 984 · Updated: 2025-07-28</div>
+            <div class="body">
+              <div class="title">The Most Satisfying Mangosteen Slices</div>
+              <div class="mini">Get ready to feast your eyes on a visually stunning display of a fresh, ripe...</div>
+              <div class="mini-meta">Views: 984</div>
             </div>
           </a>
-          <a class="item" href="/videos/will-ai-replace-human-mukbangs.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/will-ai-replace-human-mukbangs.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/-oMR-qryMq0/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Is AI Set to Dominate Human Mukbangs Forever?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Is AI Set to Dominate Human Mukbangs Forever?</div>
-              <div style="color:#aaa">Get ready to have your mind blown by the most realistic AI-generated mukbang creations that will leave you...</div>
-              <div class="subtle">Views: 650 · Updated: 2025-08-13</div>
+            <div class="body">
+              <div class="title">Is AI Set to Dominate Human Mukbangs Forever?</div>
+              <div class="mini">Get ready to have your mind blown by the most realistic AI-generated mukbang creations...</div>
+              <div class="mini-meta">Views: 650</div>
             </div>
           </a>
-          <a class="item" href="/videos/the-ultimate-asmr-food-bliss.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/the-ultimate-asmr-food-bliss.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="The Most Satisfying ASMR Food Journey"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">The Most Satisfying ASMR Food Journey</div>
-              <div style="color:#aaa">Watch me take on a piping hot, fire-roasted dumpling straight from the spoon! This video captures the sizzle, the...</div>
-              <div class="subtle">Views: 2,135 · Updated: 2025-07-01</div>
+            <div class="body">
+              <div class="title">The Most Satisfying ASMR Food Journey</div>
+              <div class="mini">Watch me take on a piping hot, fire-roasted dumpling straight from the spoon! This...</div>
+              <div class="mini-meta">Views: 2,135</div>
             </div>
           </a>
-          <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/hot-knife-asmr-will-it-melt.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Hot Knife ASMR! Can You Handle the MELT?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Hot Knife ASMR! Can You Handle the MELT?</div>
-              <div style="color:#aaa">Immerse yourself in this unique and incredible ASMR experience as a knife slices through a stunning passionfruit...</div>
-              <div class="subtle">Views: 10,408 · Updated: 2025-07-01</div>
+            <div class="body">
+              <div class="title">Hot Knife ASMR! Can You Handle the MELT?</div>
+              <div class="mini">Immerse yourself in this unique and incredible ASMR experience as a knife slices...</div>
+              <div class="mini-meta">Views: 10,408</div>
             </div>
           </a>
-          <a class="item" href="/videos/whats-really-inside-this-asmr-glass-fruit.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/whats-really-inside-this-asmr-glass-fruit.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/_NzZa9ULG28/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="What&#39;s REALLY Inside this ASMR Glass Fruit?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">What&#39;s REALLY Inside this ASMR Glass Fruit?</div>
-              <div style="color:#aaa">Have you ever seen an ASMR glass fruit like this before? Prepare for some satisfying ASMR cutting as we slice into...</div>
-              <div class="subtle">Views: 962 · Updated: 2025-07-28</div>
+            <div class="body">
+              <div class="title">What&#39;s REALLY Inside this ASMR Glass Fruit?</div>
+              <div class="mini">Have you ever seen an ASMR glass fruit like this before? Prepare for some satisfying...</div>
+              <div class="mini-meta">Views: 962</div>
             </div>
           </a>
-          <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="This Glass Apple Looks Normal But Watch What’s Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">This Glass Apple Looks Normal But Watch What’s Inside!</div>
-              <div style="color:#aaa">Experience the visually appealing and satisfying sounds of this candy apple being sliced! The oddly satisfying video...</div>
-              <div class="subtle">Views: 920 · Updated: 2025-07-29</div>
+            <div class="body">
+              <div class="title">This Glass Apple Looks Normal But Watch What’s Inside!</div>
+              <div class="mini">Experience the visually appealing and satisfying sounds of this candy apple being...</div>
+              <div class="mini-meta">Views: 920</div>
             </div>
           </a>
-          <a class="item" href="/videos/satisfying-glass-dragon-fruit-slicing-asmr.html">
-            <img loading="lazy"
+          <a class="rec-card" href="/videos/satisfying-glass-dragon-fruit-slicing-asmr.html">
+            <img class="thumb" decoding="async" loading="lazy"
                  src="https://i.ytimg.com/vi/tQKP3KcQOI4/hqdefault.jpg"
-                width="168" height="94"
+                 width="320" height="180"
                  alt="Satisfying Glass Dragon Fruit Slicing ASMR!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div>
-              <div class="link" style="font-weight:700">Satisfying Glass Dragon Fruit Slicing ASMR!</div>
-              <div style="color:#aaa">Get ready for a genuinely unique ASMR experience as we slice open the mysterious Glass Dragon Fruit! This exotic...</div>
-              <div class="subtle">Views: 769 · Updated: 2025-07-29</div>
+            <div class="body">
+              <div class="title">Satisfying Glass Dragon Fruit Slicing ASMR!</div>
+              <div class="mini">Get ready for a genuinely unique ASMR experience as we slice open the mysterious Glass...</div>
+              <div class="mini-meta">Views: 769</div>
             </div>
           </a>
+      </div>
     </div>
   </aside>
 </main>
 
-<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
+<footer>
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
