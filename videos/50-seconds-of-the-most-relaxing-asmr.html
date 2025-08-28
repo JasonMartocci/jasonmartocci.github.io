@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="Get ready for a mesmerizing experience! In this unique video, we&#39;re mixing magic in 50 seconds using 9-second ASMR clips! Immerse...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="Get ready for a mesmerizing experience! In this unique video, we&#39;re mixing magic in 50 seconds using 9-second ASMR...">
 <meta name="twitter:image:alt" content="Martocci Mayhem 50 Seconds of the Most Relaxing ASMR">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/kLcmQWQKy98/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html", "name": "50 Seconds of the Most Relaxing ASMR", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-vis\u2026"}, "name": "What is \u201c50 Seconds of the Most Relaxing ASMR\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=kLcmQWQKy98."}, "name": "Where can I watch \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "49s."}, "name": "How long is \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 14, 2025."}, "name": "When was \u201c50 Seconds of the Most Relaxing ASMR\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 233 \u00b7 Likes: 3 \u00b7 Comments: 0 (counts update on YouTube)."}, "name": "How popular is \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a mesmerizing experience! In this unique video, we\u0027re mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-vis\u2026"}, "name": "What is \u201c50 Seconds of the Most Relaxing ASMR\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=kLcmQWQKy98\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=kLcmQWQKy98\u003c/a\u003e."}, "name": "Where can I watch \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "49s."}, "name": "How long is \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 14, 2025."}, "name": "When was \u201c50 Seconds of the Most Relaxing ASMR\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 233 \u00b7 Likes: 3 \u00b7 Comments: 0 (counts update on YouTube)."}, "name": "How popular is \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201c50 Seconds of the Most Relaxing ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/50-seconds-of-the-most-relaxing-asmr.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">50 Seconds of the Most Relaxing ASMR</h1>
+  <div>50 Seconds of the Most Relaxing ASMR</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/kLcmQWQKy98"
-        title="50 Seconds of the Most Relaxing ASMR" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/kLcmQWQKy98"
+              title="50 Seconds of the Most Relaxing ASMR" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">50 Seconds of the Most Relaxing ASMR</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">50 Seconds of the Most Relaxing ASMR</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" rel="noopener">Views: 233</a>
         <a href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" rel="noopener">Likes: 3</a>
         <a href="https://www.youtube.com/watch?v=kLcmQWQKy98#comments" target="_blank" rel="noopener">Comments: 0</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 14, 2025 &middot;
+        Last Edited: August 14, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-visual journey, carefully crafted to trigger your Autonomous Sensory Meridian Response. With a dash of magic, we're taking ASMR to the next level!
@@ -194,72 +151,72 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #aiasmr</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “50 Seconds of the Most Relaxing ASMR” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-vis…</div>
+                <div>Get ready for a mesmerizing experience! In this unique video, we're mixing magic in 50 seconds using 9-second ASMR clips! Immerse yourself in this relaxing and intriguing audio-vis…</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “50 Seconds of the Most Relaxing ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “50 Seconds of the Most Relaxing ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" rel="noopener">https://www.youtube.com/watch?v=kLcmQWQKy98</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=kLcmQWQKy98" target="_blank" rel="noopener">https://www.youtube.com/watch?v=kLcmQWQKy98</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “50 Seconds of the Most Relaxing ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>49s.</div>
+                <div>49s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “50 Seconds of the Most Relaxing ASMR” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>August 14, 2025.</div>
+                <div>August 14, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Entertainment.</div>
+                <div>Entertainment.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “50 Seconds of the Most Relaxing ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 233 · Likes: 3 · Comments: 0 (counts update on YouTube).</div>
+                <div>Views: 233 · Likes: 3 · Comments: 0 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio</div>
+                <div>AI, ASMR, ASMR video, Jason Martocci, Martocci Mayhem, ambient sound, audio</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “50 Seconds of the Most Relaxing ASMR”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -267,137 +224,125 @@ All stunts are performed in a controlled environment; don't attempt them at home
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/the-asmr-experience-for-non-believers.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-asmr-experience-for-non-believers.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/QgfRY7elfQg/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The ASMR Experience for Non-Believers"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The ASMR Experience for Non-Believers</div>
-              <div class="mini">Get ready to relax with the most calming ASMR experience! In this video, we&#39;ve curated...</div>
-              <div class="mini-meta">Views: 53</div>
+            <div>
+              <div class="link" style="font-weight:700">The ASMR Experience for Non-Believers</div>
+              <div style="color:#aaa">Get ready to relax with the most calming ASMR experience! In this video, we&#39;ve curated the best 9-second ASMR clips...</div>
+              <div class="subtle">Views: 53 · Updated: 2025-08-14</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/why-asmr-is-more-than-just-weird-noises.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/why-asmr-is-more-than-just-weird-noises.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Why ASMR Is More Than Just Weird Noises"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Why ASMR Is More Than Just Weird Noises</div>
-              <div class="mini">Embark on a sensory journey with this satisfying hot knife ASMR experience! Witness...</div>
-              <div class="mini-meta">Views: 18</div>
+            <div>
+              <div class="link" style="font-weight:700">Why ASMR Is More Than Just Weird Noises</div>
+              <div style="color:#aaa">Embark on a sensory journey with this satisfying hot knife ASMR experience! Witness the mesmerizing effects as a...</div>
+              <div class="subtle">Views: 18 · Updated: 2025-08-10</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/mind-blowing-food-combos-in-asmr-mukbang.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/mind-blowing-food-combos-in-asmr-mukbang.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Mind-Blowing FOOD COMBOS in ASMR Mukbang!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</div>
-              <div class="mini">Get ready for a relaxing video of a culinary adventure like no other! In this ASMR...</div>
-              <div class="mini-meta">Views: 880</div>
+            <div>
+              <div class="link" style="font-weight:700">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</div>
+              <div style="color:#aaa">Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we&#39;re pushing the...</div>
+              <div class="subtle">Views: 880 · Updated: 2025-08-12</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxation.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxation.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Why ASMR Cutting Sounds Are the Secret to Relaxation"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Why ASMR Cutting Sounds Are the Secret to Relaxation</div>
-              <div class="mini">Are you curious about what happens when you combine ASMR cutting sensations with...</div>
-              <div class="mini-meta">Views: 807</div>
+            <div>
+              <div class="link" style="font-weight:700">Why ASMR Cutting Sounds Are the Secret to Relaxation</div>
+              <div style="color:#aaa">Are you curious about what happens when you combine ASMR cutting sensations with savage grandma roasts? Have you...</div>
+              <div class="subtle">Views: 807 · Updated: 2025-08-07</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-weird-science-behind-asmr.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-weird-science-behind-asmr.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/sPWSf8ohWSQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Strange Science of ASMR, Tested"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Strange Science of ASMR, Tested</div>
-              <div class="mini">Get ready for a satisfying video with the ultimate ASMR weird science remix...</div>
-              <div class="mini-meta">Views: 176</div>
+            <div>
+              <div class="link" style="font-weight:700">The Strange Science of ASMR, Tested</div>
+              <div style="color:#aaa">Get ready for a satisfying video with the ultimate ASMR weird science remix experience! This video is a frenzy of...</div>
+              <div class="subtle">Views: 176 · Updated: 2025-08-07</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Ultimate Satisfying ASMR Experiment"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Ultimate Satisfying ASMR Experiment</div>
-              <div class="mini">Get ready to experience the most unconventional ASMR session of your life! In...</div>
-              <div class="mini-meta">Views: 13</div>
+            <div>
+              <div class="link" style="font-weight:700">The Ultimate Satisfying ASMR Experiment</div>
+              <div style="color:#aaa">Get ready to experience the most unconventional ASMR session of your life! In tonight&#39;s video, we&#39;re throwing out...</div>
+              <div class="subtle">Views: 13 · Updated: 2025-08-16</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Crazy Food Combo Experiments You Have To See!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Crazy Food Combo Experiments You Have To See!</div>
-              <div class="mini">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the...</div>
-              <div class="mini-meta">Views: 85</div>
+            <div>
+              <div class="link" style="font-weight:700">Crazy Food Combo Experiments You Have To See!</div>
+              <div style="color:#aaa">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the boundaries of flavor and sound...</div>
+              <div class="subtle">Views: 85 · Updated: 2025-08-12</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/lava-bedroom-asmr-ignite-your-evening-with-fiery-ambiance.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/WsutEXb-Gds/hqdefault.jpg"
-                 width="320" height="180"
                  alt="LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</div>
-              <div class="mini">Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy...</div>
-              <div class="mini-meta">Views: 1,236</div>
+            <div>
+              <div class="link" style="font-weight:700">LAVA BEDROOM ASMR: Ignite Your Evening with Fiery Ambiance!</div>
+              <div style="color:#aaa">Get ready for a bizarre bedroom experience! Watch as a standard bed morphs into crazy materials, from chocolate to...</div>
+              <div class="subtle">Views: 1,236 · Updated: 2025-08-19</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/5-mind-blowing-asmr-experiments-for-a-relaxing-exp.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/-KPCJhtZKjc/hqdefault.jpg"
-                 width="320" height="180"
                  alt="5 Mind Blowing ASMR Experiments For A Relaxing Experience"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">5 Mind Blowing ASMR Experiments For A Relaxing Experience</div>
-              <div class="mini">Need A Relaxing Experience? These amazing ASMR experiments will be a heart-stopping...</div>
-              <div class="mini-meta">Views: 63</div>
+            <div>
+              <div class="link" style="font-weight:700">5 Mind Blowing ASMR Experiments For A Relaxing Experience</div>
+              <div style="color:#aaa">Need A Relaxing Experience? These amazing ASMR experiments will be a heart-stopping moment when a surgical procedure...</div>
+              <div class="subtle">Views: 63 · Updated: 2025-08-09</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/this-bed-melts-when-you-sleep-on-it.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/vBbmVDAJdwo/hqdefault.jpg"
-                 width="320" height="180"
                  alt="This Bed MELTS When You Sleep On It!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">This Bed MELTS When You Sleep On It!</div>
-              <div class="mini">Immerse yourself in a one-of-a-kind LAVA BEDROOM ASMR EXPERIENCE, where the soft glow...</div>
-              <div class="mini-meta">Views: 49</div>
+            <div>
+              <div class="link" style="font-weight:700">This Bed MELTS When You Sleep On It!</div>
+              <div style="color:#aaa">Immerse yourself in a one-of-a-kind LAVA BEDROOM ASMR EXPERIENCE, where the soft glow of flowing lava furniture sets...</div>
+              <div class="subtle">Views: 49 · Updated: 2025-08-19</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

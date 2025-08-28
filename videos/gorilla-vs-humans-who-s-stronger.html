@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST MODE” versus...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/gorilla-vs-humans-who-s-stronger.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Gorilla vs Humans: Who&#39;s Stronger?">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/IPSg13Jq2Ng/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/gorilla-vs-humans-who-s-stronger.html", "name": "Gorilla vs Humans: Who\u0027s Stronger?", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in \u201cBEAST MODE\u201d versus champion human heavyweight John \u201cThe Titan\u201d Turner. No \u2026"}, "name": "What is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=IPSg13Jq2Ng."}, "name": "Where can I watch \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 08, 2025."}, "name": "When was \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Pets \u0026 Animals."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 2,080 \u00b7 Likes: 14 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI sports, Olympic parody, ai sports analysis, ai wrestling, beast mode, funny ai, gorilla fight"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Turn sound on and watch in full-screen for the best experience."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in \u201cBEAST MODE\u201d versus champion human heavyweight John \u201cThe Titan\u201d Turner. No \u2026"}, "name": "What is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=IPSg13Jq2Ng\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=IPSg13Jq2Ng\u003c/a\u003e."}, "name": "Where can I watch \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 08, 2025."}, "name": "When was \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Pets \u0026 Animals."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 2,080 \u00b7 Likes: 14 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI sports, Olympic parody, ai sports analysis, ai wrestling, beast mode, funny ai, gorilla fight"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cGorilla vs Humans: Who\u0027s Stronger?\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Turn sound on and watch in full-screen for the best experience."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/gorilla-vs-humans-who-s-stronger.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">Gorilla vs Humans: Who&#39;s Stronger?</h1>
+  <div>Gorilla vs Humans: Who&#39;s Stronger?</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/IPSg13Jq2Ng"
-        title="Gorilla vs Humans: Who&#39;s Stronger?" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/IPSg13Jq2Ng"
+              title="Gorilla vs Humans: Who&#39;s Stronger?" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">Gorilla vs Humans: Who&#39;s Stronger?</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">Gorilla vs Humans: Who&#39;s Stronger?</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=IPSg13Jq2Ng" target="_blank" rel="noopener">Views: 2,080</a>
         <a href="https://www.youtube.com/watch?v=IPSg13Jq2Ng" target="_blank" rel="noopener">Likes: 14</a>
         <a href="https://www.youtube.com/watch?v=IPSg13Jq2Ng#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 08, 2025 &middot;
+        Last Edited: July 08, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=IPSg13Jq2Ng" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST MODE” versus champion human heavyweight John “The Titan” Turner. No CGI, no stunt doubles—just raw power, agility, and a mic-drop line that’ll crack you up mid-pin!
@@ -209,72 +166,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “Gorilla vs Humans: Who&#39;s Stronger?” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST MODE” versus champion human heavyweight John “The Titan” Turner. No …</div>
+                <div>Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST MODE” versus champion human heavyweight John “The Titan” Turner. No …</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “Gorilla vs Humans: Who&#39;s Stronger?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “Gorilla vs Humans: Who&#39;s Stronger?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=IPSg13Jq2Ng" target="_blank" rel="noopener">https://www.youtube.com/watch?v=IPSg13Jq2Ng</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=IPSg13Jq2Ng" target="_blank" rel="noopener">https://www.youtube.com/watch?v=IPSg13Jq2Ng</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “Gorilla vs Humans: Who&#39;s Stronger?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>9s.</div>
+                <div>9s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “Gorilla vs Humans: Who&#39;s Stronger?” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>July 08, 2025.</div>
+                <div>July 08, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Pets & Animals.</div>
+                <div>Pets & Animals.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “Gorilla vs Humans: Who&#39;s Stronger?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 2,080 · Likes: 14 · Comments: 1 (counts update on YouTube).</div>
+                <div>Views: 2,080 · Likes: 14 · Comments: 1 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>AI sports, Olympic parody, ai sports analysis, ai wrestling, beast mode, funny ai, gorilla fight</div>
+                <div>AI sports, Olympic parody, ai sports analysis, ai wrestling, beast mode, funny ai, gorilla fight</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “Gorilla vs Humans: Who&#39;s Stronger?”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Turn sound on and watch in full-screen for the best experience.</div>
+                <div>Turn sound on and watch in full-screen for the best experience.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -282,137 +239,129 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/savage-grandma-roasts-the-entire-internet.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandma-roasts-the-entire-internet.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/O4MUqCQaZDY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma Roasts the Entire Internet"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma Roasts the Entire Internet</div>
-              <div class="mini">Get ready for some laughs as the savage Grandma reacts to something unbelievable on...</div>
-              <div class="mini-meta">Views: 70</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma Roasts the Entire Internet</div>
+              <div style="color:#aaa">Get ready for some laughs as the savage Grandma reacts to something unbelievable on TV! Watch her react with...</div>
+              <div class="subtle">Views: 70 · Updated: 2025-07-18</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/how-to-make-the-best-berry-toast.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/how-to-make-the-best-berry-toast.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/KVG_5Vta1ps/hqdefault.jpg"
-                 width="320" height="180"
                  alt="How to Make the *Best* Berry Toast"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">How to Make the *Best* Berry Toast</div>
-              <div class="mini">Enjoy this viral berry breakfast toast bread recipe featuring mixed fruit! This easy...</div>
-              <div class="mini-meta">Views: 725</div>
+            <div>
+              <div class="link" style="font-weight:700">How to Make the *Best* Berry Toast</div>
+              <div style="color:#aaa">Enjoy this viral berry breakfast toast bread recipe featuring mixed fruit! This easy recipe is the perfect healthy...</div>
+              <div class="subtle">Views: 725 · Updated: 2025-07-11</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/pLr1GbyX1xQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
-              <div class="mini">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a...</div>
-              <div class="mini-meta">Views: 648</div>
+            <div>
+              <div class="link" style="font-weight:700">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
+              <div style="color:#aaa">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a simple bed frame gets a...</div>
+              <div class="subtle">Views: 648 · Updated: 2025-07-28</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-yet-genius-relationship-advice.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-yet-genius-relationship-advice.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/Yla2OhXNdfM/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Yet Genius Relationship Advice"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Yet Genius Relationship Advice</div>
-              <div class="mini">Savage Grandma Trilogy is On Fire! Savage Grandma&#39;s relationship advice is perfect for...</div>
-              <div class="mini-meta">Views: 33</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Yet Genius Relationship Advice</div>
+              <div style="color:#aaa">Savage Grandma Trilogy is On Fire! Savage Grandma&#39;s relationship advice is perfect for a funny video.
+ 
+Get ready...</div>
+              <div class="subtle">Views: 33 · Updated: 2025-07-10</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/silverback-gorilla-tug-of-war-destruction-vs-50-me.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/silverback-gorilla-tug-of-war-destruction-vs-50-me.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/FD_wJEPwhTM/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Silverback Gorilla Tug of War DESTRUCTION vs 50 Men"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Silverback Gorilla Tug of War DESTRUCTION vs 50 Men</div>
-              <div class="mini">Welcome to the most unbelievable event of the Silverback Gorilla Tug of War Olympics!...</div>
-              <div class="mini-meta">Views: 33</div>
+            <div>
+              <div class="link" style="font-weight:700">Silverback Gorilla Tug of War DESTRUCTION vs 50 Men</div>
+              <div style="color:#aaa">Welcome to the most unbelievable event of the Silverback Gorilla Tug of War Olympics! Watch as a single silverback...</div>
+              <div class="subtle">Views: 33 · Updated: 2025-07-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/asmr-extra-creamy-glass-fruit-cutting-oddly-satisf.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/08AfEsiLjnU/hqdefault.jpg"
-                 width="320" height="180"
                  alt="ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying</div>
-              <div class="mini">Ultra-realistic, satisfying glass fruits are sliced open to reveal extra creamy,...</div>
-              <div class="mini-meta">Views: 23</div>
+            <div>
+              <div class="link" style="font-weight:700">ASMR Extra Creamy Glass Fruit Cutting 🍓 | Oddly Satisfying</div>
+              <div style="color:#aaa">Ultra-realistic, satisfying glass fruits are sliced open to reveal extra creamy, surreal textures inside.
+ 
+This...</div>
+              <div class="subtle">Views: 23 · Updated: 2025-06-21</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/did-a-gorilla-just-save-the-planet.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/did-a-gorilla-just-save-the-planet.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/dZV7_lI8Pv4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Did a Gorilla Just Save the Entire Planet?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Did a Gorilla Just Save the Entire Planet?</div>
-              <div class="mini">Watch a mighty silverback gorilla make a dramatic appearance in an ASMR-style sequence...</div>
-              <div class="mini-meta">Views: 21</div>
+            <div>
+              <div class="link" style="font-weight:700">Did a Gorilla Just Save the Entire Planet?</div>
+              <div style="color:#aaa">Watch a mighty silverback gorilla make a dramatic appearance in an ASMR-style sequence after a rapid zoom from space...</div>
+              <div class="subtle">Views: 21 · Updated: 2025-07-24</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/3-epic-fruit-to-animal-morphs-ultimate-morph-compi.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/3-epic-fruit-to-animal-morphs-ultimate-morph-compi.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/yR-Ti8836Xk/hqdefault.jpg"
-                 width="320" height="180"
                  alt="3 Epic Fruit-to-Animal Morphs! | Ultimate Morph Compilation"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">3 Epic Fruit-to-Animal Morphs! | Ultimate Morph Compilation</div>
-              <div class="mini">Ready for a triple-take? In this 24-second Veo3 compilation, we’re cranking up the...</div>
-              <div class="mini-meta">Views: 17</div>
+            <div>
+              <div class="link" style="font-weight:700">3 Epic Fruit-to-Animal Morphs! | Ultimate Morph Compilation</div>
+              <div style="color:#aaa">Ready for a triple-take? In this 24-second Veo3 compilation, we’re cranking up the magic with three jaw-dropping,...</div>
+              <div class="subtle">Views: 17 · Updated: 2025-07-09</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/gPHqtEKv9oQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma SPILLS The TEA on Her Love Life"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma SPILLS The TEA on Her Love Life</div>
-              <div class="mini">Ever wonder what happens when savage grandma brings her humor to dinner? This funny...</div>
-              <div class="mini-meta">Views: 899</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma SPILLS The TEA on Her Love Life</div>
+              <div style="color:#aaa">Ever wonder what happens when savage grandma brings her humor to dinner? This funny video features a hilarious...</div>
+              <div class="subtle">Views: 899 · Updated: 2025-08-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/i-cracked-open-dragon-fruit-and-found-a-wild-anima.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/i-cracked-open-dragon-fruit-and-found-a-wild-anima.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/rAK4XnhiPzY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="I Cracked Open DRAGON Fruit and Found a WILD Animal Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">I Cracked Open DRAGON Fruit and Found a WILD Animal Inside!</div>
-              <div class="mini">Get ready for a fruity adventure where ordinary fruits hide extraordinary surprises!...</div>
-              <div class="mini-meta">Views: 1,202</div>
+            <div>
+              <div class="link" style="font-weight:700">I Cracked Open DRAGON Fruit and Found a WILD Animal Inside!</div>
+              <div style="color:#aaa">Get ready for a fruity adventure where ordinary fruits hide extraordinary surprises! This funny vid showcases fruit...</div>
+              <div class="subtle">Views: 1,202 · Updated: 2025-07-17</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="🔥 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/why-silverback-gorillas-are-the-strongest-animals-.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="🔥 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Why Silverback Gorillas Are The Strongest Animals On Earth">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/zh1okaKLHRw/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/why-silverback-gorillas-are-the-strongest-animals-.html", "name": "Why Silverback Gorillas Are The Strongest Animals On Earth", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "\ud83d\udd25 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive setting. In this impressive demonstration, a silverback \u2026"}, "name": "What is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=zh1okaKLHRw."}, "name": "Where can I watch \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 07, 2025."}, "name": "When was \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 16 \u00b7 Likes: 1 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ai animation, ai olympics, animal olympics, animal strength, ape vs man, beast mode, clean and jerk record"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "\ud83d\udd25 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive setting. In this impressive demonstration, a silverback \u2026"}, "name": "What is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=zh1okaKLHRw\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=zh1okaKLHRw\u003c/a\u003e."}, "name": "Where can I watch \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 07, 2025."}, "name": "When was \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 16 \u00b7 Likes: 1 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ai animation, ai olympics, animal olympics, animal strength, ape vs man, beast mode, clean and jerk record"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cWhy Silverback Gorillas Are The Strongest Animals On Earth\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/why-silverback-gorillas-are-the-strongest-animals-.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">Why Silverback Gorillas Are The Strongest Animals On Earth</h1>
+  <div>Why Silverback Gorillas Are The Strongest Animals On Earth</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/zh1okaKLHRw"
-        title="Why Silverback Gorillas Are The Strongest Animals On Earth" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/zh1okaKLHRw"
+              title="Why Silverback Gorillas Are The Strongest Animals On Earth" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">Why Silverback Gorillas Are The Strongest Animals On Earth</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">Why Silverback Gorillas Are The Strongest Animals On Earth</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=zh1okaKLHRw" target="_blank" rel="noopener">Views: 16</a>
         <a href="https://www.youtube.com/watch?v=zh1okaKLHRw" target="_blank" rel="noopener">Likes: 1</a>
         <a href="https://www.youtube.com/watch?v=zh1okaKLHRw#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 07, 2025 &middot;
+        Last Edited: July 07, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=zh1okaKLHRw" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">🔥 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive setting. In this impressive demonstration, a silverback gorilla performs a clean & lift of an astounding 4,200 lbs overhead — without the assistance of a spotter. Set in an Olympic-style stadium, with enthusiastic crowds and detailed visual highlights, this cinematic moment showcases the extraordinary power of an apex alpha. But how does a silverback compare to the strongest humans in powerlifting? Let's analyze the data. 
@@ -202,72 +159,72 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #AIASMR</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “Why Silverback Gorillas Are The Strongest Animals On Earth” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>🔥 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive setting. In this impressive demonstration, a silverback …</div>
+                <div>🔥 Welcome to the Gorilla Olympics 2025, where we observe the remarkable strength of the silverback gorilla in a competitive setting. In this impressive demonstration, a silverback …</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “Why Silverback Gorillas Are The Strongest Animals On Earth”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “Why Silverback Gorillas Are The Strongest Animals On Earth”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=zh1okaKLHRw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zh1okaKLHRw</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=zh1okaKLHRw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zh1okaKLHRw</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “Why Silverback Gorillas Are The Strongest Animals On Earth”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>9s.</div>
+                <div>9s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “Why Silverback Gorillas Are The Strongest Animals On Earth” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>July 07, 2025.</div>
+                <div>July 07, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>People & Blogs.</div>
+                <div>People & Blogs.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “Why Silverback Gorillas Are The Strongest Animals On Earth”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 16 · Likes: 1 · Comments: 1 (counts update on YouTube).</div>
+                <div>Views: 16 · Likes: 1 · Comments: 1 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>ai animation, ai olympics, animal olympics, animal strength, ape vs man, beast mode, clean and jerk record</div>
+                <div>ai animation, ai olympics, animal olympics, animal strength, ape vs man, beast mode, clean and jerk record</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “Why Silverback Gorillas Are The Strongest Animals On Earth”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -275,137 +232,125 @@ All stunts are performed in a controlled environment; don't attempt them at home
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/silverback-gorilla-tug-of-war-destruction-vs-50-me.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/silverback-gorilla-tug-of-war-destruction-vs-50-me.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/FD_wJEPwhTM/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Silverback Gorilla Tug of War DESTRUCTION vs 50 Men"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Silverback Gorilla Tug of War DESTRUCTION vs 50 Men</div>
-              <div class="mini">Welcome to the most unbelievable event of the Silverback Gorilla Tug of War Olympics!...</div>
-              <div class="mini-meta">Views: 33</div>
+            <div>
+              <div class="link" style="font-weight:700">Silverback Gorilla Tug of War DESTRUCTION vs 50 Men</div>
+              <div style="color:#aaa">Welcome to the most unbelievable event of the Silverback Gorilla Tug of War Olympics! Watch as a single silverback...</div>
+              <div class="subtle">Views: 33 · Updated: 2025-07-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/gorilla-vs-humans-who-s-stronger.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/gorilla-vs-humans-who-s-stronger.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/IPSg13Jq2Ng/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Gorilla vs Humans: Who&#39;s Stronger?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Gorilla vs Humans: Who&#39;s Stronger?</div>
-              <div class="mini">Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb...</div>
-              <div class="mini-meta">Views: 2,080</div>
+            <div>
+              <div class="link" style="font-weight:700">Gorilla vs Humans: Who&#39;s Stronger?</div>
+              <div style="color:#aaa">Step into the ring for the most unbelievable wrestling match ever staged: a 450 lb silverback gorilla in “BEAST...</div>
+              <div class="subtle">Views: 2,080 · Updated: 2025-07-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/did-a-gorilla-just-save-the-planet.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/did-a-gorilla-just-save-the-planet.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/dZV7_lI8Pv4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Did a Gorilla Just Save the Entire Planet?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Did a Gorilla Just Save the Entire Planet?</div>
-              <div class="mini">Watch a mighty silverback gorilla make a dramatic appearance in an ASMR-style sequence...</div>
-              <div class="mini-meta">Views: 21</div>
+            <div>
+              <div class="link" style="font-weight:700">Did a Gorilla Just Save the Entire Planet?</div>
+              <div style="color:#aaa">Watch a mighty silverback gorilla make a dramatic appearance in an ASMR-style sequence after a rapid zoom from space...</div>
+              <div class="subtle">Views: 21 · Updated: 2025-07-24</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-grandmas-brutal-roast.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandmas-brutal-roast.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/7Vdbu4nJako/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma Destroys Internet Trolls"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma Destroys Internet Trolls</div>
-              <div class="mini">Join us on the coziest front porch ever, where sweet tea flows and sassy grandma...</div>
-              <div class="mini-meta">Views: 6,183</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma Destroys Internet Trolls</div>
+              <div style="color:#aaa">Join us on the coziest front porch ever, where sweet tea flows and sassy grandma wisdom abounds! In this...</div>
+              <div class="subtle">Views: 6,183 · Updated: 2025-08-14</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-ultimate-asmr-food-bliss.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-ultimate-asmr-food-bliss.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/9xg2ny94EKU/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Most Satisfying ASMR Food Journey"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Most Satisfying ASMR Food Journey</div>
-              <div class="mini">Watch me take on a piping hot, fire-roasted dumpling straight from the spoon! This...</div>
-              <div class="mini-meta">Views: 2,135</div>
+            <div>
+              <div class="link" style="font-weight:700">The Most Satisfying ASMR Food Journey</div>
+              <div style="color:#aaa">Watch me take on a piping hot, fire-roasted dumpling straight from the spoon! This video captures the sizzle, the...</div>
+              <div class="subtle">Views: 2,135 · Updated: 2025-07-01</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/carnival-cruises-disturbing-secrets.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/carnival-cruises-disturbing-secrets.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/ZTeuQl2bWxI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Carnival Cruise&#39;s Disturbing Secrets"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Carnival Cruise&#39;s Disturbing Secrets</div>
-              <div class="mini">Carnival ain&#39;t a cruise line; it&#39;s a floating episode of &#34;Cops!&#34; This funny skit will...</div>
-              <div class="mini-meta">Views: 1,061</div>
+            <div>
+              <div class="link" style="font-weight:700">Carnival Cruise&#39;s Disturbing Secrets</div>
+              <div style="color:#aaa">Carnival ain&#39;t a cruise line; it&#39;s a floating episode of &#34;Cops!&#34; This funny skit will have you laughing at the wild...</div>
+              <div class="subtle">Views: 1,061 · Updated: 2025-07-31</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
-              <div class="mini">Savage Grandma is back with her signature humor, hilariously reacting to the Carnival...</div>
-              <div class="mini-meta">Views: 1,018</div>
+            <div>
+              <div class="link" style="font-weight:700">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
+              <div style="color:#aaa">Savage Grandma is back with her signature humor, hilariously reacting to the Carnival Cruise drink package limit!...</div>
+              <div class="subtle">Views: 1,018 · Updated: 2025-07-31</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/gPHqtEKv9oQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma SPILLS The TEA on Her Love Life"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma SPILLS The TEA on Her Love Life</div>
-              <div class="mini">Ever wonder what happens when savage grandma brings her humor to dinner? This funny...</div>
-              <div class="mini-meta">Views: 899</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma SPILLS The TEA on Her Love Life</div>
+              <div style="color:#aaa">Ever wonder what happens when savage grandma brings her humor to dinner? This funny video features a hilarious...</div>
+              <div class="subtle">Views: 899 · Updated: 2025-08-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-shocking-secrets-of-venus-flytraps.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-shocking-secrets-of-venus-flytraps.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/QguSXsx5mgs/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Shocking Secrets of Venus Flytraps"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Shocking Secrets of Venus Flytraps</div>
-              <div class="mini">Discover the incredible carnivorous plant, the Venus flytrap, in this mesmerizing...</div>
-              <div class="mini-meta">Views: 864</div>
+            <div>
+              <div class="link" style="font-weight:700">The Shocking Secrets of Venus Flytraps</div>
+              <div style="color:#aaa">Discover the incredible carnivorous plant, the Venus flytrap, in this mesmerizing 3-part video series! Watch as...</div>
+              <div class="subtle">Views: 864 · Updated: 2025-07-04</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/kingda-ka-s-fastest-demise-revealed.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/kingda-ka-s-fastest-demise-revealed.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/YHfgduMAfds/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Kingda Ka&#39;s FASTEST Demise Revealed"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Kingda Ka&#39;s FASTEST Demise Revealed</div>
-              <div class="mini">🎢 KINGDA KA LEGEND (2011 POV ARCHIVE) – Ride with me on the former world&#39;s tallest...</div>
-              <div class="mini-meta">Views: 692</div>
+            <div>
+              <div class="link" style="font-weight:700">Kingda Ka&#39;s FASTEST Demise Revealed</div>
+              <div style="color:#aaa">🎢 KINGDA KA LEGEND (2011 POV ARCHIVE) – Ride with me on the former world&#39;s tallest roller coaster: a 456 ft (139 m)...</div>
+              <div class="subtle">Views: 692 · Updated: 2025-07-20</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

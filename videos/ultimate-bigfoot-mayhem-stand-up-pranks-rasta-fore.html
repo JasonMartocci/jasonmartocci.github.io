@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="Meet the world’s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/ultimate-bigfoot-mayhem-stand-up-pranks-rasta-fore.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="Meet the world’s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh...">
 <meta name="twitter:image:alt" content="Martocci Mayhem We Pranked People With Bigfoot Stand-Up Comedy">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/89azTrCpkPc/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/ultimate-bigfoot-mayhem-stand-up-pranks-rasta-fore.html", "name": "We Pranked People With Bigfoot Stand-Up Comedy", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Meet the world\u2019s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to \u201cMessin\u2019 with Bigfoot\u201d prank paybacks, to a late-night R\u2026"}, "name": "What is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=89azTrCpkPc."}, "name": "Where can I watch \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "1m 38s."}, "name": "How long is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 25, 2025."}, "name": "When was \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Comedy."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 15 \u00b7 Likes: 2 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "oddly satisfying, youtube shorts, asmr, bigfoot compilation, funny bigfoot, bigfoot stand up comedy, rasta bigfoot"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Meet the world\u2019s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to \u201cMessin\u2019 with Bigfoot\u201d prank paybacks, to a late-night R\u2026"}, "name": "What is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=89azTrCpkPc\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=89azTrCpkPc\u003c/a\u003e."}, "name": "Where can I watch \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "1m 38s."}, "name": "How long is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 25, 2025."}, "name": "When was \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Comedy."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 15 \u00b7 Likes: 2 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "oddly satisfying, youtube shorts, asmr, bigfoot compilation, funny bigfoot, bigfoot stand up comedy, rasta bigfoot"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cWe Pranked People With Bigfoot Stand-Up Comedy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/ultimate-bigfoot-mayhem-stand-up-pranks-rasta-fore.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">We Pranked People With Bigfoot Stand-Up Comedy</h1>
+  <div>We Pranked People With Bigfoot Stand-Up Comedy</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/89azTrCpkPc"
-        title="We Pranked People With Bigfoot Stand-Up Comedy" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/89azTrCpkPc"
+              title="We Pranked People With Bigfoot Stand-Up Comedy" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">We Pranked People With Bigfoot Stand-Up Comedy</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">We Pranked People With Bigfoot Stand-Up Comedy</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=89azTrCpkPc" target="_blank" rel="noopener">Views: 15</a>
         <a href="https://www.youtube.com/watch?v=89azTrCpkPc" target="_blank" rel="noopener">Likes: 2</a>
         <a href="https://www.youtube.com/watch?v=89azTrCpkPc#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: July 25, 2025 &middot;
+        Last Edited: July 25, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=89azTrCpkPc" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Meet the world’s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to “Messin’ with Bigfoot” prank paybacks, to a late-night Rasta chill-out with the Blue Dream—this full-length compilation packs every ultra-real Bigfoot short into one wild ride.
@@ -206,72 +163,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “We Pranked People With Bigfoot Stand-Up Comedy” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Meet the world’s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to “Messin’ with Bigfoot” prank paybacks, to a late-night R…</div>
+                <div>Meet the world’s favorite 7-foot legend, Bigfoot, in one nonstop mash-up! From savage stand-up slams at the Laugh Lodge, to “Messin’ with Bigfoot” prank paybacks, to a late-night R…</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “We Pranked People With Bigfoot Stand-Up Comedy”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “We Pranked People With Bigfoot Stand-Up Comedy”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=89azTrCpkPc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=89azTrCpkPc</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=89azTrCpkPc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=89azTrCpkPc</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “We Pranked People With Bigfoot Stand-Up Comedy”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>1m 38s.</div>
+                <div>1m 38s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “We Pranked People With Bigfoot Stand-Up Comedy” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>July 25, 2025.</div>
+                <div>July 25, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Comedy.</div>
+                <div>Comedy.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “We Pranked People With Bigfoot Stand-Up Comedy”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 15 · Likes: 2 · Comments: 1 (counts update on YouTube).</div>
+                <div>Views: 15 · Likes: 2 · Comments: 1 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>oddly satisfying, youtube shorts, asmr, bigfoot compilation, funny bigfoot, bigfoot stand up comedy, rasta bigfoot</div>
+                <div>oddly satisfying, youtube shorts, asmr, bigfoot compilation, funny bigfoot, bigfoot stand up comedy, rasta bigfoot</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “We Pranked People With Bigfoot Stand-Up Comedy”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -279,137 +236,129 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/surprising-moments-with-bigfoot-at-campfire.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/surprising-moments-with-bigfoot-at-campfire.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/QZVg13MrIMk/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Bigfoot: The Campfire Stories that Changed Everything"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Bigfoot: The Campfire Stories that Changed Everything</div>
-              <div class="mini">Real talk around the campfire with a Bigfoot-like creature, as they vibe under the...</div>
-              <div class="mini-meta">Views: 10</div>
+            <div>
+              <div class="link" style="font-weight:700">Bigfoot: The Campfire Stories that Changed Everything</div>
+              <div style="color:#aaa">Real talk around the campfire with a Bigfoot-like creature, as they vibe under the stars. My spirit&#39;s skanking with...</div>
+              <div class="subtle">Views: 10 · Updated: 2025-07-24</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/bigfoot-s-wild-campfire-surprise.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/bigfoot-s-wild-campfire-surprise.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/AIzh2f1uNJA/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Bigfoot Surprises Campers By The Fire"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Bigfoot Surprises Campers By The Fire</div>
-              <div class="mini">Take a load off with some Blue Dream, and chill by the campfire with this mystical...</div>
-              <div class="mini-meta">Views: 1,356</div>
+            <div>
+              <div class="link" style="font-weight:700">Bigfoot Surprises Campers By The Fire</div>
+              <div style="color:#aaa">Take a load off with some Blue Dream, and chill by the campfire with this mystical Bigfoot! Enjoy some instrumental...</div>
+              <div class="subtle">Views: 1,356 · Updated: 2025-07-24</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/bigfoots-5-crazy-bug-eating-challenges-can-you-stomach-them-all.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/bigfoots-5-crazy-bug-eating-challenges-can-you-stomach-them-all.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/X5KGBcMDPGQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Bigfoot&#39;s 5 CRAZY Bug Eating Challenges, Can You Stomach Them All?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Bigfoot&#39;s 5 CRAZY Bug Eating Challenges, Can You Stomach Them All?</div>
-              <div class="mini">Watch viral Bigfoot and his wild reactions as he enjoys a variety of colorful, gross...</div>
-              <div class="mini-meta">Views: 1,257</div>
+            <div>
+              <div class="link" style="font-weight:700">Bigfoot&#39;s 5 CRAZY Bug Eating Challenges, Can You Stomach Them All?</div>
+              <div style="color:#aaa">Watch viral Bigfoot and his wild reactions as he enjoys a variety of colorful, gross bugs on a stick! 
+ 
+This funny...</div>
+              <div class="subtle">Views: 1,257 · Updated: 2025-07-26</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/bigfoot-eats-bugs-and-it-gets-wild.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/bigfoot-eats-bugs-and-it-gets-wild.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/rOrx30yN4G4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet</div>
-              <div class="mini">You won&#39;t believe what Bigfoot actually eats—watch till the end for the chaos! (IF YOU...</div>
-              <div class="mini-meta">Views: 6</div>
+            <div>
+              <div class="link" style="font-weight:700">What Bigfoot Eats: An Investigation into Sasquatch&#39;s Diet</div>
+              <div style="color:#aaa">You won&#39;t believe what Bigfoot actually eats—watch till the end for the chaos! (IF YOU CAN MAKE IT)
+ 
+⚠️ Do NOT try...</div>
+              <div class="subtle">Views: 6 · Updated: 2025-07-26</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/bigfoot-s-deadly-watermelon-challenge.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/bigfoot-s-deadly-watermelon-challenge.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/W-dOS-m3jHk/hqdefault.jpg"
-                 width="320" height="180"
                  alt="BIGFOOT&#39;s DEADLY Watermelon Challenge"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">BIGFOOT&#39;s DEADLY Watermelon Challenge</div>
-              <div class="mini">Watch this Bigfoot build suspense as he wraps a watermelon in rubber bands! Will the...</div>
-              <div class="mini-meta">Views: 845</div>
+            <div>
+              <div class="link" style="font-weight:700">BIGFOOT&#39;s DEADLY Watermelon Challenge</div>
+              <div style="color:#aaa">Watch this Bigfoot build suspense as he wraps a watermelon in rubber bands! Will the watermelon burst? This Bigfoot...</div>
+              <div class="subtle">Views: 845 · Updated: 2025-07-21</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandma-outsmarts-bad-guys-with-her-wisdom.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/HaynzHs2q9I/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma Outsmarts Bad Guys with Her Wisdom"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma Outsmarts Bad Guys with Her Wisdom</div>
-              <div class="mini">Savage Grandma jokes that making $5,000 each unit would be a great solution to stop...</div>
-              <div class="mini-meta">Views: 1,246</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma Outsmarts Bad Guys with Her Wisdom</div>
+              <div style="color:#aaa">Savage Grandma jokes that making $5,000 each unit would be a great solution to stop the bad guys. She&#39;s hoping that...</div>
+              <div class="subtle">Views: 1,246 · Updated: 2025-08-01</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/whats-the-real-reason-carnival-cruise-limits-your-drinks-to-15.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/W0u6FVmHHFI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
-              <div class="mini">Savage Grandma is back with her signature humor, hilariously reacting to the Carnival...</div>
-              <div class="mini-meta">Views: 1,018</div>
+            <div>
+              <div class="link" style="font-weight:700">What&#39;s the REAL Reason Carnival Cruise Limits Your DRINKS to 15</div>
+              <div style="color:#aaa">Savage Grandma is back with her signature humor, hilariously reacting to the Carnival Cruise drink package limit!...</div>
+              <div class="subtle">Views: 1,018 · Updated: 2025-07-31</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/ivy-vs-tall-grass-cast-your-vote.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/pLr1GbyX1xQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
-              <div class="mini">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a...</div>
-              <div class="mini-meta">Views: 648</div>
+            <div>
+              <div class="link" style="font-weight:700">Ivy 🌸 vs Tall Grass 🌿 — Cast Your Vote!</div>
+              <div style="color:#aaa">Step into a nature-inspired dream with this grass and ivy-covered bed! Watch as a simple bed frame gets a...</div>
+              <div class="subtle">Views: 648 · Updated: 2025-07-28</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/grass-vs-sand-bed-cast-your-vote.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/grass-vs-sand-bed-cast-your-vote.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/o-dBl_AqxBY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Grass 🌸 vs Sand 🌿 Bed — Cast Your Vote!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Grass 🌸 vs Sand 🌿 Bed — Cast Your Vote!</div>
-              <div class="mini">Imagine if your bizarre bedroom were made of grass or even sand! Watch as people react...</div>
-              <div class="mini-meta">Views: 154</div>
+            <div>
+              <div class="link" style="font-weight:700">Grass 🌸 vs Sand 🌿 Bed — Cast Your Vote!</div>
+              <div style="color:#aaa">Imagine if your bizarre bedroom were made of grass or even sand! Watch as people react to the funny and unbelievable...</div>
+              <div class="subtle">Views: 154 · Updated: 2025-07-28</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/glass-passion-fruit-splits-open-in-slow-motion.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/glass-passion-fruit-splits-open-in-slow-motion.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/DBzzPlwpZT0/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Glass Passion Fruit Splits Open in SLOW MOTION!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Glass Passion Fruit Splits Open in SLOW MOTION!</div>
-              <div class="mini">Watch as a knife slices through a vibrant and juicy dragon fruit, creating a...</div>
-              <div class="mini-meta">Views: 63</div>
+            <div>
+              <div class="link" style="font-weight:700">Glass Passion Fruit Splits Open in SLOW MOTION!</div>
+              <div style="color:#aaa">Watch as a knife slices through a vibrant and juicy dragon fruit, creating a satisfying video experience! This fruit...</div>
+              <div class="subtle">Views: 63 · Updated: 2025-07-31</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

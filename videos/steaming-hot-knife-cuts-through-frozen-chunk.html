@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa">
 <link rel="canonical" href="https://jasonmartocci.com/videos/steaming-hot-knife-cuts-through-frozen-chunk.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa">
 <meta name="twitter:image:alt" content="Martocci Mayhem STEAMING HOT Knife Cuts Through Frozen Chunk!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/qsGqwpv5-uY/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/steaming-hot-knife-cuts-through-frozen-chunk.html", "name": "STEAMING HOT Knife Cuts Through Frozen Chunk!", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa"}, "name": "What is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=qsGqwpv5-uY."}, "name": "Where can I watch \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "13s."}, "name": "How long is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 04, 2025."}, "name": "When was \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 533 \u00b7 Likes: 7 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "jason martocci, savage grandma, bigfoot comedy, weird asmr, mr beast style, google veo 3, viral shorts"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa"}, "name": "What is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=qsGqwpv5-uY\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=qsGqwpv5-uY\u003c/a\u003e."}, "name": "Where can I watch \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "13s."}, "name": "How long is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 04, 2025."}, "name": "When was \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 533 \u00b7 Likes: 7 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "jason martocci, savage grandma, bigfoot comedy, weird asmr, mr beast style, google veo 3, viral shorts"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cSTEAMING HOT Knife Cuts Through Frozen Chunk!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/steaming-hot-knife-cuts-through-frozen-chunk.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">STEAMING HOT Knife Cuts Through Frozen Chunk!</h1>
+  <div>STEAMING HOT Knife Cuts Through Frozen Chunk!</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/qsGqwpv5-uY"
-        title="STEAMING HOT Knife Cuts Through Frozen Chunk!" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/qsGqwpv5-uY"
+              title="STEAMING HOT Knife Cuts Through Frozen Chunk!" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">STEAMING HOT Knife Cuts Through Frozen Chunk!</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">STEAMING HOT Knife Cuts Through Frozen Chunk!</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=qsGqwpv5-uY" target="_blank" rel="noopener">Views: 533</a>
         <a href="https://www.youtube.com/watch?v=qsGqwpv5-uY" target="_blank" rel="noopener">Likes: 7</a>
         <a href="https://www.youtube.com/watch?v=qsGqwpv5-uY#comments" target="_blank" rel="noopener">Comments: 1</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 04, 2025 &middot;
+        Last Edited: August 04, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=qsGqwpv5-uY" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">More hot knife slicing chaos in my playlist! <a class="link" href="https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa" target="_blank" rel="noopener">https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa</a>
@@ -161,72 +118,72 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “STEAMING HOT Knife Cuts Through Frozen Chunk!” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa</div>
+                <div>More hot knife slicing chaos in my playlist! https://www.youtube.com/playlist?list=PLxilLfhDKqldavBNmjSnXddB99cdILlLa</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “STEAMING HOT Knife Cuts Through Frozen Chunk!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “STEAMING HOT Knife Cuts Through Frozen Chunk!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=qsGqwpv5-uY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qsGqwpv5-uY</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=qsGqwpv5-uY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qsGqwpv5-uY</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “STEAMING HOT Knife Cuts Through Frozen Chunk!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>13s.</div>
+                <div>13s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “STEAMING HOT Knife Cuts Through Frozen Chunk!” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>August 04, 2025.</div>
+                <div>August 04, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Entertainment.</div>
+                <div>Entertainment.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “STEAMING HOT Knife Cuts Through Frozen Chunk!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 533 · Likes: 7 · Comments: 1 (counts update on YouTube).</div>
+                <div>Views: 533 · Likes: 7 · Comments: 1 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>jason martocci, savage grandma, bigfoot comedy, weird asmr, mr beast style, google veo 3, viral shorts</div>
+                <div>jason martocci, savage grandma, bigfoot comedy, weird asmr, mr beast style, google veo 3, viral shorts</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “STEAMING HOT Knife Cuts Through Frozen Chunk!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -234,139 +191,127 @@ New Martocci Mayhem every Saturday at noon ET!
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/can-a-superheated-blade-destroy-ice-instantly.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/bIa_pWVGYJ0/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Can a Superheated Blade Destroy Ice Instantly?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Can a Superheated Blade Destroy Ice Instantly?</div>
-              <div class="mini">Check out this hot knife being used in an interesting experiment! This satisfying...</div>
-              <div class="mini-meta">Views: 32</div>
+            <div>
+              <div class="link" style="font-weight:700">Can a Superheated Blade Destroy Ice Instantly?</div>
+              <div style="color:#aaa">Check out this hot knife being used in an interesting experiment! This satisfying compilation of a glowing hotknife...</div>
+              <div class="subtle">Views: 32 · Updated: 2025-08-04</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/i-tested-the-weird-asmr-keyboard-trend.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/poG6XScoa88/hqdefault.jpg"
-                 width="320" height="180"
                  alt="I Tested The Weird ASMR Keyboard Trend"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">I Tested The Weird ASMR Keyboard Trend</div>
-              <div class="mini">What happens when the worlds of ASMR and tech collide? Join us as we explore the weird...</div>
-              <div class="mini-meta">Views: 87</div>
+            <div>
+              <div class="link" style="font-weight:700">I Tested The Weird ASMR Keyboard Trend</div>
+              <div style="color:#aaa">What happens when the worlds of ASMR and tech collide? Join us as we explore the weird keyboards trend, complete...</div>
+              <div class="subtle">Views: 87 · Updated: 2025-08-05</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/family-dinner-gets-wild-with-grandmas-secret.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/family-dinner-gets-wild-with-grandmas-secret.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/P5VrYObsphY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Family Dinner Gets Wild With Grandma’s Secret!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Family Dinner Gets Wild With Grandma’s Secret!</div>
-              <div class="mini">Join us for a magical Golden Hour Gathering, where the soft, warm light of the setting...</div>
-              <div class="mini-meta">Views: 24</div>
+            <div>
+              <div class="link" style="font-weight:700">Family Dinner Gets Wild With Grandma’s Secret!</div>
+              <div style="color:#aaa">Join us for a magical Golden Hour Gathering, where the soft, warm light of the setting sun brings people together in...</div>
+              <div class="subtle">Views: 24 · Updated: 2025-08-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/weird-food-mukbangs-the-500-challenge.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Weird Food Mukbangs: The $500 Challenge"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Weird Food Mukbangs: The $500 Challenge</div>
-              <div class="mini">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a...</div>
-              <div class="mini-meta">Views: 1,038</div>
+            <div>
+              <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>
+              <div style="color:#aaa">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a whirlwind of blades and chaos...</div>
+              <div class="subtle">Views: 1,038 · Updated: 2025-08-10</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-most-satisfying-mangosteen-slices.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Most Satisfying Mangosteen Slices"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Most Satisfying Mangosteen Slices</div>
-              <div class="mini">Get ready to feast your eyes on a visually stunning display of a fresh, ripe...</div>
-              <div class="mini-meta">Views: 984</div>
+            <div>
+              <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
+              <div style="color:#aaa">Get ready to feast your eyes on a visually stunning display of a fresh, ripe mangosteen being sliced open! The...</div>
+              <div class="subtle">Views: 984 · Updated: 2025-07-28</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxation.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/why-asmr-cutting-sounds-are-the-secret-to-relaxation.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/p7o4kqz8MI4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Why ASMR Cutting Sounds Are the Secret to Relaxation"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Why ASMR Cutting Sounds Are the Secret to Relaxation</div>
-              <div class="mini">Are you curious about what happens when you combine ASMR cutting sensations with...</div>
-              <div class="mini-meta">Views: 807</div>
+            <div>
+              <div class="link" style="font-weight:700">Why ASMR Cutting Sounds Are the Secret to Relaxation</div>
+              <div style="color:#aaa">Are you curious about what happens when you combine ASMR cutting sensations with savage grandma roasts? Have you...</div>
+              <div class="subtle">Views: 807 · Updated: 2025-08-07</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/mind-blowing-seafood-mukbang-moments.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/mind-blowing-seafood-mukbang-moments.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/Osu7q_6hOI8/hqdefault.jpg"
-                 width="320" height="180"
                  alt="MIND-BLOWING SEAFOOD MUKBANG Moments!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">MIND-BLOWING SEAFOOD MUKBANG Moments!</div>
-              <div class="mini">Join me on this epic Asian seafood mukbang adventure, with a dash of dad jokes, as we...</div>
-              <div class="mini-meta">Views: 717</div>
+            <div>
+              <div class="link" style="font-weight:700">MIND-BLOWING SEAFOOD MUKBANG Moments!</div>
+              <div style="color:#aaa">Join me on this epic Asian seafood mukbang adventure, with a dash of dad jokes, as we dive into a mouth-watering...</div>
+              <div class="subtle">Views: 717 · Updated: 2025-08-06</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/martocci-mayhem-how-technology-is-revolutionizing-ai-asmr.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/-rGkkYd_xkg/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Martocci Mayhem: How Technology is Revolutionizing AI ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Martocci Mayhem: How Technology is Revolutionizing AI ASMR</div>
-              <div class="mini">Greetings, Traveler! Welcome to Martocci Mayhem.
+            <div>
+              <div class="link" style="font-weight:700">Martocci Mayhem: How Technology is Revolutionizing AI ASMR</div>
+              <div style="color:#aaa">Greetings, Traveler! Welcome to Martocci Mayhem.
  
- Prepare for a wild AI ASMR ride as...</div>
-              <div class="mini-meta">Views: 54</div>
+ Prepare for a wild AI ASMR ride as we explore the world of...</div>
+              <div class="subtle">Views: 54 · Updated: 2025-07-29</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/savage-grandma-spills-the-tea-on-her-love-life.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/gPHqtEKv9oQ/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Savage Grandma SPILLS The TEA on Her Love Life"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Savage Grandma SPILLS The TEA on Her Love Life</div>
-              <div class="mini">Ever wonder what happens when savage grandma brings her humor to dinner? This funny...</div>
-              <div class="mini-meta">Views: 899</div>
+            <div>
+              <div class="link" style="font-weight:700">Savage Grandma SPILLS The TEA on Her Love Life</div>
+              <div style="color:#aaa">Ever wonder what happens when savage grandma brings her humor to dinner? This funny video features a hilarious...</div>
+              <div class="subtle">Views: 899 · Updated: 2025-08-08</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/hot-knife-asmr-will-it-melt.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/hot-knife-asmr-will-it-melt.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/poDPPlsCfuY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Hot Knife ASMR! Can You Handle the MELT?"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Hot Knife ASMR! Can You Handle the MELT?</div>
-              <div class="mini">Immerse yourself in this unique and incredible ASMR experience as a knife slices...</div>
-              <div class="mini-meta">Views: 10,408</div>
+            <div>
+              <div class="link" style="font-weight:700">Hot Knife ASMR! Can You Handle the MELT?</div>
+              <div style="color:#aaa">Immerse yourself in this unique and incredible ASMR experience as a knife slices through a stunning passionfruit...</div>
+              <div class="subtle">Views: 10,408 · Updated: 2025-07-01</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>

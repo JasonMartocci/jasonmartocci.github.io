@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,12 +5,6 @@
 <meta name="description" content="Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we&#39;re pushing the boundaries of flavor...">
 <link rel="canonical" href="https://jasonmartocci.com/videos/mind-blowing-food-combos-in-asmr-mukbang.html">
 <link rel="icon" href="/images/favicon.ico">
-
-<!-- Preconnect / DNS -->
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-<link rel="dns-prefetch" href="https://i.ytimg.com">
 
 <!-- Open Graph -->
 <meta property="og:type" content="video.other">
@@ -28,78 +21,41 @@
 <meta name="twitter:description" content="Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we&#39;re pushing the...">
 <meta name="twitter:image:alt" content="Martocci Mayhem Mind-Blowing FOOD COMBOS in ASMR Mukbang!">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/L8ahNiv0w4w/hqdefault.jpg">
-
 <style>
   :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #0f0f0f; color: #fff;
-    -webkit-text-size-adjust: 100%;
-  }
-  img, svg, video, canvas, iframe { display:block; max-width:100%; }
+  *{box-sizing:border-box}
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+         background:#0f0f0f; color:#fff; }
+  header,footer { border-color:#222; }
+  header { display:flex; align-items:center; justify-content:center; gap:12px;
+           padding:14px 16px; border-bottom:1px solid; position:sticky; top:0;
+           background:#0f0f0f; z-index:5; }
+  header a.brand { position:absolute; left:16px; top:10px; color:#fff;
+                   text-decoration:none; display:flex; align-items:center;
+                   gap:8px; font-weight:600; }
+  main { width:100%; margin:0 auto; padding:clamp(12px,2vw,24px);
+         display:grid; grid-template-columns:minmax(0,2.6fr) minmax(280px,1fr);
+         gap:clamp(14px,2vw,28px); }
+  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
 
-  /* Header: logo left, H1 centered (no overlap on mobile) */
-  header {
-    position: relative;
-    display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f;
-  }
-  header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
-  }
-  header .brand img { width:28px; height:28px; }
-  header .page-title {
-    position:absolute; left:50%; transform:translateX(-50%);
-    margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
-  }
-  @media (max-width:560px){
-    header { flex-direction:column; align-items:flex-start; }
-    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
+           border:1px solid #222; border-radius:12px; margin-bottom:16px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; }
 
-  /* Full-width content */
-  main {
-    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
-    display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
-    gap:clamp(14px, 2vw, 28px);
-  }
-  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
-
-  /* Video wrapper reserves height to prevent CLS */
-  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
-  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  @supports not (aspect-ratio: 16/9) {
-    .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
-  }
-
-  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
-  section .card + .card { margin-top: 16px; }
+  .card { background:#111; border:1px solid #222; border-radius:12px;
+          padding:clamp(12px,1.6vw,18px); }
+  section .card + .card { margin-top:16px; }
 
   .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
-  .meta a:hover { color:#fff; border-color:#3ea6ff; }
+  .meta a:hover{ color:#fff; border-color:#3ea6ff }
   a, .link { color:#3ea6ff; text-decoration:none; }
-
-  .desc { color:#ddd; line-height:1.65; overflow-wrap:anywhere; white-space:pre-wrap; }
+  .desc { color:#ddd; line-height:1.65; word-wrap:anywhere; white-space:pre-wrap; }
   details summary { cursor:pointer; }
-
-  .block-title { font-weight:800; margin:.2rem 0 .6rem; }
-  .subtle { color:#9aa; }
-
-  /* Recommended uses the same grid card layout as index */
-  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
-  .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
-  .body { padding:10px 12px; }
-  .title { font-weight:800; margin-bottom:6px; }
-  .mini { color:#9aa; font-size:.92rem; }
-  .mini-meta { color:#777; margin-top:6px; font-size:.9rem; }
-
-  footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
+  .rec .item { display:flex; gap:10px; padding:10px; border:1px solid #222;
+               border-radius:10px; margin-bottom:10px; background:#111; }
+  .rec img { width:168px; height:94px; object-fit:cover; border-radius:8px; }
+  .block-title{font-weight:800;margin:.2rem 0 .6rem}
+  .subtle{color:#9aa}
 </style>
 
 <!-- JSON-LD: VideoObject -->
@@ -108,50 +64,51 @@
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/mind-blowing-food-combos-in-asmr-mukbang.html", "name": "Mind-Blowing FOOD COMBOS in ASMR Mukbang!", "position": 2}]}</script>
 
-<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we\u0027re pushing the boundaries of flavor and sound with an oddly satisfying surprise food \u2026"}, "name": "What is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=L8ahNiv0w4w."}, "name": "Where can I watch \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "25s."}, "name": "How long is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 12, 2025."}, "name": "When was \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 880 \u00b7 Likes: 6 \u00b7 Comments: 2 (counts update on YouTube)."}, "name": "How popular is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ASMR, mukbang, relaxing video, food ASMR, sound therapy, delicious food, savory flavors"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+<!-- JSON-LD: FAQPage (only output when FAQs exist) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we\u0027re pushing the boundaries of flavor and sound with an oddly satisfying surprise food \u2026"}, "name": "What is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=L8ahNiv0w4w\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=L8ahNiv0w4w\u003c/a\u003e."}, "name": "Where can I watch \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "25s."}, "name": "How long is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 12, 2025."}, "name": "When was \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 880 \u00b7 Likes: 6 \u00b7 Comments: 2 (counts update on YouTube)."}, "name": "How popular is \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ASMR, mukbang, relaxing video, food ASMR, sound therapy, delicious food, savory flavors"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cMind-Blowing FOOD COMBOS in ASMR Mukbang!\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
+
+    <!-- JSON-LD: Speakable for FAQ (voice/chat assistants) -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".faq summary", ".faq .answer"]}, "url": "https://jasonmartocci.com/videos/mind-blowing-food-combos-in-asmr-mukbang.html"}</script>
+
 </head>
 <body>
 <header>
   <a class="brand" href="https://jasonmartocci.com">
     <img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo">
-    <span>Martocci Mayhem</span>
+    Martocci Mayhem
   </a>
-  <h1 class="page-title">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</h1>
+  <div>Mind-Blowing FOOD COMBOS in ASMR Mukbang!</div>
 </header>
 
 <main>
   <section>
-    <!-- Video -->
+    <!-- 1) Video -->
     <div class="video">
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/L8ahNiv0w4w"
-        title="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        referrerpolicy="origin-when-cross-origin">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/L8ahNiv0w4w"
+              title="Mind-Blowing FOOD COMBOS in ASMR Mukbang!" frameborder="0"
+              allowfullscreen loading="lazy"></iframe>
     </div>
 
-    <!-- Stats -->
+    <!-- 2) Stats -->
     <div class="card">
-      <h2 class="block-title" style="margin-top:0">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        Subscribers: 198
-      </div>
-      <div class="meta" style="margin-top:8px;">
+      <h1 class="block-title">Mind-Blowing FOOD COMBOS in ASMR Mukbang!</h1>
+      <div class="subtle">Subscribers: 198</div>
+      <div class="meta">
         <a href="https://www.youtube.com/watch?v=L8ahNiv0w4w" target="_blank" rel="noopener">Views: 880</a>
         <a href="https://www.youtube.com/watch?v=L8ahNiv0w4w" target="_blank" rel="noopener">Likes: 6</a>
         <a href="https://www.youtube.com/watch?v=L8ahNiv0w4w#comments" target="_blank" rel="noopener">Comments: 2</a>
         <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Channel: Martocci Mayhem</a>
       </div>
-      <p style="margin:.8rem 0 0">
+      <div class="subtle" style="margin-top:6px">
+        Uploaded: August 12, 2025 &middot;
+        Last Edited: August 12, 2025
+      </div>
+      <p style="margin:.7rem 0 0">
         <a class="link" href="https://www.youtube.com/watch?v=L8ahNiv0w4w" target="_blank" rel="noopener">Watch on YouTube</a>
       </p>
     </div>
 
-    <!-- Description -->
+    <!-- 3) Description -->
     <div class="card">
       <h2 class="block-title">Description</h2>
       <div class="desc">Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we're pushing the boundaries of flavor and sound with an oddly satisfying surprise food combo that will tantalize your taste buds and trigger your senses. 
@@ -196,72 +153,72 @@ All stunts are performed in a controlled environment; don't attempt them at home
 #MartocciMayhem, #JasonMartocci, #aiasmr</div>
     </div>
 
-    <!-- FAQ (visual) -->
-      <div class="card faq" id="faq">
+<!-- 4) FAQ -->
+        <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
-          <details>
+            <details>
             <summary>What is “Mind-Blowing FOOD COMBOS in ASMR Mukbang!” about?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we're pushing the boundaries of flavor and sound with an oddly satisfying surprise food …</div>
+                <div>Get ready for a relaxing video of a culinary adventure like no other! In this ASMR mukbang, we're pushing the boundaries of flavor and sound with an oddly satisfying surprise food …</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Who created “Mind-Blowing FOOD COMBOS in ASMR Mukbang!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
+                <div>Martocci Mayhem (<a class="link" href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">@JasonMartocci</a>)</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Where can I watch “Mind-Blowing FOOD COMBOS in ASMR Mukbang!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=L8ahNiv0w4w" target="_blank" rel="noopener">https://www.youtube.com/watch?v=L8ahNiv0w4w</a>.</div>
+                <div>You can watch it above or on YouTube: <a class="link" href="https://www.youtube.com/watch?v=L8ahNiv0w4w" target="_blank" rel="noopener">https://www.youtube.com/watch?v=L8ahNiv0w4w</a>.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How long is “Mind-Blowing FOOD COMBOS in ASMR Mukbang!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>25s.</div>
+                <div>25s.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>When was “Mind-Blowing FOOD COMBOS in ASMR Mukbang!” uploaded?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>August 12, 2025.</div>
+                <div>August 12, 2025.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What type of video is this?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Entertainment.</div>
+                <div>Entertainment.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>How popular is “Mind-Blowing FOOD COMBOS in ASMR Mukbang!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Views: 880 · Likes: 6 · Comments: 2 (counts update on YouTube).</div>
+                <div>Views: 880 · Likes: 6 · Comments: 2 (counts update on YouTube).</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>What are the key tags/keywords for this video?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>ASMR, mukbang, relaxing video, food ASMR, sound therapy, delicious food, savory flavors</div>
+                <div>ASMR, mukbang, relaxing video, food ASMR, sound therapy, delicious food, savory flavors</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Can I share or embed “Mind-Blowing FOOD COMBOS in ASMR Mukbang!”?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
+                <div>Yes. Use YouTube’s Share button for a link or the Embed option for an iframe. Please credit the channel.</div>
             </div>
-          </details>
-          <details>
+            </details>
+            <details>
             <summary>Any tips for the best experience?</summary>
             <div class="answer" style="padding:.6rem 0;color:#ccc">
-              <div>Headphones recommended for immersive audio and ASMR tingles.</div>
+                <div>Headphones recommended for immersive audio and ASMR tingles.</div>
             </div>
-          </details>
-      </div>
+            </details>
+        </div>
 
-    <!-- Comments -->
+    <!-- 5) Comments -->
     <div class="card">
       <h2 class="block-title">Comments</h2>
       <p class="subtle">Join the discussion on YouTube to see real-time comments, likes, and replies.</p>
@@ -269,137 +226,125 @@ All stunts are performed in a controlled environment; don't attempt them at home
     </div>
   </section>
 
-  <!-- Sidebar / Recommended -->
+  <!-- Sidebar -->
   <aside class="rec">
     <div class="card">
       <h2 class="block-title">Recommended Videos</h2>
-      <div class="grid">
-          <a class="rec-card" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/crazy-food-combo-experiments-you-have-to-see.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/dFuF088X7jg/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Crazy Food Combo Experiments You Have To See!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Crazy Food Combo Experiments You Have To See!</div>
-              <div class="mini">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the...</div>
-              <div class="mini-meta">Views: 85</div>
+            <div>
+              <div class="link" style="font-weight:700">Crazy Food Combo Experiments You Have To See!</div>
+              <div style="color:#aaa">Get ready for a food challenge like no other! In this ASMR mukbang, we&#39;re pushing the boundaries of flavor and sound...</div>
+              <div class="subtle">Views: 85 · Updated: 2025-08-12</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/i-let-ai-create-an-unusual-food-feast.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/i-let-ai-create-an-unusual-food-feast.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/YT2bBo4s2m4/hqdefault.jpg"
-                 width="320" height="180"
                  alt="I Let AI Create An Unusual Food Feast"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">I Let AI Create An Unusual Food Feast</div>
-              <div class="mini">Get ready to have your mind blown by the most insane AI mukbang creations you&#39;ve ever...</div>
-              <div class="mini-meta">Views: 37</div>
+            <div>
+              <div class="link" style="font-weight:700">I Let AI Create An Unusual Food Feast</div>
+              <div style="color:#aaa">Get ready to have your mind blown by the most insane AI mukbang creations you&#39;ve ever seen! From surreal food...</div>
+              <div class="subtle">Views: 37 · Updated: 2025-08-13</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/why-asmr-is-more-than-just-weird-noises.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/why-asmr-is-more-than-just-weird-noises.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/lgcDpcEd5TI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Why ASMR Is More Than Just Weird Noises"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Why ASMR Is More Than Just Weird Noises</div>
-              <div class="mini">Embark on a sensory journey with this satisfying hot knife ASMR experience! Witness...</div>
-              <div class="mini-meta">Views: 18</div>
+            <div>
+              <div class="link" style="font-weight:700">Why ASMR Is More Than Just Weird Noises</div>
+              <div style="color:#aaa">Embark on a sensory journey with this satisfying hot knife ASMR experience! Witness the mesmerizing effects as a...</div>
+              <div class="subtle">Views: 18 · Updated: 2025-08-10</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-ultimate-satisfying-asmr-experiment.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/P0EdsP2BzfA/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Ultimate Satisfying ASMR Experiment"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Ultimate Satisfying ASMR Experiment</div>
-              <div class="mini">Get ready to experience the most unconventional ASMR session of your life! In...</div>
-              <div class="mini-meta">Views: 13</div>
+            <div>
+              <div class="link" style="font-weight:700">The Ultimate Satisfying ASMR Experiment</div>
+              <div style="color:#aaa">Get ready to experience the most unconventional ASMR session of your life! In tonight&#39;s video, we&#39;re throwing out...</div>
+              <div class="subtle">Views: 13 · Updated: 2025-08-16</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/weird-food-mukbangs-the-500-challenge.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/weird-food-mukbangs-the-500-challenge.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/xQl7CHnOmMY/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Weird Food Mukbangs: The $500 Challenge"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Weird Food Mukbangs: The $500 Challenge</div>
-              <div class="mini">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a...</div>
-              <div class="mini-meta">Views: 1,038</div>
+            <div>
+              <div class="link" style="font-weight:700">Weird Food Mukbangs: The $500 Challenge</div>
+              <div style="color:#aaa">Get ready for the most epic display of slicing mastery as Martocci Mayhem unleashes a whirlwind of blades and chaos...</div>
+              <div class="subtle">Views: 1,038 · Updated: 2025-08-10</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/the-most-satisfying-mangosteen-slices.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/the-most-satisfying-mangosteen-slices.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/m8ndFmWVlvU/hqdefault.jpg"
-                 width="320" height="180"
                  alt="The Most Satisfying Mangosteen Slices"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">The Most Satisfying Mangosteen Slices</div>
-              <div class="mini">Get ready to feast your eyes on a visually stunning display of a fresh, ripe...</div>
-              <div class="mini-meta">Views: 984</div>
+            <div>
+              <div class="link" style="font-weight:700">The Most Satisfying Mangosteen Slices</div>
+              <div style="color:#aaa">Get ready to feast your eyes on a visually stunning display of a fresh, ripe mangosteen being sliced open! The...</div>
+              <div class="subtle">Views: 984 · Updated: 2025-07-28</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/this-glass-apple-looks-normal-but-watch-what-s-ins.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/Nq-BRHknv_U/hqdefault.jpg"
-                 width="320" height="180"
                  alt="This Glass Apple Looks Normal But Watch What’s Inside!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">This Glass Apple Looks Normal But Watch What’s Inside!</div>
-              <div class="mini">Experience the visually appealing and satisfying sounds of this candy apple being...</div>
-              <div class="mini-meta">Views: 920</div>
+            <div>
+              <div class="link" style="font-weight:700">This Glass Apple Looks Normal But Watch What’s Inside!</div>
+              <div style="color:#aaa">Experience the visually appealing and satisfying sounds of this candy apple being sliced! The oddly satisfying video...</div>
+              <div class="subtle">Views: 920 · Updated: 2025-07-29</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/watch-this-glass-apple-get-perfectly-cut-a-mesmeri.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/0_NL-9Jjsi8/hqdefault.jpg"
-                 width="320" height="180"
                  alt="Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</div>
-              <div class="mini">Immerse yourself in the satisfying sounds of crisp apple cutting in this ASMR-inducing...</div>
-              <div class="mini-meta">Views: 158</div>
+            <div>
+              <div class="link" style="font-weight:700">Watch This Glass Apple Get Perfectly Cut: A Mesmerizing Art Transformation!</div>
+              <div style="color:#aaa">Immerse yourself in the satisfying sounds of crisp apple cutting in this ASMR-inducing video! Get ready to relax and...</div>
+              <div class="subtle">Views: 158 · Updated: 2025-07-29</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/1A-r49arZoo/hqdefault.jpg"
-                 width="320" height="180"
                  alt="What Happens When You Cut Objects in REVERSE ASMR"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">What Happens When You Cut Objects in REVERSE ASMR</div>
-              <div class="mini">Get ready for the ultimate mind-bending experiments in reverse! In this slow motion...</div>
-              <div class="mini-meta">Views: 30</div>
+            <div>
+              <div class="link" style="font-weight:700">What Happens When You Cut Objects in REVERSE ASMR</div>
+              <div style="color:#aaa">Get ready for the ultimate mind-bending experiments in reverse! In this slow motion video, we&#39;re flipping the script...</div>
+              <div class="subtle">Views: 30 · Updated: 2025-08-11</div>
             </div>
           </a>
-          <a class="rec-card" href="/videos/experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html">
-            <img class="thumb" decoding="async" loading="lazy"
+          <a class="item" href="/videos/experience-satisfying-sounds-of-slicing-open-glass-dragon-fruit-asmr.html">
+            <img loading="lazy"
                  src="https://i.ytimg.com/vi/144YU0heSJI/hqdefault.jpg"
-                 width="320" height="180"
                  alt="EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!"
                  onerror="this.onerror=null;this.src='/images/default-thumbnail.png'">
-            <div class="body">
-              <div class="title">EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!</div>
-              <div class="mini">Immerse yourself in the calming atmosphere and indulge in the satisfying sounds of...</div>
-              <div class="mini-meta">Views: 18</div>
+            <div>
+              <div class="link" style="font-weight:700">EXPERIENCE Satisfying Sounds of Slicing Open GLASS Dragon Fruit ASMR!</div>
+              <div style="color:#aaa">Immerse yourself in the calming atmosphere and indulge in the satisfying sounds of slicing open a mesmerizing glass...</div>
+              <div class="subtle">Views: 18 · Updated: 2025-07-28</div>
             </div>
           </a>
-      </div>
     </div>
   </aside>
 </main>
 
-<footer>
+<footer style="padding:16px; text-align:center; border-top:1px solid #222; color:#aaa">
   © 2025 Martocci Mayhem ·
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
