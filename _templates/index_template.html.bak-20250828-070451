@@ -64,37 +64,9 @@
     header .site-title{ position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
   }
 
-  /* One sticky block that contains two stacked rows */
-    .toolbar-wrap {
-    position: sticky;
-    top: 0;                 /* if you later make the header sticky, set this to its height */
-    z-index: 20;
-    background:#0f0f0f;
-    border-bottom:1px solid #222;
-    }
-
-    /* Rows */
-    .filters-row,
-    .search-row {
-    padding:10px 12px;
-    background:#0f0f0f;
-    }
-    .filters-row { border-bottom:1px solid #222; }
-
-    /* Category chips (horizontal scroll) */
-    .filters {
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    }
-    .filters::-webkit-scrollbar { display:none; }
-    .filters button {
-    background:#161616; border:1px solid #222; color:#bbb; padding:8px 12px;
-    border-radius:999px; cursor:pointer; white-space:nowrap; flex:0 0 auto;
-    }
-    .filters button.active { color:#fff; border-color:#3ea6ff; }
+  /* ===== Sticky toolbar (only this is sticky) ===== */
+  .toolbar-wrap { position:sticky; top:0; z-index:20; background:#0f0f0f; border-bottom:1px solid #222; }
+  .toolbar { display:flex; align-items:center; gap:10px; padding:10px 12px; flex-wrap:nowrap; }
 
   /* Horizontal scroll filter chips */
   .filters {
@@ -196,11 +168,11 @@
 </header>
 
 <div class="toolbar-wrap">
-  <div class="filters-row">
+  <div class="toolbar">
     <div class="filters" id="filters" aria-label="Categories"></div>
-  </div>
-  <div class="search-row">
-    <input id="q" type="search" placeholder="Search titles, descriptions, tags…" aria-label="Search videos">
+    <div class="search">
+      <input id="q" type="search" placeholder="Search titles, descriptions, tags…" aria-label="Search videos">
+    </div>
   </div>
 </div>
 
