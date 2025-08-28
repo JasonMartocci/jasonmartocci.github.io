@@ -158,22 +158,14 @@
   "contentUrl": "https://www.youtube.com/watch?v=" ~ video_id,
   "url": site_url + "/videos/" + slug + ".html",
   "sameAs": ["https://www.youtube.com/watch?v=" ~ video_id],
-
   "potentialAction": [
-    {
-      "@type": "WatchAction",
-      "target": "https://www.youtube.com/watch?v=" ~ video_id
-    },
+    { "@type": "WatchAction", "target": "https://www.youtube.com/watch?v=" ~ video_id },
     {
       "@type": "SeekToAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.youtube.com/watch?v=" ~ video_id ~ "&t={seek_to_second_number}"
-      },
+      "target": "https://www.youtube.com/watch?v=" ~ video_id ~ "&t={seek_to_second_number}s",
       "startOffset-input": "required name=seek_to_second_number"
     }
   ],
-
   "duration": (duration_seconds and duration_seconds>0) and ("PT" ~ duration_seconds ~ "S") or none,
   "isFamilyFriendly": true,
   "inLanguage": "en",
@@ -187,7 +179,6 @@
   }
 } | tojson | replace("</","<\\/") | safe }}
 </script>
-
 
 <!-- WebPage (the actual watch page container) -->
 <script type="application/ld+json">
