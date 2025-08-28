@@ -64,7 +64,6 @@
     header .site-title{ position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
   }
 
-  /* ===== Sticky toolbar (only this is sticky) ===== */
   /* One sticky block that contains two stacked rows */
     .toolbar-wrap {
     position: sticky;
