@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -40,48 +41,46 @@
   }
   img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
-  /* Header (not sticky), mobile-safe layout, no overlap */
+  /* Header: logo left, H1 centered (no overlap on mobile) */
   header {
+    position: relative;
     display:flex; align-items:center; gap:10px; padding:10px 12px;
-    border-bottom:1px solid #222; background:#0f0f0f; flex-wrap:wrap;
+    border-bottom:1px solid #222; background:#0f0f0f;
   }
   header .brand {
-    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700;
+    display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:700; z-index:2;
   }
   header .brand img { width:28px; height:28px; }
   header .page-title {
+    position:absolute; left:50%; transform:translateX(-50%);
     margin:0; font-weight:800; color:#eee;
-    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2;
-    flex:1 1 320px;
+    font-size:clamp(1rem, 2.2vw, 1.35rem); line-height:1.2; text-align:center;
+  }
+  @media (max-width:560px){
+    header { flex-direction:column; align-items:flex-start; }
+    header .page-title { position:static; transform:none; width:100%; text-align:center; margin-top:2px; }
   }
 
+  /* Full-width content */
   main {
-    width:100%; margin:0 auto; padding:clamp(12px, 2vw, 24px); max-width:1400px;
+    width:100%; margin:0; padding:clamp(12px, 2vw, 24px); max-width:none;
     display:grid; grid-template-columns:minmax(0, 2.6fr) minmax(280px, 1fr);
     gap:clamp(14px, 2vw, 28px);
   }
-  @media (max-width: 1024px) { main { grid-template-columns: 1fr; } }
+  @media (max-width:1024px) { main { grid-template-columns: 1fr; } }
 
   /* Video wrapper reserves height to prevent CLS */
-  .video {
-    position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden;
-    border: 1px solid #222; border-radius: 12px; margin-bottom: 16px; background:#000;
-  }
+  .video { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border:1px solid #222; border-radius:12px; margin-bottom:16px; background:#000; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   @supports not (aspect-ratio: 16/9) {
     .video { height: 0; padding-top: 56.25%; }
-    .video iframe { position: absolute; inset:0; width:100%; height:100%; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; }
   }
 
-  .card {
-    background:#111; border:1px solid #222; border-radius:12px;
-    padding:clamp(12px,1.6vw,18px);
-  }
+  .card { background:#111; border:1px solid #222; border-radius:12px; padding:clamp(12px,1.6vw,18px); }
   section .card + .card { margin-top: 16px; }
 
-  .meta a {
-    color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444;
-  }
+  .meta a { color:#bbb; margin-right:14px; text-decoration:none; border-bottom:1px dotted #444; }
   .meta a:hover { color:#fff; border-color:#3ea6ff; }
   a, .link { color:#3ea6ff; text-decoration:none; }
 
@@ -108,6 +107,9 @@
 
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://jasonmartocci.com", "name": "Home", "position": 1}, {"@type": "ListItem", "item": "https://jasonmartocci.com/videos/galactic-asmr-saturn-jupiter-neptune-soundscapes.html", "name": "Galactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a", "position": 2}]}</script>
+
+<!-- JSON-LD: FAQPage (built only if we have FAQs) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Immerse yourself in the cosmic world of Galactic ASMR, a soothing journey through the soundscapes of Saturn, Jupiter, and Neptune, in this short video. Get ready to relax and unwin\u2026"}, "name": "What is \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (@JasonMartocci)"}, "name": "Who created \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: https://www.youtube.com/watch?v=vA4YB8jxCc4."}, "name": "Where can I watch \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "31s."}, "name": "How long is \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 11, 2025."}, "name": "When was \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 21 \u00b7 Likes: 1 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ASMR short, asmr, asmr shorts, cosmic ASMR, cosmic whispers, funny asmr, galactic vibes"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cGalactic ASMR: Saturn, Jupiter \u0026 Neptune Soundscapes \ud83c\udf0c\ud83d\udd0a\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}</script>
 </head>
 <body>
 <header>
@@ -194,7 +196,7 @@ New Martocci Mayhem every Saturday at noon ET!
 [Your Socials/Links Here]</div>
     </div>
 
-    <!-- FAQ -->
+    <!-- FAQ (visual) -->
       <div class="card faq" id="faq">
         <h2 class="block-title">Frequently Asked Questions</h2>
           <details>
