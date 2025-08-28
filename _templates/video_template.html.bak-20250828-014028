@@ -137,9 +137,55 @@
 } | tojson | replace("</","<\\/") | safe }}
 </script>
 
-<!-- VideoObject -->
+<!-- VideoObject (strongest signal for the watch page) -->
 <script type="application/ld+json">
-{{ video_schema | tojson | replace("</","<\\/") | safe }}
+{{ {
+  "@context":"https://schema.org",
+  "@type":"VideoObject",
+  "@id": site_url + "/videos/" + slug + ".html#video",
+  "name": title,
+  "description": short_desc,
+  "keywords": (tags and (tags|join(", "))) or "",
+  "thumbnailUrl": "https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg",
+  "thumbnail": {
+    "@type":"ImageObject",
+    "url":"https://i.ytimg.com/vi/" ~ video_id ~ "/hqdefault.jpg",
+    "width": 480,
+    "height": 360
+  },
+  "uploadDate": upload_date,
+  "embedUrl": "https://www.youtube.com/embed/" ~ video_id,
+  "contentUrl": "https://www.youtube.com/watch?v=" ~ video_id,
+  "url": site_url + "/videos/" + slug + ".html",
+  "sameAs": ["https://www.youtube.com/watch?v=" ~ video_id],
+
+  "potentialAction": [
+    {
+      "@type": "WatchAction",
+      "target": "https://www.youtube.com/watch?v=" ~ video_id
+    },
+    {
+      "@type": "SeekToAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.youtube.com/watch?v=" ~ video_id ~ "&t={seek_to_second_number}"
+      },
+      "startOffset-input": "required name=seek_to_second_number"
+    }
+  ],
+
+  "duration": (duration_seconds and duration_seconds>0) and ("PT" ~ duration_seconds ~ "S") or none,
+  "isFamilyFriendly": true,
+  "inLanguage": "en",
+  "publisher": {"@id": site_url + "/#org"},
+  "mainEntityOfPage": site_url + "/videos/" + slug + ".html#webpage",
+  "genre": category or "People & Blogs",
+  "interactionStatistic": {
+    "@type":"InteractionCounter",
+    "interactionType":{"@type":"WatchAction"},
+    "userInteractionCount": view_count_raw
+  }
+} | tojson | replace("</","<\\/") | safe }}
 </script>
 
 <!-- WebPage (the actual watch page container) -->
