@@ -119,11 +119,9 @@
 <script type="application/ld+json">
 {{ item_list_schema | tojson | replace("</","<\\/") | safe }}
 </script>
-
 <script type="application/ld+json">
 {{ web_page_schema | tojson | replace("</","<\\/") | safe }}
 </script>
-
 <script id="__data" type="application/json">
 {{ videos | tojson | replace("</","<\\/") | safe }}
 </script>
