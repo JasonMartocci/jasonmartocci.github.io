@@ -83,6 +83,20 @@
     .filters-row { border-bottom:1px solid #222; }
 
     /* Category chips (horizontal scroll) */
+    .filters {
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    }
+    .filters::-webkit-scrollbar { display:none; }
+    .filters button {
+    background:#161616; border:1px solid #222; color:#bbb; padding:8px 12px;
+    border-radius:999px; cursor:pointer; white-space:nowrap; flex:0 0 auto;
+    }
+    .filters button.active { color:#fff; border-color:#3ea6ff; }
+
   /* Horizontal scroll filter chips */
   .filters {
     display:flex; flex:1 1 auto; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
