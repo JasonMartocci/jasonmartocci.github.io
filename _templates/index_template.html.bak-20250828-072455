@@ -203,7 +203,7 @@
     <div class="filters" id="filters" aria-label="Categories"></div>
   </div>
   <div class="search-row">
-    <input id="q" class="search" type="search" placeholder="Search titles, descriptions, tags…" aria-label="Search videos">
+    <input id="q" type="search" placeholder="Search titles, descriptions, tags…" aria-label="Search videos">
   </div>
 </div>
 
