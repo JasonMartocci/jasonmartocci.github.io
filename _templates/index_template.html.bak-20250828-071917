@@ -109,9 +109,7 @@
   }
   .filters button.active { color:#fff; border-color:#3ea6ff; }
 
-  .search { 
-    width:100%; padding:10px 12px; border-radius:999px; border:1px solid #222;
-    background:#111; color:#ddd; }
+  .search { flex:0 0 min(46%, 420px); }
   .search input {
     width:100%; padding:10px 12px; border-radius:999px; border:1px solid #222;
     background:#111; color:#ddd;
