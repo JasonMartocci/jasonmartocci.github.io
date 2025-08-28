@@ -195,7 +195,7 @@
 <body>
 <header>
   <a class="brand" href="{{ site_url }}"><img src="/images/JasonMartocci_Logo.png" width="28" height="28" alt="Logo"><span>Martocci Mayhem</span></a>
-  <h1 class="site-title">Slice • Smash • Laugh • Repeat 🔥</h1>
+  <h1 class="site-title">Take A Dive Into Mayhem</h1>
 </header>
 
 <div class="toolbar-wrap">
