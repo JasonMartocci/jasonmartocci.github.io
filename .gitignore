@@ -1,18 +1,23 @@
-﻿# Python env & cache
-.venv/
-__pycache__/
-*.pyc
+﻿# ==== OS / IDE junk ====
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
 
-# Local settings & secrets
-.env
-mm_settings.json
-quota_tracker.json
-token.pickle
-credentials.json
+# ==== If you use a JS toolchain (safe to keep even if unused) ====
+node_modules/
+.cache/
+.tmp/
+dist/
+build/
+*.map
 
-# Local previews & logs
+# ==== Drafts / temp (optional) ====
 _preview/
+*.bak-*
 *.log
 
-# Large/derived data
-videos.json
+# IMPORTANT: Do NOT ignore your actual site files.
+# Keep all *.html, *.css, *.js, images, sitemap.xml, robots.txt, CNAME,
+# and your {INDEXNOW_KEY}.txt committed.
