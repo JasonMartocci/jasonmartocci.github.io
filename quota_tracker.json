@@ -1,1 +1,8 @@
-{"date": "2025-08-24", "units": 401}
+{
+  "date_pt": "2025-08-30",
+  "units": 3053,
+  "per_method": {
+    "channels.list": 2,
+    "videos.update": 3050
+  }
+}
