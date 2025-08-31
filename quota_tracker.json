@@ -1,6 +1,6 @@
 {
   "date_pt": "2025-08-30",
-  "units": 3053,
+  "units": 10000,
   "per_method": {
     "channels.list": 2,
     "videos.update": 3050
