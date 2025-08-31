@@ -1,8 +1,10 @@
 {
-  "date_pt": "2025-08-30",
-  "units": 10000,
+  "date_pt": "2025-08-31",
+  "units": 9994,
   "per_method": {
     "channels.list": 2,
-    "videos.update": 3050
+    "playlistItems.list": 10,
+    "videos.list": 132,
+    "videos.update": 9850
   }
 }
