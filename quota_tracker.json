@@ -1,6 +1,6 @@
 {
   "date_pt": "2025-08-31",
-  "units": 10012,
+  "units": 10000,
   "per_method": {
     "channels.list": 3,
     "playlistItems.list": 10,
