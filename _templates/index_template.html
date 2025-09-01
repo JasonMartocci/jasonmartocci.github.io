@@ -225,8 +225,7 @@
   function compactMeta(views, likes, comments){
     const v = "Views: "  + Number(views||0).toLocaleString();
     const l = "Likes: "  + Number(likes||0).toLocaleString();
-    const c = "Comments: " + Number(comments||0).toLocaleString();
-    const full = v + " · " + l + " · " + c;
+    const full = v + " · " + l;
     return (full.length > 42) ? (v + " · " + l) : full;
   }
   const RAW = document.getElementById("__data");
