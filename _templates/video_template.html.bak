@@ -274,7 +274,7 @@
             </div>
 
             <!-- Controls & fallback BELOW the video (no overlap/clipping) -->
-            <div class="card" id="player-controls" style="margin:12px auto 0;">
+            <div class="card" id="player-controls" style="margin:12px auto 0; margin-bottom: 12px;">
             <div id="yt-controls" style="display:none;gap:8px;flex-wrap:wrap;display:flex;">
                 <button id="play"  type="button" aria-label="Play video">Play</button>
                 <button id="pause" type="button" aria-label="Pause video">Pause</button>
