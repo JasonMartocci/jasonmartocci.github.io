@@ -117,7 +117,7 @@
   /* Recommended uses the same grid card layout as index */
   .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
   .rec-card { background:#111; border:1px solid #222; border-radius:12px; overflow:hidden; display:block; }
-  .thumb { aspect-ratio:16/9; object-fit:cover; display:block; }
+  .thumb { aspect-ratio:16/9; object-fit:cover; display:block; width=100%; }
   .body { padding:10px 12px; }
   .title { font-weight:800; margin-bottom:6px; }
   .mini { color:#9aa; font-size:1rem; }
