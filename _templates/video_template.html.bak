@@ -121,7 +121,7 @@
   .body { padding:10px 12px; }
   .title { font-weight:800; margin-bottom:6px; }
   .mini { color:#9aa; font-size:1rem; }
-  .mini-meta { color:#333333; margin-top:6px; font-size:1rem; }
+  .mini-meta { margin-top:6px; font-size:1rem; }
 
   footer { padding:16px; text-align:center; border-top:1px solid #222; color:#aaa }
 {% endraw %}</style>
