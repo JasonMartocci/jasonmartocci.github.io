@@ -232,6 +232,8 @@
   </div>
 </footer>
 
+<div id="grid"></div>
+<div id="sentinel" aria-hidden="true"></div>
 <script>
 "use strict";
 (function(){
@@ -259,7 +261,8 @@
   cats.forEach(c=>{ const b=document.createElement("button"); b.textContent=c; b.addEventListener("click", ()=>{currentCat=c; applyFilters();}); if(c===currentCat) b.classList.add("active"); filters.appendChild(b); });
 
   qEl.addEventListener("input", debounce(e=>{ query=(e.target.value||"").toLowerCase().trim(); applyFilters(); }, 200));
-
+    if (sentinel) observer.observe(sentinel);
+    else console.warn("No sentinel element found!");
   function matchesQuery(v, q){
     if (!q) return true;
     const parts = q.split(/\s+/);
