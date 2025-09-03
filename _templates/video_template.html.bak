@@ -40,7 +40,7 @@
     background: #0f0f0f; color: #fff;
     -webkit-text-size-adjust: 100%;
   }
-  img, svg, video, canvas, iframe { display:block; }
+  img, svg, video, canvas, iframe { display:block; max-width:100%; }
 
   /* Header: logo left, H1 centered (no overlap on mobile) */
   header {
