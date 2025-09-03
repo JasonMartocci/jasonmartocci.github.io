@@ -232,6 +232,11 @@
       <a class="social-btn" href="https://www.facebook.com/MartocciMayhem" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-9h3l.5-4H13V7.2c0-1.1.3-1.8 1.9-1.8H17V2.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6V9H7v4h3v9h3z"/></svg>
       </a>
+      <a class="social-btn" href="https://www.linkedin.com/in/MartocciMayhem target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554V14.86c0-1.333-.024-3.048-1.86-3.048-1.862 0-2.147 1.453-2.147 2.953v5.687H9.333V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.6 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.07-.928-2.07-2.07s.926-2.07 2.07-2.07c1.142 0 2.07.928 2.07 2.07s-.928 2.07-2.07 2.07zM6.997 20.452H3.675V9h3.322v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.272V1.727C24 .774 23.2 0 22.225 0z"/>
+        </svg>
+      </a>
     </nav>
   </div>
 </footer>
