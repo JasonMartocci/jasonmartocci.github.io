@@ -198,15 +198,19 @@
 </header>
 
 <main>
-    <div class="toolbar-wrap">
-        <div class="filters-row">
-            <div class="filters" id="filters"></div>
-        </div>
-        <div class="search-row">
-            <input id="q" class="search" type="search" placeholder="Search titles, descriptions, tags…">
-        </div>
+  <div class="toolbar-wrap">
+    <div class="filters-row">
+      <div class="filters" id="filters"></div>
     </div>
-    <div class="grid" id="grid"></div>
+    <div class="search-row">
+      <input id="q" class="search" type="search" placeholder="Search titles, descriptions, tags…">
+    </div>
+  </div>
+  <!-- SINGLE grid -->
+  <div class="grid" id="grid"></div>
+
+  <!-- Sentinel should immediately follow the grid it drives -->
+  <div id="sentinel" aria-hidden="true"></div>
 </main>
 
 <footer>
@@ -233,79 +237,106 @@
 </footer>
 
 <script>
-"use strict";
-(function(){
-  function debounce(fn,ms){ let t; return function(){ const a=arguments; clearTimeout(t); t=setTimeout(()=>fn.apply(null,a), ms||250); }; }
-  function compactMeta(views, likes, comments){
-    const v = "Views: "  + Number(views||0).toLocaleString();
-    const l = "Likes: "  + Number(likes||0).toLocaleString();
-    const full = v + " · " + l;
-    return (full.length > 42) ? (v + " · " + l) : full;
-  }
-  const RAW = document.getElementById("__data");
-  let ALL = [];
-  try { ALL = JSON.parse((RAW && RAW.textContent) || "[]"); } catch(e){ console.error("Bad data JSON", e); }
+    "use strict";
+    (function(){
+    function debounce(fn,ms){ let t; return function(){ const a=arguments; clearTimeout(t); t=setTimeout(()=>fn.apply(null,a), ms||250); }; }
+    function compactMeta(views, likes, comments){
+        const v = "Views: "  + Number(views||0).toLocaleString();
+        const l = "Likes: "  + Number(likes||0).toLocaleString();
+        const full = v + " · " + l;
+        return (full.length > 42) ? (v + " · " + l) : full;
+    }
 
-  const DATA = ALL.map(v => ({...v, _t:(v.title||"").toLowerCase(), _d:(v.desc||"").toLowerCase(), _tags:(v.tags||[]).map(t=>String(t).toLowerCase()) }));
-  const cats = ["All", ...Array.from(new Set(DATA.map(v => v.category || "People & Blogs"))).sort((a,b)=>a.localeCompare(b))];
+    const RAW = document.getElementById("__data");
+    let ALL = [];
+    try { ALL = JSON.parse((RAW && RAW.textContent) || "[]"); } catch(e){ console.error("Bad data JSON", e); }
 
-  const filters  = document.getElementById("filters");
-  const grid     = document.getElementById("grid");
-  const qEl      = document.getElementById("q");
-  const sentinel = document.getElementById("sentinel");
+    const DATA = ALL.map(v => ({...v, _t:(v.title||"").toLowerCase(), _d:(v.desc||"").toLowerCase(), _tags:(v.tags||[]).map(t=>String(t).toLowerCase()) }));
+    const cats = ["All", ...Array.from(new Set(DATA.map(v => v.category || "People & Blogs"))).sort((a,b)=>a.localeCompare(b))];
 
-  let currentCat = "All", query = "", filtered = [], pageSize = 30, cursor = 0, observer = null;
+    const filters  = document.getElementById("filters");
+    const grid     = document.getElementById("grid");
+    const qEl      = document.getElementById("q");
+    const sentinel = document.getElementById("sentinel");
 
-  cats.forEach(c=>{ const b=document.createElement("button"); b.textContent=c; b.addEventListener("click", ()=>{currentCat=c; applyFilters();}); if(c===currentCat) b.classList.add("active"); filters.appendChild(b); });
+    if (!filters || !grid || !qEl || !sentinel) { console.warn("Missing required elements"); return; }
 
-  qEl.addEventListener("input", debounce(e=>{ query=(e.target.value||"").toLowerCase().trim(); applyFilters(); }, 200));
+    let currentCat = "All", query = "", filtered = [], pageSize = 30, cursor = 0, observer = null;
 
-  function matchesQuery(v, q){
-    if (!q) return true;
-    const parts = q.split(/\s+/);
-    return parts.every(tok=>{
-      if (tok.startsWith("tag:")) return v._tags.some(x=>x.includes(tok.slice(4)));
-      if (tok.startsWith("id:"))  return String(v.video_id||"").toLowerCase().includes(tok.slice(3));
-      return v._t.includes(tok)||v._d.includes(tok)||v._tags.some(x=>x.includes(tok));
+    cats.forEach(c=>{
+        const b=document.createElement("button");
+        b.type="button";
+        b.textContent=c;
+        b.addEventListener("click", ()=>{ currentCat=c; applyFilters(); });
+        if(c===currentCat) b.classList.add("active");
+        filters.appendChild(b);
     });
-  }
 
-  function applyFilters(){
-    Array.prototype.forEach.call(filters.children, b=>b.classList.toggle("active", b.textContent===currentCat));
-    filtered = DATA.filter(v => (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query))
-                   .sort((a,b)=> String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||"")));
-    grid.textContent = ""; cursor = 0; if (observer) observer.disconnect();
-    loadMore();
-    observer = new IntersectionObserver((entries)=>{ if (entries[0].isIntersecting) loadMore(); }, { rootMargin: "1200px" });
-    observer.observe(sentinel);
-  }
+    qEl.addEventListener("input", debounce(e=>{
+        query=(e.target.value||"").toLowerCase().trim();
+        applyFilters();
+    }, 200));
 
-  function loadMore(){
-    if (cursor >= filtered.length) return;
-    const end = Math.min(cursor + pageSize, filtered.length);
-    const frag = document.createDocumentFragment();
-    for (let i=cursor; i<end; i++) frag.appendChild(card(filtered[i]));
-    grid.appendChild(frag); cursor = end;
-  }
+    function matchesQuery(v, q){
+        if (!q) return true;
+        const parts = q.split(/\s+/);
+        return parts.every(tok=>{
+        if (tok.startsWith("tag:")) return v._tags.some(x=>x.includes(tok.slice(4)));
+        if (tok.startsWith("id:"))  return String(v.video_id||"").toLowerCase().includes(tok.slice(3));
+        return v._t.includes(tok)||v._d.includes(tok)||v._tags.some(x=>x.includes(tok));
+        });
+    }
 
-  // THUMBNAIL STACKS ABOVE TITLE (img first, then body)
-  function card(v){
-    const a = document.createElement("a"); a.href = "/videos/" + (v.slug||"") + ".html"; a.className="card";
-    const img = document.createElement("img"); img.className="thumb"; img.loading="lazy"; img.decoding="async"; img.width=320; img.height=180;
-    img.src="https://i.ytimg.com/vi/"+v.video_id+"/hqdefault.jpg"; img.alt=v.title||""; img.onerror=function(){this.onerror=null; this.src='/images/default-thumbnail.png';};
-    const body=document.createElement("div"); body.className="body";
-    const t=document.createElement("div"); t.className="title"; t.textContent=v.title||"";
-    const cat=document.createElement("div"); cat.className="cat"; cat.textContent=String(v.category||"");
-    const desc=document.createElement("div"); desc.className="desc"; const raw=(v.desc||""); desc.textContent=raw.length>90?(raw.slice(0,90)+"…"):raw;
-    const meta=document.createElement("div"); meta.className="meta"; meta.textContent=compactMeta(v.view_count, v.like_count, v.comment_count);
-    body.appendChild(t); body.appendChild(cat); body.appendChild(desc); body.appendChild(meta);
-    a.appendChild(img); a.appendChild(body); return a;
-  }
+    function applyFilters(){
+        Array.prototype.forEach.call(filters.children, b=>b.classList.toggle("active", b.textContent===currentCat));
+        filtered = DATA
+        .filter(v => (currentCat==="All" || v.category===currentCat) && matchesQuery(v, query))
+        .sort((a,b)=> String(b.last_edited_date||"").localeCompare(String(a.last_edited_date||""))); // ok if ISO dates
 
-  applyFilters();
-})();
+        grid.textContent = "";
+        cursor = 0;
+        if (observer) observer.disconnect();
+        loadMore();
+        observer = new IntersectionObserver((entries)=>{ if (entries[0].isIntersecting) loadMore(); }, { rootMargin: "1200px" });
+        if (sentinel) observer.observe(sentinel);
+    }
+
+    function loadMore(){
+        if (cursor >= filtered.length) return;
+        const end = Math.min(cursor + pageSize, filtered.length);
+        const frag = document.createDocumentFragment();
+        for (let i=cursor; i<end; i++) frag.appendChild(card(filtered[i]));
+        grid.appendChild(frag);
+        cursor = end;
+    }
+
+    function card(v){
+        const a = document.createElement("a");
+        a.href = "/videos/" + (v.slug||"") + ".html";
+        a.className="card";
+
+        const img = document.createElement("img");
+        img.className="thumb";
+        img.loading="lazy";
+        img.decoding="async";
+        img.width=320; img.height=180;
+        img.src="https://i.ytimg.com/vi/"+v.video_id+"/hqdefault.jpg";
+        img.alt=v.title||"";
+        img.onerror=function(){ this.onerror=null; this.src='/images/default-thumbnail.png'; };
+
+        const body=document.createElement("div"); body.className="body";
+        const t=document.createElement("div"); t.className="title"; t.textContent=v.title||"";
+        const cat=document.createElement("div"); cat.className="cat"; cat.textContent=String(v.category||"");
+        const desc=document.createElement("div"); desc.className="desc"; const raw=(v.desc||""); desc.textContent=raw.length>90?(raw.slice(0,90)+"…"):raw;
+        const meta=document.createElement("div"); meta.className="meta"; meta.textContent=compactMeta(v.view_count, v.like_count, v.comment_count);
+
+        body.appendChild(t); body.appendChild(cat); body.appendChild(desc); body.appendChild(meta);
+        a.appendChild(img); a.appendChild(body);
+        return a;
+    }
+
+    applyFilters();
+    })();
 </script>
 <!-- generated by Mayhem Maker v{{ app_version }} @ {{ build_stamp }}Z -->
-<div id="grid"></div>
-<div id="sentinel" aria-hidden="true"></div>
 </body></html>
