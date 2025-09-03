@@ -254,11 +254,11 @@
             <span>Views: {{ view_count }}</span>
             <span>Likes: {{ like_count }}</span>
             <span>
-            Channel:
-            <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">
-                {{ channel_title or ("@" ~ channel_handle) }}
-            </a>
-            — Subscribers: {{ subs_known and subscriber_count or "—" }}
+                Channel:
+                <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">
+                    {{ channel_title or ("@" ~ channel_handle) }}
+                </a>
+                | Subscribers: {{ subs_known and subscriber_count or "—" }}
             </span>
         </div>
 
