@@ -206,6 +206,15 @@
 {{ faq_schema | tojson | replace("</","<\\/") | safe }}
 </script>
 {% endif %}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -252,8 +261,9 @@
         <script>
         // Use your template variable here instead of the hard-coded ID if you have one.
         const VIDEO_ID = "{{ video_id }}";
-        const ORIGIN   = window.location.origin;
-
+        const ORIGIN = (location.origin && location.origin.startsWith('http'))
+        ? location.origin
+        : "{{ site_url }}";
         let ytPlayer;
 
         function showFallback(){
@@ -264,25 +274,27 @@
 
         window.onYouTubeIframeAPIReady = function () {
             try {
-            ytPlayer = new YT.Player('player', {
-                videoId: VIDEO_ID,
-                playerVars: {
-                enablejsapi: 1,
-                origin: ORIGIN,     // must EXACTLY match https://jasonmartocci.com in production
-                rel: 0,
-                modestbranding: 1,
-                playsinline: 1
-                },
-                events: {
-                onReady: function(){
-                    document.getElementById("yt-controls").style.display = "flex";
-                },
-                onError: function(){
-                    showFallback();
-                }
-                }
-            });
-            } catch (e) {
+                ytPlayer = new YT.Player('player', {
+                    host: 'https://www.youtube-nocookie.com',
+                    videoId: VIDEO_ID,
+                    playerVars: {
+                        enablejsapi: 1,
+                        origin: ORIGIN,   // must exactly match your real site in production
+                        rel: 0,
+                        modestbranding: 1,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: function(){
+                        document.getElementById("yt-controls").style.display = "flex";
+                        },
+                        onError: function(){
+                        showFallback();
+                        }
+                    }
+                    });
+
+                } catch (e) {
             showFallback();
             }
         };

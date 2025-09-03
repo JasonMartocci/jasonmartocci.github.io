@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ASMR Lava Cheesecake Bite: Melty &amp; Delicious Sounds</title>
 <meta name="description" content="Indulge in the ultimate ASMR experience with a gooey lava cheesecake! Watch and listen as I take a satisfying bite, capturing the...">
-<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.044558)">
+<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.045224)">
 <link rel="canonical" href="https://jasonmartocci.com/videos/asmr-lava-cheesecake-bite-melty-delicious-sounds.html">
 <link rel="icon" href="/images/favicon.ico">
 
@@ -150,6 +150,15 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Indulge in the ultimate ASMR experience with a gooey lava cheesecake! Watch and listen as I take a satisfying bite, capturing the melty, yummy sounds of this decadent treat. Perfec\u2026"}, "name": "What is \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=k6k6kyXlp6g\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=k6k6kyXlp6g\u003c/a\u003e."}, "name": "Where can I watch \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 02, 2025."}, "name": "When was \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "People \u0026 Blogs."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,096 \u00b7 Likes: 6 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ai generated food video, ai mukbang, asmr eating, asmr food, cheesecake, crunch sounds, eating show"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cASMR Lava Cheesecake Bite: Melty \u0026 Delicious Sounds\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
 </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -196,8 +205,9 @@
         <script>
         // Use your template variable here instead of the hard-coded ID if you have one.
         const VIDEO_ID = "k6k6kyXlp6g";
-        const ORIGIN   = window.location.origin;
-
+        const ORIGIN = (location.origin && location.origin.startsWith('http'))
+        ? location.origin
+        : "https://jasonmartocci.com";
         let ytPlayer;
 
         function showFallback(){
@@ -208,25 +218,27 @@
 
         window.onYouTubeIframeAPIReady = function () {
             try {
-            ytPlayer = new YT.Player('player', {
-                videoId: VIDEO_ID,
-                playerVars: {
-                enablejsapi: 1,
-                origin: ORIGIN,     // must EXACTLY match https://jasonmartocci.com in production
-                rel: 0,
-                modestbranding: 1,
-                playsinline: 1
-                },
-                events: {
-                onReady: function(){
-                    document.getElementById("yt-controls").style.display = "flex";
-                },
-                onError: function(){
-                    showFallback();
-                }
-                }
-            });
-            } catch (e) {
+                ytPlayer = new YT.Player('player', {
+                    host: 'https://www.youtube-nocookie.com',
+                    videoId: VIDEO_ID,
+                    playerVars: {
+                        enablejsapi: 1,
+                        origin: ORIGIN,   // must exactly match your real site in production
+                        rel: 0,
+                        modestbranding: 1,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: function(){
+                        document.getElementById("yt-controls").style.display = "flex";
+                        },
+                        onError: function(){
+                        showFallback();
+                        }
+                    }
+                    });
+
+                } catch (e) {
             showFallback();
             }
         };
@@ -524,6 +536,6 @@ Welcome to the Dante’s Inferno...</div>
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
 </footer>
-<!-- generated by Mayhem Maker v0.7.0 @ 20250903.044558Z -->
+<!-- generated by Mayhem Maker v0.7.0 @ 20250903.045224Z -->
 </body></html>
-<!-- rebuild:2025-09-03T04:46:33.683663+00:00 -->
+<!-- rebuild:2025-09-03T04:52:43.526372+00:00 -->

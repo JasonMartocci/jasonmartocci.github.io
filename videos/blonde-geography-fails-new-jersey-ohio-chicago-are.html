@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blonde Geography Fails: New Jersey, Ohio &amp; Chicago Are...</title>
 <meta name="description" content="Questions from an alien, geography fails. And the human girl?">
-<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.044558)">
+<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.045224)">
 <link rel="canonical" href="https://jasonmartocci.com/videos/blonde-geography-fails-new-jersey-ohio-chicago-are.html">
 <link rel="icon" href="/images/favicon.ico">
 
@@ -150,6 +150,15 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Questions from an alien, geography fails. And the human girl?"}, "name": "What is \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=c2AERmaaq2k\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=c2AERmaaq2k\u003c/a\u003e."}, "name": "Where can I watch \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "37s."}, "name": "How long is \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 13, 2025."}, "name": "When was \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Comedy."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 9 \u00b7 Likes: 1 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "alien antics, alien comedy, alien comic, alien interview, aliens, awkward moments, blonde jokes"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cBlonde Geography Fails: New Jersey, Ohio \u0026 Chicago Are Countries! \ud83d\ude02\ud83c\udf0e\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
 </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -196,8 +205,9 @@
         <script>
         // Use your template variable here instead of the hard-coded ID if you have one.
         const VIDEO_ID = "c2AERmaaq2k";
-        const ORIGIN   = window.location.origin;
-
+        const ORIGIN = (location.origin && location.origin.startsWith('http'))
+        ? location.origin
+        : "https://jasonmartocci.com";
         let ytPlayer;
 
         function showFallback(){
@@ -208,25 +218,27 @@
 
         window.onYouTubeIframeAPIReady = function () {
             try {
-            ytPlayer = new YT.Player('player', {
-                videoId: VIDEO_ID,
-                playerVars: {
-                enablejsapi: 1,
-                origin: ORIGIN,     // must EXACTLY match https://jasonmartocci.com in production
-                rel: 0,
-                modestbranding: 1,
-                playsinline: 1
-                },
-                events: {
-                onReady: function(){
-                    document.getElementById("yt-controls").style.display = "flex";
-                },
-                onError: function(){
-                    showFallback();
-                }
-                }
-            });
-            } catch (e) {
+                ytPlayer = new YT.Player('player', {
+                    host: 'https://www.youtube-nocookie.com',
+                    videoId: VIDEO_ID,
+                    playerVars: {
+                        enablejsapi: 1,
+                        origin: ORIGIN,   // must exactly match your real site in production
+                        rel: 0,
+                        modestbranding: 1,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: function(){
+                        document.getElementById("yt-controls").style.display = "flex";
+                        },
+                        onError: function(){
+                        showFallback();
+                        }
+                    }
+                    });
+
+                } catch (e) {
             showFallback();
             }
         };
@@ -523,6 +535,6 @@ All stunts are performed in a controlled environment; don&#x27;t attempt them at
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
 </footer>
-<!-- generated by Mayhem Maker v0.7.0 @ 20250903.044558Z -->
+<!-- generated by Mayhem Maker v0.7.0 @ 20250903.045224Z -->
 </body></html>
-<!-- rebuild:2025-09-03T04:46:28.241905+00:00 -->
+<!-- rebuild:2025-09-03T04:52:37.541575+00:00 -->

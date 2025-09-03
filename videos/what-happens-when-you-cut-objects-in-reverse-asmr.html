@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What Happens When You Cut Objects in REVERSE ASMR</title>
 <meta name="description" content="Get ready for the ultimate mind-bending experiments in reverse! In this slow motion video, we&#39;re flipping the script and bringing...">
-<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.044558)">
+<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.045224)">
 <link rel="canonical" href="https://jasonmartocci.com/videos/what-happens-when-you-cut-objects-in-reverse-asmr.html">
 <link rel="icon" href="/images/favicon.ico">
 
@@ -150,6 +150,15 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Get ready for the ultimate mind-bending experiments in reverse! In this slow motion video, we\u0027re flipping the script and bringing you Reverse ASMR!"}, "name": "What is \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=1A-r49arZoo\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=1A-r49arZoo\u003c/a\u003e."}, "name": "Where can I watch \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "59s."}, "name": "How long is \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "August 11, 2025."}, "name": "When was \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 32 \u00b7 Likes: 1 \u00b7 Comments: 0 (counts update on YouTube)."}, "name": "How popular is \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Jason Martocci, Martocci Mayhem, Viral Video, Relaxing Video, Amazing Videos, AI ASMR, ASMR"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cWhat Happens When You Cut Objects in REVERSE ASMR\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
 </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -196,8 +205,9 @@
         <script>
         // Use your template variable here instead of the hard-coded ID if you have one.
         const VIDEO_ID = "1A-r49arZoo";
-        const ORIGIN   = window.location.origin;
-
+        const ORIGIN = (location.origin && location.origin.startsWith('http'))
+        ? location.origin
+        : "https://jasonmartocci.com";
         let ytPlayer;
 
         function showFallback(){
@@ -208,25 +218,27 @@
 
         window.onYouTubeIframeAPIReady = function () {
             try {
-            ytPlayer = new YT.Player('player', {
-                videoId: VIDEO_ID,
-                playerVars: {
-                enablejsapi: 1,
-                origin: ORIGIN,     // must EXACTLY match https://jasonmartocci.com in production
-                rel: 0,
-                modestbranding: 1,
-                playsinline: 1
-                },
-                events: {
-                onReady: function(){
-                    document.getElementById("yt-controls").style.display = "flex";
-                },
-                onError: function(){
-                    showFallback();
-                }
-                }
-            });
-            } catch (e) {
+                ytPlayer = new YT.Player('player', {
+                    host: 'https://www.youtube-nocookie.com',
+                    videoId: VIDEO_ID,
+                    playerVars: {
+                        enablejsapi: 1,
+                        origin: ORIGIN,   // must exactly match your real site in production
+                        rel: 0,
+                        modestbranding: 1,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: function(){
+                        document.getElementById("yt-controls").style.display = "flex";
+                        },
+                        onError: function(){
+                        showFallback();
+                        }
+                    }
+                    });
+
+                } catch (e) {
             showFallback();
             }
         };
@@ -523,6 +535,6 @@ All stunts are performed in a controlled environment; don&#x27;t attempt them at
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
 </footer>
-<!-- generated by Mayhem Maker v0.7.0 @ 20250903.044558Z -->
+<!-- generated by Mayhem Maker v0.7.0 @ 20250903.045224Z -->
 </body></html>
-<!-- rebuild:2025-09-03T04:46:41.756547+00:00 -->
+<!-- rebuild:2025-09-03T04:52:52.314968+00:00 -->
