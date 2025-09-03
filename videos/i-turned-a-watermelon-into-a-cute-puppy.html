@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>I Turned a Watermelon Into a Cute Puppy</title>
 <meta name="description" content="ASMR Trigger Words: Ever wondered what happens when you slice into a watermelon and a cute puppy pops out… and it isn&#39;t a...">
-<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.043157)">
+<meta name="generator" content="Mayhem Maker 0.7.0 (20250903.043837)">
 <link rel="canonical" href="https://jasonmartocci.com/videos/i-turned-a-watermelon-into-a-cute-puppy.html">
 <link rel="icon" href="/images/favicon.ico">
 
@@ -150,6 +150,15 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "ASMR Trigger Words: Ever wondered what happens when you slice into a watermelon and a cute puppy pops out\u2026 and it isn\u0027t a watermelon? It\u0027s literally a dog surprise. \ud83d\ude31 In this 8-sec\u2026"}, "name": "What is \u201cI Turned a Watermelon Into a Cute Puppy\u201d about?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Martocci Mayhem (\u003ca class=\"link\" href=\"https://www.youtube.com/@JasonMartocci\" target=\"_blank\" rel=\"noopener\"\u003e@JasonMartocci\u003c/a\u003e)"}, "name": "Who created \u201cI Turned a Watermelon Into a Cute Puppy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "You can watch it above or on YouTube: \u003ca class=\"link\" href=\"https://www.youtube.com/watch?v=lOO4n2TUPns\" target=\"_blank\" rel=\"noopener\"\u003ehttps://www.youtube.com/watch?v=lOO4n2TUPns\u003c/a\u003e."}, "name": "Where can I watch \u201cI Turned a Watermelon Into a Cute Puppy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "9s."}, "name": "How long is \u201cI Turned a Watermelon Into a Cute Puppy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "July 09, 2025."}, "name": "When was \u201cI Turned a Watermelon Into a Cute Puppy\u201d uploaded?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Entertainment."}, "name": "What type of video is this?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Views: 1,082 \u00b7 Likes: 8 \u00b7 Comments: 1 (counts update on YouTube)."}, "name": "How popular is \u201cI Turned a Watermelon Into a Cute Puppy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "AI asmr glass cutting video, ai asmr, ai cutting asmr, ai videos, asmr, asmr cutting video, asmr slicing"}, "name": "What are the key tags/keywords for this video?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use YouTube\u2019s Share button for a link or the Embed option for an iframe. Please credit the channel."}, "name": "Can I share or embed \u201cI Turned a Watermelon Into a Cute Puppy\u201d?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Headphones recommended for immersive audio and ASMR tingles."}, "name": "Any tips for the best experience?"}]}
 </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -173,62 +182,99 @@
   <section>
     <!-- Video -->
     <div class="video">
-      <div id="player" class="yt-container" style="max-width: 900px; aspect-ratio: 16/9;"></div>
-        <div class="yt-controls" style="margin-top:12px; display:flex; gap:8px;">
-        <button id="play"  type="button" aria-label="Play video">Play</button>
-        <button id="pause" type="button" aria-label="Pause video">Pause</button>
-        <button id="mute"  type="button" aria-label="Mute video">Mute</button>
-        <button id="unmute" type="button" aria-label="Unmute video">Unmute</button>
+      
+        <div class="yt-wrap" style="max-width:900px;margin:auto;">
+        <div id="player" class="yt-player" style="aspect-ratio:16/9;"></div>
+
+        <!-- Buttons the test agent (and users) can click -->
+        <div id="yt-controls" style="display:none;margin-top:12px;gap:8px;display:flex;flex-wrap:wrap;">
+            <button id="play"  type="button" aria-label="Play video">Play</button>
+            <button id="pause" type="button" aria-label="Pause video">Pause</button>
+            <button id="mute"  type="button" aria-label="Mute video">Mute</button>
+            <button id="unmute" type="button" aria-label="Unmute video">Unmute</button>
         </div>
 
-        <script src="https://www.youtube.com/iframe_api"></script>
+        <!-- Fallback shown if the API is blocked -->
+        <div id="yt-fallback" style="display:none;margin-top:12px;">
+            <a id="yt-link" href="https://www.youtube.com/watch?v=1QQoT7SwEfk" target="_blank" rel="noopener">
+            Watch on YouTube
+            </a>
+        </div>
+        </div>
+
         <script>
+        // Use your template variable here instead of the hard-coded ID if you have one.
+        const VIDEO_ID = "1QQoT7SwEfk";
+        const ORIGIN   = window.location.origin;
+
         let ytPlayer;
 
-        function onYouTubeIframeAPIReady() {
+        function showFallback(){
+            document.getElementById("yt-fallback").style.display = "block";
+            document.getElementById("yt-controls").style.display = "none";
+            document.getElementById("yt-link").href = "https://www.youtube.com/watch?v=" + VIDEO_ID;
+        }
+
+        window.onYouTubeIframeAPIReady = function () {
+            try {
             ytPlayer = new YT.Player('player', {
-            videoId: '',                // <-- your template variable here
-            playerVars: {
+                videoId: VIDEO_ID,
+                playerVars: {
                 enablejsapi: 1,
-                origin: 'https://jasonmartocci.com',  // <-- your site URL
+                origin: ORIGIN,     // must EXACTLY match https://jasonmartocci.com in production
                 rel: 0,
                 modestbranding: 1,
                 playsinline: 1
-            },
-            events: { onReady: onPlayerReady }
+                },
+                events: {
+                onReady: function(){
+                    document.getElementById("yt-controls").style.display = "flex";
+                },
+                onError: function(){
+                    showFallback();
+                }
+                }
             });
-        }
+            } catch (e) {
+            showFallback();
+            }
+        };
 
-        function onPlayerReady() {
-            // enable buttons once player is ready
-            ['play','pause','mute','unmute'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.disabled = false;
-            });
-        }
+        // Load the API with a graceful fallback if it’s blocked
+        (function(){
+            const s = document.createElement('script');
+            s.src = "https://www.youtube.com/iframe_api";
+            s.async = true;
+            s.referrerPolicy = "origin-when-cross-origin";
+            s.onerror = showFallback;
+            s.onload = function(){
+            // If some privacy tools strip the API, fallback
+            if (!window.YT || !window.YT.Player) showFallback();
+            };
+            document.head.appendChild(s);
+        })();
 
-        // Host-page controls the tester/agent can click
-        document.getElementById('play' )?.addEventListener('click', () => ytPlayer?.playVideo());
-        document.getElementById('pause')?.addEventListener('click', () => ytPlayer?.pauseVideo());
-        document.getElementById('mute' )?.addEventListener('click', () => ytPlayer?.mute());
-        document.getElementById('unmute')?.addEventListener('click', () => ytPlayer?.unMute());
+        // Host-page controls (clickable without entering the iframe)
+        document.getElementById("play").addEventListener("click",   () => ytPlayer && ytPlayer.playVideo());
+        document.getElementById("pause").addEventListener("click",  () => ytPlayer && ytPlayer.pauseVideo());
+        document.getElementById("mute").addEventListener("click",   () => ytPlayer && ytPlayer.mute());
+        document.getElementById("unmute").addEventListener("click", () => ytPlayer && ytPlayer.unMute());
         </script>
-    </div>
 
-    <!-- Stats -->
-    <div class="card">
-      <h2 class="block-title" style="margin-top:0">I Turned a Watermelon Into a Cute Puppy</h2>
-      <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
-        <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Martocci Mayhem Subscribers: 214</a>
-      </div>
-      <div class="meta" style="margin-top:8px;">
-        <a href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Views: 1,082</a>
-        <a href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Likes: 8</a>
-      </div>
-      <p style="margin:.4rem 0 0">
-        <a class="link" href="https://www.youtube.com/@JasonMartocci?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>&nbsp;|&nbsp;<a class="link" href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Watch on YouTube</a>
-      </p>
 
+            <!-- Stats -->
+            <div class="card">
+            <h2 class="block-title" style="margin-top:0">I Turned a Watermelon Into a Cute Puppy</h2>
+            <div class="subtle" style="margin-top:6px; margin-bottom:8px;">
+                <a href="https://www.youtube.com/@JasonMartocci" target="_blank" rel="noopener">Martocci Mayhem Subscribers: 214</a>
+            </div>
+            <div class="meta" style="margin-top:8px;">
+                <a href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Views: 1,082</a>
+                <a href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Likes: 8</a>
+            </div>
+            <p style="margin:.4rem 0 0">
+                <a class="link" href="https://www.youtube.com/@JasonMartocci?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>&nbsp;|&nbsp;<a class="link" href="https://www.youtube.com/watch?v=lOO4n2TUPns" target="_blank" rel="noopener">Watch on YouTube</a>
+            </p>
     </div>
 
     <!-- Description -->
@@ -496,6 +542,6 @@ A molten-hot...</div>
   <a class="link" href="https://jasonmartocci.com">All The Mayhem</a> ·
   <a class="link" href="https://github.com/JasonMartocci" target="_blank" rel="noopener">GitHub</a>
 </footer>
-<!-- generated by Mayhem Maker v0.7.0 @ 20250903.043157Z -->
+<!-- generated by Mayhem Maker v0.7.0 @ 20250903.043837Z -->
 </body></html>
-<!-- rebuild:2025-09-03T04:32:14.837033+00:00 -->
+<!-- rebuild:2025-09-03T04:38:57.149845+00:00 -->
