@@ -206,15 +206,6 @@
 {{ faq_schema | tojson | replace("</","<\\/") | safe }}
 </script>
 {% endif %}
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    analytics_storage: 'denied'
-  });
-</script>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M23LKR14B1"></script>
 <script>
@@ -252,7 +243,7 @@
 
         <!-- Fallback shown if the API is blocked -->
         <div id="yt-fallback" style="display:none;margin-top:12px;">
-            <a id="yt-link" href="https://www.youtube.com/watch?v=1QQoT7SwEfk" target="_blank" rel="noopener">
+            <a id="yt-link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">
             Watch on YouTube
             </a>
         </div>
@@ -260,7 +251,7 @@
 
         <script>
         // Use your template variable here instead of the hard-coded ID if you have one.
-        const VIDEO_ID = "1QQoT7SwEfk";
+        const VIDEO_ID = "{{ video_id }}";
         const ORIGIN   = window.location.origin;
 
         let ytPlayer;
