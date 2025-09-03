@@ -1,11 +1,11 @@
 {
   "date_pt": "2025-09-02",
-  "units": 8850,
+  "units": 8951,
   "per_method": {
-    "channels.list": 24,
+    "channels.list": 25,
     "playlistItems.list": 12,
     "videos.list": 14,
     "videos.update": 5600,
-    "search.list": 3200
+    "search.list": 3300
   }
 }
