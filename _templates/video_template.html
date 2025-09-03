@@ -257,7 +257,7 @@
                 Channel:
                 <a href="https://www.youtube.com/@{{ channel_handle }}" target="_blank" rel="noopener">
                     {{ channel_title or ("@" ~ channel_handle) }}
-                </a> | Subscribers: {{ subs_known and subscriber_count or "—" }}
+                </a>| Subscribers: {{ subs_known and subscriber_count or "—" }}
             </span>
         </div>
 
@@ -267,19 +267,21 @@
             <a class="link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">Watch on YouTube</a>
         </p>
         </div>
-    <div class="video">
-        <div class="yt-wrap" style="max-width:900px;margin:auto;">
-            <div id="player" class="yt-player" style="aspect-ratio:16/9;"></div>
+        <div class="video">
+            <div class="yt-wrap" style="max-width:900px;margin:auto;">
+                <div id="player" class="yt-player" style="aspect-ratio:16/9;"></div>
+            </div>
+            </div>
 
-            <!-- Buttons the test agent (and users) can click -->
-            <div id="yt-controls" style="margin-top:12px;gap:8px;display:flex;flex-wrap:wrap;">
+            <!-- Controls & fallback BELOW the video (no overlap/clipping) -->
+            <div class="card" id="player-controls" style="max-width:900px;margin:12px auto 0;">
+            <div id="yt-controls" style="display:none;gap:8px;flex-wrap:wrap;display:flex;">
                 <button id="play"  type="button" aria-label="Play video">Play</button>
                 <button id="pause" type="button" aria-label="Pause video">Pause</button>
                 <button id="mute"  type="button" aria-label="Mute video">Mute</button>
                 <button id="unmute" type="button" aria-label="Unmute video">Unmute</button>
             </div>
 
-            <!-- Fallback shown if the API is blocked -->
             <div id="yt-fallback" style="display:none;margin-top:12px;">
                 <a id="yt-link" href="https://www.youtube.com/watch?v={{ video_id }}" target="_blank" rel="noopener">
                 Watch on YouTube
