@@ -281,6 +281,7 @@
                 <button id="pause" type="button" aria-label="Pause video">Pause</button>
                 <button id="mute"  type="button" aria-label="Mute video">Mute</button>
                 <button id="unmute" type="button" aria-label="Unmute video">Unmute</button>
+                <button id="fullscreen" type="button" aria-label="Enter fullscreen">Fullscreen</button>
             </div>
 
             <div id="yt-fallback" style="display:none;margin-top:12px;">
@@ -350,6 +351,7 @@
         document.getElementById("pause").addEventListener("click",  () => ytPlayer && ytPlayer.pauseVideo());
         document.getElementById("mute").addEventListener("click",   () => ytPlayer && ytPlayer.mute());
         document.getElementById("unmute").addEventListener("click", () => ytPlayer && ytPlayer.unMute());
+        document.getElementById("fullscreen").addEventListener("click", () => ytPlayer && ytPlayer.fullscreen());
         </script>
     </div>
 
